@@ -1,0 +1,14 @@
+2019-20_DUA_Reunion_ALR_ReunionInvitations_Initial_Alumni Reunion Young Alumni Registration - 39931_20200306
+
+Image Urls
+https://adcomms.utoronto.ca/email-templates/reunion/2020/03/shaker_final.jpg
+https://adcomms.utoronto.ca/email-templates/reunion/2020/03/bbq_final.jpg
+https://adcomms.utoronto.ca/email-templates/reunion/2020/03/sfd_young_final.jpg
+
+Events with TagR
+http://my.alumni.utoronto.ca/s/731/18/interior.aspx?sid=731&gid=1&pgid=14888&tags=SHAKER&utm_source=DUA&utm_medium=Email&utm_campaign=ReunionRegistration&consID=##OptionalParameter3##&utm_content=young
+http://my.alumni.utoronto.ca/s/731/18/interior.aspx?sid=731&gid=1&pgid=14888&tags=BBQ&utm_source=DUA&utm_medium=Email&utm_campaign=ReunionRegistration&consID=##OptionalParameter3##&utm_content=young
+http://my.alumni.utoronto.ca/s/731/18/interior.aspx?sid=731&gid=1&pgid=14888&tags=stressfreedegree&utm_source=DUA&utm_medium=Email&utm_campaign=ReunionRegistration&consID=##OptionalParameter3##&utm_content=young
+
+Unsubscribe
+mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%20DUA_ALL_AR_Invitations_##OptionalParameter3##%20|%20REUNION20-REGISTRATION-EMAIL-YOUNG

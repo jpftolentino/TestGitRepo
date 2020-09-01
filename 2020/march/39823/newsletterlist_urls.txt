@@ -1,0 +1,34 @@
+2019-20_DUA_Reunion_NURS_ReunionInvitations_Initial_Nursing Alumni Reunion Evite - 39823_20200311
+
+Seed/approve list
+john.tolentino@utoronto.ca
+shonna.spicer@utoronto.ca
+lindsay.curtis@utoronto.ca
+l.clark@utoronto.ca
+curtis.nelson@utoronto.ca
+rachel.chochinov@utoronto.ca
+
+Image Urls
+https://adcomms.utoronto.ca/email-templates/reunion/2020/nurs/nurs_100th_logo_final.jpg
+https://adcomms.utoronto.ca/email-templates/reunion/2020/nurs/nurs_100th_logo_final_2.jpg
+
+https://adcomms.utoronto.ca/email-templates/reunion/2020/nurs/sfd_lecture_photo_final.jpg
+https://adcomms.utoronto.ca/email-templates/reunion/2020/nurs/breakfast_final.png
+https://adcomms.utoronto.ca/email-templates/reunion/2020/nurs/ice_cream_final.jpg
+https://adcomms.utoronto.ca/email-templates/reunion/2020/nurs/toronto_bluejays_game_final.jpg
+
+Events with TagR
+http://my.alumni.utoronto.ca/s/731/18/register.aspx?sid=731&gid=1&pgid=14888&utm_source=DUA&utm_medium=Email&utm_campaign=ReunionRegistration&consID=##OptionalParameter3##
+
+&utm_source=DUA&utm_medium=Emails&utm_campaign=ReunionRegistration&consID=##OptionalParameter3##
+
+http://my.alumni.utoronto.ca/s/731/18/home.aspx?sid=731&gid=1&pgid=14887&utm_source=DUA&utm_medium=Emails&utm_campaign=ReunionRegistration&consID=##OptionalParameter3##
+
+http://my.alumni.utoronto.ca/s/731/18/register.aspx?sid=731&gid=1&pgid=14888&tags=nursing&utm_source=DUA&utm_medium=Emails&utm_campaign=ReunionRegistration&consID=##OptionalParameter3##
+http://my.alumni.utoronto.ca/s/731/18/register.aspx?sid=731&gid=1&pgid=14888&tags=nursing&utm_source=DUA&utm_medium=Emails&utm_campaign=ReunionRegistration&consID=##OptionalParameter3##
+http://my.alumni.utoronto.ca/s/731/18/register.aspx?sid=731&gid=1&pgid=14888&tags=nursing&utm_source=DUA&utm_medium=Emails&utm_campaign=ReunionRegistration&consID=##OptionalParameter3##
+http://my.alumni.utoronto.ca/s/731/18/register.aspx?sid=731&gid=1&pgid=14888&tags=nursing&utm_source=DUA&utm_medium=Emails&utm_campaign=ReunionRegistration&consID=##OptionalParameter3##
+
+Unsubscribe
+mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%20DUA_ALL_AR_Invitations_##OptionalParameter3##%20|%20REUNION20-REGISTRATION-EMAIL
+

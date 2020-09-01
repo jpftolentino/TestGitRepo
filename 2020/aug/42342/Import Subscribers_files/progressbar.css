@@ -1,0 +1,19 @@
+
+body { margin: 0px; padding: 0px; }
+
+table.pgbLayout {
+  border-width: 0px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.pgbLayout td {
+  padding: 0px;
+}
+
+table.pgbMain {
+  background-color: #CC0000;
+  border-width: 0px;
+  border-collapse: collapse;
+  height: 11px;
+}

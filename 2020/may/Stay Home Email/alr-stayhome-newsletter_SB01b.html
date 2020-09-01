@@ -1,0 +1,1179 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+    <style>
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+        table table table {
+            table-layout: auto;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        *[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links *,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+            display: none !important;
+            opacity: 0.01 !important;
+        }
+        /* If the above doesn't work, add a .g-img class to any image in question. */
+        img.g-img + div {
+            display: none !important;
+        }
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            .email-container {
+                min-width: 414px !important;
+            }
+        }
+        @media only screen and (max-device-width: 767px) {
+            .hide {
+                display: none !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+    <!-- Reset list spacing because Outlook ignores much of our inline CSS. -->
+    <!--[if mso]>
+    <style type="text/css">
+        ul,
+        ol {
+            margin: 0 !important;
+        }
+        li {
+            margin-left: 30px !important;
+        }
+        li.list-item-first {
+            margin-top: 0 !important;
+        }
+        li.list-item-last {
+            margin-bottom: 10px !important;
+        }
+    </style>
+    <![endif]-->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+        /* Media Queries */
+        @media screen and (max-width: 480px) {
+
+            /* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
+            .fluid {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+            .stack-column-left-pad{
+                padding-left: 10px;
+            }
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+</head>
+<!--
+    The email background color (#222222) is defined in three places:
+    1. body tag: for most email clients
+    2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+    3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #f2f4f7;">
+    <center style="width: 100%; background-color: #f2f4f7;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f2f4f7;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+            Explore the benefits of being a U of T alumn
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+            ‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!--
+            Set the email width. Defined in two places:
+            1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+            2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+            Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+        -->
+        <div style="max-width: 680px; margin: 0 auto;" class="email-container">
+            <!--[if mso]>
+            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+            <tr>
+            <td>
+            <![endif]-->
+
+            <!-- Email Body : BEGIN -->
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: 0 auto;">
+                <!-- Email Pre Header : BEGIN -->
+                <tbody><tr>
+                    <td style="text-align: center; padding-bottom: 10px; padding-top: 10px; font-family: arial; background-color: #ffffff; border-bottom: 1px solid #f2f4f7;">
+                        <a href="#" style="text-decoration: none !important; color: #000000; font-size: 12px;text-align: center !important;">
+                          <strong>View this email online</strong>
+                        </a>
+                    </td>
+                </tr>
+                <!-- Email Pre Header : END -->
+                <!-- Email Header : BEGIN -->
+                <tr>
+                    <!-- dir=rtl is where the magic happens. This can be changed to dir=ltr to swap the alignment on wide while maintaining stack order on narrow. -->
+                    <td dir="rtl" height="100%" valign="top" width="100%" style="padding: 10px 0; background-color: #ffffff;border-bottom: 1px solid #f2f4f7;">
+                        <!--[if mso]>
+                        <table align="center" role="presentation" border="0" cellspacing="0" cellpadding="0" width="680" style="width: 680px;" bgcolor="white">
+                        <tr>
+                        <td valign="top" width="680" bgcolor="white">
+                        <![endif]-->
+                        <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:680px;" bgcolor="white">
+                            <tbody><tr>
+                                <td align="center" valign="top" style="font-size:0; padding: 10px 0;" bgcolor="white">
+                                    <!--[if mso]>
+                                    <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="680" style="width: 680px;">
+                                    <tr>
+                                    <td valign="bottom" width="220" style="width: 220px;" border="0" bgcolor="white">
+                                    <![endif]-->
+                                    <div style="display:inline-block; margin: 0 -2px; max-width: 200px; min-width: 160px; vertical-align:bottom; width:100%;" class="stack-column">
+                                    </div>
+                                    <!--[if mso]>
+                                    </td>
+                                    <td valign="top" width="440" style="width: 440px;">
+                                    <![endif]-->
+                                    <div style="display:inline-block; margin: 0 -2px; max-width:66.66%; min-width:320px; vertical-align:top;" class="stack-column">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tbody><tr>
+                                                <td dir="ltr" style="font-family: sans-serif; color: #555555; padding: 0 10px; text-align: left;" class="">
+                                                        <img src="https://adcomms.utoronto.ca/email-templates/dua/2020/05/uoft-signature-alum.png" width="300" height="64" alt="U of T Signature">
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </div>
+                                    <!--[if mso]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+                <!-- Email Header : END -->
+
+                <!-- 1 Column - SUB HEADER : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 20px 20px; font-family: 'Arial', sans-serif; font-size: 36px; line-height: 42px; color: #25355a; text-align: left;">
+                                        <strong>#StayHome and #StayEngaged with online offerings for U of T alumni.</strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <!-- 1 Column - SUB HEADER : END -->
+
+                <!-- 1 Column - SUB HEADER : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td style="font-family: 'Arial', sans-serif; font-size: 40px; line-height: 38px; color: #25355a; text-align: center;">
+                                        <img src="https://adcomms.utoronto.ca/email-templates/dua/2020/05/banner.jpg" width="680" height="" border="0" alt="A young woman in a sunlit living room sitting with crossed legs, looking calm with eyes closed and wearing headphones" class="fluid g-img" style="width: 100%; max-width: 680px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 18px; line-height: 24px; color: #555555; border: 1px solid #eeeeee;">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <!-- 1 Column - SUB HEADER : END -->
+
+                <!-- 1 Column Text + Button : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tbody><tr>
+                                <td align="left" style="padding: 20px; font-family: sans-serif; font-size: 22px; line-height: 32px; color: #25355a;">
+                                    <p style="text-align: left; margin: 10px 0 10px; font-size: 22px; line-height: 1.4;">
+                                        Our lives may feel on hold right now but that doesn’t mean we can’t keep learning and exploring.<br><br>To answer the call, here are your online resources for the times:
+                                    </p>
+                                    <ul>
+                                        <li><a href="#" style="color: #007fa3;">Addicted to the news?</a></li>
+                                        <li><a href="#" style="color: #007fa3;">Forget how to sweat?</a></li>
+                                        <li><a href="#" style="color: #007fa3;">Bored?</a></li>
+                                    </ul>
+                                    <p>
+                                        Check out the new hub often for workouts, webinars, insights, virtual events and more.
+                                        <br>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0 20px 20px 0;">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                        <tbody>
+                                        <tr>
+                                            <td style="padding: 0px 20px">
+                                                <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="button-td button-td-primary" valign="botttom" align="right" style="border-radius: 4px; background: #0580A4;">
+                                                                <a class="button-a button-a-primary" href="#" style="background: #0580A4; border: 1px solid #0580A4; font-family: 'Arial', sans-serif; font-size: 14px; line-height: 18px; text-decoration: none; padding: 12px 25px; color: #ffffff; display: block;"><strong>GO TO THE ONLINE HUB</strong></a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    <tr>
+                                        <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px;">
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="background-color: #ffffff; border-bottom: 1px solid #007fa3;">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tbody><tr>
+                                            <td style="padding: 20px; padding-bottom: 10px;font-family: sans-serif;font-size: 32px;line-height: 1.1;color: #007fa3;text-align: left;">
+                                                <strong>Upcoming Online Events</strong>
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="background-color: #ffffff;">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tbody><tr>
+                                            <td style="padding: 20px; font-family: sans-serif; font-size: 22px; line-height: 30px; color: #263459">
+                                                <a href="#" style="color: #25355a;"><strong>MANAGING YOUR MENTAL HEALTH DURING COVID-19 </strong><span><img src="https://adcomms.utoronto.ca/email-templates/dua/2020/05/arrow.png" width="16" height="16" border="0"></span></a><br>
+                                                <span style="font-size: 16px; line-height: 24px; color: #007fa3;">April 13–May 29, 2020</span><br>
+                                                <span style="font-size: 18px; line-height: 26px; color: #555555;">A free course about coping in strange times with Professor Steve Joordens, Department of Psychology, <strong>U of T Scarborough</strong>. 
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0 20px 20px 20px">
+                                    <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                                         <tbody>
+                                            <tr>
+                                                <td class="button-td button-td-primary" valign="botttom" align="right" style="border-radius: 4px; background: #white;">
+                                                    <a class="button-a button-a-primary" href="#" style="background: white; border: 2px solid #25355a; font-family: 'Arial', sans-serif; font-size: 14px; line-height: 18px; text-decoration: none; padding: 12px 25px; color: #25355a; display: block;"><strong>FIND OUT MORE</strong></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="background-color: #ffffff; border-bottom: 1px solid #007fa3;">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tbody><tr>
+                                            <td style="padding: 20px; padding-top: 40px; padding-bottom: 10px;font-family: sans-serif;font-size: 32px;line-height: 1.1;color: #007fa3;text-align: left;">
+                                                <strong>More Alumni Offerings</strong>
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                </td>
+                            </tr>
+
+                            <!-- 2 Even Columns - STORY : BEGIN -->
+                            <tr>
+                                <td height="100%" valign="top" width="100%" style="background-color: #ffffff;">
+                                    <!--[if mso]>
+                                    <table align="center" role="presentation" border="0" cellspacing="0" cellpadding="0" width="680">
+                                    <tr>
+                                    <td valign="top" width="680">
+                                    <![endif]-->
+                                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:680px;">
+                                        <tbody><tr>
+                                            <td style="background-color: #ffffff;">
+                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="padding: 20px 20px 0 20px">
+                                                                            <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td class="" valign="bottom" align="right" style="">
+                                                                                             <span style="background: #e7f4f6; border: 1px solid #e7f4f6; font-family: 'Arial', sans-serif; font-size: 14px; line-height: 18px; text-decoration: none; padding: 4px 12px; color: #25355a;">Career Kick-Starts</span>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                        <tr>
+                                                        <td style="padding: 20px; padding-top:10px; padding-bottom:0px; font-family: sans-serif; font-size: 22px; line-height: 30px; color: #263459">
+                                                            <a href="#" style="color: #25355a;"><strong>FREE ONLINE COURSE: MASTERING LINKEDIN </strong><span><img src="https://adcomms.utoronto.ca/email-templates/dua/2020/05/arrow.png" width="16" height="16" border="0"></span></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody></table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="top" style="font-size:0;">
+                                                <!--[if mso]>
+                                                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="680">
+                                                <tr>
+                                                <td valign="top" width="330">
+                                                <![endif]-->
+                                                <div style="display:inline-block; margin: 0 -2px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                        <tbody><tr>
+                                                            <td style="padding: 10px 10px;">
+                                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                                                    <tbody><tr>
+                                                                        <td>
+                                                                            <a href="#"><img src="https://adcomms.utoronto.ca/email-templates/dua/2020/05/linkedin.jpg" width="308" height="" border="0" alt="Two young men in suits greeting each other at a networking event" class="fluid g-img" style="width: 100%; max-width: 308px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 18px; line-height: 24px; color: #555555; border: 1px solid #eeeeee;"></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody></table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                </div>
+                                                <!--[if mso]>
+                                                </td>
+                                                <td valign="top" width="330">
+                                                <![endif]-->
+                                                <div style="display:inline-block; margin: 0 -2px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                        <tbody><tr>
+                                                            <td style="padding: 10px 10px;">
+                                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                                                    <tbody><tr>
+                                                                        <td style="font-family: sans-serif; font-size: 18px; line-height: 24px; color: #555555; padding-top: 0px;" class="stack-column-left">
+                                                                            <p style="margin: 0;">Two former LinkedIn employees show you how to turn your job profile into a recruiter magnet. Regularly $130, free for U of T alumni.</p>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="padding: 20px 20px 20px 0px">
+                                                                            <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td class="button-td button-td-primary" valign="botttom" align="right" style="border-radius: 4px; background: #0580A4;">
+                                                                                             <a class="button-a button-a-primary" href="#" style="background: white; border: 2px solid #25355a; font-family: 'Arial', sans-serif; font-size: 14px; line-height: 18px; text-decoration: none; padding: 12px 25px; color: #25355a; display: block;"><strong>REGISTER BY JUNE 2020</strong></a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody></table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                </div>
+                                                <!--[if mso]>
+                                                </td>
+                                                </tr>
+                                                </table>
+                                                <![endif]-->
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                    <!--[if mso]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                            <!-- 2 Even Columns - STORY : END -->
+
+                            <!-- Clear Spacer : BEGIN -->
+                            <tr>
+                                <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px;">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <!-- Clear Spacer : END -->
+
+                            <!-- 2 Even Columns - STORY : BEGIN -->
+                            <tr>
+                                <td height="100%" valign="top" width="100%" style="background-color: #ffffff;">
+                                    <!--[if mso]>
+                                    <table align="center" role="presentation" border="0" cellspacing="0" cellpadding="0" width="680">
+                                    <tr>
+                                    <td valign="top" width="680">
+                                    <![endif]-->
+                                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:680px;">
+                                        <tbody><tr>
+                                            <td style="background-color: #ffffff;">
+                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="padding: 20px 20px 0 20px">
+                                                                            <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td class="" valign="bottom" align="right" style="">
+                                                                                             <span style="background: #e7f4f6; border: 1px solid #e7f4f6; font-family: 'Arial', sans-serif; font-size: 14px; line-height: 18px; text-decoration: none; padding: 4px 12px; color: #25355a;">Expand Your Mind</span>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                        <tr>
+                                                        <td style="padding: 20px; padding-top:10px; padding-bottom:0px; font-family: sans-serif; font-size: 22px; line-height: 30px; color: #263459">
+                                                            <a href="#" style="color: #25355a;"><strong>COVID-19 PODCAST </strong><span><img src="https://adcomms.utoronto.ca/email-templates/dua/2020/05/arrow.png" width="16" height="16" border="0"></span></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody></table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="top" style="font-size:0;">
+                                                <!--[if mso]>
+                                                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="680">
+                                                <tr>
+                                                <td valign="top" width="330">
+                                                <![endif]-->
+                                                <div style="display:inline-block; margin: 0 -2px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                        <tbody><tr>
+                                                            <td style="padding: 10px 10px;">
+                                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                                                    <tbody><tr>
+                                                                        <td>
+                                                                            <a href="#"><img src="https://adcomms.utoronto.ca/email-templates/dua/2020/05/podcast.jpg" width="308" height="" border="0" alt="A portrait of U of T Vice President of Research and Innovation Vivek Goel, the host of the COVID-19 podcast" class="fluid g-img" style="width: 100%; max-width: 308px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 18px; line-height: 24px; color: #555555; border: 1px solid #eeeeee;"></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody></table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                </div>
+                                                <!--[if mso]>
+                                                </td>
+                                                <td valign="top" width="330">
+                                                <![endif]-->
+                                                <div style="display:inline-block; margin: 0 -2px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                        <tbody><tr>
+                                                            <td style="padding: 10px 10px;">
+                                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                                                    <tbody><tr>
+                                                                        <td style="font-family: sans-serif; font-size: 18px; line-height: 24px; color: #555555; padding-top: 0px;" class="stack-column-left">
+                                                                            <p style="margin: 0;">What's next for the pandemic? For us? Hear up-to-the minute insights from Vivek Goel, a U of T vice-president and professor at the <strong>Dalla Lana School of Public Health.</strong></p>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="padding: 20px 20px 20px 0px">
+                                                                            <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td class="button-td button-td-primary" valign="botttom" align="right" style="border-radius: 4px; background: #0580A4;">
+                                                                                             <a class="button-a button-a-primary" href="#" style="background: white; border: 2px solid #25355a; font-family: 'Arial', sans-serif; font-size: 14px; line-height: 18px; text-decoration: none; padding: 12px 25px; color: #25355a; display: block;"><strong>SUBSCRIBE</strong></a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody></table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                </div>
+                                                <!--[if mso]>
+                                                </td>
+                                                </tr>
+                                                </table>
+                                                <![endif]-->
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                    <!--[if mso]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                            <!-- 2 Even Columns - STORY : END -->
+
+                            <!-- 2 Even Columns - STORY : BEGIN -->
+                            <tr>
+                                <td height="100%" valign="top" width="100%" style="background-color: #ffffff;">
+                                    <!--[if mso]>
+                                    <table align="center" role="presentation" border="0" cellspacing="0" cellpadding="0" width="680">
+                                    <tr>
+                                    <td valign="top" width="680">
+                                    <![endif]-->
+                                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:680px;">
+                                        <tbody><tr>
+                                            <td style="background-color: #ffffff;">
+                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="padding: 20px 20px 0 20px">
+                                                                            <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td class="" valign="bottom" align="right" style="">
+                                                                                             <span style="background: #e7f4f6; border: 1px solid #e7f4f6; font-family: 'Arial', sans-serif; font-size: 14px; line-height: 18px; text-decoration: none; padding: 4px 12px; color: #25355a;">Stay Connected</span>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                        <tr>
+                                                        <td style="padding: 20px; padding-top:10px; padding-bottom:0px; font-family: sans-serif; font-size: 22px; line-height: 30px; color: #263459">
+                                                            <a href="#" style="color: #25355a;"><strong>VOLUNTEER FROM HOME </strong><span><img src="https://adcomms.utoronto.ca/email-templates/dua/2020/05/arrow.png" width="16" height="16" border="0"></span></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody></table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="top" style="font-size:0;">
+                                                <!--[if mso]>
+                                                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="680">
+                                                <tr>
+                                                <td valign="top" width="330">
+                                                <![endif]-->
+                                                <div style="display:inline-block; margin: 0 -2px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                        <tbody><tr>
+                                                            <td style="padding: 10px 10px;">
+                                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                                                    <tbody><tr>
+                                                                        <td>
+                                                                            <a href="#"><img src="https://adcomms.utoronto.ca/email-templates/dua/2020/05/volunteer.jpg" width="308" height="" border="0" alt="Portrait of a young male U of T volunteer wearing a t-shirt and smiling" class="fluid g-img" style="width: 100%; max-width: 308px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 18px; line-height: 24px; color: #555555; border: 1px solid #eeeeee;"></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody></table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                </div>
+                                                <!--[if mso]>
+                                                </td>
+                                                <td valign="top" width="330">
+                                                <![endif]-->
+                                                <div style="display:inline-block; margin: 0 -2px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                        <tbody><tr>
+                                                            <td style="padding: 10px 10px;">
+                                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                                                    <tbody><tr>
+                                                                        <td style="font-family: sans-serif; font-size: 18px; line-height: 24px; color: #555555; padding-top: 0px;" class="stack-column-left">
+                                                                            <p style="margin: 0;">The world needs volunteers more than ever these days. Why not mentor a student or share your expertise with a U of T alum?</p>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="padding: 20px 20px 20px 0px">
+                                                                            <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td class="button-td button-td-primary" valign="botttom" align="right" style="border-radius: 4px; background: #0580A4;">
+                                                                                             <a class="button-a button-a-primary" href="#" style="background: white; border: 2px solid #25355a; font-family: 'Arial', sans-serif; font-size: 14px; line-height: 18px; text-decoration: none; padding: 12px 25px; color: #25355a; display: block;"><strong>FIND OUT HOW</strong></a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody></table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                </div>
+                                                <!--[if mso]>
+                                                </td>
+                                                </tr>
+                                                </table>
+                                                <![endif]-->
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                    <!--[if mso]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                            <!-- 2 Even Columns - STORY : END -->
+
+                            <!-- 2 Even Columns - STORY : BEGIN -->
+                            <tr>
+                                <td height="100%" valign="top" width="100%" style="background-color: #ffffff;">
+                                    <!--[if mso]>
+                                    <table align="center" role="presentation" border="0" cellspacing="0" cellpadding="0" width="680">
+                                    <tr>
+                                    <td valign="top" width="680">
+                                    <![endif]-->
+                                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:680px;">
+                                        <tbody><tr>
+                                            <td style="background-color: #ffffff;">
+                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="padding: 20px 20px 0 20px">
+                                                                            <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td class="" valign="bottom" align="right" style="">
+                                                                                             <span style="background: #e7f4f6; border: 1px solid #e7f4f6; font-family: 'Arial', sans-serif; font-size: 14px; line-height: 18px; text-decoration: none; padding: 4px 12px; color: #25355a;">Eat, Dream, Sweat</span>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                        <tr>
+                                                        <td style="padding: 20px; padding-top:10px; padding-bottom:0px; font-family: sans-serif; font-size: 22px; line-height: 30px; color: #263459">
+                                                            <a href="#" style="color: #25355a;"><strong>WORK OUT WITH U OF T'S FITNESS EXPERTS </strong><span><img src="https://adcomms.utoronto.ca/email-templates/dua/2020/05/arrow.png" width="16" height="16" border="0"></span></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody></table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" valign="top" style="font-size:0;">
+                                                <!--[if mso]>
+                                                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="680">
+                                                <tr>
+                                                <td valign="top" width="330">
+                                                <![endif]-->
+                                                <div style="display:inline-block; margin: 0 -2px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                        <tbody><tr>
+                                                            <td style="padding: 10px 10px;">
+                                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                                                    <tbody><tr>
+                                                                        <td>
+                                                                            <a href="#"><img src="https://adcomms.utoronto.ca/email-templates/dua/2020/05/kpe.jpg" width="308" height="" border="0" alt="A top-down shot of a healthy looking breakfast bowl with fruit, oats and peanut butter" class="fluid g-img" style="width: 100%; max-width: 308px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 18px; line-height: 24px; color: #555555; border: 1px solid #eeeeee;"></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody></table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                </div>
+                                                <!--[if mso]>
+                                                </td>
+                                                <td valign="top" width="330">
+                                                <![endif]-->
+                                                <div style="display:inline-block; margin: 0 -2px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                        <tbody><tr>
+                                                            <td style="padding: 10px 10px;">
+                                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                                                    <tbody><tr>
+                                                                        <td style="font-family: sans-serif; font-size: 18px; line-height: 24px; color: #555555; padding-top: 0px;" class="stack-column-left">
+                                                                            <p style="margin: 0;">Bring the <strong>Faculty of Kinesiology &amp; Physical Education</strong> into your living room. KPE pros share workouts, meditation videos and other wellness resources on Instagram.
+                                                                            </p>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="padding: 20px 20px 20px 0px">
+                                                                            <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td class="button-td button-td-primary" valign="botttom" align="right" style="border-radius: 4px; background: #0580A4;">
+                                                                                             <a class="button-a button-a-primary" href="#" style="background: white; border: 2px solid #25355a; font-family: 'Arial', sans-serif; font-size: 14px; line-height: 18px; text-decoration: none; padding: 12px 25px; color: #25355a; display: block;"><strong>GET ACTIVE</strong></a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody></table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                </div>
+                                                <!--[if mso]>
+                                                </td>
+                                                </tr>
+                                                </table>
+                                                <![endif]-->
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                    <!--[if mso]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                            <!-- 2 Even Columns - STORY : END -->
+
+
+                            <!-- 1 Column - SUB HEADER : BEGIN -->
+                            <tr>
+                                <td style="background-color: #ffffff; border-bottom: 1px solid #007fa3;">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tbody><tr>
+                                            <td style="padding: 20px; padding-top: 40px; padding-bottom: 10px;font-family: sans-serif;font-size: 32px;line-height: 1.1;color: #007fa3;text-align: left;">
+                                                <strong>There’s Always Something to Do</strong>
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                </td>
+                            </tr>
+                            <!-- 1 Column - SUB HEADER : END -->
+
+                            <!-- Clear Spacer : BEGIN -->
+                            <tr>
+                                <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px;">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <!-- Clear Spacer : END -->
+
+                            <!-- 2 Even Columns - STORY : BEGIN -->
+                             <!-- 1 Column Text + Button : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tbody><tr>
+                                <td align="left" style="padding: 0 20px; font-family: sans-serif; font-size: 18px; line-height: 24px; color: #555555;">
+                                    <p style="text-align: left; margin: 0 0 10px;">
+                                        <em>U of T is creating and curating alumni offerings all the time. We’ll be updating the online hub and sending these e-newsletters regularly. So visit often, check your inbox and engage with your community.</em>
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <!-- 2 Even Columns - STORY : END -->
+
+                            <!-- Clear Spacer : BEGIN -->
+                            
+                            <!-- Clear Spacer : END -->
+
+                        </tbody></table>
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tbody><tr>
+                                                            <td style="padding: 0 20px;">
+                                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <td style="padding: 20px 20px 20px 0px">
+                                                                            <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td class="button-td button-td-primary" valign="botttom" align="right" style="border-radius: 4px; background: #0580A4;">
+                                                                                             <a class="button-a button-a-primary" href="#" style="background: #0580A4; border: 1px solid #0580A4; font-family: 'Arial', sans-serif; font-size: 14px; line-height: 18px; text-decoration: none; padding: 12px 25px; color: #ffffff; display: block;"><strong>GO TO THE ONLINE HUB</strong></a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px;">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                                                                </tbody></table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                    </td>
+                </tr>
+                <!-- 1 Column Text + Button : END -->
+
+                <tr>
+                    <td height="100%" valign="top" width="100%" style="padding: 10px 0; background-color: #25355a;">
+                        <!--[if mso]>
+                        <table align="center" role="presentation" border="0" cellspacing="0" cellpadding="0" width="680">
+                        <tr>
+                        <td valign="top" width="680">
+                        <![endif]-->
+                        <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:680px;">
+                            <tbody><tr>
+                                <td align="center" valign="top" style="font-size:0;">
+                                    <!--[if mso]>
+                                    <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="680">
+                                    <tr>
+                                    <td valign="top" width="340">
+                                    <![endif]-->
+                                    <div style="display:inline-block; margin: 0 -2px; max-width:51.1%; min-width:340px; vertical-align:top; width:100%;" class="stack-column">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tbody><tr>
+                                                <td style="padding: 10px 10px;">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="text-align: left;">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td style="font-family: sans-serif; font-size: 15px; color: #555555; padding-top: 10px;" class="stack-column">
+                                                                <a href="https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=8&amp;ID=0&amp;NL=3095&amp;N=3912&amp;SI=1387605&amp;URL=https%3a%2f%2fwww.facebook.com%2fuoftalumni" style="border:0;text-decoration: none;">
+                                                                  <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/facebook-fff-128.png" alt="Facebook" border="0" width="28" height="28" class="social">
+                                                                </a>&nbsp;
+                                                                <a href="https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=8&amp;ID=0&amp;NL=3095&amp;N=3912&amp;SI=1387605&amp;URL=https%3a%2f%2ftwitter.com%2fuoftalumni" style="border:0;text-decoration: none;">
+                                                                  <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/twitter-fff-128.png" alt="Twitter" border="0" width="28" height="28" class="social">
+                                                                </a>&nbsp;
+                                                                <a href="https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=8&amp;ID=0&amp;NL=3095&amp;N=3912&amp;SI=1387605&amp;URL=https%3a%2f%2fwww.instagram.com%2fuoftalumni%2f" style="border:0;text-decoration: none;">
+                                                                  <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/instagram-fff-128.png" alt="Instagram" border="0" width="28" height="28" class="social">
+                                                                </a>&nbsp;
+                                                                <a href="https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=8&amp;ID=0&amp;NL=3095&amp;N=3912&amp;SI=1387605&amp;URL=https%3a%2f%2fwww.linkedin.com%2fschool%2funiversity-of-toronto" style="border:0;text-decoration: none;">
+                                                                  <img src="https://adcomms.utoronto.ca/email-templates/dua/2020/05/linkedin-fff-128.png" alt="LinkedIn" border="0" width="28" height="28" class="social">
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </div>
+                                    <!--[if mso]>
+                                    </td>
+                                    <td valign="top" width="200">
+                                    <![endif]-->
+                                    <div style="display:inline-block; margin: 0 -2px; max-width:30.30%; min-width:200px; vertical-align:top; width:100%;" class="stack-column">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tbody><tr>
+                                                <td class="hide" style="padding: 10px 10px;">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td height="5" style="font-family: sans-serif; font-size: 18px; line-height: 24px; color: #555555;" class="stack-column">
+                                                            
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </div>
+                                    <!--[if mso]>
+                                    </td>
+                                    <td valign="bottom" width="120" style="padding-bottom: 8px;">
+                                    <![endif]-->
+                                    <div style="display:inline-block; margin: 0 -2px; max-width:18.18%; min-width:120px; vertical-align:bottom; width:100%;" class="stack-column">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tbody><tr>
+                                                <td style="padding: 10px 10px;">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td style="font-family: sans-serif; font-size: 15px; color: #555555; padding-top: 10px;" class="stack-column">
+                                                                <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/boundless-reverse%402x.png" alt="Boundless" width="100" height="17" border="0">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </div>
+                                    <!--[if mso]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+
+            </tbody></table>
+            <!-- Email Body : END -->
+
+            <!-- Email Footer : BEGIN -->
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 680px;">
+                <tbody><tr>
+                    <td height="100%" valign="top" width="100%" style="padding: 10px 0; background-color: #ffffff;">
+                        <!--[if mso]>
+                        <table align="center" role="presentation" border="0" cellspacing="0" cellpadding="0" width="680">
+                        <tr>
+                        <td valign="top" width="680">
+                        <![endif]-->
+                        <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:680px;">
+                            <tbody><tr>
+                                <td align="center" valign="top" style="font-size:0;">
+                                    <!--[if mso]>
+                                    <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="680">
+                                    <tr>
+                                    <td valign="top" width="260">
+                                    <![endif]-->
+                                    <div style="display:inline-block; margin: 0 -2px; max-width:39.39%; min-width:260px; vertical-align:top; width:100%;" class="stack-column">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tbody><tr>
+                                                <td style="padding: 10px 10px;">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding-top: 10px;" class="stack-column">
+                                                                <p style="margin:0">
+                                                                    The University&nbsp;of&nbsp;Toronto <br>
+                                                                    21 King's College Circle <br>
+                                                                    Toronto, Ontario <br>
+                                                                    M5S 3J3<br>
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </div>
+                                    <!--[if mso]>
+                                    </td>
+                                    <td valign="top" width="200">
+                                    <![endif]-->
+                                    <div style="display:inline-block; margin: 0 -2px; max-width:30.30%; min-width:200px; vertical-align:top; width:100%;" class="stack-column">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tbody><tr>
+                                                <td class="hide" style="padding: 10px 0px;">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td height="5" style="font-family: sans-serif; font-size: 18px; line-height: 24px; color: #555555;" class="stack-column">
+                                                            
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </div>
+                                    <!--[if mso]>
+                                    </td>
+                                    <td valign="bottom" width="200">
+                                    <![endif]-->
+                                    <div style="display:inline-block; margin: 0 -2px; max-width:30.30%; min-width:200px; vertical-align:bottom; width:100%;" class="stack-column">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tbody><tr>
+                                                <td style="padding: 10px 10px;">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding-top: 10px;" class="stack-column">
+
+                                                                <a href="https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=8&amp;ID=0&amp;NL=3095&amp;N=3912&amp;SI=1387605&amp;URL=https%3a%2f%2fboundless.utoronto.ca" style="color: #007FA3; text-decoration: none;">boundless.utoronto.ca</a><br>
+                                                                
+                                                                <a href="https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=8&amp;ID=0&amp;NL=3095&amp;N=3912&amp;SI=1387605&amp;URL=https%3a%2f%2fsecureca.imodules.com%2fs%2f731%2fform-blank%2findex.aspx%3fsid%3d731%26gid%3d1%26pgid%3d1363%26cid%3d2576%26post_id%3d0" style="font-family: 'Arial';border: none; text-decoration: none;color: #007FA3;">
+                                                                  update&nbsp;contact&nbsp;information
+                                                                  <br>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </div>
+                                    <!--[if mso]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+            </tbody></table>
+            <!-- Email Footer : END -->
+            
+            <!-- Clear Spacer : BEGIN -->
+             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 680px;">
+                <tbody><tr>
+                    <td aria-hidden="true" height="10" style="font-size: 0px; line-height: 0px;background-color: #ffffff;">
+                        &nbsp;
+                    </td>
+                </tr>
+            </tbody></table>
+            <!-- Clear Spacer : END -->
+
+            <!-- Email Footer : BEGIN -->
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 680px;">
+                <tbody><tr>
+                    <td class="stack-column" style="background-color: #ffffff;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tbody><tr>
+                                <td style="padding: 0 20px;text-align:center;font-size:11px;color:#000000;line-height:16px;font-family:Arial, sans-serif;font-weight:normal; border-top: 1px solid #f2f4f7">
+                                    <p style="margin: 30px 0 10px 0;">
+                                        The University&nbsp;of&nbsp;Toronto respects your privacy. We do not rent, trade or sell our mailing lists. Copyright © 2020 University&nbsp;of&nbsp;Toronto. All rights reserved.
+                                        <br><br>
+                                        This e-mail was sent to ##SubscriberEmail##<br>
+                                        To opt out of future messages of this kind, please <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_ALR_ALL_ALL_NEWSLETTER##OptionalParameter3##%20Stay%20home%20eNewshub" style="color: #000000; text-decoration: underline; color: #007FA3;">contact us.</a>
+                                        <br><br>
+                                        ##OptionalParameter3##
+                                        <br><br>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+            <!-- Email Footer : END -->
+
+            <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </div>
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+<img width="1" height="1" src="https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=8&amp;ID=0&amp;NL=3095&amp;N=3912&amp;Imp=True&amp;SI=1387605">
+
+<!--
+X-MailPersonHistoryID: 0
+X-MailPersonSubscriberID: 1387605
+X-MailPersonEmail: sd.baker@utoronto.ca
+-->
+</body></html>

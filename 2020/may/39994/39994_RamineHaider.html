@@ -1,0 +1,716 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title></title>
+    <style>
+    @media only screen and (min-width: 480px) and (max-width: 599px) {
+    table[class=outer] { width: 480px !important;}
+    td[class=outer] { width: 480px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 440px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 440px !important;}
+    td[class=inner] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 400px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 480px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 440px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 400px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 480px !important; height: auto !important;}
+    img[class=img-rect] { width: 440px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 285px !important; height: auto !important;}
+    strong[class=banner] { font-size: 28px !important;}
+    .section-heading { width: 440px !important; }
+    .section-heading td { width: 440px !important; }
+    .full-story { width: 440px !important; }
+    .image-block img { width: 440px !important; height: auto !important; }
+    .button { width: 440px !important; }
+    .two-col-section { width: 440px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 440px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    @media only screen and (min-width: 360px) and (max-width: 479px) {
+    table[class=outer] { width: 360px !important;}
+    td[class=outer] { width: 360px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 320px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 320px !important;}
+    td[class=inner] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 300px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 360px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 320px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 300px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 360px !important; height: auto !important;}
+    img[class=img-rect] { width: 320px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 260px !important; height: auto !important;}
+    strong[class=banner] { font-size: 22px !important;}
+    .section-heading { width: 320px !important; }
+    .section-heading td { width: 320px !important; }
+    .image-block img { width: 320px !important; height: auto !important; }
+    .button { width: 320px !important; }
+    .two-col-section { width: 320px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 320px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    @media only screen and (max-width: 359px) {
+    table[class=outer] { width: 320px !important;}
+    td[class=outer] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 280px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 280px !important;}
+    td[class=inner] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 260px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 280px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 260px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 320px !important; height: auto !important;}
+    img[class=img-rect] { width: 280px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 240px !important; height: auto !important;}
+    strong[class=banner] { font-size: 20px !important;}
+    .section-heading { width: 280px !important; }
+    .section-heading td { width: 280px !important; }
+    .full-story { width: 280px !important; }
+    .image-block img { width: 280px !important; height: auto !important; }
+    .button { width: 280px !important; }
+    .two-col-section { width: 280px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 280px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0;">
+    <div style="display:none;font-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">
+      Welcome to the Spring 2020 issue of Interactions
+    </div>
+    <table cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td width="100%" align="center" valign="top">
+          <!-- end of top portion of outer table -->
+          <!-- header section (preheader text, web version link, banner) -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td width="600" valign="top" style="text-align: center; padding-bottom: 15px; padding-top: 10px; font-family: arial; background-color: #ffffff;" class="content-outer">
+                <a href="##HTMLNewsletterURL##" style="text-decoration: none !important; color: #000000; font-size: 12px;"><strong>View this email online</strong></a>
+              </td>
+            </tr>
+            <!-- Section Header : BEGIN -->
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px; border-top: 1px solid #002A5C;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:15px; padding:5px 0px 5px 3px; line-height:18px; color:#002A5C;">
+                <strong>Interactions Newsletter - Spring 2020</strong>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <!-- Section Header : END -->
+            <tr>
+              <td style="text-align: center; padding-top: 20px; padding-bottom: 20px;" class="inner--centered" width="285" valign="top">
+                <img src="https://adcomms.utoronto.ca/email-templates/arts-science/physics/2019/logo-large.jpg" style="border: none !important;" alt="University of Toronto, Faculty of Arts and Science - Department of Physics" class="img-full" />
+              </td>
+            </tr>
+        </table>
+        <!-- end of header section -->
+          <!-- main featured story -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px; color:#002A5C; background-color:#dde1e8;">
+                <strong>MESSAGE FROM THE CHAIR</strong>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:15px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <!-- begin of story -->
+            <tr>
+              <td width="550" valign="top" class="content-outer" style="text-align: left; font-family: arial; padding: 15px 25px 10px 25px; font-size: 14px; line-height: 20px; background-color: #ffffff; color: #002a5c;">
+                Dear Physics community,
+                <br/><br/>
+                Welcome to the Spring 2020 issue of Interactions, the Department of Physics newsletter!
+                <br/><br/>
+                I write this message just after the winter term has ended and with the summer term now underway. Trees and flowers are blossoming around campus, but with U&nbsp;of&nbsp;T’s transition to remote learning and working from home, few people are here to enjoy them. It has been an extraordinary two months for the Department of Physics, as it has been everywhere. Congratulations to all of our students for making it through despite the challenges they faced this term! And a heartfelt thank-you to everyone who has worked so tirelessly to keep the Department's teaching, research and operations going amid complex and rapidly changing circumstances.
+                <br/><br/>
+                To read more about the Department’s response to the COVID-19 pandemic and recent news highlights, please <a href="https://www9.physics.utoronto.ca/newsletter/spring-2020/message-chair/">visit our website.</a>
+                <br/><br/>
+                I hope you enjoy the stories below, which highlight exciting news from the Department of Physics. Please keep in touch, and I hope you and your loved ones are staying safe and healthy during this time.
+                <br/><br/>
+                With very best wishes,
+                <br><br>
+                <!--[if mso]>
+                  <v:oval xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:130px;width:130px" strokecolor="#FFFFFF" fillcolor="#FFFFFF" >
+                  <v:fill type="frame" color="#FFFFFF" src="https://adcomms.utoronto.ca/email-templates/arts-science/physics/2019/KimberlyStrong.jpg" style="height:130px;width:130px"/></v:oval>
+                <![endif]-->
+                <!--[if !IE]><!-->
+                  <img src="https://adcomms.utoronto.ca/email-templates/arts-science/physics/2019/KimberlyStrong.jpg" width="130" height="" alt="alt_text" border="0" style="width: 100%;max-width: 130px;border-radius: 50%;height: auto;background: #dddddd;font-family: sans-serif;font-size: 15px;line-height: 15px;color: #555555;">
+                <!--<![endif]-->
+                <br><br>
+                <img src="https://adcomms.utoronto.ca/images/artsc/physics/KimberlyStrongSig01.jpg">
+                <br>
+                Professor & Chair
+              </td>
+            </tr>
+          </table>
+          <br>
+          
+          <!-- end of story -->
+                   
+          <!-- News Update Section : BEGIN -->
+            <table cellspacing="0" cellpadding="0" border="0" width="600" class="two-col-section" align="center" style="width:600px;">
+
+              <!-- Section Header : BEGIN -->
+              <tr>
+                <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px; border-top: 1px solid #002A5C;">&nbsp;</td>
+              </tr>
+              <tr>
+                <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px; color:#002A5C; background-color:#dde1e8;">
+                  <strong>NEWS AND EVENTS</strong>
+                </td>
+              </tr>
+              <tr>
+                <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+              </tr>
+              <!-- Section Header : END -->
+
+              <!-- Even Columns : BEGIN -->
+              <tr>
+                <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                  <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                    <tr>
+
+                      <td valign="top" class="col-story-wrap" width="280">
+                        <table cellspacing="0" cellpadding="0" border="0" align="center">
+                          <tr>
+                            <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                              <img src="https://adcomms.utoronto.ca/email-templates/arts-science/physics/2020/faculty_profile_thomas_scaffdi.png" alt="faculty_profile_thomas_scaffdi" width="280" height="204"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                              <strong>Faculty Profile</strong>
+                              <br/>
+                              <strong>Thomas Scaffidi</strong>
+                              <br>
+                              Assistant Professor
+                              <br/><br/>
+                              Meet Professor Thomas Scaffidi, our newest faculty member in theoretical condensed matter physics.
+                              <br/><br/>
+                              <a href="https://www9.physics.utoronto.ca/newsletter/spring-2020/faculty-profile-thomas-scaffidi/">READ MORE</a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+
+                      <td class="divider" width="15"></td>
+
+                      <td valign="top" class="col-story-wrap" width="280">
+                        <table cellspacing="0" cellpadding="0" border="0" align="center">
+                          <tr>
+                            <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                              <img src="https://adcomms.utoronto.ca/email-templates/arts-science/physics/2020/Post_Doctoral_Fellow_Profile_Karola_Dette_.png" alt="Post_Doctoral_Fellow_Profile_Karola_Dette" width="280" height="204"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                              <strong>Post-Doctoral Fellow Profile</strong>
+                              <br/>
+                              <strong>Karola Dette</strong>
+                              <br>
+                              High Energy Physics
+                              <br/><br/>
+                              Karola Dette completed her PhD at the European Organization for Nuclear Research (CERN) and is developing and testing hardware for the next upgrade of the ATLAS (A Toroidal LHC Apparatus) tracking system.
+                              <br/><br/>
+                              <a href="https://www9.physics.utoronto.ca/newsletter/spring-2020/post-doctoral-fellow-profile/">READ MORE</a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- Even Columns : END -->
+
+              <!-- Even Columns : BEGIN -->
+              <tr>
+                <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                  <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                    <tr>
+
+                      <td valign="top" class="col-story-wrap" width="280">
+                        <table cellspacing="0" cellpadding="0" border="0" align="center">
+                          <tr>
+                            <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                              <img src="https://adcomms.utoronto.ca/email-templates/arts-science/physics/2020/Graduate_Student_Profile.png" alt="Graduate_Student_Profile" width="280" height="204"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                              <strong>Graduate Student Profile</strong>
+                              <br/>
+                              <strong>Shira Jackson</strong>
+                              <br>
+                              Quantum Optics 
+                              <br/><br/>
+                              Shira Jackson is developing a precise measurement device called a “compact optical atomic clock.” Optical clocks can be used to search for dark matter and dark energy, detect gravitational waves and conduct ultra-precise surveys of Earth's gravitational potential.
+                              <br/><br/>
+                              <a href="https://www9.physics.utoronto.ca/newsletter/spring-2020/shira-jackson/">READ MORE</a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+
+                      <td class="divider" width="15"></td>
+
+                      <td valign="top" class="col-story-wrap" width="280">
+                        <table cellspacing="0" cellpadding="0" border="0" align="center">
+                          <tr>
+                            <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                              <img src="https://adcomms.utoronto.ca/email-templates/arts-science/physics/2020/Undergraduate_Student_Profile.png" alt="Undergraduate_Student_Profile" width="280" height="204"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                              <strong>Undergraduate Student Profile</strong>
+                              <br/>
+                              <strong>Clara Eegene Chung</strong>
+                              <br>
+                              Physics Specialist
+                              <br/><br/>
+                              Clara Eegene Chung, one of our accomplished undergraduate students, regularly volunteers for outreach and was involved in organizing the Canadian Conference for Undergraduate Women in Physics in January 2020.
+                              <br/><br/>
+                              <a href="https://www9.physics.utoronto.ca/newsletter/spring-2020/clara-eegene-chung/">READ MORE</a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- Even Columns : END -->
+
+              <!-- Even Columns : BEGIN -->
+              <tr>
+                <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                  <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                    <tr>
+
+                      <td valign="top" class="col-story-wrap" width="280">
+                        <table cellspacing="0" cellpadding="0" border="0" align="center">
+                          <tr>
+                            <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                              <img src="https://adcomms.utoronto.ca/email-templates/arts-science/physics/2020/Alumna_Profile.png" alt="Alumna_Profile" width="280" height="204"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                              <strong>Alumna Profile  </strong>
+                              <br/>
+                              <strong>Kristen Vandstone</strong>
+                              <br>
+                              9T4
+                              <br/><br/>
+                              Kristen Vandstone’s physics degree led her into the field of science communications. She is now the Executive Director of the Royal Canadian Institute for Science, Canada’s oldest public scientific society.
+                              <br/><br/>
+                              <a href="https://www9.physics.utoronto.ca/newsletter/spring-2020/kirsten-vanstone/">READ MORE</a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+
+                      <td class="divider" width="15"></td>
+
+                      <td valign="top" class="col-story-wrap" width="280">
+                        <table cellspacing="0" cellpadding="0" border="0" align="center">
+                          <tr>
+                            <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                              <img src="https://adcomms.utoronto.ca/email-templates/arts-science/physics/2020/PhD_Graduates.png" alt="PhD_Graduates" width="280" height="204"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                              <strong>PhD Graduates</strong>
+                              <br/>
+                              November 2019
+                              <br/><br/>
+                              Congratulations to our newest PhD graduates!
+                              <br/><br/>
+                              <a href="https://www9.physics.utoronto.ca/newsletter/spring-2020/phd-graduates-nov-2019/">READ MORE</a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- Even Columns : END -->
+
+              <!-- Even Columns : BEGIN -->
+              <tr>
+                <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                  <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                    <tr>
+
+                      <td valign="top" class="col-story-wrap" width="280">
+                        <table cellspacing="0" cellpadding="0" border="0" align="center">
+                          <tr>
+                            <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                              <img src="https://adcomms.utoronto.ca/email-templates/arts-science/physics/2020/Research_in_the_News.png" alt="Research_in_the_News" width="280" height="204"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                              <strong>Research in the News</strong>
+                              <br/><br/>
+                              Highlights of recent publications and news stories from the Department of Physics.
+                              <br/><br/>
+                              <a href="https://www9.physics.utoronto.ca/newsletter/spring-2020/research-news/">READ MORE</a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+
+                      <td class="divider" width="15"></td>
+
+                      <td valign="top" class="col-story-wrap" width="280">
+                        <table cellspacing="0" cellpadding="0" border="0" align="center">
+                          <tr>
+                            <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                              <img src="https://adcomms.utoronto.ca/email-templates/arts-science/physics/2020/Measuring_Atmospheric_Trace_Gases_Near_the_Top_of_the_World.png" alt="Measuring_Atmospheric_Trace_Gases_Near_the_Top_of_the_World" width="280" height="204"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                              <strong>Measuring Atmospheric Trace Gases Near the Top of the World</strong>
+                              <br/><br/>
+                              Students and postdocs travelled to Eureka, Nunavut, in the Canadian High Arctic (80N) to collect unique measurements of atmospheric trace gases.
+                              <br/><br/>
+                              <a href="https://www9.physics.utoronto.ca/newsletter/spring-2020/research/">READ MORE</a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- Even Columns : END -->
+
+              <!-- Even Columns : BEGIN -->
+              <tr>
+                <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                  <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                    <tr>
+
+                      <td valign="top" class="col-story-wrap" width="280">
+                        <table cellspacing="0" cellpadding="0" border="0" align="center">
+                          <tr>
+                            <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                              <img src="https://adcomms.utoronto.ca/email-templates/arts-science/physics/2020/2020_Canadian_Conference_for_Undergraduate_Women_in_Physics.png" alt="2020_Canadian_Conference_for_Undergraduate_Women_in_Physics" width="280" height="204"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                              <strong>2020 Canadian Conference for Undergraduate Women in Physics</strong>
+                              <br/><br/>
+                              Organized by students, this conference was attended by 130 physics undergraduates who participated in various panels, lectures and workshops.
+                              <br/><br/>
+                              <a href="https://www9.physics.utoronto.ca/newsletter/spring-2020/conferences/">READ MORE</a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+
+                      <td class="divider" width="15"></td>
+
+                      <td valign="top" class="col-story-wrap" width="280">
+                        <table cellspacing="0" cellpadding="0" border="0" align="center">
+                          <tr>
+                            <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                              <img src="https://adcomms.utoronto.ca/email-templates/arts-science/physics/2020/Events.png" alt="Events" width="280" height="204"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                              <strong>Events</strong>
+                              <br/><br/>
+                              Highlights of some events that took place in 2019-2020, including the Tuzo Wilson Lecture and the Mentorship Program Launch Event.
+                              <br/><br/>
+                              <a href="https://www9.physics.utoronto.ca/newsletter/spring-2020/events/">READ MORE</a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- Even Columns : END -->
+
+              <!-- Even Columns : BEGIN -->
+              <tr>
+                <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                  <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                    <tr>
+
+                      <td valign="top" class="col-story-wrap" width="280">
+                        <table cellspacing="0" cellpadding="0" border="0" align="center">
+                          <tr>
+                            <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                              <img src="https://adcomms.utoronto.ca/email-templates/arts-science/physics/2020/Outreach_in_Action.png" alt="Outreach_in_Action" width="280" height="204"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                              <strong>Outreach in Action</strong>
+                              <br/><br/>
+                              The Department of Physics does a great deal of outreach with high school students to inspire them to pursue physics for their post-secondary studies. Here are some highlights of school visits that took place in the fall of 2019.
+                              <br/><br/>
+                              <a href="https://www9.physics.utoronto.ca/newsletter/spring-2020/outreach-action/">READ MORE</a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+
+                      <td class="divider" width="15"></td>
+
+                      <td valign="top" class="col-story-wrap" width="280">
+                        <table cellspacing="0" cellpadding="0" border="0" align="center">
+                          <tr>
+                            <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                              <img src="https://adcomms.utoronto.ca/email-templates/arts-science/physics/2020/Arrivals_and_Departures.png" alt="Arrivals_and_Departures" width="280" height="204"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                              <strong>Arrivals and Departures</strong>
+                              <br/><br/>
+                              Welcoming new members and saying goodbye to friends and colleagues in the Department of Physics.
+                              <br/><br/>
+                              <a href="https://www9.physics.utoronto.ca/newsletter/spring-2020/arrivals-departures/">READ MORE</a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- Even Columns : END -->
+
+              <!-- Even Columns : BEGIN -->
+              <tr>
+                <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                  <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                    <tr>
+
+                      <td valign="top" class="col-story-wrap" width="280">
+                        <table cellspacing="0" cellpadding="0" border="0" align="center">
+                          <tr>
+                            <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                              <img src="https://adcomms.utoronto.ca/email-templates/arts-science/physics/2020/In_Memoriam_Natalia_Krasnopolskaia.png" alt="In_Memoriam_Natalia_Krasnopolskaias" width="280" height="204"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                              <strong>In Memoriam
+                              <br/>
+                              Natalia Krasnopolskaia
+                              </strong>
+                              <br/><br/>
+                              <a href="https://www9.physics.utoronto.ca/newsletter/spring-2020/memoriam/">READ MORE</a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+
+                      <td class="divider" width="15"></td>
+
+                      <td valign="top" class="col-story-wrap" width="280">
+                        <table cellspacing="0" cellpadding="0" border="0" align="center">
+                          <tr>
+                            <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                              <img src="https://adcomms.utoronto.ca/email-templates/arts-science/physics/2020/Letters_to_the_Editor.png" alt="Letters_to_the_Editor" width="280" height="204"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                              <strong>Letters to the Editor </strong>
+                              <br/><br/>
+                              <a href="https://www9.physics.utoronto.ca/newsletter/spring-2020/letters-editor/">READ MORE</a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- Even Columns : END -->
+
+
+
+          <!-- Section Header : BEGIN -->
+          <tr>
+            <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px; border-top: 1px solid #002A5C;">&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px; color:#002A5C; background-color:#dde1e8;">
+              <strong><a href="https://donate.utoronto.ca/give/show/49">SUPPORT THE DEPARTMENT OF PHYSICS</a></strong>
+            </td>
+          </tr>
+          <tr>
+            <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+          </tr>
+          <!-- Section Header : END -->
+
+          <!-- Story : BEGIN -->
+
+          <tr>
+            <td width="550" valign="top" class="content-outer" style="text-align: left; font-family: arial; padding: 15px 25px 10px 25px; font-size: 14px; line-height: 20px; background-color: #ffffff; color: #002a5c;">
+              The Department of Physics is proud to offer an unrivalled breadth of cutting-edge research opportunities and educational programming designed to expand our knowledge of nature. These range from traditional core areas of condensed matter physics, quantum optics, subatomic physics and astrophysics, through globally influential work in climate change to the exciting emerging areas of quantum information, string theory and biological physics. Internationally renowned faculty are training future generations of scientists, all in an effort to respond strategically to some of the most pressing questions of our time. Your support will play a vital role in advancing the Department's reputation for excellence and innovation.
+            </td>
+          </tr>
+
+          <!-- Story : END -->
+
+          <tr>
+            <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td align="center" width="550" valign="top" class="content-outer" style="text-align: center; font-family: arial; padding: 15px 25px 10px 25px; font-size: 14px; line-height: 20px; background-color: #ffffff; color: #002a5c;">
+              If you have any feedback regarding the Department of Physics newsletter, please contact Sheela Manek at <a href="mailto:newsletter@physics.utoronto.ca?subject=Physics%20e-Newsletter%202020">newsletter@physics.utoronto.ca</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+          </tr>
+
+        </table>
+        <!-- News Update Section : END -->
+
+
+          <!-- begin of story -->
+                  <!-- social media -->
+                  <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+                    <tr><td width="600" align="center" height="20" style="background-color: #ffffff;"></td></tr>
+                    <tr>
+                      <td width="600" align="center" style="background-color: #ffffff;">
+                        <table cellpadding="0" cellspacing="0" width="200">
+                          <tr>
+                            <td style="width: 66px;">
+                              <a href="https://www.youtube.com/channel/UCH2J2YJx3nfN1KygnB1ub4w" style="border:0 !important;">
+                                <img src="https://adcomms.utoronto.ca/icons/youtube.png" width="32" height="32"/>
+                              </a>
+                            </td>
+                            <td>
+                              <a href="https://www.facebook.com/PhysicsUofT/" style="border:0 !important;">
+                                <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/facebook.png" width="40" height="40" />
+                              </a>
+                            </td>
+                            <td></td>
+                            <td>
+                              <a href="https://twitter.com/uoftphysics" style="border:0 !important;">
+                                <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/twitter.png" width="40" height="40" />
+                              </a>
+                            </td>
+                            <td></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr><td width="600" align="center" height="20" style="background-color: #ffffff;" class="outer"></td></tr>
+                  </table>
+                  <!-- end of social media -->
+
+                  <!-- footer -->
+                  <table cellspacing="0" cellpadding="0" width="600" class="outer" align="center">
+                    <tr>
+                      <td width="550" style="background-color: #dde1e8; padding: 30px 25px;" valign="top" class="content-outer">
+                        <table width="550" cellspacing="0" cellpadding="0" class="inner">
+                          <tr>
+                            <td style="line-height:16px; text-align: left; font-size: 12px; font-family: arial, helvetica, sans-serif; padding-bottom: 10px;" valign="top" class="inner--centered">
+                              <strong>
+                              Department of Physics</strong> <br />
+                              60 St. George Street<br />
+                              Toronto, Ontario, M4S 1A7 Canada<br />
+                              e-mail: <a style="color:#000000;" href="mailto:reception@physics.utoronto.ca">reception@physics.utoronto.ca</a><br />
+                              web: <a style="color:#000000;" href="https://www.physics.utoronto.ca/">https://www.physics.utoronto.ca/</a><br />
+                              give: <a style="color:#000000;" href="https://donate.utoronto.ca/give/show/49">https://donate.utoronto.ca/give/show/49</a>
+                            </td>
+                            <td style="line-height:16px; text-align: right; font-size: 12px; font-family: arial, helvetica, sans-serif; padding-bottom: 20px;" valign="top" class="inner--centered">
+                              This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #005cc9;">##SubscriberEmail##</a><br />
+                              <a href="##TrackClick##https://secureca.imodules.com/s/731/index_clean.aspx?sid=731&gid=1&pgid=1363&cid=2576&post_id=0" style="color: #005cc9; text-decoration: none;">Update contact information</a><br />
+                              <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_ALD_ALL_AAS_NEWSLETTERS_##OptionalParameter3##%20Physics%20e-Newsletter%202020" style="color: #005cc9; text-decoration: none;">Opt out of future messages</a>
+                            </td>
+                          </tr>
+                          <!--                   <tr>
+                            <td height="50"></td>
+                          </tr> -->
+                          <tr>
+                            <td style="text-align: left; padding-top: 20px;" class="inner--centered" width="285" valign="top">
+                              <a href="##TrackClick##http://www.alumni.artsci.utoronto.ca/" style="color: #005cc9;"><img src="https://alumni.utoronto.ca/sites/default/files/inline-images/header.gif" style="border: none !important;" alt="University of Toronto, Faculty of Arts and Science" st-image="footer-logo" class="footer-logo-left" /></a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- end of footer -->
+                  <!-- copyright area -->
+                  <table width="600" cellpadding="0" cellspacing="0" class="outer" align="center">
+                    <tr>
+                      <td style="text-align: center; font-size: 11px; font-family: arial, helvetica;background-color: #ffffff; color: #777777; padding: 10px 60px 20px 60px; line-height: 14px;" valign="top" width="600" class="content">
+                        The University&nbsp;of&nbsp;Toronto respects your privacy.
+                        We do not rent, trade or sell our mailing lists.
+                        Copyright &copy; 2020 University&nbsp;of&nbsp;Toronto. All rights reserved. This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #005cc9;">##SubscriberEmail##</a>.<br />
+                        ##OptionalParameter3##<br />
+                        ##TrackImpression##
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- end of copyright area -->
+                  <!-- beginning of bottom portion of outer table -->
+                </td>
+              </tr>
+            </table>
+
+          </body>
+        </html>

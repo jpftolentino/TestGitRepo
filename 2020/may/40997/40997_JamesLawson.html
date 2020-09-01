@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+ <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+ <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+ <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+ <meta name="x-apple-disable-message-reformatting"> <!-- Disable auto-scale in iOS 10 Mail entirely -->
+ <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+ <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+ <!-- Web Font / @font-face : BEGIN -->
+ <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
+
+ <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+ <!--[if mso]>
+ <style>
+ * {
+ font-family: sans-serif !important;
+ }
+ </style>
+ <![endif]-->
+
+ <!-- CSS Reset : BEGIN -->
+ <style>
+
+ /* What it does: Remove spaces around the email design added by some email clients. */
+ /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+ html,
+ body {
+ margin: 0 auto !important;
+ padding: 0 !important;
+ height: 100% !important;
+ width: 100% !important;
+ }
+
+ /* What it does: Stops email clients resizing small text. */
+ * {
+ -ms-text-size-adjust: 100%;
+ -webkit-text-size-adjust: 100%;
+ }
+
+ /* What it does: Centers email on Android 4.4 */
+ div[style*="margin: 16px 0"] {
+ margin: 0 !important;
+ }
+ /* What it does: forces Samsung Android mail clients to use the entire viewport */
+ #MessageViewBody, #MessageWebViewDiv{
+ width: 100% !important;
+ }
+
+ /* What it does: Stops Outlook from adding extra spacing to tables. */
+ table,
+ td {
+ mso-table-lspace: 0pt !important;
+ mso-table-rspace: 0pt !important;
+ }
+
+ /* What it does: Fixes webkit padding issue. */
+ table {
+ border-spacing: 0 !important;
+ border-collapse: collapse !important;
+ table-layout: fixed !important;
+ margin: 0 auto !important;
+ }
+
+ /* What it does: Uses a better rendering method when resizing images in IE. */
+ img {
+ -ms-interpolation-mode:bicubic;
+ }
+
+ /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+ a {
+ text-decoration: none;
+ }
+
+ /* What it does: A work-around for email clients meddling in triggered links. */
+ a[x-apple-data-detectors], /* iOS */
+ .unstyle-auto-detected-links a,
+ .aBn {
+ border-bottom: 0 !important;
+ cursor: default !important;
+ color: inherit !important;
+ text-decoration: none !important;
+ font-size: inherit !important;
+ font-family: inherit !important;
+ font-weight: inherit !important;
+ line-height: inherit !important;
+ }
+
+ /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+ .im {
+ color: inherit !important;
+ }
+
+ /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+ .a6S {
+ display: none !important;
+ opacity: 0.01 !important;
+ }
+ /* If the above doesn't work, add a .g-img class to any image in question. */
+ img.g-img + div {
+ display: none !important;
+ }
+
+ /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89 */
+ /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+ /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+ @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+ u ~ div .email-container {
+ min-width: 320px !important;
+ }
+ }
+ /* iPhone 6, 6S, 7, 8, and X */
+ @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+ u ~ div .email-container {
+ min-width: 375px !important;
+ }
+ }
+ /* iPhone 6+, 7+, and 8+ */
+ @media only screen and (min-device-width: 414px) {
+ u ~ div .email-container {
+ min-width: 414px !important;
+ }
+ }
+
+ </style>
+
+ <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+ <!--[if gte mso 9]>
+ <xml>
+ <o:OfficeDocumentSettings>
+ <o:AllowPNG/>
+ <o:PixelsPerInch>96</o:PixelsPerInch>
+ </o:OfficeDocumentSettings>
+ </xml>
+ <![endif]-->
+
+ <!-- CSS Reset : END -->
+
+ <!-- Progressive Enhancements : BEGIN -->
+ <style>
+
+ /* What it does: Hover styles for buttons */
+ .button-td,
+ .button-a {
+ transition: all 100ms ease-in;
+ }
+ .button-td-primary:hover,
+ .button-a-primary:hover {
+ background: #555555 !important;
+ border-color: #555555 !important;
+ }
+
+ /* Media Queries */
+ @media screen and (max-width: 480px) {
+
+ /* What it does: Forces table cells into full-width rows. */
+ .stack-column,
+ .stack-column-center {
+ display: block !important;
+ width: 100% !important;
+ max-width: 100% !important;
+ direction: ltr !important;
+ }
+ /* And center justify these ones. */
+ .stack-column-center {
+ text-align: center !important;
+ }
+
+ /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+ .center-on-narrow {
+ text-align: center !important;
+ display: block !important;
+ margin-left: auto !important;
+ margin-right: auto !important;
+ float: none !important;
+ }
+ table.center-on-narrow {
+ display: inline-block !important;
+ }
+
+ /* What it does: Adjust typography on small screens to improve readability */
+ .email-container p {
+ font-size: 17px !important;
+ }
+ }
+
+ </style>
+ <!-- Progressive Enhancements : END -->
+
+</head>
+<!--
+The email background color (#f2f4f7) is defined in three places:
+1. body tag: for most email clients
+2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #f2f4f7;">
+<center style="width: 100%; background-color: #f2f4f7;">
+ <!--[if mso | IE]>
+ <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f2f4f7;">
+ <tr>
+ <td>
+ <![endif]-->
+<!--
+            Set the email width. Defined in two places:
+            1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+            2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+            Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+        -->
+        <div style="max-width: 680px; margin: 0 auto;" class="email-container">
+            <!--[if mso]>
+            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+            <tr>
+            <td>
+            <![endif]-->
+
+            <!-- Email Body : BEGIN -->
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: 0 auto;">
+                <!-- Email Pre Header : BEGIN -->
+                <tr>
+                    <td style="text-align: center; padding-bottom: 10px; padding-top: 10px; font-family: arial; background-color: #ffffff;border-bottom: 1px solid #f2f4f7;">
+                        <a href="##HTMLNewsletterURL##" style="text-decoration: none !important; color: #000000; font-size: 12px;text-align: center !important;">
+                          <strong>View this email online</strong>
+                        </a>
+                    </td>
+                </tr>
+                <!-- Email Pre Header : END -->
+                <!-- Email Header : BEGIN -->
+                <tr>
+                    <!-- dir=rtl is where the magic happens. This can be changed to dir=ltr to swap the alignment on wide while maintaining stack order on narrow. -->
+                    <td dir="rtl" height="100%" valign="top" width="100%" style="padding: 10px 0; background-color: #ffffff;">
+                        <!--[if mso]>
+                        <table align="center" role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;" bgcolor="white">
+                        <tr>
+                        <td valign="top" width="660" bgcolor="white">
+                        <![endif]-->
+                        <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:660px;" bgcolor="white">
+                            <tr>
+                                <td align="center" valign="top" style="font-size:0; padding-top: 10px;padding-bottom: 20px;" bgcolor="white">
+                                    <!--[if mso]>
+                                    <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
+                                    <tr>
+                                    <td valign="bottom" width="220" style="width: 220px;" border="0" bgcolor="white">
+                                    <![endif]-->
+                                    <div style="display:inline-block; margin: 0 -2px; max-width: 200px; min-width:160px; vertical-align:bottom; width:100%;" class="stack-column">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="white">
+                                        </table>
+                                    </div>
+                                    <!--[if mso]>
+                                    </td>
+                                    <td valign="top" width="440" style="width: 440px;">
+                                    <![endif]-->
+                                    <div style="display:inline-block; margin: 0 -2px; max-width:66.66%; min-width:320px; vertical-align:top;" class="stack-column">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tr>
+                                                <td dir="ltr" style="font-family: sans-serif; color: #555555; padding: 10px 10px 0; text-align: left;" class="">
+                                                    <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/ut_signature_transp.png" width="170" height="60" alt="University&nbsp;of&nbsp;Toronto">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <!--[if mso]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+
+                                </td>
+                            </tr>
+                        </table>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+                <!-- Email Header : END -->
+ <!-- Visually Hidden Preheader Text : BEGIN -->
+ <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+ (Optional) This text will appear in the inbox preview, but not the email body. It can be used to supplement the email subject line or even summarize the email's contents. Extended text preheaders (~490 characters) seems like a better UX for anyone using a screenreader or voice-command apps like Siri to dictate the contents of an email. If this text is not included, email clients will automatically populate it using the text (including image alt text) at the start of the email's body.
+ </div>
+ <!-- Visually Hidden Preheader Text : END -->
+
+ <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+ <!-- Preview Text Spacing Hack : BEGIN -->
+ <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+ &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+ </div>
+ <!-- Preview Text Spacing Hack : END -->
+
+ <!--
+ Set the email width. Defined in two places:
+ 1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+ 2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+ Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+ -->
+ <div style="max-width: 680px; margin: 0 auto;" class="email-container">
+ <!--[if mso]>
+ <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+ <tr>
+ <td>
+ <![endif]-->
+
+ <!-- Email Body : BEGIN -->
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+ 
+ <!-- Email Header : BEGIN -->
+ <tr>
+ <td style="padding: 50px 0 10px 0; text-align: center;background: #ffffff;">
+ <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Arts_and_Science_Matters_Title.jpg" width="383" height="94" alt="Arts-and-Science-Matters-Title" border="0" style="height: auto; background: #ffffff;">
+ </td>
+ </tr>
+ <!-- Email Header : END -->
+ 
+ <!-- 1 Column sub heading centered BEGIN -->
+ <tr>
+ <td style="background-color: #ffffff;text-align: center;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" align="center">
+ <tr>
+ <td style="padding: 20px 0px 10px 0px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a;text-align: center;"align="center">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;text-align: center;">Winter 2020</h1>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column sub heading centered END -->
+
+ <!--Divider: START-->
+ <tr>
+<td style="padding:0px;background-color: #ffffff;">
+<table cellspacing="0" cellpadding="0" border="0" width="100%" style="width: 100% !important;">
+<tbody><tr>
+ <td align="left" valign="top" width="" height="1" style="background-color: #d7d7d7; border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; mso-line-height-rule: exactly; line-height: 1px;">
+ <!--[if gte mso 15]>
+ &nbsp;
+ <![endif]-->
+ </td>
+</tr>
+</tbody></table>
+</td>
+ </tr>
+ <!--Divider: END-->
+
+ <!-- 1 Column Text BEGIN -->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 20px 30px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">New look! </h1>
+ <p style="margin: 0 0 10px; color: #222222;font-family: 'Arial',sans-serif; font-size: 16px;line-height: 24px;">We hope everyone got off to a great start to 2020! And since we’re starting a new decade, we thought it was time to refresh and redesign our newsletter for A&S alumni and friends. We hope you find it an easier and more compelling read about what’s happening at Arts & Science, and the incredible impact of our remarkable students, faculty and alumni, here and around the world. And, of course, we’ll update you on the many ways our donors support the great initiatives here as well. Send us your feedback and story ideas to: <a href="mailto:artsci.communications@utoronto.ca" style="color:#007faf">artsci.communications@utoronto.ca</a></p>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Text END -->
+
+ <!-- Heading with background BEGIN -->
+ <tr>
+ <td valign="middle" style="background-color: #25355a;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 25px 20px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0px; font-family: 'Arial',sans-serif;font-size: 28px; line-height: 28px; color: #ffffff; font-weight: bold;">Top Stories</h1>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- Heading with background END -->
+
+ <!-- 1 Column Heading BEGIN ~ 1-->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 95px 0px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">Remembering A&S graduate students Mohammad Amin Beiruti and Mohammad Saleheh who perished in the crash of Flight PS752 in Iran</h1>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Heading END ~ 1-->
+
+ <!-- Thumbnail Left, Text Right : BEGIN ~ 1-->
+ <tr>
+ <!-- dir=ltr is where the magic happens. This can be changed to dir=rtl to swap the alignment on wide while maintaining stack order on narrow. -->
+ <td dir="ltr" height="100%" valign="top" width="100%" style="font-size:0; padding: 5px 10px 25px 10px; background-color: #ffffff;">
+ <!--[if mso]>
+ <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
+ <tr>
+ <td valign="top" width="310" style="width: 310px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 310px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="padding: 0 10px 10px 30px;">
+ <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Mohammad_Amin_Beiruti_and_Mohammad_Saleheh.jpg" width="310" height="" border="0" alt="Mohammad-Amin-Beiruti-and-Mohammad-Saleheh" style="width: 100%; max-width: 310px; height: auto; background: #ffffff;">
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ <td valign="top" width="350" style="width: 350px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 350px; min-width:280px; vertical-align:top;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="font-family: 'Arial', sans-serif; font-size: 16px; line-height: 24px; color: #222222; padding: 0px 10px 0 10px;">
+ <p style="margin: 0 0 10px 0;">The Faculty’s Department of Computer Science will establish an endowed graduate student scholarship to be awarded in perpetuity to outstanding international students in memory of Mohammad Amin Beiruti and Mohammad Saleheh. The department will provide a one-to-one match on all donations to this scholarship up to $50,000. Learn more about the Beiruti and Saleheh Memorial Fund, and how to donate. </p>
+ <!-- Button : BEGIN -->
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="left">
+ <tr>
+ <td class="button-td button-td-primary" style="border-radius: 4px; background: #007faf;">
+ <a class="button-a button-a-primary" href="##TrackClick##https://www.artsci.utoronto.ca/news/computer-science-establishes-beiruti-and-saleheh-memorial-fund" style="background: #007faf; border: 1px solid #007faf; font-family: 'Arial' ,sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 16px 25px; color: #ffffff; display: block; border-radius: 0px;text-transform: uppercase;font-weight: bold;">Read more</a>
+ </td>
+ </tr>
+ </table>
+ <!-- Button : END -->
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ </tr>
+ </table>
+ <![endif]-->
+ </td>
+ </tr>
+ <!-- Thumbnail Left, Text Right : END ~ 1-->
+
+ <!-- 1 Column Heading BEGIN ~ 2-->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 95px 0px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">Presence leads to purpose: Alumna Ausma Malik keynotes the 2020 Next Steps Conference</h1>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Heading END ~ 2-->
+
+ <!-- Thumbnail Left, Text Right : BEGIN ~ 2-->
+ <tr>
+ <!-- dir=ltr is where the magic happens. This can be changed to dir=rtl to swap the alignment on wide while maintaining stack order on narrow. -->
+ <td dir="ltr" height="100%" valign="top" width="100%" style="font-size:0; padding: 5px 10px 25px 10px; background-color: #ffffff;">
+ <!--[if mso]>
+ <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
+ <tr>
+ <td valign="top" width="310" style="width: 310px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 310px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="padding: 0 10px 10px 30px;">
+ <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Ausma_Malik.jpg" width="310" height="" border="0" alt="Ausma-Malik" style="width: 100%; max-width: 310px; height: auto; background: #ffffff; ">
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ <td valign="top" width="350" style="width: 350px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 350px; min-width:280px; vertical-align:top;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="font-family: 'Arial', sans-serif; font-size: 16px; line-height: 24px; color: #222222; padding: 0px 10px 0 10px;">
+ <p style="margin: 0 0 10px 0;">What advice did the first hijab-wearing Muslim woman to be elected to public office in Canada offer to more than 350 students, recent grads and alumni?<br><br>
+ Show up. 
+ </p>
+ <!-- Button : BEGIN -->
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="left">
+ <tr>
+ <td class="button-td button-td-primary" style="border-radius: 4px; background: #007faf;">
+ <a class="button-a button-a-primary" href="##TrackClick##https://www.artsci.utoronto.ca/news/presence-leads-purpose-next-steps-conference-keynote-ausma-malik" style="background: #007faf; border: 1px solid #007faf; font-family: 'Arial' ,sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 16px 25px; color: #ffffff; display: block; border-radius: 0px;text-transform: uppercase;font-weight: bold;">Read more</a>
+ </td>
+ </tr>
+ </table>
+ <!-- Button : END -->
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ </tr>
+ </table>
+ <![endif]-->
+ </td>
+ </tr>
+ <!-- Thumbnail Left, Text Right : END ~ 2-->
+
+ <!-- 1 Column Heading BEGIN ~ 3-->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 95px 0px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">Words of wisdom: A&S alumni share career experiences with students at the 12th annual Next Steps Conference</h1>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Heading END ~ 3-->
+
+ <!-- Thumbnail Left, Text Right : BEGIN ~ 3-->
+ <tr>
+ <!-- dir=ltr is where the magic happens. This can be changed to dir=rtl to swap the alignment on wide while maintaining stack order on narrow. -->
+ <td dir="ltr" height="100%" valign="top" width="100%" style="font-size:0; padding: 5px 10px 25px 10px; background-color: #ffffff;">
+ <!--[if mso]>
+ <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
+ <tr>
+ <td valign="top" width="310" style="width: 310px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 310px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="padding: 0 10px 10px 30px;">
+ <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Next_Steps_2020.jpg" width="310" height="" border="0" alt="Next-Steps-2020" style="width: 100%; max-width: 310px; height: auto; background: #ffffff; ">
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ <td valign="top" width="350" style="width: 350px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 350px; min-width:280px; vertical-align:top;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="font-family: 'Arial', sans-serif; font-size: 16px; line-height: 24px; color: #222222; padding: 0px 10px 0 10px;">
+ <p style="margin: 0 0 10px 0;">Next Steps was an opportunity to pay it forward for 2018 graduate Tali Voron, a member of Victoria College who studied education and society, English literature and psychology. “When I was in my undergrad at U&nbsp;of&nbsp;T, I met my mentor through this program and that truly changed my life. I would love to be able to do that for somebody else.”
+ </p>
+ <!-- Button : BEGIN -->
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="left">
+ <tr>
+ <td class="button-td button-td-primary" style="border-radius: 4px; background: #007faf;">
+ <a class="button-a button-a-primary" href="##TrackClick##https://www.artsci.utoronto.ca/news/words-wisdom-alumni-share-career-experiences-students-12th-annual-next-steps-conference" style="background: #007faf; border: 1px solid #007faf; font-family: 'Arial' ,sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 16px 25px; color: #ffffff; display: block; border-radius: 0px;text-transform: uppercase;font-weight: bold;">Read more</a>
+ </td>
+ </tr>
+ </table>
+ <!-- Button : END -->
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ </tr>
+ </table>
+ <![endif]-->
+ </td>
+ </tr>
+ <!-- Thumbnail Left, Text Right : END ~ 3-->
+
+ <!-- Heading with background BEGIN -->
+ <tr>
+ <td valign="middle" style="background-color: #25355a;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 25px 20px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0px; font-family: 'Arial',sans-serif;font-size: 28px; line-height: 28px; color: #ffffff; font-weight: bold;">Highlights</h1>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- Heading with background END -->
+
+ <!-- 1 Column Heading BEGIN ~ 1-->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 95px 0px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">More plastic than fish? Business leader and philanthropist Wendy Schmidt talks ocean health</h1>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Heading END ~ 1-->
+
+ <!-- Thumbnail Left, Text Right : BEGIN ~ 1-->
+ <tr>
+ <!-- dir=ltr is where the magic happens. This can be changed to dir=rtl to swap the alignment on wide while maintaining stack order on narrow. -->
+ <td dir="ltr" height="100%" valign="top" width="100%" style="font-size:0; padding: 5px 10px 25px 10px; background-color: #ffffff;">
+ <!--[if mso]>
+ <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
+ <tr>
+ <td valign="top" width="310" style="width: 310px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 310px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="padding: 0 10px 10px 30px;">
+ <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Wendy_Schmidt.jpg" width="310" height="" border="0" alt="Wendy-Schmidt" style="width: 100%; max-width: 310px; height: auto; background: #ffffff;">
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ <td valign="top" width="350" style="width: 350px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 350px; min-width:280px; vertical-align:top;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="font-family: 'Arial', sans-serif; font-size: 16px; line-height: 24px; color: #222222; padding: 0px 10px 0 10px;">
+ <p style="margin: 0 0 10px 0;">By 2050, there could be more plastic in the world’s oceans by weight than fish. This was just one of many shocking statistics philanthropist Wendy Schmidt presented at What We Don’t Know About the Oceans Can Kill Us, a lecture hosted by the School of the Environment. </p>
+ <!-- Button : BEGIN -->
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="left">
+ <tr>
+ <td class="button-td button-td-primary" style="border-radius: 4px; background: #007faf;">
+ <a class="button-a button-a-primary" href="##TrackClick##https://www.artsci.utoronto.ca/news/think-ocean-your-life-support-system-and-think-about-how-it-connects-your-life-wendy-schmidt" style="background: #007faf; border: 1px solid #007faf; font-family: 'Arial' ,sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 16px 25px; color: #ffffff; display: block; border-radius: 0px;text-transform: uppercase;font-weight: bold;">Read more</a>
+ </td>
+ </tr>
+ </table>
+ <!-- Button : END -->
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ </tr>
+ </table>
+ <![endif]-->
+ </td>
+ </tr>
+ <!-- Thumbnail Left, Text Right : END ~ 1-->
+
+ <!-- 1 Column Heading BEGIN ~ 2-->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 95px 0px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">Earth sciences students visit Turkey where geology and culture mix, and continents collide</h1>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Heading END ~ 2-->
+
+ <!-- Thumbnail Left, Text Right : BEGIN ~ 2-->
+ <tr>
+ <!-- dir=ltr is where the magic happens. This can be changed to dir=rtl to swap the alignment on wide while maintaining stack order on narrow. -->
+ <td dir="ltr" height="100%" valign="top" width="100%" style="font-size:0; padding: 5px 10px 25px 10px; background-color: #ffffff;">
+ <!--[if mso]>
+ <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
+ <tr>
+ <td valign="top" width="310" style="width: 310px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 310px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="padding: 0 10px 10px 30px;">
+ <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Earth_Sciences_students.jpg" width="310" height="" border="0" alt="Earth-Sciences-students.jpg" style="width: 100%; max-width: 310px; height: auto; background: #ffffff; ">
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ <td valign="top" width="350" style="width: 350px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 350px; min-width:280px; vertical-align:top;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="font-family: 'Arial', sans-serif; font-size: 16px; line-height: 24px; color: #222222; padding: 0px 10px 0 10px;">
+ <p style="margin: 0 0 10px 0;">To an aspiring geologist, southern Ontario leaves something to be desired sitting astride the geologically stable Canadian Shield. Not so the Cappadocia region of central Turkey. Professors Russell Pysklywec and Grant Henderson, of the Department of Earth Sciences, led a group of 13 A&S students to this tectonic trove for the department’s Minerals and Rocks International/Indigenous Course Module.
+ </p>
+ <!-- Button : BEGIN -->
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="left">
+ <tr>
+ <td class="button-td button-td-primary" style="border-radius: 4px; background: #007faf;">
+ <a class="button-a button-a-primary" href="##TrackClick##https://www.artsci.utoronto.ca/news/earth-sciences-students-visit-turkey-where-geology-and-culture-mix-and-continents-collide" style="background: #007faf; border: 1px solid #007faf; font-family: 'Arial' ,sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 16px 25px; color: #ffffff; display: block; border-radius: 0px;text-transform: uppercase;font-weight: bold;">Read more</a>
+ </td>
+ </tr>
+ </table>
+ <!-- Button : END -->
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ </tr>
+ </table>
+ <![endif]-->
+ </td>
+ </tr>
+ <!-- Thumbnail Left, Text Right : END ~ 2-->
+
+ <!-- 1 Column Heading BEGIN ~ 3-->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 95px 0px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">Backpack to Briefcase: Alumni help turn an A&S degree into 'a great career'</h1>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Heading END ~ 3-->
+
+ <!-- Thumbnail Left, Text Right : BEGIN ~ 3-->
+ <tr>
+ <!-- dir=ltr is where the magic happens. This can be changed to dir=rtl to swap the alignment on wide while maintaining stack order on narrow. -->
+ <td dir="ltr" height="100%" valign="top" width="100%" style="font-size:0; padding: 5px 10px 25px 10px; background-color: #ffffff;">
+ <!--[if mso]>
+ <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
+ <tr>
+ <td valign="top" width="310" style="width: 310px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 310px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="padding: 0 10px 10px 30px;">
+ <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/b2B.jpg" width="310" height="" border="0" alt="b2b" style="width: 100%; max-width: 310px; height: auto; background: #ffffff; ">
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ <td valign="top" width="350" style="width: 350px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 350px; min-width:280px; vertical-align:top;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="font-family: 'Arial', sans-serif; font-size: 16px; line-height: 24px; color: #222222; padding: 0px 10px 0 10px;">
+ <p style="margin: 0 0 10px 0;">‘What do you want to do with your life?’ It’s a question that makes Andrew Gallant cringe. To help answer this question, he and dozens of other Arts & Science undergrads attended a Backpack to Briefcase, or b2B, Industry Night where students and alumni mixed and mingled while learning about careers in law, and healthcare and wellness.
+ </p>
+ <!-- Button : BEGIN -->
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="left">
+ <tr>
+ <td class="button-td button-td-primary" style="border-radius: 4px; background: #007faf;">
+ <a class="button-a button-a-primary" href="##TrackClick##https://www.artsci.utoronto.ca/news/backpack-briefcase-industry-night" style="background: #007faf; border: 1px solid #007faf; font-family: 'Arial' ,sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 16px 25px; color: #ffffff; display: block; border-radius: 0px;text-transform: uppercase;font-weight: bold;">Read more</a>
+ </td>
+ </tr>
+ </table>
+ <!-- Button : END -->
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ </tr>
+ </table>
+ <![endif]-->
+ </td>
+ </tr>
+ <!-- Thumbnail Left, Text Right : END ~ 3-->
+
+ <!-- Heading with background BEGIN -->
+ <tr>
+ <td valign="middle" style="background-color: #25355a;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 25px 20px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0px; font-family: 'Arial',sans-serif;font-size: 28px; line-height: 28px; color: #ffffff; font-weight: bold;">Alumni Features</h1>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- Heading with background END -->
+
+ <!-- 1 Column Heading BEGIN ~ 1-->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 95px 0px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">Angelica Demetriou's business makes an artistic impression</h1>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Heading END ~ 1-->
+
+ <!-- Thumbnail Left, Text Right : BEGIN ~ 1-->
+ <tr>
+ <!-- dir=ltr is where the magic happens. This can be changed to dir=rtl to swap the alignment on wide while maintaining stack order on narrow. -->
+ <td dir="ltr" height="100%" valign="top" width="100%" style="font-size:0; padding: 5px 10px 25px 10px; background-color: #ffffff;">
+ <!--[if mso]>
+ <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
+ <tr>
+ <td valign="top" width="310" style="width: 310px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 310px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="padding: 0 10px 10px 30px;">
+ <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Angelica_Demetriou.jpg" width="310" height="" border="0" alt="Angelica-Demetriou" style="width: 100%; max-width: 310px; height: auto; background: #ffffff;">
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ <td valign="top" width="350" style="width: 350px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 350px; min-width:280px; vertical-align:top;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="font-family: 'Arial', sans-serif; font-size: 16px; line-height: 24px; color: #222222; padding: 0px 10px 0 10px;">
+ <p style="margin: 0 0 10px 0;">“I love literature and the visual arts, and am interested in visual vocabularies. I especially like artwork that explores the relationship between text and image.” What sets this alumna apart is a passion for art paired with a penchant for business operations.</p>
+ <!-- Button : BEGIN -->
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="left">
+ <tr>
+ <td class="button-td button-td-primary" style="border-radius: 4px; background: #007faf;">
+ <a class="button-a button-a-primary" href="##TrackClick##https://www.artsci.utoronto.ca/news/angelica-demetrious-business-makes-artistic-impression" style="background: #007faf; border: 1px solid #007faf; font-family: 'Arial' ,sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 16px 25px; color: #ffffff; display: block; border-radius: 0px;text-transform: uppercase;font-weight: bold;">Read more</a>
+ </td>
+ </tr>
+ </table>
+ <!-- Button : END -->
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ </tr>
+ </table>
+ <![endif]-->
+ </td>
+ </tr>
+ <!-- Thumbnail Left, Text Right : END ~ 1-->
+
+ <!-- 1 Column Heading BEGIN ~ 2-->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 95px 0px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">Studying 'Ukrainian language and literature enriched my life': Alumnus Mark Strychar-Bodnar</h1>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Heading END ~ 2-->
+
+ <!-- Thumbnail Left, Text Right : BEGIN ~ 2-->
+ <tr>
+ <!-- dir=ltr is where the magic happens. This can be changed to dir=rtl to swap the alignment on wide while maintaining stack order on narrow. -->
+ <td dir="ltr" height="100%" valign="top" width="100%" style="font-size:0; padding: 5px 10px 25px 10px; background-color: #ffffff;">
+ <!--[if mso]>
+ <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
+ <tr>
+ <td valign="top" width="310" style="width: 310px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 310px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="padding: 0 10px 10px 30px;">
+ <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Mark_Strychar-Bodnar.jpg" width="310" height="" border="0" alt="Mark-Strychar-Bodnar.jpg" style="width: 100%; max-width: 310px; height: auto; background: #ffffff; ">
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ <td valign="top" width="350" style="width: 350px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 350px; min-width:280px; vertical-align:top;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="font-family: 'Arial', sans-serif; font-size: 16px; line-height: 24px; color: #222222; padding: 0px 10px 0 10px;">
+ <p style="margin: 0 0 10px 0;">When Mark Strychar-Bodnar enrolled in his first Ukrainian language and literature class in the Faculty of Arts & Science’s Department of Slavic Languages and Literatures, he thought it was going to be easy. After all, he had spoken Ukrainian all his life. “How wrong I was.”
+ </p>
+ <!-- Button : BEGIN -->
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="left">
+ <tr>
+ <td class="button-td button-td-primary" style="border-radius: 4px; background: #007faf;">
+ <a class="button-a button-a-primary" href="##TrackClick##https://www.artsci.utoronto.ca/news/alumnus-mark-strychar-bodnar" style="background: #007faf; border: 1px solid #007faf; font-family: 'Arial' ,sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 16px 25px; color: #ffffff; display: block; border-radius: 0px;text-transform: uppercase;font-weight: bold;">Read more</a>
+ </td>
+ </tr>
+ </table>
+ <!-- Button : END -->
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ </tr>
+ </table>
+ <![endif]-->
+ </td>
+ </tr>
+ <!-- Thumbnail Left, Text Right : END ~ 2-->
+
+ <!-- 1 Column Heading BEGIN ~ 3-->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 95px 0px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">Alumna strives to ensure justice is served</h1>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Heading END ~ 3-->
+
+ <!-- Thumbnail Left, Text Right : BEGIN ~ 3-->
+ <tr>
+ <!-- dir=ltr is where the magic happens. This can be changed to dir=rtl to swap the alignment on wide while maintaining stack order on narrow. -->
+ <td dir="ltr" height="100%" valign="top" width="100%" style="font-size:0; padding: 5px 10px 25px 10px; background-color: #ffffff;">
+ <!--[if mso]>
+ <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
+ <tr>
+ <td valign="top" width="310" style="width: 310px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 310px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="padding: 0 10px 10px 30px;">
+ <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Noha_Aboueldahab.jpg" width="310" height="" border="0" alt="Noha-Aboueldahab" style="width: 100%; max-width: 310px; height: auto; background: #ffffff; ">
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ <td valign="top" width="350" style="width: 350px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 350px; min-width:280px; vertical-align:top;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="font-family: 'Arial', sans-serif; font-size: 16px; line-height: 24px; color: #222222; padding: 0px 10px 0 10px;">
+ <p style="margin: 0 0 10px 0;">Last fall, Canada’s Ambassador to the State of Qatar tweeted a list of 10 women of influence, including diplomats, other ambassadors and one U&nbsp;of&nbsp;T alumna. A few weeks earlier and time zones away, that same alumna was honoured at the British Council’s Study UK Alumni Awards for her research on human rights, politics and international law in the Middle East and North Africa. That’s quite the month for Noha Aboueldahab. 
+ </p>
+ <!-- Button : BEGIN -->
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="left">
+ <tr>
+ <td class="button-td button-td-primary" style="border-radius: 4px; background: #007faf;">
+ <a class="button-a button-a-primary" href="##TrackClick##https://www.artsci.utoronto.ca/news/alumna-strives-ensure-justice-served" style="background: #007faf; border: 1px solid #007faf; font-family: 'Arial' ,sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 16px 25px; color: #ffffff; display: block; border-radius: 0px;text-transform: uppercase;font-weight: bold;">Read more</a>
+ </td>
+ </tr>
+ </table>
+ <!-- Button : END -->
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ </tr>
+ </table>
+ <![endif]-->
+ </td>
+ </tr>
+ <!-- Thumbnail Left, Text Right : END ~ 3-->
+
+ <!--Divider: START-->
+ <tr>
+<td style="padding:0px;background-color: #ffffff;">
+<table cellspacing="0" cellpadding="0" border="0" width="100%" style="width: 100% !important;">
+<tbody><tr>
+ <td align="left" valign="top" width="" height="1" style="background-color: #d7d7d7; border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; mso-line-height-rule: exactly; line-height: 1px;">
+ <!--[if gte mso 15]>
+ &nbsp;
+ <![endif]-->
+ </td>
+</tr>
+</tbody></table>
+</td>
+ </tr>
+ <!--Divider: END-->
+
+ <!-- 1 Column Text BEGIN -->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 20px 20px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">We&rsquo;re on LinkedIn and Facebook</h1>
+ <p style="margin: 0 0 10px; color: #222222;font-family: 'Arial',sans-serif; font-size: 16px;line-height: 24px;">Connect with us on <a href="##TrackClick##https://www.linkedin.com/company/37012535/admin/notifications/all/" target="_blank" style="color:#007faf;text-decoration: underline;">LinkedIn</a> and stay up to date with the latest alumni stories and news. You can also join us on <a href="##TrackClick##https://www.facebook.com/ArtsandScienceAlumni/?ref=bookmarks]" style="color:#007faf;text-decoration: underline;">Facebook too.</a></p>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Text END -->
+
+ <!-- Heading with background BEGIN -->
+ <tr>
+ <td valign="middle" style="background-color: #25355a;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 25px 20px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0px; font-family: 'Arial',sans-serif;font-size: 28px; line-height: 28px; color: #ffffff; font-weight: bold;">Giving Matters</h1>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- Heading with background END -->
+
+<!-- 1 Column Heading BEGIN ~ 1-->
+<tr>
+    <td style="background-color: #ffffff;">
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+    <td style="padding: 20px 95px 0px 40px; font-family: 'Arial',sans-serif;">
+    <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">One gift leads to another &mdash; new MGA scholarship to help Caribbean students</h1>
+    </td>
+    </tr>
+    </table>
+    </td>
+    </tr>
+    <!-- 1 Column Heading END ~ 1-->
+   
+    <!-- Thumbnail Left, Text Right : BEGIN ~ 1-->
+    <tr>
+    <!-- dir=ltr is where the magic happens. This can be changed to dir=rtl to swap the alignment on wide while maintaining stack order on narrow. -->
+    <td dir="ltr" height="100%" valign="top" width="100%" style="font-size:0; padding: 5px 10px 25px 10px; background-color: #ffffff;">
+    <!--[if mso]>
+    <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
+    <tr>
+    <td valign="top" width="310" style="width: 310px;">
+    <![endif]-->
+    <div style="display:inline-block; margin: 0 -1px; max-width: 310px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+    <td dir="ltr" style="padding: 0 10px 10px 30px;">
+    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Connie_Carter.jpg" width="310" height="" border="0" alt="Dunlap" style="width: 100%; max-width: 310px; height: auto; background: #ffffff;">
+    </td>
+    </tr>
+    </table>
+    </div>
+    <!--[if mso]>
+    </td>
+    <td valign="top" width="350" style="width: 350px;">
+    <![endif]-->
+    <div style="display:inline-block; margin: 0 -1px; max-width: 350px; min-width:280px; vertical-align:top;" class="stack-column">
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+    <td dir="ltr" style="font-family: 'Arial', sans-serif; font-size: 16px; line-height: 24px; color: #222222; padding: 0px 10px 0 10px;">
+    <p style="margin: 0 0 10px 0;">On a recent flight to Toronto, Connie Carter beamed as she filled out her customs form. In the box that asked for her nationality, she was able to print “Canadian” for the very first time. “I felt such pride,” says Carter, who was born in Jamaica, educated in the United Kingdom, lived in Denmark for most of her adult life, and became a Canadian citizen last October. She celebrated by creating a scholarship.</p>
+    <!-- Button : BEGIN -->
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="left">
+    <tr>
+    <td class="button-td button-td-primary" style="border-radius: 4px; background: #007faf;">
+    <a class="button-a button-a-primary" href="##TrackClick##https://www.artsci.utoronto.ca/news/one-gift-leads-another-new-mga-scholarship-help-caribbean-students" style="background: #007faf; border: 1px solid #007faf; font-family: 'Arial' ,sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 16px 25px; color: #ffffff; display: block; border-radius: 0px;text-transform: uppercase;font-weight: bold;">Read more</a>
+    </td>
+    </tr>
+    </table>
+    <!-- Button : END -->
+    </td>
+    </tr>
+    </table>
+    </div>
+    <!--[if mso]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </td>
+    </tr>
+    <!-- Thumbnail Left, Text Right : END ~ 1-->
+
+ <!-- 1 Column Heading BEGIN ~ 1-->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 95px 0px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">Department of Astronomy & Astrophysics celebrates new name after gift from long-time supporters, the Dunlap family</h1>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Heading END ~ 1-->
+
+ <!-- Thumbnail Left, Text Right : BEGIN ~ 1-->
+ <tr>
+ <!-- dir=ltr is where the magic happens. This can be changed to dir=rtl to swap the alignment on wide while maintaining stack order on narrow. -->
+ <td dir="ltr" height="100%" valign="top" width="100%" style="font-size:0; padding: 5px 10px 25px 10px; background-color: #ffffff;">
+ <!--[if mso]>
+ <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
+ <tr>
+ <td valign="top" width="310" style="width: 310px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 310px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="padding: 0 10px 10px 30px;">
+ <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Dunlap.jpg" width="310" height="" border="0" alt="Dunlap" style="width: 100%; max-width: 310px; height: auto; background: #ffffff;">
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ <td valign="top" width="350" style="width: 350px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 350px; min-width:280px; vertical-align:top;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="font-family: 'Arial', sans-serif; font-size: 16px; line-height: 24px; color: #222222; padding: 0px 10px 0 10px;">
+ <p style="margin: 0 0 10px 0;">It is an historic time for the Department of Astronomy & Astrophysics &mdash; not only as it approaches its centenary next year, but also as it embraces a new name: the David A. Dunlap Department of Astronomy and Astrophysics.</p>
+ <!-- Button : BEGIN -->
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="left">
+ <tr>
+ <td class="button-td button-td-primary" style="border-radius: 4px; background: #007faf;">
+ <a class="button-a button-a-primary" href="##TrackClick##https://www.artsci.utoronto.ca/news/department-astronomy-astrophysics-celebrates-new-name-after-gift-long-time-supporters-dunlap" style="background: #007faf; border: 1px solid #007faf; font-family: 'Arial' ,sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 16px 25px; color: #ffffff; display: block; border-radius: 0px;text-transform: uppercase;font-weight: bold;">Read more</a>
+ </td>
+ </tr>
+ </table>
+ <!-- Button : END -->
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ </tr>
+ </table>
+ <![endif]-->
+ </td>
+ </tr>
+ <!-- Thumbnail Left, Text Right : END ~ 1-->
+
+ <!-- 1 Column Heading BEGIN ~ 2-->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 95px 0px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">Catherine Monahan: A long and storied history of giving</h1>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Heading END ~ 2-->
+
+ <!-- Thumbnail Left, Text Right : BEGIN ~ 2-->
+ <tr>
+ <!-- dir=ltr is where the magic happens. This can be changed to dir=rtl to swap the alignment on wide while maintaining stack order on narrow. -->
+ <td dir="ltr" height="100%" valign="top" width="100%" style="font-size:0; padding: 5px 10px 25px 10px; background-color: #ffffff;">
+ <!--[if mso]>
+ <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
+ <tr>
+ <td valign="top" width="310" style="width: 310px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 310px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="padding: 0 10px 10px 30px;">
+ <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Catherine_Monahan.jpg" width="310" height="" border="0" alt="Catherine-Monahan" style="width: 100%; max-width: 310px; height: auto; background: #ffffff; ">
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ <td valign="top" width="350" style="width: 350px;">
+ <![endif]-->
+ <div style="display:inline-block; margin: 0 -1px; max-width: 350px; min-width:280px; vertical-align:top;" class="stack-column">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td dir="ltr" style="font-family: 'Arial', sans-serif; font-size: 16px; line-height: 24px; color: #222222; padding: 0px 10px 0 10px;">
+ <p style="margin: 0 0 10px 0;">For alumna Catherine Monahan, managing editor of the Dictionary of Old English (DOE), giving is personal and professional. She’s not only a member of the DOE team, but has also been donating to it for more than 25 years. “People think that dictionaries and lexicography are boring,” she says. “What I find interesting about this project is that we have one copy of every Old English text that’s available in the world...”
+ </p>
+ <!-- Button : BEGIN -->
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" align="left">
+ <tr>
+ <td class="button-td button-td-primary" style="border-radius: 4px; background: #007faf;">
+ <a class="button-a button-a-primary" href="##TrackClick##https://alumni.artsci.utoronto.ca/catherine-monahan-profile/" style="background: #007faf; border: 1px solid #007faf; font-family: 'Arial' ,sans-serif; font-size: 14px; line-height: 14px; text-decoration: none; padding: 16px 25px; color: #ffffff; display: block; border-radius: 0px;text-transform: uppercase;font-weight: bold;">Read more</a>
+ </td>
+ </tr>
+ </table>
+ <!-- Button : END -->
+ </td>
+ </tr>
+ </table>
+ </div>
+ <!--[if mso]>
+ </td>
+ </tr>
+ </table>
+ <![endif]-->
+ </td>
+ </tr>
+ <!-- Thumbnail Left, Text Right : END ~ 2-->
+
+ 
+
+ <!-- Heading with background BEGIN -->
+ <tr>
+ <td valign="middle" style="background-color: #25355a;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 25px 20px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0px; font-family: 'Arial',sans-serif;font-size: 28px; line-height: 28px; color: #ffffff; font-weight: bold;">Alumni Benefits</h1>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- Heading with background END -->
+
+ <!-- 1 Column Text BEGIN -->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 20px 20px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">Rotman executive programs alumni discounts</h1>
+ <p style="margin: 0 0 10px; color: #222222;font-family: 'Arial',sans-serif; font-size: 16px;line-height: 24px;">University&nbsp;of&nbsp;Toronto alumni receive 15% off the cost of <a href="##TrackClick##https://www.rotman.utoronto.ca/ProfessionalDevelopment/Executive-Programs/Programs-Individuals?_ga=2.233752598.988221440.1578926278-1024559619.1571925244" style="color:#007faf;text-decoration:underline;">eligible programs</a>. Take advantage of intensive short courses for individuals looking to acquire new professional skills, exceed their goals and gain a competitive advantage.</p>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Text END -->
+
+ <!-- 1 Column Text BEGIN -->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 20px 20px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">Benefits and travel</h1>
+ <p style="margin: 0 0 10px; color: #222222;font-family: 'Arial',sans-serif; font-size: 16px;line-height: 24px;">Enjoy the lifelong perks and benefits that come with being a U&nbsp;of&nbsp;T alum &mdash; from career development and networking opportunities to exclusive discounts on Toronto attractions, and much more! <a href="##TrackClick##https://alumni.utoronto.ca/benefits-and-travel" style="color:#007faf;text-decoration: underline;">Check out your alumni discounts</a> on travel, retail, courses, financial and cultural products, and more.</p>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Text END -->
+
+ <!-- Heading with background BEGIN -->
+ <tr>
+ <td valign="middle" style="background-color: #25355a;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 25px 20px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0px; font-family: 'Arial',sans-serif;font-size: 28px; line-height: 28px; color: #ffffff; font-weight: bold;">Events</h1>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- Heading with background END -->
+
+ <!-- Email Image : BEGIN -->
+ <tr>
+ <td style="padding: 50px 0 10px 0; text-align: center;background: #ffffff;">
+ <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Alumni_Reunion.jpg" width="93.5%" height="" alt="Alumni-Reunion" border="0" style="height: auto; background: #ffffff;">
+ </td>
+ </tr>
+ <!-- Email Image : END -->
+
+ <!-- 1 Column Text BEGIN -->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 20px 20px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">Save the Dates!<span style="color:#007faf;"> Reunion 2020</span> </h1>
+ <p style="margin: 0 0 10px; color: #222222;font-family: 'Arial',sans-serif; font-size: 16px;line-height: 24px;">It’s not too early to think about Reunion 2020, coming up this spring, May 27–31. Join us and your fellow A&S alumni for a special event on May 28. More details to come in the spring edition of Arts & Science Matters. And <a href="##TrackClick##https://alumni.utoronto.ca/events-and-programs/alumni-reunion" style="color:#007faf;text-decoration: underline;">you can sign up for Reunion updates here</a>.</p>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Text END -->
+
+ <!--Divider: START-->
+ <tr>
+<td style="padding:0px;background-color: #ffffff;">
+<table cellspacing="0" cellpadding="0" border="0" width="100%" style="width: 100% !important;">
+<tbody><tr>
+ <td align="left" valign="top" width="" height="1" style="background-color: #d7d7d7; border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; mso-line-height-rule: exactly; line-height: 1px;">
+ <!--[if gte mso 15]>
+ &nbsp;
+ <![endif]-->
+ </td>
+</tr>
+</tbody></table>
+</td>
+ </tr>
+ <!--Divider: END-->
+
+ <!-- 1 Column Text BEGIN -->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 20px 20px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">Black History Month: Check out these A&S events in February</h1>
+ <p style="margin: 0 0 10px; color: #222222;font-family: 'Arial',sans-serif; font-size: 16px;line-height: 24px;">
+ February is Black History Month. Here are a few of the many events in the <a style="color: #007faf; text-decoration: underline;" href="##TrackClick##https://www.artsci.utoronto.ca/news/black-history-month-check-out-these-events-february">Faculty of Arts & Science recognizing Black History, as well as cultural and literary events</a>.</p>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Text END -->
+
+ <!-- 1 Column Text BEGIN -->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 20px 20px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">An Oozakazoo folk/rock concert for alumni families</h1>
+ <p style="margin: 0 0 10px; color: #222222;font-family: 'Arial',sans-serif; font-size: 16px;line-height: 24px;">
+ <strong>Friday, February 14, 2020</strong><br>
+ <strong>10:00 am – 12:30 pm</strong><br>
+ Principal Hall<br>
+ 1 Spadina Crescent, Toronto 
+ <br><br> 
+ Kick-off Family Day weekend with singing and fun with the Oozakazoos. The 45-minute performance will be followed by colouring activities and access to the Architecture and Design Gallery’s child-friendly installation. This event is for 2 to 7 year olds and space is limited. Come back to campus for an exclusive event just for alumni families. 
+ <a href="##TrackClick##https://alumni.utoronto.ca/events-and-programs/oozakazoo-folkrock-concert-alumni-families" style="color:#007faf;text-decoration: underline;">Registration required</a>.</p>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Text END -->
+
+ <!-- 1 Column Text BEGIN -->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 20px 20px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">Toronto’s Tech Utopia</h1>
+ <p style="margin: 0 0 10px; color: #222222;font-family: 'Arial',sans-serif; font-size: 16px;line-height: 24px;">
+ <strong>February 24, 2020</strong><br>
+ <strong>6:00 pm - 9:00 pm</strong><br>
+ Innis Town Hall<br>
+ 2 Sussex Ave, Toronto 
+ <br><br> 
+ How do we think about the public in the context of the Sidewalk Labs proposal? Join us for a moderated panel discussion hosted by the University&nbsp;of&nbsp;Toronto Association of Geography Alumni (UTAGA) in partnership with the Department of Geography & Planning.
+ <a href="##TrackClick##https://geography.utoronto.ca/event/torontos-tech-utopia-how-do-we-think-about-the-public-in-the-context-of-the-sidewalk-labs-proposal-feb-24/" style="color:#007faf;text-decoration: underline;">Registration required</a>.</p>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Text END -->
+
+ <!-- 1 Column Text BEGIN -->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 20px 20px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">Canadian Perspectives Lecture Series </h1>
+ <p style="margin: 0 0 10px; color: #222222;font-family: 'Arial',sans-serif; font-size: 16px;line-height: 24px;">
+ For more than 40 years, the Senior Alumni Association (SAA) has been offering insightful lectures to alumni and friends of U&nbsp;of&nbsp;T through its Canadian Perspectives Lecture Series. The lectures are open to everyone from new graduates to seniors, and to alumni and non-alumni. Registration and further information 
+ <a href="##TrackClick##https://alumni.utoronto.ca/events-and-programs/canadian-perspectives-lecture-series" style="color:#007faf;text-decoration: underline;">can be found here</a>.</p>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Text END -->
+
+ <!-- 1 Column Text BEGIN -->
+ <tr>
+ <td style="background-color: #ffffff;">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+ <td style="padding: 20px 20px 20px 40px; font-family: 'Arial',sans-serif;">
+ <h1 style="margin: 0 0 10px; font-family: 'Arial',sans-serif;font-size: 22px; line-height: 26px; color: #25355a; font-weight: bold;">City of Toronto + Women and Gender Studies Institute Scholarship 35th anniversary event</h1>
+ <p style="margin: 0 0 10px; color: #222222;font-family: 'Arial',sans-serif; font-size: 16px;line-height: 24px;">
+ <strong>March 27, 2020</strong><br>
+ <strong>5:00 pm - 7:00 pm </strong><br>
+ Wilson Hall, New College<br>
+ 40 Willcocks Street, Toronto 
+ <br><br> 
+ This year marks the 35th anniversary of the City of Toronto Women’s Scholarship award. Join us for an intergenerational celebration, where WGSI will honour the 2020 awardees, recognize the scholarship founders, and announce new scholarships. 
+ <a href="##TrackClick##https://wgsi.utoronto.ca/news/city-of-toronto-wgsi-scholarship-35th-anniversary-party" style="color:#007faf;text-decoration: underline;">Registration required</a>.</p>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ <!-- 1 Column Text END -->
+
+ <!--footer Start -->
+ <tr>
+ <td style="background-color: #002A5C;" align="center">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" align="center">
+ <tbody><tr>
+ <td style="padding: 20px; font-family: 'Arial',sans-serif;text-align:center;" align="center">
+ <h2 style="margin:0; padding: 20px 20px 20px 20px; mso-padding-alt:20px;font-family: 'Arial',sans-serif;font-size: 16px; line-height: 18px; color: #ffffff; font-weight: bold;">Follow A&S Alumni </h2>
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" align="center" style="mso-padding-alt:20px;">
+ <tbody><tr>
+ <td style="text-align: center;padding: 0px;mso-padding-alt:20px;" align="center">
+ <a href="##TrackClick##https://www.facebook.com/ArtsandScienceAlumni/" target="_blank" style="padding: 0 5px;">
+ <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Facebook.png" alt="icon">
+ </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+ <a href="##TrackClick##https://www.linkedin.com/company/university-of-toronto-faculty-of-arts-science-alumni/?viewAsMember=true" target="_blank" style="padding: 0 5px;">
+ <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/linkedin.png" alt="icon">
+ </a>
+ </td>
+ </tr>
+ </tbody></table>
+ <h2 style="margin:0; padding: 20px 20px 20px 20px; mso-padding-alt:20px;font-family: 'Arial',sans-serif;font-size: 16px; line-height: 18px; color: #ffffff; font-weight: bold;">Follow Arts & Science News</h2>
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" align="center" style="mso-padding-alt:20px;">
+ <tbody><tr>
+ <td style="text-align: center;padding:0px;mso-padding-alt:20px;" align="center">
+ <a href="##TrackClick##https://www.facebook.com/UofTArtSci/" target="_blank" style="padding: 0 5px;">
+ <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Facebook.png" alt="icon">
+ </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+ <a href="##TrackClick##https://www.instagram.com/uoftartsci/?hl=en" target="_blank" style="padding: 0 5px;">
+ <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/instagram.png" alt="icon">
+ </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+ <a href="##TrackClick##https://twitter.com/uoftartsci" target="_blank" style="padding: 0 5px;">
+ <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/twitter.png" alt="icon">
+ </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+ <a href="##TrackClick##https://www.youtube.com/channel/UCXRrb_NqDU5IN2ensLpWbcg" target="_blank" style="padding: 0 5px;">
+ <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/youtube.png" alt="icon">
+ </a>
+ </td>
+ </tr>
+ </tbody></table>
+ <p style="font-size: 14px;margin: 0 0 10px 0;padding: 20px 30px 20px 30px;color: #ffffff;"><strong>Arts & Science Matters</strong> is produced by the Office of Communications & Public Affairs<br> for the Office of Advancement.</p>
+ <p style="font-size: 14px;margin: 0 0 10px 0;color: #ffffff;">Contact Communications at: <a href="mailto:artsci.communications@utoronto.ca" style="color:#007faf;text-decoration: underline;">artsci.communications@utoronto.ca</a></p>
+ <p style="font-size: 14px;margin: 0 0 10px 0;color: #ffffff;">Contact Advancement at: <a href="mailto:alumni@artsci.utoronto.ca" style="color:#007faf;text-decoration: underline;">alumni@artsci.utoronto.ca</a></p>
+ <p style="font-size: 14px;margin: 0 0 10px 0;color: #ffffff;">Support Arts & Science here: <a href="##TrackClick##https://donate.utoronto.ca/give/show/12" target="_blank" style="color:#007faf;text-decoration: underline;">donate.utoronto.ca/artsandscience</a></p>
+ <p style="font-size: 14px;margin: 0 0 10px 0;color: #ffffff;">This email was sent to <a href="mailto:artsci.communications@utoronto.ca" style="color: #FFFFFF; text-decoration: none;">artsci.communications@utoronto.ca</a></p>
+ <p style="font-size: 14px;margin: 0 0 10px 0;color: #ffffff;"><a href="##TrackClick##https://secureca.imodules.com/s/731/form-blank/index.aspx?sid=731&gid=1&pgid=1363&cid=2576&post_id=0" target="_blank" style="color:#007faf;text-decoration: underline;">Link to Address Update</a></p>
+ <p style="font-size: 14px;margin: 0 0 10px 0;color: #ffffff;"><a href="mailto:subscriptions@utoronto.ca?subject=Unsubscribe_AAS_ALL_ALL_Newsletter_##OptionalParameter3##%20|%20Alumni%20Enews" style="color:#007faf;text-decoration: underline;">Link to Opt out</a>
+ </p>
+ </td>
+ </tr>
+ </tbody></table>
+ </td>
+ </tr>
+ <!-- footer End-->
+
+ <!-- Footer logo Image, Flush : BEGIN -->
+ <tr>
+ <td style="background-color: #002A5C;padding:10px 0px 40px 0px;">
+ <a href="##TrackClick##http://www.alumni.artsci.utoronto.ca/" target="_blank">
+ <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Arts_and_Science_logo.png" width="680" height="" alt="logo" border="0" style="width: 100%; max-width: 680px; height: auto; margin: auto; display: block;" class="g-img">
+ </a>
+ </td>
+ </tr>
+ <!-- Footer logo Image, Flush : END -->
+
+ <!--Footer Divider Start-->
+ <tr>
+<td style="padding: 5px 20px;background-color: #002A5C;"align="center" >
+<table cellspacing="0" cellpadding="0" border="0" width="100%" style="width: 100% !important;">
+<tbody><tr>
+ <td align="left" valign="top" width="" height="1" style="background-color: #ffffff; border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; mso-line-height-rule: exactly; line-height: 1px;">
+ <!--[if gte mso 15]>&nbsp;<![endif]-->
+ </td>
+</tr>
+</tbody></table>
+</td>
+ </tr>
+ <!--Footer Divider End-->
+
+ <!--Footer Privacy Start-->
+ <tr>
+ <td style="background-color: #002A5C;" align="center">
+ <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tbody><tr>
+ <td style="padding: 20px 20px 30px 20px; font-family: 'Arial', sans-serif; font-size: 12px; line-height: 18px; color: #ffffff; text-align:center;">
+ The University&nbsp;of&nbsp;Toronto respects your privacy.
+ We do not rent, trade or sell our mailing lists.
+ Copyright © 2020 University&nbsp;of&nbsp;Toronto. All rights reserved.
+ This e-mail was sent to <a href="mailto:artsci.communications@utoronto.ca" style="color: #FFFFFF; text-decoration: none;">artsci.communications@utoronto.ca</a>
+ </td>
+ </tr>
+ </tbody></table>
+ </td>
+ </tr>
+ <!--Footer Privacy End-->
+
+ </table>
+ <!-- Email Body : END -->
+
+ <!--[if mso]>
+ </td>
+ </tr>
+ </table>
+ <![endif]-->
+ </div>
+
+ <!--[if mso | IE]>
+ </td>
+ </tr>
+ </table>
+ <![endif]-->
+ </center>
+##TrackImpression##</body>
+</html>

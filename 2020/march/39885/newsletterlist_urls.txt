@@ -1,0 +1,25 @@
+2019-20_DUA_Reunion_TRIN_ReunionInvitations_Initial_Alumni Reunion - Trinity College Reunion 2020 - 39885_20200310
+
+Seed/approve list
+nazerit.hagos@utoronto.ca
+laura.leach@utoronto.ca
+jill.rooksby@utoronto.ca
+
+Image Urls
+https://adcomms.utoronto.ca/email-templates/reunion/2020/trinity/class_4t5_final.jpg
+
+Events w/o TagR
+
+Events with TagR
+http://my.alumni.utoronto.ca/s/731/18/register.aspx?sid=731&gid=1&pgid=14888&utm_source=DUA&utm_medium=Email&utm_campaign=ReunionRegistration&consID=##OptionalParameter3##
+
+http://my.alumni.utoronto.ca/s/731/18/register.aspx?sid=731&gid=1&pgid=14888&tags=trinity&utm_source=DUA&utm_medium=Emails&utm_campaign=ReunionRegistration&consID=##OptionalParameter3##
+
+Unsubscribe
+mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%20DUA_ALL_AR_Invitations_##OptionalParameter3##%20|%20REUNION20-REGISTRATION-EMAIL
+
+https://secure.e2rm.com/registrant/donate.aspx?eventid=237228
+
+https://magazine.trinity.utoronto.ca/building-a-greener-future/
+
+----> CREATE NEWS LETTER LIST!

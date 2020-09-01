@@ -1,0 +1,22 @@
+2019-20_DUA_Reunion_MED_ReunionInvitations_Initial_Alumni Reunion - U of T Faculty of Medicine - 40058_20200310
+
+Seed/approve list
+
+rohini.chopra@utoronto.ca
+
+Image Urls
+
+https://adcomms.utoronto.ca/email-templates/reunion/2020/med/ahmedel-sohemy.png
+https://adcomms.utoronto.ca/email-templates/reunion/2020/med/grahamcollingridge.png
+https://adcomms.utoronto.ca/email-templates/reunion/2020/med/davidson.png
+
+Events with TagR
+
+http://my.alumni.utoronto.ca/s/731/18/register.aspx?sid=731&gid=1&pgid=14888&tags=medicine&utm_source=DUA&utm_medium=Email&utm_campaign=ReunionRegistration&consID=##OptionalParameter3##
+
+http://my.alumni.utoronto.ca/s/731/18/register.aspx?sid=731&gid=1&pgid=14888&tags=elsohemy&utm_source=DUA&utm_medium=Email&utm_campaign=ReunionRegistration&consID=##OptionalParameter3##
+http://my.alumni.utoronto.ca/s/731/18/register.aspx?sid=731&gid=1&pgid=14888&tags=collingridge&utm_source=DUA&utm_medium=Email&utm_campaign=ReunionRegistration&consID=##OptionalParameter3##
+http://my.alumni.utoronto.ca/s/731/18/register.aspx?sid=731&gid=1&pgid=14888&tags=davidson&utm_source=DUA&utm_medium=Email&utm_campaign=ReunionRegistration&consID=##OptionalParameter3##
+
+Unsubscribe
+mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%20DUA_ALL_AR_Invitations_##OptionalParameter3##%20|%20REUNION20-REGISTRATION-EMAIL

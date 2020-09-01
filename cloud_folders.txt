@@ -1,0 +1,2 @@
+smb://csisss1.utorcsi.utoronto.ca/sss-dua$
+smb://vault14.utorcsi.utoronto.ca/home14$/tolent18

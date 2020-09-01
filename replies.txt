@@ -1,0 +1,44 @@
+GET REPLIES
+
+Hi XXX,
+
+Nice to e-meet you!
+ 
+Just in case you weren't aware, I wanted to notify you that the content I need to create the newsletter emails has not been attached to this ticket yet.
+ 
+If you get back to me as soon as possible I would greatly appreciate it!
+ 
+Cheers,
+ 
+John
+
+PREVIEW SENT FOLLOW UP
+
+Hi XXX,
+
+I sent you an email preview for approval. If you could reply with the time and date for the emails to be sent I would greatly appreciate it!
+
+Cheers,
+John
+
+APPROVAL 
+
+The email that's approved has now been scheduled to be sent out within the hour.
+
+Attached above are the details of the scheduled email. Please carefully read the
+attached details and let me know if any last minute changes are needed.
+
+Thank you!
+
+FIX IMAGE RESOLUTION
+
+Hi XXXX,
+
+Nice to e-meet you!
+
+Just received the content and wanted to notify you about the images attached to the ticket.
+If you could resend the same images with a higher resolution the email will look a lot better and less pixelized!
+
+Cheers, 
+
+John

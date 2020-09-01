@@ -1,0 +1,42 @@
+2020-21_ALR_ALL_ALL_NEWSLETTER_INITIAL_Stay home eNewshub - 20200512
+
+Email Subject
+
+From: 
+Subject: 
+Preview: 
+Reply to: 
+
+Seed/approve list
+
+susan.fischer@utoronto.ca
+m.pang@utoronto.ca
+emma.nguyen@utoronto.ca
+sd.baker@utoronto.ca
+gary.bhanot@utoronto.ca
+john.tolentino@utoronto.ca
+
+Image Urls
+
+Events w/o TagR
+
+waiting on Rachel to give proper links before tagging urls with utm tags
+
+Events with TagR
+
+Unsubscribe
+mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_ALR_ALL_ALL_NEWSLETTER##OptionalParameter3##%20Stay%20home%20eNewshub
+
+Litmus test:
+
+- Outlook 2016 (Windows 10)
+-> Banner image cut off
+
+- Outlook 2019 (Windows 10)
+-> banner image cut off
+
+- Outlook Office 365 (Windows 10)
+-> banner image cut off
+
+- Outlook Office 365 Dark (Windows 10)
+-> banner image cut off

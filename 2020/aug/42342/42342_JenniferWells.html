@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title></title>
+    <style>
+      /* What it does: Hover styles for buttons */
+      .button-td a,
+      .button-a a{
+          transition: all 100ms ease-in;
+          color:#002A5C !important; 
+          background-color:#dde1e8;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;  
+      }
+      .button-td-primary:hover,
+      .button-a-primary:hover {
+          background: #002A5C !important;
+          color: #dde1e8 !important;
+      }
+      .button-td-primary a:hover,
+      .button-a-primary a:hover {
+          background: #002A5C !important;
+          color: #dde1e8 !important;
+      }
+    @media only screen and (min-width: 480px) and (max-width: 599px) {
+    table[class=outer] { width: 480px !important;}
+    td[class=outer] { width: 480px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 440px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 440px !important;}
+    td[class=inner] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 400px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 480px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 440px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 400px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 480px !important; height: auto !important;}
+    img[class=img-rect] { width: 440px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 285px !important; height: auto !important;}
+    strong[class=banner] { font-size: 28px !important;}
+    .section-heading { width: 440px !important; }
+    .section-heading td { width: 440px !important; }
+    .full-story { width: 440px !important; }
+    .image-block img { width: 440px !important; height: auto !important; }
+    .button { width: 440px !important; }
+    .two-col-section { width: 440px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 440px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    @media only screen and (min-width: 360px) and (max-width: 479px) {
+    table[class=outer] { width: 360px !important;}
+    td[class=outer] { width: 360px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 320px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 320px !important;}
+    td[class=inner] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 300px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 360px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 320px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 300px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 360px !important; height: auto !important;}
+    img[class=img-rect] { width: 320px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 260px !important; height: auto !important;}
+    strong[class=banner] { font-size: 22px !important;}
+    .section-heading { width: 320px !important; }
+    .section-heading td { width: 320px !important; }
+    .image-block img { width: 320px !important; height: auto !important; }
+    .button { width: 320px !important; }
+    .two-col-section { width: 320px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 320px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    @media only screen and (max-width: 359px) {
+    table[class=outer] { width: 320px !important;}
+    td[class=outer] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 280px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 280px !important;}
+    td[class=inner] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 260px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 280px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 260px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 320px !important; height: auto !important;}
+    img[class=img-rect] { width: 280px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 240px !important; height: auto !important;}
+    strong[class=banner] { font-size: 20px !important;}
+    .section-heading { width: 280px !important; }
+    .section-heading td { width: 280px !important; }
+    .full-story { width: 280px !important; }
+    .image-block img { width: 280px !important; height: auto !important; }
+    .button { width: 280px !important; }
+    .two-col-section { width: 280px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 280px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0;">
+    <!-- <div style="display:none;font-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">
+      Join us at PDAC March 3rd!
+    </div> -->
+
+    <!-- Visually Hidden Preheader Text : BEGIN -->
+    <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+      Join us for a fun day on the course with students, faculty, and staff, and reconnect with former classmates!
+    </div>
+    <!-- Visually Hidden Preheader Text : END -->
+
+    <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+    <!-- Preview Text Spacing Hack : BEGIN -->
+    <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+        &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+    </div>
+    <!-- Preview Text Spacing Hack : END -->
+
+    <table cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td width="100%" align="center" valign="top">
+          <!-- end of top portion of outer table -->
+          <!-- header section (preheader text, web version link, banner) -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td width="550" valign="top" style="text-align: center; padding-bottom: 20px; padding-top: 10px; font-family: arial; background-color: #ffffff; " class="content-outer">
+                <a href="##HTMLNewsletterURL##" style="text-decoration: none !important; color: #000000; font-size: 12px;"><strong>View this email online</strong></a>
+              </td>
+            </tr>
+          </table>
+          <!-- end of header section -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center" style="text-align: center; background-color: #ffffff;">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:580px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td style="text-align: center; padding-top: 20px; padding-bottom: 20px;" class="inner--centered" width="285" valign="top">
+                <a href="##TrackClick##https://www.es.utoronto.ca/"><img src="http://adcomms.utoronto.ca/email-templates/arts-science/images/earth-sciences-logo.jpg" style="border: none !important;" alt="University of Toronto, Faculty of Arts and Science - Department of Cell & Systems Biology" class="img-full" /></a>
+              </td>
+          </table>
+
+
+          <!-- ANNOUNCEMENT : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px; color:#000000;">
+                <strong>ALUMNI NEWS</strong>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:15px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td width="550" valign="top" class="content-outer" style="text-align: left; font-family: arial; padding: 15px; font-size: 15px; line-height: 20px; background-color: #ffffff; color: #000000;">
+                Dear Earth Sciences Alumni & Friends,
+                <br><br>
+                I hope you are having a great summer despite the ongoing pandemic and shut-down that happened almost immediately after many of us gathered in March at the Alumni and Friends Reception during the Prospectors & Developers Association of Canada convention. 
+                <br><br>
+                The 2020-21 academic year is rapidly approaching and will be a very different experience for everyone, with most classes and research activities moving online for the fall. We are working to keep our students and Earth Sciences community engaged throughout this new approach to learning and interacting, with opportunities for sharing knowledge online and safely meeting in person where possible. On that note, our <a href="https://www.es.utoronto.ca/event/9921/">U of T Earth Sciences Alumni & Friends Golf Tournament</a> will be held again this year, on September 25, and I invite you to join us. The event is one that gives us a chance to gather and meet again in a safe and healthy (and fun) environment. Follow the <a href="https://www.es.utoronto.ca/event/9921/">link</a> below!
+                <br><br>
+                On a sad note, our department and the entire geoscience community have had a great loss with the recent passing of <a href="https://www.es.utoronto.ca/digger-gorman/">Digger Gorman</a> and <a href="https://www.es.utoronto.ca/remembering-tony-naldrett-1933-2020/">Tony Naldrett</a>. Both were giants in education and research and are sorely missed. In memoriam tributes are posted on our <a href="https://www.es.utoronto.ca/">website</a> where you can share your memories.
+                <br><br>
+                If you know of any interesting activities or news that we should include in our annual alumni newsletter, please send a note to <a href="mailto:alumni.newsletter@es.utoronto.ca">alumni.newsletter@es.utoronto.ca</a>. We would love to hear from you!
+                <br><br>
+                Enjoy the rest of your summer and I look forward to seeing you at our upcoming events!
+                <br><br>
+
+                <img src="https://adcomms.utoronto.ca/images/a%26s/russellpysklywecSignature.png" width="200" style="border: none !important;" alt="Ulrich Wortmann Signature"/> 
+                
+                <br>
+                Russell Pysklywec
+                <br>
+                Professor and Chair of Earth Sciences
+                <br>
+                McRae-Quantec Chair in Geosciences
+                <br>
+                Department of Earth Sciences
+              </td>
+            </tr>
+          </table>
+          <!-- ANNOUNCEMENT : END -->
+          
+            </td>
+          </tr>
+        </table>
+
+          <!-- UPCOMING EVENTS : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:15px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            
+
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px; color:#002A5C; background-color:#dde1e8;">
+                <strong>UPCOMING EVENTS</strong>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+          </table>
+          
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td valign="top" style="text-align:left; padding-bottom: 10px; padding-top: 20px;">
+                <a href="##TrackClick##https://donate.utoronto.ca/give/show/47" target="_blank"><img src="https://adcomms.utoronto.ca/images/a%26s/2020/08/ES-golf-day.jpg" alt="Picture of golf invitation poster" width="400" height="auto" class="img-full"></a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p style="font-family:Arial,sans serif; font-size:16px;">
+                  <strong>Earth Sciences Golf Tournament</strong><br>
+                  <br>
+                  Join Professors Grant Henderson and Russ Pysklywec on <strong>Friday, September 25, 2020</strong>, at Nobleton Lakes Golf Club for the U of T Earth Sciences golf tournament. All skill levels are welcome.
+                  </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!-- SIGN UP BTN : BEGIN -->
+                <table>
+                  <tr>
+                      <td width="32%"></td>
+                        <td class="button-td button-td-primary" valign="botttom" align="middle" style="background: #dde1e8;text-align:center">
+                            <a class="button-a button-a-primary" href="https://forms.office.com/Pages/ResponsePage.aspx?id=JsKqeAMvTUuQN7RtVsVSEGGC0hN_tbREvfoWMePSNg1UN0VaVzY5NlRWMEhLOVY5MlVQVDVSMDRQNC4u" style="font-family:Arial,sans serif;background: #dde1e8; border: 1px solid #dde1e8; font-size: 14px; font-weight: bold; line-height: 15px; text-decoration: none; padding: 12px 15px; color: #002A5C; display: block; letter-spacing : -0.35px;-webkit-text-size-adjust:none;">SIGN UP FOR MORE INFO</a>
+                        </td>
+                        <td width="32%"></td>
+                  </tr>
+                </table>
+                <!-- SIGN UP BTN : END -->
+              </td>
+            </tr>
+          </table>
+          <!-- UPCOMING EVENTS : END -->
+          
+          <!-- STUDENT SUPPORT : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:15px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            
+
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px; color:#002A5C; background-color:#dde1e8;">
+                <strong>STUDENT SUPPORT</strong>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+          </table>
+          
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td valign="top" style="text-align:left; padding-bottom: 10px; padding-top: 20px;">
+                <a href="##TrackClick##https://donate.utoronto.ca/give/show/47" target="_blank"><img src="https://adcomms.utoronto.ca/email-templates/arts-science/2019/07/pic5.jpg" alt="Geoscience Education Fund" width="600" height="286.55" class="img-full"></a>
+              </td>
+            </tr>
+          </table>
+          <!-- STUDENT SUPPORT : END -->
+
+          <!-- FOOTER : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:15px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:0px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              
+             <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:580px;color:#fff;font-family: Arial; text-align:center; line-height:0px;font-size:7px;">&nbsp;</td>
+            </tr>
+    
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:0px;font-size:7px;">&nbsp;</td>
+            </tr>
+          </table>
+
+          <!-- SOCIAL MEDIA : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr><td width="600" align="center" height="20" style="background-color: #ffffff;"></td></tr>
+            <tr>
+              <td width="300" class="inner" valign="top" style="background-color: #ffffff;text-align: center;">
+                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                  <td width="100px" text-aligh="center"></td>
+                    <td valign="top" style="padding-bottom: 20px; text-align: center;">
+                        <a href="https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=1&ID=0&NL=5282&N=6526&SI=1066366&URL=https%3A%2F%2Fwww.facebook.com%2FUofTEarthSci%2F" style="border: none; text-decoration: none;" target="_blank">
+                          <img src="https://adcomms.utoronto.ca/images/dua/facebookCircleIcon.png" alt="U&nbsp;of&nbsp;T Facebook" width="45" height="45" style="border: none;" />
+                        </a>&nbsp;&nbsp;&nbsp;
+                        <a href="https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=1&ID=0&NL=5282&N=6526&SI=1066366&URL=https%3A%2F%2Ftwitter.com%2FUofTEarthSci" style="border: none; text-decoration: none;" target="_blank">
+                          <img src="https://adcomms.utoronto.ca/images/dua/twitterCircleIcon.png" alt="U&nbsp;of&nbsp;T Twitter" width="45" height="45" style="border: none;" />
+                        </a>&nbsp;&nbsp;&nbsp;
+                        <a href="https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=1&ID=0&NL=5282&N=6526&SI=1066366&URL=https%3A%2F%2Fwww.instagram.com%2Fuoftearthsci%2F" style="border: none; text-decoration: none;" target="_blank">
+                          <img src="https://adcomms.utoronto.ca/images/dua/instagramCircleIcon.png" alt="U&nbsp;of&nbsp;T LinkedIn" width="45" height="45" style="border: none;" />
+                        </a>
+                    </td>
+                    <td width="100px"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr><td width="600" align="center" height="20" style="background-color: #ffffff;" class="outer"></td></tr>
+        </table>
+        <!-- SOCIAL MEDIA : END -->
+
+          <table cellspacing="0" cellpadding="0" width="600" class="outer" align="center">
+            <tr>
+              <td width="550" style="background-color: #dde1e8; padding: 30px 25px;" valign="top" class="content-outer">
+           <table width="550" cellspacing="0" cellpadding="0" class="inner">
+              <tr>
+                  <td style="line-height:16px; text-align: left; font-size: 12px; font-family: arial, helvetica, sans-serif; padding-bottom: 10px;" valign="top" class="inner--centered">
+                      <strong>
+                      Department of Earth Sciences</strong> <br />
+                      22 Russell Street<br />
+                      Tel: (416) 978-3022<br />
+                      email: <a href="mailto:alumni.newsletter@es.utoronto.ca" style="color: #005cc9;">alumni.newsletter@es.utoronto.ca</a><br />
+                      web: <a target="_blank" style="color:#000000;" href="##TrackClick##https://www.es.utoronto.ca/">es.utoronto.ca</a>
+                      <br />
+                      give: <a target="_blank" style="color:#000000;" href="##TrackClick##https://donate.utoronto.ca/give/show/47?sid=DIS-##OptionalParameter3##">donate.utoronto.ca/earthsciences</a>
+                  </td>
+                  <td style="line-height:16px; text-align: right; font-size: 12px; font-family: arial, helvetica, sans-serif; padding-bottom: 20px;" valign="top" class="inner--centered">
+                      This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #005cc9;">##SubscriberEmail##</a><br />
+                      <a href="##TrackClick##https://secureca.imodules.com/s/731/index_clean.aspx?sid=731&gid=1&pgid=1363&cid=2576&post_id=0" style="color: #005cc9; text-decoration: none;">Update contact information</a><br />
+                      <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%2020-21_ARTSCI_ES_INVITATION_INITIAL_##OptionalParameter3##%20U%20of%20T%20Earth%20Sciences%20Golf%20Tournament" style="color: #005cc9; text-decoration: none;">Opt out of future messages</a>
+                  </td>
+              </tr>
+              <!--                   <tr>
+                  <td height="50"></td>
+              </tr> -->
+              <tr>
+                  <td style="text-align: left; padding-top: 20px;" class="inner--centered" width="285" valign="top">
+                      <a href="##TrackClick##http://www.alumni.artsci.utoronto.ca/"><img src="https://alumni.utoronto.ca/sites/default/files/inline-images/header.gif" style="border: none !important;" alt="University of Toronto, Faculty of Arts and Science" st-image="footer-logo" class="footer-logo-left" /></a>
+                  </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- FOOTER : END -->
+
+          <!-- COPYRIGHT: BEGIN -->
+          <table width="600" cellpadding="0" cellspacing="0" class="outer" align="center">
+            <tr>
+                <td style="text-align: center; font-size: 11px; font-family: arial, helvetica;background-color: #ffffff; color: #777777; padding: 10px 60px 20px 60px; line-height: 14px;" valign="top" width="600" class="content">
+                    The University&nbsp;of&nbsp;Toronto respects your privacy.
+                    We do not rent, trade or sell our mailing lists.
+                    Copyright &copy; 2020 University&nbsp;of&nbsp;Toronto. All rights reserved. This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #005cc9;">##SubscriberEmail##</a>.<br />
+                    ##OptionalParameter3##<br />##TrackImpression##
+                    
+                </td>
+            </tr>
+        </table>
+        <!-- COPYRIGHT: END -->
+        </td>
+      </tr>
+</table></body>
+</html>

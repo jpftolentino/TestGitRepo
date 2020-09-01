@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            /* table-layout: fixed !important; */
+            margin: 0 auto!important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+        a {
+            font-weight: 700;
+        }
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: #555555 !important;
+	        border-color: #555555 !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            td.center-on-narrow p.one-column-text {
+                margin: 0 !important;
+            }
+
+            td.center-on-narrow p {
+                margin: 20px 50px !important;
+            }
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                /* text-align: center !important; */
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                /* text-align: center !important; */
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+                width: 90% !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 30px !important;
+                line-height: 40px !important;
+            }
+
+            .email-container h2 {
+                font-size: 40px !important;
+                line-height: 40px !important;
+            }
+        }
+
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #f2f4f7;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #f2f4f7;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #222222;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
+            Wrapping up the year at St. Mike’s!
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="700" style="margin: auto;" class="email-container">
+            <tr>
+                <td style="background-color: #ffffff; text-align: center;">
+                    <a href="##HTMLNewsletterURL##"style="color: #000000;text-decoration: none; font-weight: bold;font-size:11px;font-family: Arial, Helvetica, sans-serif;">Click to view this email online</a>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 50px 0 10px 0; text-align: center;background: #ffffff;">
+                    
+                    <a href="https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=1&ID=7797&NL=6364&N=8132&SI=1118735&URL=https%3a%2f%2fstmikes.utoronto.ca%2f" style="color: #005cc9;"><img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/05/logo.png" style="border: none !important;width:550px" width="500" alt="University of Toronto, Faculty of Arts and Science" /></a>
+                </td>
+            </tr>
+
+
+            <!-- Wrapping up the Year at St. Mike's : BEGIN -->
+            <!-- Section Heading : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 20px 30px 0 30px;text-align: center">
+                    <table width="100%" align="middle" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                        <tr>
+                            <td style="background-color: #002A5C;padding: 0 15px;text-align: center">
+                                <h2 style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 26px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 25px;margin-top: 25px; mso-margin-bottom-alt: 25px;margin-bottom: 25px;">Wrapping up the Year at St. Mike’s!</h2>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- Section Heading : END -->
+            <!-- 1 Column Text + Button : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px;">
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                        <!-- Column : BEGIN -->
+                        <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: left;" class="center-on-narrow">
+                                        <p class="one-column-text" style="mso-margin-top-alt: 15px;margin-top: 15px;">
+                                            Dear Alumni and Friends, 
+                                            <br><br>
+                                            Activities in May and June usually mark the end of the academic year and the beginning of summer for our alumni team. The last several  weeks have certainly been different from how we pictured this year ending. Our plans included the campus being filled with alumni, students and families celebrating Alumni Reunion and Convocation. When COVID-19 related restrictions meant St. Mike’s had to celebrate these milestones virtually, alumni and students rose to the occasion with great resiliency. Planning is underway to celebrate these occasions in person as soon as we are able.
+                                            <br><br>
+                                            This year-end update <a href="#president-video" target="_self" style="text-decoration: none;color:#2e94de">video</a> from President David Sylvester and the creation of a <a href="#convocation-hub" target="_self" style="text-decoration: none;color:#2e94de">Convocation Hub</a> are two of the ways we connected with and celebrated alumni and students and I am delighted to share these with you in this newsletter. You will also find announcements about our interim Dean of Theology, and acting Principal and also about new ways we hope you will  stay involved and engaged with St. Mike's during this socially-distanced time.
+                                            <br><br>
+                                            Please do stay in touch over the summer. We hope to see you soon! 
+                                            <br/><br/>
+                                            Brittany Davila
+                                            <br/>
+                                            Senior Manager, Alumni Programming
+                                            <br/>
+                                            416-926-7260, <a href="mailto:brittany.davila@utoronto.ca" style="text-decoration: none;color:#2e94de">brittany.davila@utoronto.ca</a>
+                                            <br><br>
+                                            <span style="font-size: 12px;line-height:13px;"><strong>Advancement and Alumni Team:</strong><br/>
+                                            Kathryn Elton, Chief Advancement Officer, 416-926-7261, <a href="mailto:kathryn.elton@utoronto.ca" style="text-decoration: none;color:#2e94de">kathryn.elton@utoronto.ca</a><br/>
+                                            Matt Doyle, Advancement Officer, Special Projects: 416-926-2331, <a href="mailto:smcdevcrd@utoronto.ca" style="text-decoration: none;color:#2e94de">smcdevcrd@utoronto.ca</a><br/>
+                                            Klim Khomenko, Senior Development Manager: 416-926-7279, <a href="mailto:klim.khomenko@utoronto.ca" style="text-decoration: none;color:#2e94de">klim.khomenko@utoronto.ca</a><br/>
+                                            Betty Noakes, Advancement Associate, Stewardship: 416-926-2251, <a href="mailto:betty.noakes@utoronto.ca" style="text-decoration: none;color:#2e94de">betty.noakes@utoronto.ca</a><br/>
+                                            Ken Schnell, Advancement Manager, Annual Campaigns: 416-926-7281, <a href="mailto:kenneth.schnell@utoronto.ca" style="text-decoration: none;color:#2e94de">kenneth.schnell@utoronto.ca</a><br/>
+                                            </span>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </th>
+                        <!-- Column : END -->
+                    </table>
+                </td> 
+            </tr>
+            <!-- 1 Column Text + Button : END -->
+            <!-- Wrapping up the Year at St. Mike's : END -->            
+
+
+
+            <!-- Message from the President : BEGIN -->
+            <!-- Section Heading : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 20px 30px 0 30px;">
+                    <hr style="mso-margin-bottom-alt: 10px;">
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #ffffff;padding: 0px 30px 0 30px;text-align: center;">
+                    <!-- <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto 8px !important;"> -->
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" >
+                        <tr>
+                            <td id="president-video" name="president-video" jumpthis="president-video" style="background-color: #002A5C;padding: 0 15px;text-align: center">
+                                <h2 style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 26px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 25px;margin-top: 25px; mso-margin-bottom-alt: 25px;margin-bottom: 25px;">
+                                    Message from the President
+                                </h2>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px 0 30px;">
+                    <hr>
+                </td>
+            </tr>
+            <!-- Section Heading : END -->
+            <!-- 1 Column Text + Button : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px;">
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                        <!-- Column : BEGIN -->
+                        <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: center;" class="center-on-narrow">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="550" style="width: 550px; height: auto;">
+                                            <tr>
+                                                <td>
+                                                    <a href="https://www.youtube.com/watch?v=R3BNjymKL9Q">
+                                                        <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/05/videothumbnail.png" width="550" style="border: none !important;padding-top: 15px;width: 550px;" alt="David Sylvester virtual champagne toast video thumbnail" class="img-full">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <p class="one-column-text" style="mso-margin-top-alt: 15px;margin-top: 15px;">
+                                            The Alumni Association Annual General Meeting held on Friday evening of Alumni Reunion usually includes a year-end update from our President. 
+                                            This year, Dr. Sylvester shared his update virtually through this <a href="https://www.youtube.com/watch?v=R3BNjymKL9Q" style="text-decoration: none;color:#2e94de">brief video</a>.
+                                            President Sylvester also sent a year-end message to the St. Mike’s community on June 8, to view that message click <a href="https://stmikes.utoronto.ca/news/a-message-from-president-david-sylvester-to-the-st-michaels-community/" style="text-decoration: none;color:#2e94de">here</a>.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </th>
+                        <!-- Column : END -->
+                    </table>
+                </td> 
+            </tr>
+            <!-- 1 Column Text + Button : END -->
+            <!-- Message from the President : END -->       
+
+
+
+
+            <!-- New Appointments at St. Mike’s! : BEGIN -->
+            <!-- Section Heading : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 20px 30px 0 30px;">
+                    <hr style="mso-margin-bottom-alt: 10px;">
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px 0 30px;text-align: center;">
+                    <!-- <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto 8px !important;"> -->
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" >
+                        <tr>
+                            <td style="background-color: #002A5C;padding: 0 15px;text-align: center">
+                                <h2 style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 26px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 25px;margin-top: 25px; mso-margin-bottom-alt: 25px;margin-bottom: 25px;">
+                                    New Appointments at St. Mike’s! 
+                                </h2>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px 0 30px;">
+                    <hr>
+                </td>
+            </tr>
+            <!-- Section Heading : END -->
+	        <!-- Thumbnail Top, Text Bottom : BEGIN -->
+	        <tr>              
+                <td dir="ltr" width="100%" style="padding: 0 10px 0px 10px; background-color: #ffffff;">
+                    
+	                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                    <tr>
+	                        <!-- Column : BEGIN -->
+	                        <th width="50%" style="vertical-align: top;padding: 30px" class="stack-column-center">
+	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                                <tr>
+                                        <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; text-align: left;" class="center-on-narrow">
+                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; height: auto;">
+                                                <tr>
+                                                    <td>
+                                                    <!--[if mso]>
+                                                        <v:oval xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:245px;width:245px" strokecolor="#FFFFFF" fillcolor="#FFFFFF" >
+                                                        <v:fill type="frame" color="#FFFFFF" src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/06/DrJohnMcLaughlin.png" style="height:130px;width:130px"/></v:oval>
+                                                    <![endif]-->
+                                                    <!--[if !IE]><!-->
+                                                        <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/06/DrJohnMcLaughlin.png" width="245" height="245" alt="alt_text" border="0" style="width: 100%;max-width: 245px;border-radius: 50%;height: auto;background: #dddddd;font-family: sans-serif;font-size: 15px;line-height: 15px;color: #555555;">
+                                                    <!--<![endif]-->
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <p style="margin: 0 0 10px 0;">
+                                                <br>
+                                                President David Sylvester is pleased to announce the appointment of <a href="https://stmikes.utoronto.ca/profile/john-l-mclaughlin/"  style="text-decoration: none;color:#2e94de">Dr. John McLaughlin</a> to a two-year term as Interim Dean of the Faculty of Theology, effective July 1, 2020. 
+                                                Dr. McLaughlin served as the Faculty’s Interim Dean in the 2014-15 academic year prior to Dr. Ginther’s arrival.
+                                                <br><br>
+                                                Professor McLaughlin joined the St. Michael’s faculty in 2002 after teaching for seven years at Wheeling Jesuit University in Wheeling, West Virginia.
+                                                <br><br>
+                                                A professor of Old Testament/Hebrew Bible, Dr. McLaughlin earned a BA from St. Thomas University in Fredericton, NB before enrolling at the University of Toronto, where he earned an MA in Philosophy. He then studied Theology and Scripture at St. Michael’s Faculty of Theology, earning an MDiv and a PhD.
+                                                <br><br>
+                                                To read more about Dr. McLaughlin’s appointment please click <a href="https://stmikes.utoronto.ca/news/dr-john-mclaughlin-to-serve-as-interim-dean-of-theology/" style="text-decoration: none;color:#2e94de">here</a>. 
+                                            </p>
+	                                    </td>
+	                                </tr>
+	                            </table>
+	                        </th>
+	                        <!-- Column : END -->
+	                        <!-- Column : BEGIN -->
+	                        <th width="50%" style="vertical-align: top;padding: 30px" class="stack-column-center">
+	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                                <tr>
+                                        <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px;  text-align: left;" class="center-on-narrow">
+                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; height: auto;">
+                                                <tr>
+                                                    <td>
+                                                    <!--[if mso]>
+                                                        <v:oval xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:245px;width:245px" strokecolor="#FFFFFF" fillcolor="#FFFFFF" >
+                                                        <v:fill type="frame" color="#FFFFFF" src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/06/DrMarkMcGowan.png" style="height:130px;width:130px"/></v:oval>
+                                                    <![endif]-->
+                                                    <!--[if !IE]><!-->
+                                                        <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/06/DrMarkMcGowan.png" width="245" height="245" alt="alt_text" border="0" style="width: 100%;max-width: 245px;border-radius: 50%;height: auto;background: #dddddd;font-family: sans-serif;font-size: 15px;line-height: 15px;color: #555555;">
+                                                    <!--<![endif]-->
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <p style="margin: 0 0 10px 0;">
+                                                <br>
+                                                Principal Emeritus <a href="https://stmikes.utoronto.ca/profile/mark-mcgowan/"  style="text-decoration: none;color:#2e94de">Dr. Mark McGowan</a> will serve as the Interim Principal of the University of St. Michael’s College for the 2020-2021 academic year, President David Sylvester has announced.
+                                                <br><br>
+                                                St. Michael’s Principal from 2002-2011, Dr. McGowan is an historian renowned for his work on the Catholic Church in Canada and the Great Irish Famine, as well as the lasting impact that the Famine’s mass migration had on Canada.
+                                                <br><br>
+                                                He is cross-appointed to U of T, where he holds tenure and has served as Deputy Chair of the History department (2017-19), as Senior Academic Advisor to the Dean of Arts & Science, International (2014-17) and as Acting Vice-Provost, Students, for the University of Toronto for part of 2013.
+                                                <br><br>
+                                                To read more about Dr. McGowan’s appointment please click <a href="https://stmikes.utoronto.ca/news/mark-mcgowan-appointed-interim-principal-usmc/"  style="text-decoration: none;color:#2e94de">here</a>. 
+                                            </p>
+	                                    </td>
+	                                </tr>
+	                            </table>
+	                        </th>
+	                        <!-- Column : END -->
+	                    </tr>
+                    </table>
+	            </td>
+	        </tr>
+            <!-- Thumbnail Top, Text Bottom : END -->
+            <!-- New Appointments at St. Mike’s!  : END -->       
+
+
+
+
+            <!-- Congratulations to the Class of 2020!  : BEGIN -->
+            <!-- Section Heading : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 20px 30px 0 30px;">
+                    <hr style="mso-margin-bottom-alt: 10px;">
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #ffffff;padding: 0px 30px 0 30px;text-align: center;">
+                    <!-- <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto 8px !important;"> -->
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" >
+                        <tr>
+                            <td id="convocation-hub" name="convocation-hub" jumpthis="convocation-hub" style="background-color: #002A5C;padding: 0 15px;text-align: center">
+                                <h2 style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 26px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 25px;margin-top: 25px; mso-margin-bottom-alt: 25px;margin-bottom: 25px;">
+                                    Congratulations to the Class of 2020!
+                                </h2>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px 0 30px;">
+                    <hr>
+                </td>
+            </tr>
+            <!-- Section Heading : END -->
+            <!-- 1 Column Text + Button : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px;">
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                        <!-- Column : BEGIN -->
+                        <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: center;" class="center-on-narrow">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 425px; height: auto;text-align: center;">
+                                            <tr>
+                                                <td>
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/06/class2020.png" width="425" style="border: none !important;padding-top: 15px;width: 425px;" alt="David Sylvester virtual champagne toast video thumbnail" class="img-full">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <p class="one-column-text" style="mso-margin-top-alt: 15px;margin-top: 15px;text-align: left;">
+                                            Congratulations to the Class of 2020 and Welcome to the St. Mike's Alumni Association! 
+                                            On June 2 a virtual convocation ceremony was held for all 2020 University of Toronto graduates. 
+                                            To view the virtual ceremony please click <a href="https://www.youtube.com/watch?time_continue=1&v=9YKy90nf-aM&feature=emb_logo" style="text-decoration: none;color:#2e94de">here.</a> 
+                                            St. Mike’s convocation ceremonies were scheduled to occur on June 12, and to acknowledge that day, a congratulations video 
+                                            and messages were sent out throughout the day through email and social media to the class. 
+                                            To view the messages please visit the Convocation Hub at: <a href="https://stmikes.utoronto.ca/celebrating-the-class-of-2020/" style="text-decoration: none;color:#2e94de">https://stmikes.utoronto.ca/celebrating-the-class-of-2020/</a>
+                                        </p>
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="height: auto;text-align: center;">
+                                            <tr>
+                                                <td>
+                                                <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/06/class2020-pic1.png" style="border: none !important;width: 173px" width="173"  alt="Photos of St. Michael's College Memory One" />
+                                                <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/06/class2020-pic2.png" style="border: none !important;width: 196px" width="196"  alt="Photos of St. Michael's College Memory Two" />
+                                                <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/06/class2020-pic3.png" style="border: none !important;width: 196px" width="196"  alt="Photos of St. Michael's College Memory Three" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </th>
+                        <!-- Column : END -->
+                    </table>
+                </td> 
+            </tr>
+            <!-- 1 Column Text + Button : END -->
+            <!-- Congratulations to the Class of 2020!  : END -->     
+
+
+
+            <!-- Help St. Mike’s Remember the Pandemic : BEGIN -->
+            <!-- Section Heading : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 20px 30px 0 30px;">
+                    <hr style="mso-margin-bottom-alt: 10px;">
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px 0 30px;text-align: center;">
+                    <!-- <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto 8px !important;"> -->
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" >
+                        <tr>
+                            <td style="background-color: #002A5C;padding: 0 15px;text-align: center">
+                                <h2 style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 26px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 25px;margin-top: 25px; mso-margin-bottom-alt: 25px;margin-bottom: 25px;">
+                                    Help St. Mike’s Remember the Pandemic 
+                                </h2>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px 0 30px;">
+                    <hr>
+                </td>
+            </tr>
+            <!-- Section Heading : END -->
+	        <!-- Thumbnail Left, Text Right : BEGIN -->
+	        <tr>              
+                <td dir="ltr" width="100%" style="padding: 30px 10px; background-color: #ffffff;">
+                    
+	                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                    <tr>
+	                        <!-- Column : BEGIN -->
+	                        <th width="50%" style="vertical-align: top;" class="stack-column-center">
+	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                                <tr>
+                                        <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; text-align: left;" class="center-on-narrow">
+                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="height: auto;text-align: center;">
+                                                <tr>
+                                                    <td>
+                                                        <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/06/blackwhiteschool.png" width="245" height="auto" alt="alt_text" border="0" style="width: 100%;max-width: 245px;height: auto;background: #dddddd;font-family: sans-serif;font-size: 15px;line-height: 15px;color: #555555;">
+                                                    </td>
+                                                </tr>
+                                            </table>
+	                                    </td>
+	                                </tr>
+	                            </table>
+	                        </th>
+	                        <!-- Column : END -->
+	                        <!-- Column : BEGIN -->
+	                        <th width="50%" style="vertical-align: middle;padding: 0 30px 30px 0" class="stack-column-center">
+	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                                <tr>
+                                        <td dir="ltr" valign="middle" style="font-family: sans-serif; font-size: 15px; line-height: 20px;  text-align: left;" class="center-on-narrow">
+                                            <p style="margin: 0 0 10px 0;">
+                                                University Archivist Jessica Barr is documenting St. Michael's experience of and response to the COVID-19 pandemic — and alumni are invited to participate. 
+                                                Use the university's <a href="https://stmikes.utoronto.ca/usmc-archives-and-covid-19/" style="text-decoration: none;color:#2e94de">archive project form</a> to send in your account of life under the pandemic. 
+                                                If you have any questions, please reach out to <a href="mailto:jj.barr@utoronto.ca" style="text-decoration: none;color:#2e94de">Jessica Barr</a>. 
+                                            </p>
+	                                    </td>
+	                                </tr>
+	                            </table>
+	                        </th>
+	                        <!-- Column : END -->
+	                    </tr>
+                    </table>
+	            </td>
+	        </tr>
+            <!-- Thumbnail Left, Text Right : END -->
+            <!-- Help St. Mike’s Remember the Pandemic : END -->      
+
+
+
+
+            <!-- Staying Connected While Apart  : BEGIN -->
+            <!-- Section Heading : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 20px 30px 0 30px;">
+                    <hr style="mso-margin-bottom-alt: 10px;">
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px 0 30px;text-align: center;">
+                    <!-- <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto 8px !important;"> -->
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" >
+                        <tr>
+                            <td style="background-color: #002A5C;padding: 0 15px;text-align: center">
+                                <h2 style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 26px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 25px;margin-top: 25px; mso-margin-bottom-alt: 25px;margin-bottom: 25px;">
+                                    Staying Connected While Apart 
+                                </h2>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px 0 30px;">
+                    <hr>
+                </td>
+            </tr>
+            <!-- Section Heading : END -->
+            <!-- 1 Column Text + Button : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px;">
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                        <!-- Column : BEGIN -->
+                        <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: center;" class="center-on-narrow">
+                                        <p class="one-column-text" style="mso-margin-top-alt: 15px;margin-top: 15px;">
+                                            To stay up to date with what is going on at St. Mike’s please visit 
+                                            our website, check your email, and follow our social media outlets.
+                                            <br><br>
+                                            Website: <a href="https://stmikes.utoronto.ca/" style="text-decoration: none;color:#2e94de">stmikes.utoronto.ca</a>
+                                            <br>
+                                            Facebook: <a href="https://www.facebook.com/USMCUofT/" style="text-decoration: none;color:#2e94de">facebook.com/uStMikes/</a>
+                                            <br>
+                                            Twitter: <a href="https://twitter.com/uStMikes" style="text-decoration: none;color:#2e94de">twitter.com/uStMikes</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </th>
+                        <!-- Column : END -->
+                    </table>
+                </td> 
+            </tr>
+            <!-- 1 Column Text + Button : END -->
+	        <!-- Thumbnail Left, Text Right : BEGIN -->
+	        <tr>              
+                <td dir="ltr" width="100%" style="padding: 30px 10px; background-color: #ffffff;">
+	                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                    <tr>
+	                        <!-- Column : BEGIN -->
+	                        <th width="55%" style="vertical-align: top;" class="stack-column-center">
+	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                                <tr>
+                                        <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; text-align: left;" class="center-on-narrow">
+                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="height: auto;text-align: center;">
+                                                <tr>
+                                                    <td>
+                                                        <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/05/resource-1.png" width="320" height="auto" alt="alt_text" border="0" style="width: 100%;max-width: 320px;height: auto;background: #dddddd;font-family: sans-serif;font-size: 15px;line-height: 15px;color: #555555;">
+                                                    </td>
+                                                </tr>
+                                            </table>
+	                                    </td>
+	                                </tr>
+	                            </table>
+	                        </th>
+	                        <!-- Column : END -->
+	                        <!-- Column : BEGIN -->
+	                        <th width="45%" style="vertical-align: top;padding: 0 30px 30px 0" class="stack-column-center">
+	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                                <tr>
+                                        <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px;  text-align: left;" class="center-on-narrow">
+                                            <p style="margin: 0 0 10px 0;">
+                                                <span style="background-color: #ffffff; color: #002a5c;">
+                                                    <strong>InsightOut Blog Series</strong>
+                                                    <br/><br/>
+                                                    Wondering how alumni, students, faculty, and staff are responding to the COVID-19 crisis? Check out <a href="https://stmikes.utoronto.ca/news_topics/insightout/" style="text-decoration: none;color:#2e94de">InsightOut</a>, St. Mike’s new multimedia blog, to gain insights into everything from ethical issues to personal experiences viewed in light of the pandemic. 
+                                                    <br/><br/>
+                                                    If you are interested in submitting a blog piece for consideration, please contact Communications Officer Catherine Mulroney at <a href="mailto:catherine.mulroney@utoronto.ca" style="text-decoration: none;color:#2e94de">catherine.mulroney@utoronto.ca</a> for more details. We’d love to hear from you!
+                                                    <br/>
+                                                  </span>
+                                            </p>
+	                                    </td>
+	                                </tr>
+	                            </table>
+	                        </th>
+	                        <!-- Column : END -->
+	                    </tr>
+                    </table>
+	            </td>
+	        </tr>
+            <!-- Thumbnail Left, Text Right : END -->
+	        <!-- Thumbnail Left, Text Right : BEGIN -->
+	        <tr>              
+                <td dir="ltr" width="100%" style="padding: 30px 10px; background-color: #ffffff;">
+	                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                    <tr>
+	                        <!-- Column : BEGIN -->
+	                        <th width="55%" style="vertical-align: top;" class="stack-column-center">
+	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                                <tr>
+                                        <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; text-align: left;" class="center-on-narrow">
+                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="height: auto;text-align: center;">
+                                                <tr>
+                                                    <td>
+                                                        <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/05/resource-2.png" width="320" height="auto" alt="alt_text" border="0" style="width: 100%;max-width: 320px;height: auto;background: #dddddd;font-family: sans-serif;font-size: 15px;line-height: 15px;color: #555555;">
+                                                    </td>
+                                                </tr>
+                                            </table>
+	                                    </td>
+	                                </tr>
+	                            </table>
+	                        </th>
+	                        <!-- Column : END -->
+	                        <!-- Column : BEGIN -->
+	                        <th width="45%" style="vertical-align: top;padding: 0 30px 30px 0" class="stack-column-center">
+	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                                <tr>
+                                        <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px;  text-align: left;" class="center-on-narrow">
+                                            <p style="margin: 0 0 10px 0;">
+                                                <span style="background-color: #ffffff; color: #002a5c;">
+                                                    <strong>UofT Alumni Hub</strong>
+                                                    <br/><br/>
+                                                    Our lives may feel on hold right now but that doesn’t mean we can’t keep learning and exploring. Sought-after experts from U of T faculties, departments and across our community have answered the call with these resources for the times. Check out this online hub often for workouts, webinars, insights, events and more:
+                                                    <br/><br/>
+                                                    <a href="https://alumni.utoronto.ca/stayhome" style="text-decoration: none;color:#2e94de">alumni.utoronto.ca/stayhome</a>
+                                                    <br/>
+                                                  </span>
+                                            </p>
+	                                    </td>
+	                                </tr>
+	                            </table>
+	                        </th>
+	                        <!-- Column : END -->
+	                    </tr>
+                    </table>
+	            </td>
+	        </tr>
+            <!-- Thumbnail Left, Text Right : END -->
+            <!-- Staying Connected While Apart  : END -->      
+
+
+            <!-- Alumni Bingo Card : BEGIN -->
+            <!-- Section Heading : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 20px 30px 0 30px;">
+                    <hr style="mso-margin-bottom-alt: 10px;">
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #ffffff;padding: 0px 30px 0 30px;text-align: center;">
+                    <!-- <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto 8px !important;"> -->
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" >
+                        <tr>
+                            <td style="background-color: #002A5C;padding: 0 15px;text-align: center">
+                                <h2 style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 26px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 25px;margin-top: 25px; mso-margin-bottom-alt: 25px;margin-bottom: 25px;">
+                                    Alumni Bingo Card 
+                                </h2>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px 0 30px;">
+                    <hr>
+                </td>
+            </tr>
+            <!-- Section Heading : END -->
+            <!-- 1 Column Text + Button : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px;">
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                        <!-- Column : BEGIN -->
+                        <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: center;" class="center-on-narrow">
+                                        <p class="one-column-text" style="mso-margin-top-alt: 15px;margin-top: 15px;">
+                                            We invite you to join with classmates and friends to compare and 
+                                            <br>
+                                            share your memories with this bingo game.
+                                            <br>
+                                        </p>
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="550" style="width: 550px; height: auto;">
+                                            <tr>
+                                                <td>
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/05/bingo.png" width="550" style="border: none !important;padding-top: 15px;width: 550px;" alt="David Sylvester virtual champagne toast video thumbnail" class="img-full">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <br>
+                                    </td>
+                                </tr>
+                            </table>
+                        </th>
+                        <!-- Column : END -->
+                    </table>
+                </td> 
+            </tr>
+            <!-- 1 Column Text + Button : END -->
+            <!-- Alumni Bingo Card : END -->    
+
+
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="700" style="margin: auto;max-width: 700px;background: #002A5C;" class="email-container"> -->
+            <tr>
+                <td style="text-align: center;padding:0px;mso-padding-alt:10px;background-color: #ffffff" align="center">
+                </td>
+            </tr>
+            <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;background-color: #002A5C;">
+                    <br><br>
+                    <strong>FOLLOW USMC</strong>
+                    <br><br>
+                        <table>
+                            <tr>
+                                <td>
+                                <a href="https://www.facebook.com/USMCUofT/" target="_blank" style="padding: 0 5px;">
+                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Facebook.png" width="60" height="60" alt="icon">
+                                    </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+                                    <a href="https://ca.linkedin.com/school/university-of-toronto---university-of-st.-michael's-college/" target="_blank" style="padding: 0 5px;">
+                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/linkedin.png" width="60" height="60" alt="icon">
+                                    </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+                                    <a href="https://twitter.com/uStMikes/" target="_blank" style="padding: 0 5px;">
+                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/twitter.png" width="60" height="60" alt="icon">
+                                    </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+                                </td>
+                            </tr>
+                        </table>
+                    <br><br>
+                    <strong>University of St. Michael's College</strong>
+                    <br>
+                    <strong>Advancement and Alumni Affairs</strong>
+                    <br>
+                    81 St. Mary Street
+                    <br>
+                    Toronto, Ontario
+                    <br>
+                    M5S 1J4 
+                    <br><br>
+                    Give: <a href="https://stmikes.utoronto.ca/giving/" style="color: #13778d;">stmikes.utoronto.ca/alumni/giving</a>
+                    <br>
+                    E-mail: <a href="mailto:smc.alumniaffairs@utoronto.ca" style="color: #13778d;">smc.alumniaffairs@utoronto.ca</a>
+                    <br>
+                    Website: <a href="https://stmikes.utoronto.ca/alumni/" style="color: #13778d;">stmikes.utoronto.ca/alumni</a>
+                    <br><br><br>
+                    This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #13778d;">##SubscriberEmail##</a>
+                    <br>
+                    <a href="##TrackClick##https://secureca.imodules.com/s/731/index_clean.aspx?sid=731&gid=1&pgid=1363&cid=2576&post_id=0" style="color: #13778d; text-decoration: underline;">Update contact information</a>
+                    <br>
+                    <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_SMC_ALL_ALL_NEWSLETTERS_INITIAL_##OptionalParameter3##%20St%20Michaels%20College%20Alumni%20Newsletter" style="color: #13778d; text-decoration: underline;">Opt out of future messages</a>
+                    <br>
+                    <hr style="max-width: 660px; margin: 30px 0 15px 0;" width="660">
+                    <span style="font-size: 10px">
+                        The University&nbsp;of&nbsp;Toronto respects your privacy. We do not rent, trade or sell our mailing lists.
+                        <br>
+                        Copyright &copy; 2020 University&nbsp;of&nbsp;Toronto. All rights reserved. This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #13778d;">##SubscriberEmail##</a>
+                    </span>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Email Footer : END -->
+
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>

@@ -1,0 +1,14 @@
+2019-20_DUA_Reunion_ALR_ReunionInvitations_Initial_Alumni Reunion Established Alumni Registration - 39935_20200306
+
+Image Urls
+https://adcomms.utoronto.ca/email-templates/reunion/2020/03/kids_passport_final.jpg
+https://adcomms.utoronto.ca/email-templates/reunion/2020/03/bbq_final.jpg
+https://adcomms.utoronto.ca/email-templates/reunion/2020/03/sfd_established_final.jpg
+
+Events with TagR
+http://my.alumni.utoronto.ca/s/731/18/interior.aspx?sid=731&gid=1&pgid=14888&tags=passport&utm_source=DUA&utm_medium=Email&utm_campaign=ReunionRegistration&consID=##OptionalParameter3##&utm_content=established
+http://my.alumni.utoronto.ca/s/731/18/interior.aspx?sid=731&gid=1&pgid=14888&tags=BBQ&utm_source=DUA&utm_medium=Email&utm_campaign=ReunionRegistration&consID=##OptionalParameter3##&utm_content=established
+http://my.alumni.utoronto.ca/s/731/18/interior.aspx?sid=731&gid=1&pgid=14888&tags=stressfreedegree&utm_source=DUA&utm_medium=Email&utm_campaign=ReunionRegistration&consID=##OptionalParameter3##&utm_content=established
+
+Unsubscribe
+mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%20DUA_ALL_AR_Invitations_##OptionalParameter3##%20|%20REUNION20-REGISTRATION-EMAIL-ESTABLISHED

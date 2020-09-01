@@ -1,0 +1,614 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title></title>
+    <style>
+    figcaption { font-size: 11px;}
+    @media only screen and (min-width: 480px) and (max-width: 599px) {
+    table[class=outer] { width: 480px !important;}
+    td[class=outer] { width: 480px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 440px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 440px !important;}
+    td[class=inner] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 400px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 480px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 440px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 400px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 480px !important; height: auto !important;}
+    img[class=img-rect] { width: 440px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 285px !important; height: auto !important;}
+    strong[class=banner] { font-size: 28px !important;}
+    .section-heading { width: 440px !important; }
+    .section-heading td { width: 440px !important; }
+    .full-story { width: 440px !important; }
+    .image-block img { width: 440px !important; height: auto !important; }
+    .button { width: 440px !important; }
+    .two-col-section { width: 440px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 440px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    @media only screen and (min-width: 360px) and (max-width: 479px) {
+    table[class=outer] { width: 360px !important;}
+    td[class=outer] { width: 360px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 320px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 320px !important;}
+    td[class=inner] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 300px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 360px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 320px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 300px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 360px !important; height: auto !important;}
+    img[class=img-rect] { width: 320px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 260px !important; height: auto !important;}
+    strong[class=banner] { font-size: 22px !important;}
+    .section-heading { width: 320px !important; }
+    .section-heading td { width: 320px !important; }
+    .image-block img { width: 320px !important; height: auto !important; }
+    .button { width: 320px !important; }
+    .two-col-section { width: 320px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 320px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    @media only screen and (max-width: 359px) {
+    table[class=outer] { width: 320px !important;}
+    td[class=outer] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 280px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 280px !important;}
+    td[class=inner] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 260px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 280px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 260px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 320px !important; height: auto !important;}
+    img[class=img-rect] { width: 280px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 240px !important; height: auto !important;}
+    strong[class=banner] { font-size: 20px !important;}
+    .section-heading { width: 280px !important; }
+    .section-heading td { width: 280px !important; }
+    .full-story { width: 280px !important; }
+    .image-block img { width: 280px !important; height: auto !important; }
+    .button { width: 280px !important; }
+    .two-col-section { width: 280px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 280px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0;">
+    <div style="display:none;font-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">
+      Today would have been the start of your class reunion weekend at St Mike’s.
+    </div>
+    <table cellpadding="0" cellspacing="0" width="100%" style="font-family: Arial;font-size: 14px;">
+      <tr>
+        <td width="100%" align="center" valign="top">
+        <!-- end of top portion of outer table -->
+        <!-- header section (preheader text, web version link, banner) -->
+        <table cellpadding="0" cellspacing="0" width="650" class="outer" align="center" style="width:650px">
+            <tr>
+              <td width="600" valign="top" style="text-align: center; padding-bottom: 15px; padding-top: 10px; background-color: #ffffff;" class="content-outer">
+                <a href="##HTMLNewsletterURL##" style="text-decoration: none !important; color: #000000; font-size: 12px;"><strong>Click to view this email online</strong></a>
+              </td>
+            </tr>
+
+            <!-- Banner Logo : BEGIN -->
+            <tr>
+              <td style="text-align: center; padding-top: 20px; padding-bottom: 20px;width:600px;" class="inner--centered" width="600" valign="top">
+                <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/05/logo.png" style="border: none !important;width: 600px" width="600" alt="St. Michael's College, University of Toronto" class="img-full" />
+              </td>
+            </tr>
+            <!-- Banner Logo : END -->
+        </table>
+        <!-- end of header section -->
+        <!-- main featured story -->
+        <table cellpadding="0" cellspacing="0" width="650" class="outer" align="center" style="width: 650px;">
+          <tr>
+            <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size: 24px; padding:10px 0px 10px 3px;color:#ffffff; background-color:#002A5C;">
+              <strong>Welcome to St. Mike’s<br/>
+                Virtual Alumni Reunion 2020
+                </strong>
+            </td>
+          </tr>
+          <!-- Story Image : BEGIN -->
+          <tr><td>
+          <table width="100%" align="center" valign="top" style="text-align: center;">
+          <tr>
+            <td style="text-align: center;">
+              <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/05/mainstory-image.png" style="border: none !important; width: 550px;padding-top: 15px;" width="550" alt="Yearbook pages from 1970" class="img-full" />
+              <br/>
+              <figcaption style="text-align: center;">Yearbook pages from 1970</figcaption>
+            </td>
+          </tr>
+        </table>
+      </td>
+        </tr>
+          <!-- Story Image : END -->
+          <tr>
+            <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff; text-align:center; line-height:15px;font-size:7px;">&nbsp;</td>
+          </tr>
+          <!-- begin of story -->
+          <tr>
+            <td width="550" valign="top" class="content-outer" style="text-align: left;  padding: 15px 25px 10px 25px; line-height: 20px; background-color: #ffffff; color: #002a5c;">
+              Dear Alumni friends,
+              <br/><br/>
+              Today would have been the start of your class reunion weekend at St Mike’s. You would have traveled from near and far, excited to visit with friends you haven’t seen in a while or to enjoy a weekend of events with classmates you have stayed close to since your time at SMC. My colleagues and I would be anxiously awaiting your arrival, checking and double checking our lists, making sure everything was set up perfectly for all of you 
+              <br/><br/>
+              We are so sorry you cannot be with us in person this year. But please know your anniversary reunion is not being cancelled – but rather is being postponed. We look forward to celebrating with you and honouring your milestone anniversaries in person when we can gather again. 
+              <br/><br/>
+              In the meantime, we do not want this weekend to go by without connecting with you and sharing reunion updates, activities and virtual events through this reunion newsletter.  We hope you will connect with us by sharing your memories and stories. 
+              <br/><br/>
+              We will be thinking about you – and celebrating you - all weekend!
+              <br/><br/>
+              Happy Anniversary!
+              <br/><br/>
+              Kathryn Elton
+              <br/>
+              Chief Advancement Officer
+              <br/>
+              416-926-7261, <a href="mailto:kathryn.elton@utoronto.ca" style="text-decoration: none;color:#2e94de">kathryn.elton@utoronto.ca</a>
+              <br><br>
+              <span style="font-size: 12px;line-height:13px;"><strong>Advancement and Alumni Team:</strong><br/>
+              Brittany Davila, Senior Manager Alumni: 416-926-7260, <a href="mailto:brittany.davila@utoronto.ca" style="text-decoration: none;color:#2e94de">brittany.davila@utoronto.ca</a><br/>
+              Matt Doyle, Advancement Officer, Special Projects: 416-926-2331, <a href="mailto:smcdevcrd@utoronto.ca" style="text-decoration: none;color:#2e94de">smcdevcrd@utoronto.ca</a><br/>
+              Klim Khomenko, Senior Development Manager: 416-926-7279, <a href="mailto:klim.khomenko@utoronto.ca" style="text-decoration: none;color:#2e94de">klim.khomenko@utoronto.ca</a><br/>
+              Betty Noakes, Advancement Associate, Stewardship: 416-926-2251, <a href="mailto:betty.noakes@utoronto.ca" style="text-decoration: none;color:#2e94de">betty.noakes@utoronto.ca</a><br/>
+              Ken Schnell, Advancement Manager, Annual Campaigns: 416-926-7281, <a href="mailto:kenneth.schnell@utoronto.ca" style="text-decoration: none;color:#2e94de">kenneth.schnell@utoronto.ca</a><br/>
+              </span>
+            </td>
+          </tr>
+        </table>
+        <!-- end of story -->
+                   
+
+        <!-- News Update Section : BEGIN -->
+        <table cellpadding="0" cellspacing="0" width="650" class="outer" align="center" style="width:650px;">
+            <!-- Section Header : BEGIN -->
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff; text-align:center; line-height:7px;font-size:7px; border-top: 1px solid #002A5C;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:24px; padding:10px 0px 10px 3px;color:#ffffff; background-color:#002A5C;">
+                <strong>Congratulations and Thank You from<br/>
+                  President David Sylvester
+                  </strong>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <!-- Section Header : END -->
+            <!-- Video Thumbnail Image : BEGIN -->
+            <tr>
+              <td style="text-align: center;">
+                <a href="https://www.youtube.com/watch?v=R3BNjymKL9Q&feature=youtu.be">
+                  <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/05/videothumbnail.png" style="border: none !important;padding-top: 15px;" alt="David Sylvester virtual champagne toast video thumbnail" class="img-full" />
+                </a>
+              </td>
+            </tr>
+            <!-- Video Thumbnail Image : END -->
+            <!-- Description : BEGIN -->
+            <tr>
+              <td width="550" valign="top" class="content-outer" style="text-align: left; padding: 20px 15px; line-height: 20px; background-color: #ffffff; color: #002a5c;">
+                The Alumni Association Annual General Meeting held on Friday evening of alumni reunion includes a year-end update from our President and a champagne toast to alumni. This year David Sylvester is sharing his update virtually through this brief video above. Here's to you! (We wish we could accompany this with a glass of champagne or the beverage of your choice.)
+              </td>
+            </tr>
+            <!-- Description : END -->
+          </table>
+
+
+          <table cellpadding="0" cellspacing="0" width="650" class="outer" align="center" style="width:650px;">
+            <!-- Section Header : BEGIN -->
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff; text-align:center; line-height:7px;font-size:7px; border-top: 1px solid #002A5C;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:24px; padding:10px 0px 10px 3px; color:#ffffff; background-color:#002A5C;">
+                <strong>Send us your memories from SMC</strong>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:700px;color:#fff; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <!-- Section Header : END -->
+            <!-- Memory Photos : BEGIN -->
+              <tr>
+                <td style="text-align: center;padding-top: 25px;">
+                  <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/05/memory-smc-1.png" style="border: none !important;width: 173px" width="173"  alt="Photos of St. Michael's College Memory One" />
+                  <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/05/memory-smc-2.png" style="border: none !important;width: 200px" width="200"  alt="Photos of St. Michael's College Memory Two" />
+                  <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/05/memory-smc-3.png" style="border: none !important;width: 165px" width="165"  alt="Photos of St. Michael's College Memory Three" />
+                </td>
+              </tr>
+            <!-- Memory Photos : END -->
+            <!-- Description : BEGIN -->
+            <tr>
+              <td width="550" valign="top" class="content-outer" style="text-align: left;  padding: 20px 15px; line-height: 20px; background-color: #ffffff; color: #002a5c;">
+                Did you meet your partner or your closest friends at St. Mike’s? Do you have a fond memory of a special professor or time on campus? Do you have photos from your SMC days? If so, please share them! Please submit your memories using the link below. These memories and photos will be shared on our social media, in St. Michael’s magazine, and, hopefully, in a memory book if we have enough submissions. 
+                <br/><br/>
+                Memory submission form: <a href="https://stmikes.utoronto.ca/alumnireunion/alumni-memories-form/" style="text-decoration: none;color:#2e94de">https://stmikes.utoronto.ca/alumnireunion/alumni-memories-form/</a>
+                <br/><br/>
+                While you take a jog down memory lane, please click <a href="https://docs.google.com/presentation/d/1jHgsBqPVEOlv2MRCPkCxBXCEF_yoQsL0RgTHZztJVw0/edit?usp=sharing">here</a> to enjoy a slideshow created from your last reunion weekend in 2015.
+              </td>
+            </tr>
+            <!-- Description : END -->
+          </table>
+
+
+          <table cellpadding="0" cellspacing="0" width="650" class="outer" align="center" style="width:650px;">
+            <!-- Section Header : BEGIN -->
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff; text-align:center; line-height:7px;font-size:7px; border-top: 1px solid #002A5C;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:24px; padding:10px 0px 10px 3px; color:#ffffff; background-color:#002A5C;">
+                <strong>Alumni Bingo</strong>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <!-- Section Header : END -->
+            <!-- Description : BEGIN -->
+            <td width="550" valign="top" class="content-outer" style="text-align: center;  padding: 20px 15px; line-height: 20px; background-color: #ffffff; color: #002a5c;">
+              We invite you to join with classmates and friends to compare and share your memories with this bingo game.
+            </td>
+            <!-- Description : END -->
+            <tr>
+              <td style="text-align:center;" align="center">
+                <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/05/bingo.png" style="border: none !important;padding-bottom: 20px;" alt="Picture of St. Michaeal's Bingo" />
+              </td>
+            </tr>
+          </table>
+
+          <!-- Section : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="650" class="outer" align="center" style="width:650px;">
+            <!-- Section Header : BEGIN -->
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff; text-align:center; line-height:7px;font-size:7px; border-top: 1px solid #002A5C;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:24px; padding:10px 0px 10px 3px; color:#ffffff; background-color:#002A5C;">
+                <strong>Virtual Events</strong>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <!-- Section Header : END -->
+            <!-- Description : BEGIN -->
+            <td width="550" valign="top" class="content-outer" style="text-align: center;  padding: 20px 15px; line-height: 20px; background-color: #ffffff; color: #002a5c;">
+              Paolo Granata, Assistant Professor Book and Media Studies, was looking forward to presenting a talk about Marshall McLuhan at our Saturday lecture this weekend. During this time of physical distancing, Paolo has launched a weekly webinar series to keep our community connected. We are sharing it with you with the best wishes.
+            </td>
+            <!-- Description : END -->
+
+            <!-- Even Columns : BEGIN -->
+            <tr>
+              <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                  <tr>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td width="300" style="width: 300px;">
+                            <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/05/virtual-event-1.png" style="border: none !important;width: 300px" width="300" alt="Photos of St. Michael's College Memory One" />
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                    <td class="divider" width="15"></td>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td>
+                            <span style="background-color: #ffffff; color: #002a5c;">
+                              <strong>Webinar Series hosted by
+                              <br/>
+                              Paolo Granata
+                              </strong>
+                              <br/><br/>
+                              Hosted by Paolo Granata, the McLuhan Institute's Monday Night Webinars bring back the spirit of Marshall McLuhan's famous Monday Night Seminars for the global village in the era of COVID19. 
+                              <br/><br/>
+                              The Monday Night Webinars are an opportunity for an open discussion, a creative and respectful dialogue for making sense of our contemporary media landscape and for releasing the energy of new and outrageous ideas, innovative thought, and transformative understanding and action in response to the current social scenario. 
+                              <br/><br/>
+                              Here is the link to the latest webinar that took place on Monday, May 25:
+                              <br/>
+                              <a href="https://www.youtube.com/watch?v=mbd74FEmyDU" style="text-decoration: none;color:#2e94de">https://www.youtube.com/watch?v=mbd74FEmyDU</a>
+                            </span>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Even Columns : END -->
+
+            <!-- Description : BEGIN -->
+            <td width="550" valign="top" class="content-outer" style="text-align: center;  padding: 20px 15px; line-height: 20px; background-color: #ffffff; color: #002a5c;">
+              Sunday mornings at Alumni Reunion start with a special Alumni Mass at St. Basil’s followed by a brunch in the Canada Room. This year we invite you to attend Mass online.
+            </td>
+            <!-- Description : END -->
+            <!-- Even Columns : BEGIN -->
+            <tr>
+              <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                  <tr>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td width="300" style="width: 300px;">
+                            <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/05/virtual-event-2.png" style="border: none !important;width: 300px" width="300" alt="Photos of St. Michael's College Memory One" />
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                    <td class="divider" width="15"></td>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td>
+                            <span style="background-color: #ffffff; color: #002a5c;">
+                              <strong>Mass at St. Michael’s Cathedral</strong>
+                              <br/><br/>
+                              In light of the cancellation of all public Masses in the Archdiocese of Toronto, Mass is being celebrated daily via livestream from St. Michael's Cathedral Basilica in Toronto. To watch live on Sunday at 10:00 a.m. ET: please visit <a href="https://www.stmichaelscathedral.com/live" style="text-decoration: none;color:#2e94de">www.stmichaelscathedral.com/live</a>
+                            </span>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Even Columns : END -->
+
+          </table>
+          <!-- Section : END -->
+
+          <!-- Section : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="650" class="outer" align="center" style="width:650px;">
+            <!-- Section Header : BEGIN -->
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff; text-align:center; line-height:7px;font-size:7px; border-top: 1px solid #002A5C;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:24px; padding:10px 0px 10px 3px;color:#ffffff; background-color:#002A5C;">
+                <strong>More great links and resources</strong>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <!-- Section Header : END -->
+            <!-- Description : BEGIN -->
+            <td width="550" valign="top" class="content-outer" style="text-align: center;  padding: 20px 15px; line-height: 20px; background-color: #ffffff; color: #002a5c;">
+              To stay up to date with what is going on at St. Mike’s please visit our website, check your email, and follow our social media outlets.
+              <br/><br/>
+              Website: <a href="https://www.stmichaelscathedral.com/live" style="color:#2e94de">stmikes.utoronto.ca</a>
+              <br/>
+              Facebook: <a href="https://www.stmichaelscathedral.com/live" style="color:#2e94de">https://www.facebook.com/uStMikes/</a>
+              <br/>
+              Twitter: <a href="https://www.stmichaelscathedral.com/live" style="color:#2e94de">https://twitter.com/uStMikes</a>
+              <br/><br/>
+              Here are some of the resources you will find.
+            </td>
+            <!-- Description : END -->
+
+            <!-- Even Columns : BEGIN -->
+            <tr>
+              <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                  <tr>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td width="300" style="width: 300px;">
+                            <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/05/resource-1.png" style="border: none !important;width: 300px" width="300" alt="Photos of St. Michael's College Memory One" />
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                    <td class="divider" width="15"></td>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td>
+                            <span style="background-color: #ffffff; color: #002a5c;">
+                              <strong>InsightOut Blog Series</strong>
+                              <br/><br/>
+                              Wondering how alumni, students, faculty, and staff are responding to the COVID-19 crisis? Check out InsightOut, St. Mike’s new multimedia blog, to gain insights into everything from ethical issues to personal experiences viewed in light of the pandemic. If you are interested in submitting a blog piece for consideration, please contact Communications Officer Catherine Mulroney at <a href="mailto:Catherine.mulroney@utoronto.ca" style="text-decoration: none;color:#2e94de">Catherine.mulroney@utoronto.ca</a> for more details. We’d love to hear from you!
+                              <br/><br/>
+                              Check out the latest submission by Grace McSorley (USMC Class of 1995):
+                              <br/>
+                              <a href="https://stmikes.utoronto.ca/news/insightout-a-virtual-check-in-with-classmates/" style="text-decoration: none;color:#2e94de">https://stmikes.utoronto.ca/news/insightout-a-virtual-check-in-with-classmates/</a>
+                            </span>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Even Columns : END -->
+
+            <!-- Even Columns : BEGIN -->
+            <tr>
+              <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                  <tr>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td width="300" style="width: 300px;">
+                            <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/05/resource-2.png" style="border: none !important;width: 300px" width="300" alt="Photos of St. Michael's College Memory One" />
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                    <td class="divider" width="15"></td>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td>
+                            <span style="background-color: #ffffff; color: #002a5c;">
+                              <strong>UofT Alumni Hub</strong>
+                              <br/><br/>
+                              Our lives may feel on hold right now but that doesn’t mean we can’t keep learning and exploring. Sought-after experts from U of T faculties, departments and across our community have answered the call with these resources for the times. Check out this online hub often for workouts, webinars, insights, events and more:
+                              <br/><br/>
+                              <a href="https://alumni.utoronto.ca/stayhome" style="text-decoration: none;color:#2e94de">https://alumni.utoronto.ca/stayhome</a>
+                            </span>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Even Columns : END -->
+
+            <!-- Description : BEGIN -->
+            <tr>
+              <td width="550" valign="top" class="content-outer" style="text-align: center; padding: 20px 15px; line-height: 20px; background-color: #ffffff; color: #002a5c;">
+                Thank you for joining us for this virtual reunion celebration. 
+                <br/>
+                We look forward to seeing you in person soon!
+              </td>
+            </tr>
+            <!-- Description : END -->
+
+          </table>
+          <!-- Section : END -->
+    <!-- News Update Section : END -->
+
+
+    <!-- Footer Section: BEGIN -->
+          <!-- social media -->
+          <table cellpadding="0" cellspacing="0" width="650" class="outer" align="center">
+            <tr>
+              <td style="color:#ffffff;background-color: #113264;padding-left: 25px;"><strong>Follow USMC</strong></td>
+              <td width="600" height="45" align="center" style="background-color: #113264;width: 600px; height: 45px;">
+                <table cellpadding="0" cellspacing="0" width="200" style="padding-left:50px">
+                  <tr>
+                    <td style="width: 40px;">
+                      <a href="http://my.alumni.utoronto.ca/redirect.aspx?linkID=19340&eid=648820" style="border:0 !important;">
+                        <img src="https://adcomms.utoronto.ca/icons/facebook-icon-blue.png" width="32" height="32"/>
+                      </a>
+                    </td>
+                    <td style="width: 40px;">
+                      <a href="https://ca.linkedin.com/school/university-of-toronto---university-of-st.-michael's-college/" style="border:0 !important;">
+                        <img src="https://adcomms.utoronto.ca/icons/linkedin-icon-blue.png" width="32" height="32" />
+                      </a>
+                    </td>
+                    <td style="width: 40px;">
+                      <a href="https://twitter.com/uStMikes/" style="border:0 !important;">
+                        <img src="https://adcomms.utoronto.ca/icons/twitter-icon-blue.png" width="32" height="32" />
+                      </a>
+                    </td>
+                    <td></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr><td width="600" align="center" height="10" style="background-color: #ffffff;" class="outer"></td></tr>
+          </table>
+          <!-- end of social media -->
+
+          <!-- footer -->
+          <table cellspacing="0" cellpadding="0" width="650" class="outer" align="center">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff; text-align:center; line-height:7px;font-size:7px; border-top: 1px solid #002A5C;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td width="550" style="background-color: #ffffff; padding: 30px 25px;" valign="top" class="content-outer">
+                <table width="550" cellspacing="0" cellpadding="0" class="inner">
+                  <tr>
+                    <td style="line-height:16px; text-align: left; font-size: 12px; font-family: arial, helvetica, sans-serif; padding-bottom: 10px;" valign="top" class="inner--centered">
+                      <strong>
+                      University of St. Michael's College 
+                      <br/>
+                      Office of University Advancement
+                      </strong> <br />
+                      81 St. Mary Street<br />
+                      Toronto, Ontario<br/>
+                      M5S 1J4<br />
+                    </td>
+                    <td style="line-height:16px; text-align: left; font-size: 12px; font-family: arial, helvetica, sans-serif; padding-left:110px;padding-bottom: 20px;" valign="top" class="inner--centered">
+                      <a href="##TrackClick##https://secureca.imodules.com/s/731/index_clean.aspx?sid=731&gid=1&pgid=1363&cid=2576&post_id=0" style="color: #005cc9; text-decoration: none;">Update contact information</a><br />
+                      e-mail: <a style="color:#000000;" href="mailto:reception@physics.utoronto.ca">reception@physics.utoronto.ca</a><br />
+                      web: <a style="color:#000000;" href="https://www.physics.utoronto.ca/">https://www.physics.utoronto.ca/</a><br />
+                      give: <a style="color:#000000;" href="https://donate.utoronto.ca/give/show/49">https://donate.utoronto.ca/give/show/49</a>
+                    </td>
+                  </tr>
+
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- end of footer -->
+
+          <!-- copyright area -->
+          <table width="600" cellpadding="0" cellspacing="0" class="outer" align="center">
+            <tr>
+              <td style="text-align: center; font-size: 11px; font-family: arial, helvetica;background-color: #ffffff; color: #777777; padding: 10px 60px 20px 60px; line-height: 14px;" valign="top" width="600" class="content">
+                The University&nbsp;of&nbsp;Toronto respects your privacy.
+                We do not rent, trade or sell our mailing lists.
+                Copyright &copy; 2020 University&nbsp;of&nbsp;Toronto. All rights reserved. 
+                <br/><br/>
+                This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #005cc9;">##SubscriberEmail##</a>
+                <br />
+                To opt out of future messages <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_SMC_ALL_ALL_NEWSLETTERS_##OptionalParameter3##%20St%20Michaels%20Virtual%20Alumni%20Reunion%202020" style="color: #005cc9; text-decoration: none;">contact us</a>.
+                <br/>
+                ##OptionalParameter3##<br />
+                ##TrackImpression##
+              </td>
+            </tr>
+          </table>
+          <!-- end of copyright area -->
+
+        <!-- Footer Section: END -->
+        </td>
+      </tr>
+    </table>
+    </body>
+  </html>

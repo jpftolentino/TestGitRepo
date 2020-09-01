@@ -1,0 +1,258 @@
+
+BODY
+{
+    BACKGROUND-COLOR: #808080;
+    FONT-FAMILY: Arial,Verdana, Helvetica, sans-serif;
+    FONT-SIZE: .8em;
+    FONT-WEIGHT: normal;
+    LETTER-SPACING: normal;
+    TEXT-TRANSFORM: none;
+}
+
+
+A:link	{	
+	text-decoration:	underline;
+	color:	#000000;
+	}	
+		
+A:visited	{	
+	text-decoration:	underline;
+	color:	#000000;
+	}	
+		
+A:active	{	
+	text-decoration:	none;
+	color:	#333399;
+	}	
+		
+A:hover	{	
+	text-decoration:	underline;
+	color:	#0C3E58;
+	}
+	
+
+TEXTAREA {
+	white-space: pre-wrap;
+    background: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;    
+	color: #525252;
+	border: 2px solid #525252;
+	padding: 7px;
+    outline: none;
+    border-color: #525252;
+    -moz-box-shadow: 3px 3px 2px   #525252;
+    -webkit-box-shadow: 3px 3px 2px   #525252;
+    box-shadow: 3px 3px 2px  #525252;  
+}
+TEXTAREA:hover {
+    outline: none;
+    border-color: #B93232;
+    -moz-box-shadow: 3px 3px 2px   #545454;
+    -webkit-box-shadow: 3px 3px 2px   #545454;
+    box-shadow: 3px 3px 2px  #545454;   
+	white-space: pre-wrap;
+}
+TEXTAREA:focus {
+    outline: none;
+    border-color: #B93232;
+    -moz-box-shadow: 3px 3px 2px   #545454;
+    -webkit-box-shadow: 3px 3px 2px   #545454;
+    box-shadow: 3px 3px 2px  #545454;   
+	white-space: pre-wrap;
+}
+INPUT {
+    background: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;    
+	color: #525252;
+	border: 2px solid #525252;
+	padding: 4px;
+    outline: none;
+    border-color: #525252;
+    -moz-box-shadow: 2px 2px 2px   #525252;
+    -webkit-box-shadow: 2px 2px 2px   #525252;
+    box-shadow: 2px 2px 2px  #525252;  
+}
+INPUT:hover {
+    outline: none;
+    border-color: #B93232;
+    -moz-box-shadow: 3px 3px 2px   #545454;
+    -webkit-box-shadow: 3px 3px 2px   #545454;
+    box-shadow: 3px 3px 2px  #545454;   
+}
+INPUT:focus {
+    outline: none;
+    border-color: #B93232;
+    -moz-box-shadow: 3px 3px 2px   #545454;
+    -webkit-box-shadow: 3px 3px 2px   #545454;
+    box-shadow: 3px 3px 2px  #545454;   
+}
+Select {
+    background: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;    
+	color: #525252;
+	border: 2px solid #525252;
+	padding: 4px;
+    outline: none;
+    border-color: #525252;
+    -moz-box-shadow: 3px 3px 2px   #525252;
+    -webkit-box-shadow: 3px 3px 2px   #525252;
+    box-shadow: 3px 3px 2px  #525252;  
+
+}
+Select:hover {
+    outline: none;
+    border-color: #B93232;
+    -moz-box-shadow: 3px 3px 2px   #545454;
+    -webkit-box-shadow: 3px 3px 2px   #545454;
+    box-shadow: 3px 3px 2px  #545454;   
+}
+Select:focus {
+    outline: none;
+    border-color: #B93232;
+    -moz-box-shadow: 3px 3px 2px   #545454;
+    -webkit-box-shadow: 3px 3px 2px   #545454;
+    box-shadow: 3px 3px 2px  #545454;   
+}
+
+
+.tablenavigationHeader {
+	border-width: 1px; 
+	background-color : #0C3E58 ; 
+	border-style: solid; 
+	border-color: #000000; }
+.tablenavigationTD {
+	border-width: 1px; 
+	background-color : #D7D7D7 ; 
+	border-style: solid; 
+	border-color: #D7D7D7;  }
+.tablenavigationTDRollover {
+	border-width: 1px; 
+	background-color : #FFFFFF ; 
+	border-style: solid; 
+	border-color: #000000;  }
+.tablenavigationSelectedTD {
+	border-width: 1px; 
+	background-color : #FFFFFF ; 
+	border-style: solid; 
+	border-color: #000000;  }
+.navigationlink {
+	color:#5C755E ; 
+	text-decoration:none}
+.fontnavigation {
+	font-family:arial,helvetica; 
+	font-size: 12px; 
+	color:#5C755E }
+
+.tableMain 
+{
+	border-width: 2px; 
+	background-color : #EEEEEE ; 
+	border-style: solid; 
+	border-collapse: collapse; 
+	border-color: #808080;
+	 }
+.tableMainHeaderTD {
+	border-width: 1px; 
+	background-color : #808080 ; 
+	border-style: solid; 
+	border-color: #808080;
+	 }
+.tableMainHeaderTD2 {
+	border-width: 1px; 
+	background-color : #CCD3D7 ; 
+	border-style: solid; 
+	border-color: #000000;
+	 }	 
+.tableMainHeaderFont {
+	color:	#FFFFFF;
+	font-family:Verdana,arial,helvetica; 
+	font-size: 12px;
+	 }	 	 	 
+.clsSubmitButtons
+{
+    
+   	    -moz-box-shadow: 3px 3px 2px   #525252;
+	    -webkit-box-shadow: 3px 3px 2px   #525252;
+	    box-shadow: 3px 3px 2px  #525252;          
+        background-color:#FFFFFF;
+        
+	    border : 3;
+	    border-width :thick  ;
+	    border-style : double;
+	    border-color : #A2BFE9;
+        
+        display:inline-block;
+        color:#666666;
+        font-family:Verdana;
+        font-size:14px;
+        font-weight:bold;
+        padding: 6px 12px;
+        text-decoration:none; 
+
+ 
+}
+.clsSubmitButtonsOver
+{
+   	    -moz-box-shadow: 3px 3px 2px   #525252;
+	    -webkit-box-shadow: 3px 3px 2px   #525252;
+	    box-shadow: 3px 3px 2px  #525252;          
+        background-color:#FFFFFF;
+        
+	    border : 3;
+	    border-width :thick  ;
+	    border-style : double;
+	    border-color : #B93232;
+        
+        display:inline-block;
+        color:#666666;
+        font-family:Verdana;
+        font-size:14px;
+        font-weight:bold;
+        padding:6px 12px;
+        text-decoration:none; 
+}
+.clsSearchButton
+{
+	border : 2;
+	border-width :medium  ;
+	border-style : double;
+	border-color : #A2BFE9;
+	padding: 2px 6px 2px 6px;
+	font : Arial, Helvetica, sans-serif;
+	color: #999999;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #EEEEEE;	
+}
+.clsSearchButtonOver
+{
+	border : 2;
+	border-width :medium  ;
+	border-style : double;
+	border-color : #A2BFE9;
+	padding: 2px 6px 2px 6px;
+	font : Arial, Helvetica, sans-serif;
+	color: #999999;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #EEEEEE;	
+}
+ 
+ 
+
+
+.TableDataGridClass tbody tr:hover { background:#A2BFE9;
+ border:1px solid #03476F;
+ color:#000000;
+}
+.TableDataGridClass tr { border:1px dotted gray;}
+
+.LabelText
+{
+    FONT-FAMILY: Arial,Verdana, Helvetica, sans-serif;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: normal;
+}

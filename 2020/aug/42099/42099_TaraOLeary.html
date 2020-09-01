@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+            display: none !important;
+            opacity: 0.01 !important;
+        }
+        /* If the above doesn't work, add a .g-img class to any image in question. */
+        img.g-img + div {
+            display: none !important;
+        }
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+      /* What it does: Hover styles for buttons */
+      .button-td,
+      .button-a {
+          transition: all 100ms ease-in;
+          border: none;
+      }
+      .button-td-primary:hover,
+      .button-a-primary:hover {
+          background: #5bb432 !important;
+          border-color: #5bb432 !important;
+      }
+
+      /* Media Queries */
+      @media screen and (max-width: 480px) {
+
+          /* What it does: Forces table cells into full-width rows. */
+          .stack-column,
+          .stack-column-center {
+              display: block !important;
+              width: 100% !important;
+              max-width: 100% !important;
+              direction: ltr !important;
+          }
+          /* And center justify these ones. */
+          .stack-column-center {
+              text-align: center !important;
+          }
+
+          /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+          .center-on-narrow {
+              text-align: center !important;
+              display: block !important;
+              margin-left: auto !important;
+              margin-right: auto !important;
+              float: none !important;
+          }
+          table.center-on-narrow {
+              display: inline-block !important;
+          }
+
+          /* What it does: Adjust typography on small screens to improve readability */
+          .email-container p {
+              font-size: 17px !important;
+          }
+      }
+
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+<!--
+  The email background color (#eeeeee) is defined in three places:
+  1. body tag: for most email clients
+  2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+  3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #eeeeee;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #eeeeee;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #eeeeee;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
+            The race is on to develop a vaccine for SARS-Cov-2 as one of the top solutions to defeat the global pandemic.
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+          &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!--
+            Set the email width. Defined in two places:
+            1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+            2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+            Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+        -->
+        <div style="max-width: 680px; margin: 0 auto;" class="email-container">
+            <!--[if mso]>
+            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+            <tr>
+            <td>
+            <![endif]-->
+
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+                <tr>
+                    <td style="padding: 10px 0; text-align: center; background: #ffffff; font-family: sans-serif;">
+                        <a href="##HTMLNewsletterURL##" style="text-decoration: none !important; color: #000000; font-size: 12px;"><strong>View this email online</strong></a>
+                    </td>
+                </tr>
+            </table>
+
+          <!-- Email Body : BEGIN -->
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+            <!-- Email Header : BEGIN -->
+              <tr>
+                  <td style="padding: 20px 0; text-align: center; background-color: #002554;">
+                        <a href="##TrackClick##https://pharmacy.utoronto.ca/">
+                            <img src="https://adcomms.utoronto.ca/email-templates/pharmacy/2018/rxcellence/logo.png" width="236" height="61" alt="University of Toronto" border="0" style="height: auto; background: #002554; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+                        </a>                      
+                  </td>
+              </tr>
+            <!-- Email Header : END -->
+
+              <!-- Hero Image, Flush : BEGIN -->
+                <tr>
+                    <td style="background-color: #002554; border-bottom: 6px solid #008BB0;">
+                        <img src="https://adcomms.utoronto.ca/images/phm/2020/08/biosimilars_banner_ont.jpg" width="680" height="" alt="RXCellence spring 2020" border="0" style="width: 100%; max-width: 680px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;" class="g-img">
+                    </td>
+                </tr>
+                <!-- Hero Image, Flush : END -->
+
+                <!-- Clear Spacer : BEGIN -->
+                <!-- <tr>
+                    <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px; background: #ffffff;">
+                        &nbsp;
+                    </td>
+                </tr> -->
+                <!-- Clear Spacer : END -->
+
+                <!-- 1 Column Text + Button : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;color: #0d174a;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                          <tr>
+                                <td style="padding: 20px 20px 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #0d174a;">
+                                    <h2><a href="https://my.alumni.utoronto.ca/s/731/form-blank/index.aspx?sid=731&gid=1&pgid=17552&content_id=17731" style="color:#0d174a">Registration is OPEN! And you are invited!</a></h2>
+                                    <p>
+                                        As a valued member of our alumni community, you are invited to attend a virtual and complimentary Biosimilars Symposium and Train the Trainer Session hosted by The Leslie Dan Faculty of Pharmacy and Ontario Health (formerly Cancer Care Ontario) on October 7 & 8 from 8:30 to 12:00 pm each day.
+                                        <br><br>
+                                        With biologics and biosimilars being prescribed for people with anemia, diabetes, inflammatory bowel disease, psoriasis, rheumatoid arthritis, hormone deficiency, and numerous cancer indications, they have profoundly impacted the course of treatment and quality of life for patients.
+                                        <br><br>
+                                        As the number of biosimilars available grows, and as their overall usage increases, pharmacists are playing a lead role in providing advice regarding their efficacy and safety. Pharmacists must not only be equipped with consistent messaging to answer questions regarding biosimilars, but also the knowledge required for their successful implementation in to practice.
+                                        <br><br>
+                                        The symposium and train the trainer events bring together biosimilars subject matter experts from across Canada, and in a variety of fields to provide you with current insights and best practices on this important and emerging category of drugs.
+                                        <br><br>
+                                        The first day Biosimilars Symposium is suited to any pharmacist or health care professional looking to become more comfortable with biosimilars from an efficacy, safety and policy perspective. While the key audience for this event is pharmacists, it will benefit a broad audience across multiple therapeutic areas including cancer, rheumatology, dermatology, endocrinology, and inflammatory bowl disease.
+                                        <br><br>
+                                        The second day Train the Trainer Session is geared towards practising pharmacist looking for more in-depth training that they can take back and share with their colleagues at their own practice.
+                                        <br><br>
+                                        <a href="https://my.alumni.utoronto.ca/s/731/form-blank/index.aspx?sid=731&gid=1&pgid=17552&content_id=17731" style="color:#0d174a"><b>Click here</b></a> to register and to check out our amazing line-up of speakers and topics!
+                                        <br><br>
+                                        As a special treat for our valued alumni, the first 200 Leslie Dan Faculty of Pharmacy alumni who register for the Biosimilars Symposium on October 7 will receive a $25 Skip the Dishes Gift Card! Registration for the Train the Trainer Session on October 8 is limited to 50 participants all of which will receive a free boxed lunched delivered to your home or place of work.
+                                        <br><br>
+                                        <a href="https://my.alumni.utoronto.ca/s/731/form-blank/index.aspx?sid=731&gid=1&pgid=17552&content_id=17731" style="color:#0d174a"><b>Click here</b></a> to register and to guarantee your space.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0 20px 20px;">
+                                    <!-- Button : BEGIN -->
+                                    <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                        <tr>
+                                            <td class="button-td button-td-primary" style="background: #78BE20;">
+                                                 <a class="button-a button-a-primary" href="https://my.alumni.utoronto.ca/s/731/form-blank/index.aspx?sid=731&gid=1&pgid=17552&content_id=17731" style="background: #78BE20; border: 1px solid #78BE20; font-weight: bold; font-family: sans-serif; font-size: 16px; line-height: 16px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; text-transform: uppercase;" target="_blank">REGISTER NOW</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- Button : END -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 20px 20px 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #0d174a;">
+                                    <p>We hope to see you there!</p>
+                                    <p>The Advancement and Alumni Relations Team</p>
+                                    <p><i>This complimentary event has been made possible by our generous sponsors:</i></p>
+                                </td>
+                            </tr>
+              
+                            <!-- Hero Image, Flush : BEGIN -->
+                            <tr>
+                                <td style="background-color: #002554; border-bottom: 6px solid #008BB0;">
+                                    <img src="https://adcomms.utoronto.ca/images/phm/2020/08/biosimilars_logo_bar.jpg" width="680" height="" alt="RXCellence spring 2020" border="0" style="width: 100%; max-width: 680px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;" class="g-img">
+                                    <img src="https://adcomms.utoronto.ca/images/phm/2020/08/kellar_zhang_imodules_new.jpg" width="680" height="" alt="RXCellence spring 2020" border="0" style="width: 100%; max-width: 680px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;" class="g-img">
+                                </td>
+                            </tr>
+                            <!-- Hero Image, Flush : END -->
+
+                            <tr>
+                                <td style="padding: 20px 20px 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #0d174a;">
+                                    <p style="text-align:center;">Our Alumni Networking and Education Series is Back!</p>
+                                        Are you feeling stressed, and maybe even a little burned out during these unprecedented times?
+                                        <br><br>
+                                        As a valued member of our Leslie Dan Faculty of Pharmacy alumni community, you are invited to join Jamie Kellar and Maria Zhang, as they discuss the impact and role of resilience in the workplace for health care professionals.
+                                        <br><br>
+                                    </p>
+                                    <strong>Speaker:</strong>
+                                    <br><br>
+                                    <strong>Jamie Kellar</strong>
+                                    <br><br>
+                                    Associate Professor – Teaching stream, Acting Director, PharmD Program, Leslie Dan Faculty of Pharmacy
+                                    <br><br>
+                                    <strong>Maria Zhang,</strong>
+                                    <br><br>
+                                    Advance Practice Clinical Leader (Pharmacy), CAMH and Clinician Educator, Adjunct Lecturer, Leslie Dan Faculty of Pharmacy
+                                    
+                                    <p><strong>Date:</strong> &nbsp;September 23, 2020</p>
+                                    <p><strong>Time:</strong>&nbsp;12:30 p.m. - 1:30 p.m.</p>
+                                    <p><strong>Webinar:</strong>&nbsp;Link available in registration confirmation email</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0 20px 20px;">
+                                    <!-- Button : BEGIN -->
+                                    <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                        <tr>
+                                            <td class="button-td button-td-primary" style="background: #78BE20;">
+                                                 <a class="button-a button-a-primary" href="https://my.alumni.utoronto.ca/s/731/form-blank/index.aspx?sid=731&gid=1&pgid=17564&content_id=17739" style="background: #78BE20; border: 1px solid #78BE20; font-weight: bold; font-family: sans-serif; font-size: 16px; line-height: 16px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; text-transform: uppercase;" target="_blank">REGISTER NOW</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- Button : END -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 20px 20px 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #0d174a;">
+                                    <p>Sincerely,</p>
+                                    <p>The Advancement and Alumni Relations Team, Leslie Dan Faculty of Pharmacy</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- 1 Column Text + Button : END -->                
+
+                <!-- Clear Spacer : BEGIN -->
+                <tr>
+                    <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px; background: #ffffff;">
+                        &nbsp;
+                    </td>
+                </tr>
+                <!-- Clear Spacer : END -->
+
+                <!-- Hero Image, Flush : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;">
+                        <img src="https://adcomms.utoronto.ca/email-templates/pharmacy/2020/04/footer-img.png" width="680" height="" alt="Alumni news" border="0" style="width: 100%; max-width: 680px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;" class="g-img">
+                    </td>
+                </tr>
+                <!-- Hero Image, Flush : END -->
+            </table>
+            <!-- Email Body : END -->
+
+            <!-- Email Footer : BEGIN -->
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 680px;">
+                <tr>
+                    <td align="center" valign="top" style="font-size:0; padding: 10px 10px 30px; background-color: #002A5C;">
+                        <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                        <tr>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 10px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td class="stack-column-center">
+                                                    <a href="##TrackClick##https://pharmacy.utoronto.ca/">
+                                                        <img src="https://adcomms.utoronto.ca/email-templates/pharmacy/2018/rxcellence/logo.png" width="236" height="61" alt="University of Toronto" border="0" style="height: auto; background: #002A5C; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #ffffff;">
+                                                    </a>
+                                                </td>
+                                            </tr>                                            
+                                            <tr>
+                                                <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff; padding-top: 10px;" class="stack-column-center">
+                                                    <p style="margin: 0;">
+                                                        <strong>Leslie Dan Faculty of Pharmacy</strong>
+                                                        <br>
+                                                        144 College St
+                                                        <br>
+                                                        Toronto, ON, CA  ● M5S 3M2
+                                                        <br>
+                                                        <a href="##TrackClick##https://pharmacy.utoronto.ca/" style="color: #78BE20; text-decoration: none;"><strong style="color: #78BE20; text-decoration: none;">pharmacy.utoronto.ca</strong></a>
+                                                        <br>
+                                                        416 978 2889
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 10px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                            <tr>
+                                                <td style="padding-top: 10px; padding-bottom: 7px;" class="stack-column-center">
+                                                    <a href="##TrackClick##http://twitter.com/uoftpharmacy" style="text-decoration: none; vertical-align: middle;">
+                                                      <img src="https://adcomms.utoronto.ca/email-templates/pharmacy/2018/rxcellence/icon-twitter.png" border="0" style="border: none;" width="44" height="44">
+                                                    </a>
+                                                    <a href="##TrackClick##http://facebook.com/uoftpharmacy" style="text-decoration: none; vertical-align: middle;">
+                                                      <img src="https://adcomms.utoronto.ca/email-templates/pharmacy/2018/rxcellence/icon-facebook.png" border="0" style="border: none;" width="44" height="44">
+                                                    </a>
+                                                    <a href="##TrackClick##http://instagram.com/uoftpharmacy" style="text-decoration: none; vertical-align: middle;">
+                                                      <img src="https://adcomms.utoronto.ca/email-templates/pharmacy/2018/rxcellence/icon-instagram.png" border="0" style="border: none;" width="44" height="44">
+                                                    </a>
+                                                    <a href="##TrackClick##https://ca.linkedin.com/school/leslie-dan-faculty-of-pharmacy-university-of-toronto/" style="text-decoration: none; vertical-align: middle;">
+                                                      <img src="https://adcomms.utoronto.ca/email-templates/pharmacy/2018/rxcellence/icon-linkedin.png" border="0" style="border: none;" width="44" height="44">
+                                                    </a>
+                                                    <a href="#" style="color: #ffffff; text-decoration: none !important; font-weight: bold; font-family: sans-serif; font-size: 18px; line-height: 18px; vertical-align: middle;"><strong style="color: #ffffff;">DONATE</strong></a>
+                                                </td>
+                                            </tr>                                               
+                                            <tr>
+                                                <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff; padding-top: 10px;" class="stack-column-center">
+                                                    <p style="margin: 0;">
+                                                        <strong>Connect with our alumni office</strong>
+                                                        <br>
+                                                        <a href="mailto:alumni.pharmacy@utoronto.ca" style="color: #78BE20; text-decoration: none;"><strong style="color: #78BE20; text-decoration: none;">alumni.pharmacy@utoronto.ca</strong></a>
+                                                        <br>
+                                                        416 946 3147
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" valign="top" style="font-size:0; padding: 0 20px 30px; background-color: #002A5C;">
+                      <span style="color: #ffffff; font-size: 14px; font-family: Arial; font-style: italic;">
+                        Update your preferences or <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_PHARM_LDFP_ALL_NEWSLETTERS_INITIAL_##OptionalParameter3##%20Virtual%20Biosimilars%20Symposium%20and%20Train%20the%20Trainer%20Session" style="text-decoration: none;color: white;">unsubscribe</a> from this list
+                      </span>                        
+                    </td>
+                </tr>
+            </table>
+            <!-- Email Footer : END -->
+
+            <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </div>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+##TrackImpression##</body>
+</html>
+
+

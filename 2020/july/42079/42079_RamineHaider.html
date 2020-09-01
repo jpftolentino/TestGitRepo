@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            /* table-layout: fixed !important; */
+            margin: 0 auto!important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+        a {
+            font-weight: 700;
+        }
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: #555555 !important;
+	        border-color: #555555 !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            td.center-on-narrow p.one-column-text {
+                margin: 0 !important;
+            }
+
+            td.center-on-narrow p {
+                margin: 20px 50px !important;
+            }
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                /* text-align: center !important; */
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                /* text-align: center !important; */
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+                width: 90% !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 30px !important;
+                line-height: 40px !important;
+            }
+
+            .email-container h2 {
+                font-size: 40px !important;
+                line-height: 40px !important;
+            }
+        }
+
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #ffffff;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #ffffff;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #222222;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
+          Department of Classics e-Newsletter, Summer 2020 
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="700" style="margin: auto;" class="email-container">
+            <tr>
+                <td style="background-color: #ffffff; text-align: center;">
+                    <a href="##HTMLNewsletterURL##"style="color: #000000;text-decoration: none; font-weight: bold;font-size:11px;font-family: Arial, Helvetica, sans-serif;">Click to view this email online</a>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 50px 0 10px 50px; text-align: left;background: #ffffff;">
+                    
+                    <img src="https://adcomms.utoronto.ca/images/a%26s/2020/07/Department_of_Classics_Banner.PNG" style="border: none !important;width:600px" width="600" alt="University of Toronto, Faculty of Arts and Science" />
+                </td>
+            </tr>
+
+
+            <!-- MESSAGE FROM THE INTERIM CHAIR : BEGIN -->
+            <!-- Section Heading : BEGIN -->
+            <tr>
+              <td style="background-color: #ffffff;padding: 20px 30px 0 30px;text-align: center">
+                  <table width="100%" align="middle" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                      <tr>
+                          <td style="background-color: #35bbef;padding: 5px 15px;text-align: center">
+                              <span style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 25px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 25px;margin-top: 25px; mso-margin-bottom-alt: 25px;margin-bottom: 25px;">
+                                DEPARTMENT OF CLASSICS NEWSLETTER
+                                <br><br>
+                                2019-2020
+                              </span>
+                          </td>
+                      </tr>
+                  </table>
+              </td>
+            </tr>
+            <!-- Section Heading : END -->            
+            <!-- Section Heading : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 20px 30px 0 30px;text-align: center">
+                    <table width="100%" align="middle" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                        <tr>
+                            <td style="background-color: #D1EDF8;padding: 5px 15px;text-align: center">
+                                <span style="color: #000000; font-family:Arial, Helvetica, sans-serif;font-size: 16px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 25px;margin-top: 25px; mso-margin-bottom-alt: 25px;margin-bottom: 25px;">
+                                  MESSAGE FROM THE INTERIM CHAIR</span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- Section Heading : END -->
+            <!-- 1 Column Text + Button : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px;">
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                        <!-- Column : BEGIN -->
+                        <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: left;" class="center-on-narrow">
+                                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 425px; height: auto;text-align: center;">
+                                        <tr>
+                                            <td>
+                                                <img src="https://adcomms.utoronto.ca/images/a%26s/2020/07/InterimChair.png" width="425" style="border: none !important;padding-top: 15px;width: 425px;" alt="Image of Interim Chair" class="img-full">
+                                            </td>
+                                        </tr>
+                                      </table>
+                                        <p class="one-column-text" style="mso-margin-top-alt: 15px;margin-top: 15px;">
+                                          Dear colleagues, students and alumni,
+                                          <br><br>
+                                          The Department of Classics had a productive year in 2019-2020. Courses were taught, research was conducted, articles and books were published, and PhD degrees were earned by several graduate students. Not that everything was perfect. There was the pandemic, unfortunately still ongoing, while much else in recent news has been disheartening. Nonetheless, the department has managed to keep its focus on its pedagogical mission. We bravely and resourcefully finished the spring term with online instruction. A superb team of graduate instructors and TAs are currently teaching online summer courses, and now we are all puzzling over how to implement dual delivery &mdash; online, and to some degree, in-person &mdash; in the coming academic year. 
+                                          <br><br>
+                                          This electronic newsletter surveys the breadth and depth of our achievements. It opens with two historical essays. Ben Akrigg provides a discussion of the Athenian plague as described by Thucydides, with commentary on the relevance of this ancient event to current circumstances. And on the basis of archival material that fell into my hands this year, I contribute a piece on the origins of the Lillian Massey Building and the Household Science Department that first occupied it.
+                                          <br><br>
+                                          Next in the newsletter is a sample of all the great things accomplished by our graduate and undergraduate students this year. We are fortunate that three of our recent doctoral graduates, John Fabiano, Brad Hald and Chiara Graf, will be teaching some of our courses this coming year. Along with Alex Cushing, they provide brief reports of their recent and ongoing experiences. As for undergraduates, the Classics Students’ Union (CLASSU) displayed enormous leadership by initiating a high school outreach event last November. In late February, the department began a monthly coffee hour for undergraduates. Unfortunately, because of the pandemic the first occurrence of this event was also the last of the year, but the Undergraduate Coffee Hour will arise again sometime in the future! Both graduate and undergraduate students also industriously reorganized student space in the building, something that will be of great value as we learn how to safely use our building again.
+                                          <br><br>
+                                          Stuck at home and unable to travel as we are, we all appreciate reports of department faculty working hard on archaeological digs abroad. Though Sarah Murray will be able to do some work on site this summer, other international archaeological plans have necessarily been cancelled. It's very nice, then, that we have reports and pictures of last summer's season from Sarah, Seth Bernard and Carrie Atkins.
+                                          <br><br>
+                                          Assistant Editor Emelen Leonard conducted fascinating interviews with current post-doc Flavia Amaral and the Athenians Project team of John Traill and Philippa Matheson. Flavia describes her interesting research and provides colourful comparisons of study and life in Brazil and North America. John and Philippa describe the long and complex history of the very important Athenians Project, with some instructive commentary on the beneficial role of computers in classics research. The upcoming retirement of Ernest Weinrib of the University of Toronto’s Faculty of Law provides an opportunity to share his memories of his experiences in our department as both student and instructor &mdash; more welcome historical material for the newsletter. Finally, I ask readers to note the final item in the newsletter: the opportunity to donate to many fine scholarships and fellowships belonging to the department. Last year's newsletter heralded our most recent initiative, a diversity bursary for introductory study of Latin and Greek in our summer program. I'm pleased to report that, with generous contributions by Arts &amp; Science and donations from Christer Bruun, John Traill, and myself, the department was able to triple the bursary funds for this summer. Please consider making a contribution to this noteworthy fund or one of our many other funds.
+                                          <br><br>
+                                          Jonathan Burgess, Professor &amp; Interim Chair, July 2020
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </th>
+                        <!-- Column : END -->
+                    </table>
+                </td> 
+            </tr>
+            <!-- 1 Column Text + Button : END -->
+            <!-- MESSAGE FROM THE INTERIM CHAIR : END -->            
+
+            <!-- ANCIENT AND RECENT HISTORY : BEGIN -->       
+            <!-- Section Heading : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 20px 30px 0 30px;text-align: center">
+                    <table width="100%" align="middle" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                        <tr>
+                            <td style="background-color: #D1EDF8;padding: 5px 15px;text-align: center">
+                                <span style="color: #000000; font-family:Arial, Helvetica, sans-serif;font-size: 16px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 25px;margin-top: 25px; mso-margin-bottom-alt: 25px;margin-bottom: 25px;">
+                                  ANCIENT AND RECENT HISTORY</span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- Section Heading : END -->
+            <!-- 1 Column Text + Button : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px;">
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                        <!-- Column : BEGIN -->
+                        <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: left;" class="center-on-narrow">
+                                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 425px; height: auto;text-align: center;">
+                                        <tr>
+                                            <td>
+                                                <img src="https://adcomms.utoronto.ca/images/a%26s/2020/07/AnthenianPlague.png" width="425" style="border: none !important;padding-top: 15px;width: 425px;" alt="Image of Anthenian Plague Painting" class="img-full">
+                                            </td>
+                                        </tr>
+                                      </table>
+                                        <p class="one-column-text" style="color:#002A5C;mso-margin-top-alt: 15px;margin-top: 15px;text-align: center;">
+                                          <strong>THE ATHENIAN PLAGUE AND COVID-19</strong>
+                                        </p>
+                                        <p class="one-column-text" style="mso-margin-top-alt: 15px;margin-top: 15px;text-align: center;">
+                                          <strong>BEN AKRIGG on 
+                                            <a href="https://classics.utoronto.ca/news/newsletter/thucydides-in-thetime-of-coronavirus/" style="text-decoration: underline;color:#428ec5">media comparison of Thucydides’ account of the plague in Athens with the Coronavirus</a>
+                                          </strong>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </th>
+                        <!-- Column : END -->
+                    </table>
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                      <!-- Column : BEGIN -->
+                      <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                              <tr>
+                                  <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: left;" class="center-on-narrow">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 425px; height: auto;text-align: center;">
+                                      <tr>
+                                          <td>
+                                              <img src="https://adcomms.utoronto.ca/images/a%26s/2020/07/LillianMassey.png" width="425" style="border: none !important;padding-top: 15px;width: 425px;" alt="Image of Lillian Massey" class="img-full">
+                                          </td>
+                                      </tr>
+                                    </table>
+                                      <p class="one-column-text" style="color:#002A5C;mso-margin-top-alt: 15px;margin-top: 15px;text-align: center;">
+                                        <strong>HISTORY OF LILLIAN MASSEY BUILDING</strong>
+                                      </p>
+                                      <p class="one-column-text" style="mso-margin-top-alt: 15px;margin-top: 15px;text-align: center;">
+                                        <strong>JONATHAN BURGESS discusses archival evidence about our
+                                          <br><br>
+                                          <a href="https://classics.utoronto.ca/news/newsletter/history-lillian-massey-building/" style="text-decoration: underline;color:#428ec5">department building and its original purpose</a>
+                                        </strong>
+                                      </p>
+                                  </td>
+                              </tr>
+                          </table>
+                      </th>
+                      <!-- Column : END -->
+                  </table>
+                </td> 
+            </tr>
+            <!-- 1 Column Text + Button : END -->
+            <!-- ANCIENT AND RECENT HISTORY : END -->
+            
+
+            <!-- STUDENT NEWS : BEGIN -->       
+            <!-- Section Heading : BEGIN -->
+            <tr>
+              <td style="background-color: #ffffff;padding: 20px 30px 0 30px;text-align: center">
+                  <table width="100%" align="middle" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                      <tr>
+                          <td style="background-color: #D1EDF8;padding: 5px 15px;text-align: center">
+                              <span style="color: #000000; font-family:Arial, Helvetica, sans-serif;font-size: 16px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 25px;margin-top: 25px; mso-margin-bottom-alt: 25px;margin-bottom: 25px;">
+                                STUDENT NEWS</span>
+                          </td>
+                      </tr>
+                  </table>
+              </td>
+            </tr>
+            <!-- Section Heading : END -->
+            <!-- 1 Column Text + Button : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px;">
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                        <!-- Column : BEGIN -->
+                        <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: left;" class="center-on-narrow">
+                                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 425px; height: auto;text-align: center;">
+                                        <tr>
+                                            <td>
+                                                <img src="https://adcomms.utoronto.ca/images/a%26s/2020/07/GraduateStudent.png" width="425" style="border: none !important;padding-top: 15px;width: 425px;" alt="Image of U of T Graduate Hall" class="img-full">
+                                            </td>
+                                        </tr>
+                                      </table>
+                                        <p class="one-column-text" style="color:#002A5C;mso-margin-top-alt: 15px;margin-top: 15px;text-align: center;">
+                                          <strong>GRADUATE STUDENT
+                                            <a href="https://classics.utoronto.ca/news/newsletter/graduate-students-on-2019-2020/" style="text-decoration: underline;color:#428ec5">achievements in 2019-2020</a>
+                                          </strong>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </th>
+                        <!-- Column : END -->
+                    </table>
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                      <!-- Column : BEGIN -->
+                      <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                              <tr>
+                                  <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: left;" class="center-on-narrow">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 425px; height: auto;text-align: center;">
+                                      <tr>
+                                          <td>
+                                              <img src="https://adcomms.utoronto.ca/images/a%26s/2020/07/ClassU.png" width="425" style="border: none !important;padding-top: 15px;width: 425px;" alt="Image of a group of students" class="img-full">
+                                          </td>
+                                      </tr>
+                                    </table>
+                                      <p class="one-column-text" style="color:#002A5C;mso-margin-top-alt: 15px;margin-top: 15px;text-align: center;">
+                                        <strong>CLASSU has plenty to report about
+                                          <a href="https://classu.sa.utoronto.ca/" style="text-decoration: underline;color:#428ec5">its activities in the past year</a>
+                                        </strong>
+                                      </p>
+                                  </td>
+                              </tr>
+                          </table>
+                      </th>
+                      <!-- Column : END -->
+                  </table>
+                      <!-- Column : END -->
+                </td> 
+            </tr>
+            <!-- 1 Column Text + Button : END -->
+            <!-- STUDENT NEWS : END -->
+
+
+            <!-- IN THE FIELD AND WATER : BEGIN -->       
+            <!-- Section Heading : BEGIN -->
+            <tr>
+              <td style="background-color: #ffffff;padding: 20px 30px 0 30px;text-align: center">
+                  <table width="100%" align="middle" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                      <tr>
+                          <td style="background-color: #D1EDF8;padding: 5px 15px;text-align: center">
+                              <span style="color: #000000; font-family:Arial, Helvetica, sans-serif;font-size: 16px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 25px;margin-top: 25px; mso-margin-bottom-alt: 25px;margin-bottom: 25px;">
+                                IN THE FIELD AND WATER</span>
+                          </td>
+                      </tr>
+                  </table>
+              </td>
+            </tr>
+            <!-- Section Heading : END -->
+            <!-- 1 Column Text + Button : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px;">
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                        <!-- Column : BEGIN -->
+                        <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: left;" class="center-on-narrow">
+                                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 425px; height: auto;text-align: center;">
+                                        <tr>
+                                            <td>
+                                                <img src="https://adcomms.utoronto.ca/images/a%26s/2020/07/PopuloniaExcavations.png" width="425" style="border: none !important;padding-top: 15px;width: 425px;" alt="Image of Populonia Excavations" class="img-full">
+                                            </td>
+                                        </tr>
+                                      </table>
+                                        <p class="one-column-text" style="color:#002A5C;mso-margin-top-alt: 15px;margin-top: 15px;text-align: center;">
+                                          <strong>SETH BERNARD on 
+                                            <a href="https://classics.utoronto.ca/news/newsletter/seth-bernard-on-populonia-excavations-summer-2019/" style="text-decoration: underline;color:#428ec5">excavations at Populonia, Italy</a>
+                                          </strong>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </th>
+                        <!-- Column : END -->
+                    </table>
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                      <!-- Column : BEGIN -->
+                      <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                              <tr>
+                                  <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: left;" class="center-on-narrow">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 425px; height: auto;text-align: center;">
+                                      <tr>
+                                          <td>
+                                              <img src="https://adcomms.utoronto.ca/images/a%26s/2020/07/BaysOfEastAttica.png" width="425" style="border: none !important;padding-top: 15px;width: 425px;" alt="Image of Bays of East Attica" class="img-full">
+                                          </td>
+                                      </tr>
+                                    </table>
+                                      <p class="one-column-text" style="color:#002A5C;mso-margin-top-alt: 15px;margin-top: 15px;text-align: center;">
+                                        <strong>SARAH MURRAY on the pilot season of
+                                          <br><br>
+                                          <a href="https://classics.utoronto.ca/news/newsletter/sarah-murray-on-the-bears-expedition-summer-2019/" style="text-decoration: underline;color:#428ec5">The Bays of East Attica Regional Survey (BEARS)</a>
+                                        </strong>
+                                      </p>
+                                  </td>
+                              </tr>
+                          </table>
+                      </th>
+                      <!-- Column : END -->
+                  </table>
+                  <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                    <!-- Column : BEGIN -->
+                    <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: left;" class="center-on-narrow">
+                                  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 425px; height: auto;text-align: center;">
+                                    <tr>
+                                        <td>
+                                            <img src="https://adcomms.utoronto.ca/images/a%26s/2020/07/UnderwaterExplorationCyprus.png" width="425" style="border: none !important;padding-top: 15px;width: 425px;" alt="Image of Underwater Exploration Cyprus" class="img-full">
+                                        </td>
+                                    </tr>
+                                  </table>
+                                    <p class="one-column-text" style="color:#002A5C;mso-margin-top-alt: 15px;margin-top: 15px;text-align: center;">
+                                      <strong>CARRIE ATKINS on
+                                        <a href="https://classics.utoronto.ca/news/newsletter/carrie-atkins-on-cyprus-underwater-project-summer-2019/" style="text-decoration: underline;color:#428ec5">underwater exploration off Cyprus</a>
+                                      </strong>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </th>
+                    <!-- Column : END -->
+                </table>
+                </td> 
+            </tr>
+            <!-- 1 Column Text + Button : END -->
+            <!-- IN THE FIELD AND WATER : END -->            
+
+
+            <!-- INTERVIEWS : BEGIN -->       
+            <!-- Section Heading : BEGIN -->
+            <tr>
+              <td style="background-color: #ffffff;padding: 20px 30px 0 30px;text-align: center">
+                  <table width="100%" align="middle" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                      <tr>
+                          <td style="background-color: #D1EDF8;padding: 5px 15px;text-align: center">
+                              <span style="color: #000000; font-family:Arial, Helvetica, sans-serif;font-size: 16px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 25px;margin-top: 25px; mso-margin-bottom-alt: 25px;margin-bottom: 25px;">
+                                INTERVIEWS</span>
+                          </td>
+                      </tr>
+                  </table>
+              </td>
+            </tr>
+            <!-- Section Heading : END -->
+            <!-- 1 Column Text + Button : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px;">
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                        <!-- Column : BEGIN -->
+                        <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: left;" class="center-on-narrow">
+                                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 425px; height: auto;text-align: center;">
+                                        <tr>
+                                            <td>
+                                                <img src="https://adcomms.utoronto.ca/images/a%26s/2020/07/FlaviaAmaral.png" width="425" style="border: none !important;padding-top: 15px;width: 425px;" alt="Image of Flavia Amaral" class="img-full">
+                                            </td>
+                                        </tr>
+                                      </table>
+                                        <p class="one-column-text" style="color:#002A5C;mso-margin-top-alt: 15px;margin-top: 15px;text-align: center;">
+                                          <strong>FLAVIA AMARAL on her 
+                                            <a href="https://classics.utoronto.ca/news/newsletter/interview-with-flavia-vasconcellos-amaral/" style="text-decoration: underline;color:#428ec5">studies in North America </a>
+                                          </strong>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </th>
+                        <!-- Column : END -->
+                    </table>
+                  <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                    <!-- Column : BEGIN -->
+                    <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: left;" class="center-on-narrow">
+                                  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 425px; height: auto;text-align: center;">
+                                    <tr>
+                                        <td>
+                                            <img src="https://adcomms.utoronto.ca/images/a%26s/2020/07/AtheniansProject-1.png" width="425" style="border: none !important;padding-top: 15px;width: 425px;" alt="Image of JOHN TRAILL and students" class="img-full">
+                                        </td>
+                                    </tr>
+                                  </table>
+                                  <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 425px; height: auto;text-align: center;">
+                                    <tr>
+                                        <td>
+                                            <img src="https://adcomms.utoronto.ca/images/a%26s/2020/07/AtheniansProject-2.png" width="425" style="border: none !important;padding-top: 15px;width: 425px;" alt="Image of PHILIPPA MATHESON" class="img-full">
+                                        </td>
+                                    </tr>
+                                  </table>
+                                    <p class="one-column-text" style="color:#002A5C;mso-margin-top-alt: 15px;margin-top: 15px;text-align: center;">
+                                      <strong>JOHN TRAILL and PHILIPPA MATHESON on
+                                        <br><br>
+                                        <a href="https://classics.utoronto.ca/news/newsletter/the-athenians-project-an-interview-with-john-traill-and-philippa-matheson/" style="text-decoration: underline;color:#428ec5">The Athenians Project</a>
+                                      </strong>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </th>
+                    <!-- Column : END -->
+                </table>
+                </td> 
+            </tr>
+            <!-- 1 Column Text + Button : END -->
+            <!-- INTERVIEWS : END -->                  
+
+
+            <!-- RETIREMENTS : BEGIN -->       
+            <!-- Section Heading : BEGIN -->
+            <tr>
+              <td style="background-color: #ffffff;padding: 20px 30px 0 30px;text-align: center">
+                  <table width="100%" align="middle" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                      <tr>
+                          <td style="background-color: #D1EDF8;padding: 5px 15px;text-align: center">
+                              <span style="color: #000000; font-family:Arial, Helvetica, sans-serif;font-size: 16px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 25px;margin-top: 25px; mso-margin-bottom-alt: 25px;margin-bottom: 25px;">
+                                RETIREMENTS</span>
+                          </td>
+                      </tr>
+                  </table>
+              </td>
+            </tr>
+            <!-- Section Heading : END -->
+            <!-- 1 Column Text + Button : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px;">
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                      <!-- Column : BEGIN -->
+                      <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                          <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                              <tr>
+                                  <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: left;" class="center-on-narrow">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 425px; height: auto;text-align: center;">
+                                      <tr>
+                                          <td>
+                                              <img src="https://adcomms.utoronto.ca/images/a%26s/2020/07/ErnestWeinrib.png" width="auto" style="border: none !important;padding-top: 15px;width: auto;" alt="Image of Ernest Weinrib" class="img-full">
+                                          </td>
+                                      </tr>
+                                    </table>
+                                      <p class="one-column-text" style="color:#002A5C;mso-margin-top-alt: 15px;margin-top: 15px;text-align: center;">
+                                        <strong>ERNEST WEINRIB 
+                                          <a href="https://classics.utoronto.ca/news/newsletter/retirement-of-ernest-weinrib/" style="text-decoration: underline;color:#428ec5">regards Classics with ‘affection and awe’</a>
+                                        </strong>
+                                      </p>
+                                  </td>
+                              </tr>
+                          </table>
+                      </th>
+                      <!-- Column : END -->
+                  </table>
+                      <!-- Column : END -->
+                </td> 
+            </tr>
+            <!-- 1 Column Text + Button : END -->
+            <!-- RETIREMENTS : END -->
+
+            <!-- DONATIONS : BEGIN -->        
+            <!-- Section Heading : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 20px 30px 0 30px;text-align: center">
+                    <table width="100%" align="middle" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                        <tr>
+                            <td style="background-color: #35bbef;padding: 5px 15px;text-align: center">
+                                <span style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 16px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 25px;margin-top: 25px; mso-margin-bottom-alt: 25px;margin-bottom: 25px;">
+                                  DONATIONS</span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- Section Heading : END -->
+            <!-- 1 Column Text + Button : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px;">
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                        <!-- Column : BEGIN -->
+                        <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: left;" class="center-on-narrow">
+                                        <p class="one-column-text" style="mso-margin-top-alt: 15px;margin-top: 15px;">
+                                          <strong>Please consider contributing.</strong> As reported in last year’s newsletter, the
+                                          Department of Classics has initiated a diversity bursary for study of introductory
+                                          Latin and Greek in our summer program. And this is just one of many funds that
+                                          belong to the department. Your gift will support future generations of scholars of
+                                          ancient Greece and Rome.
+                                          <br><br>
+                                          You can support the Department of Classics through U&nbsp;of&nbsp;T’s <a href="https://donate.utoronto.ca/give/show/70?utm_source=ARTSCI&utm_medium=Solicitation&utm_campaign=ClassicsNewsletter2020&sid=DIS-##OptionalParameter3##|SRC-##OptionalParameter5##|FN-##OptionalParameter6##" style="text-decoration: underline;color:#428ec5">online donation portal.</a>
+                                          <br><br>
+                                          Designation options include:
+                                          <ul style="list-style-type:square">
+                                            <li>Departmental Trust (for the diversity bursary, etc.)</li>
+                                            <li>R. M. Smith Memorial Fellowship in Classics</li>
+                                            <li>M. B. Wallace Memorial Graduate Award in Classics</li>
+                                            <li>Emmet Robbins Memorial Graduate Award in Classics</li>
+                                            <li>Kathryn Bosher Memorial Graduate Fund in Classics</li>
+                                            <li>John Lundon Memorial Fellowship in Classics</li>
+                                          </ul>
+                                          <a href="https://classics.utoronto.ca/donate/" style="text-decoration: underline;color:#428ec5">READ MORE</a>
+                                        </p>
+                                        <br><br>
+                                    </td>
+                                </tr>
+                            </table>
+                        </th>
+                        <!-- Column : END -->
+                    </table>
+                </td> 
+            </tr>
+            <!-- 1 Column Text + Button : END -->
+            <!-- DONATIONS : END -->      
+
+
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="700" style="margin: auto;max-width: 700px;background: #002A5C;" class="email-container"> -->
+            <tr>
+                <td style="text-align: center;padding:0px;mso-padding-alt:10px;background-color: #ffffff" align="center">
+                </td>
+            </tr>
+            <tr>
+              <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;background-color: #428ec5;">
+                    <br>
+                    <span>
+                      Classics Newsletter volume 27, summer 2020.<br>
+                      Electronic edition only.<br>
+                      Editor: Jonathan Burgess; Assistant Editor: Emelen Leonard<br>
+                      
+                      Webmaster: Sam Allemang
+                      <br>
+                      <a href="https://classics.utoronto.ca/news/newsletter/" style="color: #ffffff;text-decoration: underline;">Past issues are available on our website.</a>
+                    </span>
+                    <br><br>
+
+                    <span>
+                      The Department of Classics is housed in the Lillian Massey Building, a one-minute
+                      walk from Museum subway station and a five-minute walk from either St. George
+                      or Bay subway stations. Directly in front of the building is a <a href="https://bikesharetoronto.com/" style="color: #ffffff;text-decoration: underline;">Bike Share
+                      Toronto</a> terminal and bike lane.
+                    </span>
+                    <br><br>
+
+                    <a href="https://www.google.com/maps/place/Department+of+Classics/@43.6683255,-79.3962948,17z/data=!4m12!1m6!3m5!1s0x0:0x4cae0bc51787b210!2sDepartment+of+Classics!8m2!3d43.6683656!4d-79.3939394!3m4!1s0x0:0x4cae0bc51787b210!8m2!3d43.6683656!4d-79.3939394?hl=en-CA"
+                      style="color: #ffffff;text-decoration: underline;"
+                    >
+                      Lillian Massey Building
+                    </a>
+                    <br>
+                    125 Queen’s Park
+                    <br>
+                    Toronto, Ontario
+                    <br>
+                    M5S 2C7
+                    <br><br>
+
+                    <a href="##TrackClick##https://secureca.imodules.com/s/731/index_clean.aspx?sid=731&gid=1&pgid=1363&cid=2576&post_id=0" style="color: #ffffff; text-decoration: underline;">Update contact information</a>
+                    <br>
+                    <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_ARTSCI_CLASSICS_ALL_NEWSLETTERS_INITIAL_##OptionalParameter3##%20Classics%20e-Newsletter" style="color: #ffffff; text-decoration: underline;">Opt out of future messages</a>
+                    <br>
+                    <hr style="max-width: 660px; margin: 30px 0 15px 0;" width="660">
+                    <span style="font-size: 10px">
+                        The University&nbsp;of&nbsp;Toronto respects your privacy. We do not rent, trade or sell our mailing lists.
+                        <br>
+                        Copyright &copy; 2020 University&nbsp;of&nbsp;Toronto. All rights reserved. This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #ffffff;">##SubscriberEmail##</a>
+                    </span>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Email Footer : END -->
+
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
