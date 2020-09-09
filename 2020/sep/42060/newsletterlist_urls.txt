@@ -14,7 +14,6 @@ Preview: Mentor a U of T Engineering Student from anywhere in the world!
 Seed/approve list
 
 sonia.debuglio@utoronto.ca
-
 steve.radbourn@utoronto.ca
 john.tolentino@utoronto.ca
 
