@@ -1,5 +1,5 @@
 2020-21_ARTSCI_SS_ALL_Newsletter_Initial_Stat Sci Mentorship past mentors - Are you available to be a U of T Mentor again - 42790_20200918
-
+2020-21_ARTSCI_SS_ALL_Newsletter_Reminder_Stat Sci Mentorship past mentors - Are you available to be a U of T Mentor again - 42790_20200928
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Email Subject
@@ -25,6 +25,8 @@ john.tolentino@utoronto.ca
 
 Unsubscribe:
 mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_ARTSCI_SS_ALL_Newsletter_Initial_##OptionalParameter3##%20Are%20you%20available%20to%20be%20a%20U%20of%20T%20Mentor%20again
+mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_ARTSCI_SS_ALL_Newsletter_Reminder_##OptionalParameter3##%20Are%20you%20available%20to%20be%20a%20U%20of%20T%20Mentor%20again
+
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -1,0 +1,615 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title></title>
+    <style>
+    a {
+      color: #005cc9;text-decoration: none;
+    }
+    @media only screen and (min-width: 480px) and (max-width: 599px) {
+    table[class=outer] { width: 480px !important;}
+    td[class=outer] { width: 480px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 440px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 440px !important;}
+    td[class=inner] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 400px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 480px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 440px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 400px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 480px !important; height: auto !important;}
+    img[class=img-rect] { width: 440px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 285px !important; height: auto !important;}
+    strong[class=banner] { font-size: 28px !important;}
+    .section-heading { width: 440px !important; }
+    .section-heading td { width: 440px !important; }
+    .full-story { width: 440px !important; }
+    .image-block img { width: 440px !important; height: auto !important; }
+    .button { width: 440px !important; }
+    .two-col-section { width: 440px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 440px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    @media only screen and (min-width: 360px) and (max-width: 479px) {
+    table[class=outer] { width: 360px !important;}
+    td[class=outer] { width: 360px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 320px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 320px !important;}
+    td[class=inner] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 300px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 360px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 320px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 300px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 360px !important; height: auto !important;}
+    img[class=img-rect] { width: 320px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 260px !important; height: auto !important;}
+    strong[class=banner] { font-size: 22px !important;}
+    .section-heading { width: 320px !important; }
+    .section-heading td { width: 320px !important; }
+    .image-block img { width: 320px !important; height: auto !important; }
+    .button { width: 320px !important; }
+    .two-col-section { width: 320px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 320px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    @media only screen and (max-width: 359px) {
+    table[class=outer] { width: 320px !important;}
+    td[class=outer] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 280px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 280px !important;}
+    td[class=inner] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 260px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 280px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 260px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 320px !important; height: auto !important;}
+    img[class=img-rect] { width: 280px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 240px !important; height: auto !important;}
+    strong[class=banner] { font-size: 20px !important;}
+    .section-heading { width: 280px !important; }
+    .section-heading td { width: 280px !important; }
+    .full-story { width: 280px !important; }
+    .image-block img { width: 280px !important; height: auto !important; }
+    .button { width: 280px !important; }
+    .two-col-section { width: 280px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 280px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0;">
+    <!-- Preheader : BEGIN -->
+    <div style="display:none;font-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">
+      Germanic Languages &amp; Literatures e-Newsletter, Fall 2020
+    </div>
+    <!-- Preheader : END -->
+    <table cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td width="100%" align="center" valign="top">
+          <!-- end of top portion of outer table -->
+
+          <!-- HEADER SECTION (web version link, banner) : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td width="600" valign="top" style="text-align: center; padding-bottom: 15px; padding-top: 10px; font-family: arial; background-color: #ffffff;" class="content-outer">
+                <a href="##HTMLNewsletterURL##" style="text-decoration: none !important; color: #000000; font-size: 12px;"><strong>View this email online</strong></a>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <!-- <tr>
+              <td style="text-align: center; padding-top: 20px; padding-bottom: 20px;" class="inner--centered" width="285" valign="top">
+                <a href="##TrackClick##http://www.alumni.artsci.utoronto.ca/" style="color: #005cc9;"><img src="https://alumni.utoronto.ca/sites/default/files/inline-images/A%26S_logo_rgb_300dpi.jpg" style="border: none !important;" alt="University of Toronto, Faculty of Arts and Science - Department of Germanic Languages and Literatures" class="img-full" /></a>
+              </td>
+            </tr> -->
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px; color:#002A5C; background-color:#ffffff;">
+                <strong>FACULTY OF ARTS &amp; SCIENCE</strong>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="header" width="600" valign="top" style="font-size:20px; background-color: #002a5c; color: #ffffff; text-align: center; padding-top: 40px; padding-bottom: 30px; font-family: arial; line-height: 36px;">
+              <span style="line-height: 24px;">DEPARTMENT OF ART HISTORY</span>
+              <br />
+              <strong style="font-size:36px">YOUR ALUMNI NEWS</strong>
+              <br/>
+              <span style="font-size: 15px;">September 2020 | Issue 5</span>
+            </td>
+            </tr>
+          </table>
+          <!-- HEADER SECTION (web version link, banner) : END -->
+
+          <!-- LETTER FROM THE CHAIR : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px; color:#002A5C; background-color:#dde1e8;">
+                <strong>LETTER FROM THE CHAIR</strong>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:15px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td width="550" valign="top" class="content-outer" style="text-align: left; font-family: arial; padding: 15px 25px 10px 25px; font-size: 14px; line-height: 20px; background-color: #ffffff; color: #002a5c;">
+                <strong>Dear Friends of the Department of Germanic Languages & Literatures,</strong>
+                <br><br>
+                After months of varying degrees of isolation and social distancing, it’s easy to forget that we were having an excellent year until three weeks before the end of the winter term.
+                <br><br>
+                Among our faculty, Anna Shternshis led the field with a Guggenheim Fellowship and a President’s Impact Award, Christine Lehleiter won a Humboldt Research Fellowship, and Willi Goetschel was distinguished with the 2020 Moses Mendelssohn Prize. Erol Boran walked away with the Canadian Association for University Teachers of German’s Innovate German Award and collaborated with Hang-Sun Kim on a successful application to the International Student Experience Fund for an innovative project to support third-language learning in our classes. John Zilcosky saw the publication of The Allure of Sports in Western Culture, which he co-edited with Marlo Burks.
+                <br><br>
+                Our students, too, excelled in customary fashion, winning research awards, presenting at conferences, participating in internships at schools in Toronto and organizations abroad, collaborating on faculty research endeavours and pursuing their own thesis work. A highlight on the graduate level this year was a well-attended, student-led interdisciplinary conference, “Deviance | Am Rande seiner selbst,” which offered a scholarly platform for presenters from Canada and abroad. 
+                We can also boast of real successes during the height of the pandemic this summer. Although travel restrictions derailed our plans to send the next crop of iPRAKTIKUM interns to Germany, Student Placement Coordinator Helena Juenger secured virtual placements for four students, who are currently working for cutting-edge startups in Berlin and Freiburg in the areas of social innovation, urban mobility and sustainability. 
+                <br><br>
+                One of our interns is researching the impact of COVID-19 on urban cycling policy in German and abroad. How cool is that!
+                <br><br>
+                Thanks to the efforts of interim Language Coordinator Stefana Gargova and an intrepid group of graduate student instructors, our online summer German courses have gotten us off to a fantastic start for the fall. Enrolments were higher than ever, and we learned important lessons for teaching German online. It has been a busy and demanding summer for many of us. Administrators and departmental officers have been working hard to anticipate and prepare for the various scenarios that may await in 2020-21, graduate students have been contending with poor access to research materials and difficulties finding summer work, and faculty have been learning to work with new digital teaching tools in preparation online instruction. All the while, many of us have been attending to vulnerable friends and family members, volunteering in the community, home-schooling our children and trying to stay connected to loved ones we cannot visit.
+                <br><br>
+                We bid farewell to three colleagues this year. Mike Hager, founder of our Business German program and author of important works in the field, is retiring. We wish him all the best for this new phase of life. Nicola Vöhringer completed her term as DAAD Visiting Professor and will be pursuing new opportunities in Germany. Her tireless work for our students made a real difference. There was also a change in our financial office this year; Dale Gebhardt, after years of providing us with expert support, has moved to the Department of French full-time. Our new financial officer, Nina Duras, has hit the ground running and comes to us with experience from the School of Cities and Geography. 
+                <br><br>
+                Welcome, Nina!
+                <br><br>
+                I would like to thank everyone for their extraordinary efforts to prepare for the coming year. I would like to recognize in particular our officers and administrators, who have been keeping us up and running under highly challenging conditions: Gayle Grisdale, Helena Juenger and Nina Duras in the undergraduate, graduate and financial offices; Associate Chairs Erol Boran (Undergraduate) and Christine Lehleiter (Graduate); and Language Coordinators Hang-Sun Kim (fall) and Stefana Gargova (winter).
+                <br><br>  
+                I am very pleased to welcome back this year Angelica Fenner to the role of associate chair graduate and extend my thanks to Christine Lehleiter, who served a one-year term in that role. I am very pleased that Hang-Sun Kim has agreed to serve as acting associate chair undergraduate and that we will be able to count on Stefana Gargova’s expert language coordinating again in 2020-21.
+                <br><br>
+                <strong>Stefan Soldovieri</strong><br>
+                Chair of Germanic Languages & Literatures, Associate Professor of German
+              </td>
+            </tr>
+          </table>
+          <!-- LETTER FROM THE CHAIR : END -->
+
+          <!-- NEWSLETTER 2020/21 : BEGIN -->
+          <table cellspacing="0" cellpadding="0" border="0" width="600" class="two-col-section" align="center" style="width:600px;">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px; border-top: 1px solid #002A5C;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px; color:#002A5C; background-color:#dde1e8;">
+                <strong>NEWSLETTER 2020/21</strong>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:15px;font-size:7px;">&nbsp;</td>
+            </tr>
+
+            <!-- Even Columns 1 : BEGIN -->
+            <tr>
+              <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                  <tr>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <!-- <tr>
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/10/43019/news-.png" alt="" width="280" height="204"/>
+                          </td>
+                        </tr> -->
+                        <tr>
+                          <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                            <strong>The day the world became fantastic and fantasy literature much more real</strong>
+                            <br>
+                            by Professor Erol Boran, Associate Chair, Undergraduate Studies
+                            <br><br>
+                            Our job as literature instructors has not become easier over the years. In this age of Facebook and Twitter, I have noticed that attention spans have shortened and that we can no longer take it for granted that students come equipped to decipher complex literary texts. This unfortunate trend also manifests itself in lower enrolment numbers in literature courses. And yet, today it is more essential than ever to learn to read critically, to be able to distinguish between fact and fake (news) and to develop one’s own informed opinion.
+                            <a href="https://german.utoronto.ca/wp-content/uploads/bsk-pdf-manager/2020-09-18_NL_2020_for_web_807.pdf#page=2" target="_blank">Read more...</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                    <td class="divider" width="15"></td>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <!-- <tr>
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/10/43019/news-.png" alt="" width="280" height="204"/>
+                          </td>
+                        </tr> -->
+                        <tr>
+                          <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                            <strong>Supporting graduate students</strong>
+                            <br>
+                            by Professor Christine Lehleiter, Associate Chair, Graduate Studies 
+                            <br><br>
+                            As in past years, several of our doctoral students have secured merit-based scholarship awards, including John Evjen with an OGS, and Eli Jany and Miriam Borden, the SSHRC Canada Graduate Scholarship-Doctoral for doctoral studies with a Yiddish concentration. Yet the COVID-19 pandemic also brought disruptions to research and deferral of diverse ambitions: a stay at an archive in Germany cancelled, a planned visit to a research site in the U.S. now in question, participation at an international conference moved online, and access to workspace and materials in the library limited until further notice.
+                            <a href="https://german.utoronto.ca/wp-content/uploads/bsk-pdf-manager/2020-09-18_NL_2020_for_web_807.pdf#page=2" target="_blank">Read more...</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Even Columns 1 : END -->
+
+            <!-- Even Columns 1 : BEGIN -->
+            <tr>
+              <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                  <tr>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/10/43019/news-1.png" alt="Image of a student" width="auto" height="auto"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                            <strong>Undergraduate Profile: Bridging literary studies and neuroscience</strong>
+                            <br>
+                            by India James-Licher
+                            <br><br>
+                            I came to the University of Toronto to pursue a specialist degree in Neuroscience and return to the city in which I was born. My interest in human experience and its relationship to language motivated me to study all things related to the mind and the complex processes that enable certain behaviours and thoughts. After one semester, however, I was itching to read a thought-provoking book and engage in fruitful discussions, as I had done in my literature classes back home in Switzerland.
+                            <a href="https://german.utoronto.ca/wp-content/uploads/bsk-pdf-manager/2020-09-18_NL_2020_for_web_807.pdf#page=3" target="_blank">Read more...</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                    <td class="divider" width="15"></td>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/10/43019/news-2.png" alt="Image of a student" width="auto" height="auto"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                            <strong>Graduate Profile: Toward a genealogy of gullibility in German literature and thought</strong>
+                            <br>
+                            by Rita Laszlo
+                            <br><br>
+                            I’m a curious creature, and if it’s important for me to think about something then I think about it, and that, in itself, is a privilege. I share this attitude with Ágnes Heller, a philosopher and social theorist at the New School for Social Research. Her words of wisdom and effrontery have profoundly influenced my academic endeavours. She got me thinking about gullibility in 2013, when I encountered her essay, Elmélkedések a hiszékenységről, a precious gem among her lesser known writings. In 2017 I translated this from the Hungarian as Reflections on Gullibility for the critical theoretical journal Telos, which remains one of my proudest accomplishments.
+                            <a href="https://german.utoronto.ca/wp-content/uploads/bsk-pdf-manager/2020-09-18_NL_2020_for_web_807.pdf#page=3" target="_blank">Read more...</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Even Columns 1 : END -->
+
+            <!-- Even Columns 1 : BEGIN -->
+            <tr>
+              <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                  <tr>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/10/43019/news-3.png" alt="Image of a type writer" width="auto" height="auto"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                            <strong>A sheynem Dank to all Yiddish students!</strong>
+                            <br>
+                            by Dr. Sasha Hoffman
+                            <br><br>
+                            All innovations to our program that are worthy of note this year are attributable to the hard work of our students. In first year Yiddish, we were able to use In eynem, a new textbook being piloted by the Yiddish Book Center in Amherst, Massachusetts. Miriam Borden, a PhD candidate in the department, participated in pedagogical workshops at the centre and launched the textbook in our program last fall. When I took over the continuing class in the winter semester, I was immediately impressed with students’ confidence of expression and comprehension. In eynem is the first Yiddish textbook to implement a communicative approach. Since we often have a variety of levels in one classroom, including auditors who still recall some Yiddish from childhood, this approach works very well to empower each student to contribute according to their abilities and to learn from one another.
+                            <a href="https://german.utoronto.ca/wp-content/uploads/bsk-pdf-manager/2020-09-18_NL_2020_for_web_807.pdf#page=4" target="_blank">Read more...</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                    <td class="divider" width="15"></td>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/10/43019/news-4.png" alt="Image of students and faculty" width="auto" height="auto"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                            <strong>Summer film Seminar “Posthuman Intimacies”</strong>
+                            <br>
+                            by Professor Angelica Fenner
+                            <br><br>
+                            This summer seminar for advanced graduate students, postdocs and faculty was coordinated by Dr. Angelica Fenner, associate professor in German and Cinema Studies, and hosted at the Munk School for Global Affairs and Public Policy, July 31 to August 4, 2019. Fourteen participants from U of T, the University of Waterloo, the University of Florida, the Free University of Berlin and Bremen University read and debated pre-circulated readings and shared research in progress on cross-species entanglements in European cinema. Under rubrics such as “The Human Animal,” “Cross-Species Kinship” and “Posthuman Worldmaking,” the seminar explored the symbiosis between human and other animals, and possibilities for moving beyond exploitation, dependency or humanistic anthropomorphism toward more complex understandings of subjectivity, sentience and vital matter.
+                            <a href="https://german.utoronto.ca/wp-content/uploads/bsk-pdf-manager/2020-09-18_NL_2020_for_web_807.pdf#page=4" target="_blank">Read more...</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Even Columns 1 : END -->            
+
+            <!-- Even Columns 1 : BEGIN -->
+            <tr>
+              <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                  <tr>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/10/43019/news-5.png" alt="Image of person" width="auto" height="auto"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                            <strong>Shivhei Shternshis: a year of accolades for Professor Anna Shternshis</strong>
+                            <br>
+                            by Miriam Borden
+                            <br><br>
+                            “It’s been a good year for Yiddish,” says Professor Anna Shternshis, laughing. Between the extended Broadway run of the new Yiddish version of the stage musical Fiddler on the Roof and Dr. Shternshis’ own recent award-winning project Yiddish Glory: The Lost Songs of World War II, she’s not wrong.
+                            <br>
+                            Yiddish Glory is an album of WWII-era Yiddish songs built upon Professor Shternshis’ research at the Verdansky National Library of Ukraine in the early 2000s, when she discovered a cache of unknown, unpublished Yiddish songs collected by ethnomusicologist Moisei Beregovsky, a victim of Stalin’s postwar antisemitic purges. Professor Shternshis revived the songs, finding partners to turn the songs into a full-length album and touring Yiddish Glory as a lecture-concert with a group of extraordinary performers (including Toronto-based jazz singer Sophie Milman). 
+                            <a href="https://german.utoronto.ca/wp-content/uploads/bsk-pdf-manager/2020-09-18_NL_2020_for_web_807.pdf#page=5" target=_blank">Read more...</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                    <td class="divider" width="15"></td>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/10/43019/news-6.png" alt="Image of poster" width="auto" height="auto"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                            <strong>Graduate conference builds community, awareness, and understanding</strong>
+                            <br>
+                            by André Flicker
+                            <br><br>
+                            Our second annual graduate conference, “Deviance | Am Rande seiner selbst,” took place September 28 and 29, 2019 at the Munk School of Global Affairs and Public Policy. This year’s theme gained momentum from our previous gathering in spring 2018, when we deemed it important to stand up for our ideas and regularly organize such meetings to raise public awareness about injustices of all kinds. We drew inspiration from Celan’s words on the value of communication and exchange: “Das Gedicht heute behauptet sich am Rande seiner selbst; es ruft und holt sich, um bestehen zu können, unausgesetzt aus seinem Schon-nicht-mehr in sein Immer-noch zurück. Das Gedicht ist einsam. Es ist einsam und unterwegs. Das Gedicht will zu einem Andern, es braucht dieses Andere, es braucht ein Gegenüber. Es sucht es auf, es spricht sich ihm zu.”
+                            <a href="https://german.utoronto.ca/wp-content/uploads/bsk-pdf-manager/2020-09-18_NL_2020_for_web_807.pdf#page=6" target="_blank">Read more...</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Even Columns 1 : END -->
+
+            <!-- Even Columns 1 : BEGIN -->
+            <tr>
+              <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                  <tr>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/10/43019/news-7.png" alt="Image of poster" width="auto" height="auto"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                            <strong>5th annual DAAD German language teaching and learning workshop</strong>
+                            <br>
+                            by Maral Attar-Zadeh
+                            <br><br>
+                            German language programs form the backbone of German studies in North American universities, since it is through language courses that we attract potential majors and minors in the field. In most German departments, graduate students play a key role as instructors in the language program. Thanks to the continued support of the DAAD, we held our Fifth Annual German Language Teaching and Learning Workshop, a one-and-a-half-day professional development conference on the theory and practice of second language pedagogy, which brought together graduate students and language specialists from McGill and Queen’s University, University of Waterloo and Toronto, and University of California, Los Angeles.
+                            <a href="https://german.utoronto.ca/wp-content/uploads/bsk-pdf-manager/2020-09-18_NL_2020_for_web_807.pdf#page=6" target="_blank">Read more...</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                    <td class="divider" width="15"></td>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/10/43019/news-8.png" alt="Image of graduating student" width="auto" height="auto"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                            <strong>A doner profile: hitting the books, fulfilling a dream</strong>
+                            <br>
+                            by Andrew Himel
+                            <br><br>
+                            One of my biggest dreams as an adult was to go back to school and study. Of this, though of not much else, I was certain. At 55 (there’s a reason they call it Freedom 55), I found the chance to gracefully exit my business career and embark on my academic journey, or more colloquially, got my behind out of the office chair and into the classroom. Emboldened by the encouragement of several mentors, including Professor Anna Shternshis, I applied to &mdash; and was thankfully accepted into &mdash; the master’s program of the Department of Germanic Languages &amp; Literatures.
+                            <a href="https://german.utoronto.ca/wp-content/uploads/bsk-pdf-manager/2020-09-18_NL_2020_for_web_807.pdf#page=7" target="_blank">Read more...</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Even Columns 1 : END -->
+
+            <!-- Even Columns 1 : BEGIN -->
+            <tr>
+              <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                  <tr>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/10/43019/news-9.png" alt="Image of student" width="auto" height="auto"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                            <strong>Teaching Yiddish with iPRAKTIKUM</strong>
+                            <br>
+                            by Tianna Voort
+                            <br><br>
+                            Through the iPRAKTIKUM Yiddish in the City program, I had the opportunity to work at Bialik Hebrew Day School teaching Yiddish. I was placed with Ester Klimitz, an exceptionally talented and gifted Yiddish teacher. Together we taught five Yiddish classes to grades 3 and 4 students.
+                            It was so wonderful to see young children who were enthusiastic about learning the language. Not only did kids learn how to have basic conversations in Yiddish, they also learned about the culture that surrounds the Yiddish language. We taught classes about Yiddish in Toronto and the history of the language. I think this is something so special about Yiddish; it is not only a language, but also a part of culture.
+                            <a href="https://german.utoronto.ca/wp-content/uploads/bsk-pdf-manager/2020-09-18_NL_2020_for_web_807.pdf#page=8" target="_blank">Read more...</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                    <td class="divider" width="15"></td>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <!-- <tr>
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/10/43019/news-.png" alt="" width="280" height="204"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #000000;">
+                            <strong>Title</strong>
+                            <br>
+                            author
+                            <br>
+                            story
+                            <a href="">Read more...</a>
+                          </td>
+                        </tr> -->
+                      </table>
+                    </td>
+
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Even Columns 1 : END -->
+
+            <!-- Credits : BEGIN -->
+            <tr>
+              <td width="550" valign="top" class="content-outer" style="text-align: left; font-family: arial; padding: 10px; font-size: 14px; line-height: 20px; background-color: #ffffff; color: #002a5c;">
+                Faculty editor: Angelica Fenner<br>
+                Graphic design: Helena Jünger
+              </td>
+            </tr>
+            <!-- Credits : END -->
+
+          </table>
+          <!-- NEWSLETTER 2020/21 : END -->
+
+          <!-- WHITE SPACE : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:15px;font-size:7px;">&nbsp;</td>
+            </tr>
+          </table>
+          <!-- WHITE SPACE : END -->
+
+          <!-- FOOTER : BEGIN -->
+          <table cellspacing="0" cellpadding="0" width="600" class="outer" align="center">
+            <tr>
+              <td width="550" style="background-color: #dde1e8; padding: 30px 25px;" valign="top" class="content-outer">
+                <table width="550" cellspacing="0" cellpadding="0" class="inner">
+                  <tr>
+                    <td style="line-height:16px; text-align: left; font-size: 12px; font-family: arial, helvetica, sans-serif; padding-bottom: 10px;" valign="top" class="inner--centered">
+                      <strong>
+                      Department of Germanic Languages & Literatures</strong><br>
+                      University of Toronto<br>
+                      50 St. Joseph Street, 3rd floor, Odette Hall<br>
+                      Toronto, Ontario M5S 3L5<br>
+                      <a href="https://www.german.utoronto.ca">www.german.utoronto.ca</a><br>
+                      <a href="mailto:german@chass.utoronto.ca">german@chass.utoronto.ca</a><br>
+                      Tel: 416-926-2324<br>
+                      <a href="https://donate.utoronto.ca/give/show/65?utm_source=ARTSCI&utm_medium=Newsletter&utm_campaign=Department%20of%20Germanic%20Languages%20%26%20Literatures">https://donate.utoronto.ca/give/show/65 </a>
+                    </td>
+                    <td style="line-height:16px; text-align: right; font-size: 12px; font-family: arial, helvetica, sans-serif; padding-bottom: 20px;" valign="top" class="inner--centered">
+                      This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #005cc9;text-decoration: none;">##SubscriberEmail##</a><br />
+                      <a href="##TrackClick##https://secureca.imodules.com/s/731/index_clean.aspx?sid=731&gid=1&pgid=1363&cid=2576&post_id=0" style="color: #005cc9; text-decoration: none;">Update contact information</a><br />
+                      <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_ARTSCI_GLL_ALL_Newsletter_Initial_##OptionalParameter3##%20Department%20of%20Germanic%20Languages%20%26%20Literatures%20E-newsletter%202020" style="color: #005cc9; text-decoration: none;">Opt out of future messages</a>
+                    </td>
+                  </tr>
+                  <!--                   <tr>
+                    <td height="50"></td>
+                  </tr> -->
+                  <tr>
+                    <td style="text-align: left; padding-top: 20px;" class="inner--centered" width="285" valign="top">
+                      <a href="##TrackClick##http://www.alumni.artsci.utoronto.ca/" style="color: #005cc9;"><img src="https://alumni.utoronto.ca/sites/default/files/inline-images/header.gif" style="border: none !important;" alt="University of Toronto, Faculty of Arts and Science" st-image="footer-logo" class="footer-logo-left" /></a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- FOOTER : END -->
+
+          <!-- COPYRIGHT AREA : BEGIN -->
+          <table width="600" cellpadding="0" cellspacing="0" class="outer" align="center">
+            <tr>
+              <td style="text-align: center; font-size: 11px; font-family: arial, helvetica;background-color: #ffffff; color: #777777; padding: 10px 60px 20px 60px; line-height: 14px;" valign="top" width="600" class="content">
+                The University&nbsp;of&nbsp;Toronto respects your privacy.
+                We do not rent, trade or sell our mailing lists.
+                Copyright &copy; 2020 University&nbsp;of&nbsp;Toronto. All rights reserved. This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #005cc9;">##SubscriberEmail##</a>.<br />
+                ##OptionalParameter3##<br />
+                ##TrackImpression##
+              </td>
+            </tr>
+          </table>
+          <!-- COPYRIGHT AREA : END -->
+
+          </td>
+        </tr>
+      </table>
+
+    </body>
+  </html>

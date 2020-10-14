@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+        /* Styling the content */
+        span.award-type {
+            color: #002354;
+            font-weight: 700;
+        }
+
+        span.award-name {
+            color: #002354;
+        }
+
+        span.award-degree {
+            font-style: italic;
+            font-size: 12px;
+        }
+
+        span.award-title {
+            color: #002354;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 22px;
+            margin-top: 50px;
+        }
+
+        p.intro {
+            color: #002354;
+            line-height: 23px;
+            font-size: 16px;
+        }
+
+        span.dlt-head {
+            font-size: 11px;
+            color: #000000;
+        }
+
+        span.dlt-content {
+            color: #002354;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        p.rsvp-block {
+            color: #fff;
+            background-color: #002354;
+            padding: 16px;
+            font-size: 16px;
+            line-height: 23px;
+        }
+
+        p.home-event-block {
+            background: #e6e6e6;
+        }
+
+        span.home-event-content {
+            font-weight: 700;
+            color: #000000;
+            font-size: 15px;
+        }
+
+        span.home-event-disclaimer {
+            font-size: 13px;
+            color: #000000;
+        }
+
+        .footer-desktop {
+            padding: 20px;
+        }
+
+        .footer-column-left {
+            text-align: left;
+        }
+
+        .footer-column-right {
+            text-align: right;
+        }
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: #555555 !important;
+	        border-color: #555555 !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+
+            .footer-mobile {
+                padding: 0;
+            }
+
+            .footer-center {
+                text-align: center !important;
+            }
+        }
+
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #f2f4f7;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #f2f4f7;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #222222;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
+            Celebrate Engineering's finest on Thursday, November 5th at 6 pm EST
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680" style="margin: auto;" class="email-container">
+	        <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff; text-align: center;">
+                    <a href="##HTMLNewsletterURL##"style="color: #000000;text-decoration: none; font-weight: bold;font-size:11px;font-family: Arial, Helvetica, sans-serif;">Click to view this email online</a>
+                </td>
+            </tr>
+	        <!-- Email Header : END -->
+
+            <!-- Hero Image, Flush : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <img src="https://adcomms.utoronto.ca/email-templates/engineering/2020/09/42864/Header_withtype.jpg" width="680" height="" alt="alt_text" border="0" style="width: 100%; max-width: 680px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;" class="g-img">
+                </td>
+            </tr>
+            <!-- Hero Image, Flush : END -->
+
+	        <!-- 2 Even Columns : BEGIN -->
+	        <tr>
+	            <td style="padding: 10px; background-color: #ffffff;">
+	                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                    <tr>
+	                        <!-- Column : BEGIN -->
+	                        <th valign="top" width="50%" class="stack-column-center">
+	                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                                <tr>
+	                                    <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
+                                            <p class="intro" style="margin: 15px 0;">
+                                                We’re celebrating the achievements of
+                                                U&nbsp;of&nbsp;T Engineering alumni a little differently
+                                                this year. Join us from the comfort of your
+                                                home to honour 11 outstanding Engineering
+                                                Alumni Network Award recipients.
+                                            <p class="intro">
+                                                Register by October 10 to receive a kit to
+                                                make your EAN Awards experience extra
+                                                special (see details below). Cocktail attire is
+                                                not required, but don’t let us stop you from
+                                                dressing up for the occasion!
+                                            </p>
+                                            <p style="color: #002354;border-bottom: 1px dotted; padding-bottom: 8px;">
+                                                <span class="award-title">
+                                                ENGINEERING ALUMNI NETWORK
+                                                <br>
+                                                2020 AWARD WINNERS
+                                                <br>
+                                                </span>
+                                            </p>
+                                            <p style="line-height: 18px;">
+                                                <span class="award-type">Engineering Alumni Medal</span><br>                                                
+                                                <span class="award-name">Ted Davison, </span><span class="award-degree">Eng Phys 6T0,</span><br>
+                                                <span class="award-degree">MA 6T1, PhD 6T4, Sc. D. 7T7</span>                                       
+                                                <br><br>
+                                                <span class="award-type">Engineering Hall of Distinction</span><br>
+                                                <span class="award-name">Patricia Burchat, </span><span class="award-degree">EngSci 8T1</span><br>
+                                                <span class="award-name">Howard Ginsberg, </span><span class="award-degree">EngSci 8T9</span><br>
+                                                <span class="award-name">Allen Lau, </span><span class="award-degree">ElecE 9T1, ElecE MASc 9T2</span><br>
+                                                <span class="award-name">Shumin Zhai, </span><span class="award-degree">IndE PhD 9T5</span>
+                                                <br><br>
+                                                <span class="award-type">2T5 Mid-Career Achievement Award</span><br>
+                                                <span class="award-name">Michael Helander, </span><span class="award-degree">EngSci 0T7,</span><br>
+                                                <span class="award-degree">MSE PhD 1T2</span><br>
+                                                <span class="award-name">Angela Tran, </span><span class="award-degree">EngSci 0T5,</span><br>
+                                                <span class="award-degree">ChemE MASc 0T7, ChemE PhD 1T2</span>
+                                                <br><br>
+                                                <span class="award-type">7T6 Early Career Achievement Award</span><br>
+                                                <span class="award-name">Bin Liu, </span><span class="award-degree">CivE 1T4</span>
+                                                <br><br>
+                                                <span class="award-type">Malcolm F. McGrath Alumni</span><br>
+                                                <span class="award-type">Achievement Award</span><br>
+                                                <span class="award-name">Eric Matusiak, </span><span class="award-degree">MechE 9T1</span>
+                                                <br><br>
+                                                <span class="award-type">L.E. (Ted) Jones Award</span><br>
+                                                <span class="award-name">Kate Sohn, </span><span class="award-degree">EngSci 1T9+PEY</span>
+                                                <br><br>
+                                                <span class="award-type">Honourary EAN Member</span><br>
+                                                <span class="award-name">Cristina Amon</span><br> 
+                                            </p>
+	                                    </td>
+	                                </tr>
+	                            </table>
+	                        </th>
+	                        <!-- Column : END -->
+	                        <!-- Column : BEGIN -->
+	                        <th valign="top" width="50%" class="stack-column-center">
+	                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+	                                <tr>
+	                                    <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
+                                            <p style="margin-top: 13px;">
+                                                <span class="dlt-head">DATE:</span><br>
+                                                <span class="dlt-content">Thursday, November 5, 2020</span>
+                                                <br><br>
+                                                <span class="dlt-head">LOCATION:</span><br>
+                                                <span class="dlt-content">Virtually from your living room</span>                                                
+                                                <br><br>
+                                                <span class="dlt-head">TIME:</span><br>
+                                                <span class="dlt-content">Mingle: 6 p.m.</span><br>
+                                                <span class="dlt-content">Awards Presentation: 6:30 p.m.</span>
+                                                <br><br>
+                                            </p>
+                                            <p class="rsvp-block">
+                                                <strong>RSVP BY THURSDAY, OCTOBER 29</strong>
+                                                <br>
+                                                For event details and to register, visit:
+                                                <br>
+                                                <a href="https://my.alumni.utoronto.ca/EAN2020" style="text-decoration: none;color: #ffffff">my.alumni.utoronto.ca/EAN2020</a>
+                                            </p>
+                                            <p style="background-color:#e6e6e6;padding:15px;">
+                                                    <span class="award-title" style="font-size: 16px;">
+                                                        TAKE YOUR AT-HOME EVENT<br>
+                                                    </span>    
+                                                    <span class="award-title" style="font-size: 16px;border-bottom: 1px dotted #002354;padding-bottom:8px">
+                                                        EXPERIENCE TO THE NEXT LEVEL!
+                                                    </span>
+                                                    <!-- <span style="border-bottom: 1px dotted black;"><br>&nbsp;</span> -->
+                                                    <span class="home-event-content">
+                                                        <br><br>
+                                                        RSVP by October 10 to receive a<br>
+                                                        package of items to help you celebrate<br>
+                                                        in style.
+                                                        </span>
+                                                        <br><br>
+                                                        <span class="home-event-disclaimer">
+                                                        *Available to Canadian residents only.<br>
+                                                        Registration must be completed in full by<br>
+                                                        October 10, 2020 at 5pm.<br>
+                                                    </span>
+                                                
+                                            </p>
+	                                    </td>
+                                    </tr>
+                                    <tr>
+	                                    <td style="text-align: center">
+	                                        <img src="https://adcomms.utoronto.ca/email-templates/engineering/2020/09/42864/Envelope_Popcorn_Balloon.jpg" width="270" height="" alt="alt_text" border="0" style="width: 100%; max-width: 270px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+	                                    </td>
+	                                </tr>
+	                            </table>
+	                        </th>
+	                        <!-- Column : END -->
+	                    </tr>
+	                </table>
+	            </td>
+	        </tr>
+            <!-- 2 Even Columns : END -->
+            
+
+            <!-- Hero Image, Flush : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <img src="https://adcomms.utoronto.ca/email-templates/engineering/2020/09/42864/Footer_withLogos.jpg" width="680" height="" alt="alt_text" border="0" style="width: 100%; max-width: 680px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;" class="g-img">
+                </td>
+            </tr>
+            <!-- Hero Image, Flush : END -->
+
+	        <!-- Clear Spacer : BEGIN -->
+	        <!-- <tr>
+	            <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;">
+	                &nbsp;
+	            </td>
+	        </tr> -->
+	        <!-- Clear Spacer : END -->
+
+	    <!-- Email Body : END -->
+
+        <!-- Email Footer : BEGIN -->
+            <!-- <tr>
+                <td> -->
+                    <!-- Social Media : BEGIN -->
+                    <!-- <table cellpadding="0" cellspacing="0" width="680" class="outer" align="center" style="width: 680px;">
+                        <tr><td width="600" align="center" height="20" style="background-color: #ffffff;"></td></tr>
+                        <tr>
+                        <td width="600" align="center" style="background-color: #ffffff;">
+                            <table cellpadding="0" cellspacing="0" width="200">
+                            <tr>
+                                <td>
+                                <a href="##TrackClick##https://www.facebook.com/uoftengineering" style="border:0 !important;">
+                                    <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/facebook_1.png" width="40" height="40" />
+                                </a>
+                                </td>
+                                <td></td>
+                                <td>
+                                <a href="##TrackClick##https://twitter.com/skulealumni" style="border:0 !important;">
+                                    <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/twitter_0.png" width="40" height="40" />
+                                </a>
+                                </td>
+                                <td></td>
+                                <td>
+                                <a href="##TrackClick##https://www.youtube.com/user/uofteng" style="border:0 !important;">
+                                    <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/youtube_0.png" width="40" height="40" />
+                                </a>
+                                </td>
+                                <td></td>
+                                <td>
+                                <a href="##TrackClick##https://instagram.com/uoftengineering/" style="border:0 !important;">
+                                    <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/instagram_1.png" width="40" height="40" />
+                                </a>
+                                </td>
+                            </tr>
+                            </table>
+                        </td>
+                        </tr>
+                        <tr><td width="600" align="center" height="20" style="background-color: #ffffff;" class="outer"></td></tr>
+                    </table> -->
+                    <!-- Social Media : END -->
+                <!-- </td>
+            </tr> -->
+
+            <!-- Contact Information : BEGIN -->
+                <tr>
+                    <td style="padding: 10px; background-color: #e4e4e4;">
+                        
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <!-- Column : BEGIN -->
+                                <th valign="top" width="50%" class="stack-column-center footer-mobile footer-desktop footer-column-left">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <td style="font-size: 12px; font-family: arial, helvetica, sans-serif; padding-bottom: 20px;" valign="top" class="footer-center">
+                                                <strong>Faculty of Applied Science & Engineering</strong><br />
+                                                Office of Advancement, Alumni Relations<br />
+                                                55 St. George Street, Suite 670<br />
+                                                Toronto, Ontario<br />
+                                                M5S 1A4<br /><br />
+                                                web: <a href="##TrackClick##http://alumni.engineering.utoronto.ca/">alumni.engineering.utoronto.ca</a><br />
+                                                phone: +1 (416) 978-0380 <br />
+                                                email: <a href="mailto:engineering.advancement@utoronto.ca">engineering.advancement@utoronto.ca</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-top: 20px;" width="285" valign="top">
+                                            <a href="##TrackClick##http://www.engineering.utoronto.ca/"><img src="https://alumni.utoronto.ca/sites/default/files/inline-images/apsc-logo.png" style="border: none !important;" alt="University of Toronto" width="300" height="51" st-image="footer-logo" class="footer-logo-left" /></a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <th valign="top" width="50%" class="stack-column-center footer-mobile footer-desktop footer-column-right">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <td style="font-size: 12px; font-family: arial, helvetica, sans-serif; padding-bottom: 20px;" valign="top" class="footer-center">
+                                                This e-mail was sent to ##SubscriberEmail## <br />
+                                                <a href="##TrackClick##https://secureca.imodules.com/s/731/index_clean.aspx?sid=731&gid=1&pgid=1363&cid=2576&post_id=0" style="color: #005cc9; text-decoration: none;">Update contact information</a><br />
+                                                <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_APSE_ALL_ALL_INVITATION_INITIAL_##OptionalParameter3##%20Youre%20invited%20to%20the%202020%20Engineering%20Alumni%20Network%20Virtual%20Awards" style="color: #005cc9; text-decoration: none;">Opt out of future messages</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            <!-- Contact Information : END -->
+
+            <!-- Copyright Area : BEGIN -->
+                <tr>
+                    <td>    
+                        <table width="680" cellpadding="0" cellspacing="0" class="stack-column-center" align="center">
+                            <tr>
+                            <td style="text-align: center; font-size: 10px; font-family: arial, helvetica;background-color: #ffffff; color: #777777; padding-top: 10px; line-height: 14px;" valign="top" width="600" class="outer">
+                                The University&nbsp;of&nbsp;Toronto respects your privacy.
+                                <br />
+                                We do not rent, trade or sell our mailing lists. Copyright &copy; 2020 University&nbsp;of&nbsp;Toronto. All rights reserved.
+                                <br />
+                                ##OptionalParameter3##
+                                <br />
+                                ##TrackImpression##
+                                <br /><br />
+                            </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            <!-- Copyright Area : END -->
+
+	    <!-- Email Footer : END -->
+       
+    </table>
+        
+    <!-- Email Body : END -->
+
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>

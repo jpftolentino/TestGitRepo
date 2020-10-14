@@ -13,3 +13,5 @@ http://my.alumni.utoronto.ca/s/731/18/register.aspx?sid=731&gid=1&pgid=14888&utm
 
 Unsubscribe
 mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%20DUA_ALL_AR_Invitations_##OptionalParameter3##%20|%20REUNION20-REGISTRATION-EMAIL
+
+utm_source=ARTSCI&utm_medium=Solicitation&utm_campaign=XYZ&sid=DIS-##OptionalParameter3##|SRC-##OptionalParameter5##|FN-##OptionalParameter6##

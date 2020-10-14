@@ -1,5 +1,5 @@
 2020-21_ARTSCI_A&SSTATISTICS_ALL_Newsletter_Initial_Are You Available to be a UofT ActSci Mentor Again? - 42710_20200916
-
+2020-21_ARTSCI_SS_ALL_Newsletter_Reminder_Are You Available to be a UofT ActSci Mentor Again - 42710_20200916
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Email Subject
@@ -23,8 +23,8 @@ john.tolentino@utoronto.ca
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Unsubscribe:
-mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_ARTSCI_A&SSTATISTICS_ALL_Newsletter_Initial_##OptionalParameter3##%20Are%20You%20Available%20to%20be%20a%20UofT%20ActSci%20Mentor%20Again?
-
+mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_ARTSCI_A%26SSTATISTICS_ALL_Newsletter_Initial_##OptionalParameter3##%20Are%20You%20Available%20to%20be%20a%20UofT%20ActSci%20Mentor%20Again?
+mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_ARTSCI_A%26SSTATISTICS_ALL_Newsletter_Reminder_##OptionalParameter3##%20Are%20You%20Available%20to%20be%20a%20UofT%20ActSci%20Mentor%20Again?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Solicitation URL:
