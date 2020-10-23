@@ -5,7 +5,7 @@
 Email Subject
 
 From: Department of Germanic Languages & Literatures E-newsletter 2020
-Reply to: helena.juenger@utoronto.ca
+Reply to: german@chass.utoronto.ca
 Campaign: Department of Germanic Languages and Literatures
 Subject: Department of Germanic Languages & Literatures E-newsletter 2020
 Preview: Department of Germanic Languages &amp; Literatures E-newsletter 2020
@@ -13,8 +13,11 @@ Preview: Department of Germanic Languages &amp; Literatures E-newsletter 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Seed/approve list
+
 helena.juenger@utoronto.ca
 jennifer.wells@utoronto.ca
+stefan.soldovieri@utoronto.ca
+michael.mckinnon@utoronto.ca
 ramine.haider@gmail.com
 ramine.haider@utoronto.ca
 john.tolentino@utoronto.ca

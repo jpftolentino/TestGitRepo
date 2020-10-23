@@ -1,5 +1,5 @@
 2020-21_APSE_ALL_ALL_INVITATION_INITIAL_EAN 1st General e-vite - Youre invited to the 2020 Engineering Alumni Network Virtual Awards - 42864_20200930
-
+2020-21_APSE_ALL_ALL_INVITATION_REMINDER_EAN 1st General e-vite - Youre invited to the 2020 Engineering Alumni Network Virtual Awards - 42865_20201014
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Email Subject
@@ -8,6 +8,7 @@ From: U of T Engineering Events
 Reply to: events@engineering.utoronto.ca
 Campaign: EAN 1st General e-vite
 Subject: You’re invited to the 2020 Engineering Alumni Network Virtual Awards 
+Subject: Reminder: You’re invited to the 2020 Engineering Alumni Network Virtual Awards
 Preview: Celebrate Engineering's finest on Thursday, November 5th at 6 pm EST
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

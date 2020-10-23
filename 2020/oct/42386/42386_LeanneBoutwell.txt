@@ -1,5 +1,5 @@
 2020-21_DLSPH_ALL_ALL_SOLICITATION_INITIAL_All Alumni DLSPH FY21 Campaign - Invest in the Next Generation Public Health - 42386_20201008
-
+2020-21_DLSPH_ALL_ALL_SOLICITATION_REMINDER_All Alumni DLSPH FY21 Campaign - Invest in the Next Generation Public Health - 42386_20201008
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Email Subject
@@ -7,25 +7,23 @@ Email Subject
 From: Professor Erica Di Ruggiero
 Reply to: advancement.dlsph@utoronto.ca
 Campaign: All Alumni DLSPH FY21 Campaign
-Subject: Invest in the Next Generation | Public Health
+Subject: Reminder: Invest in the Next Generation | Public Health
 Preview: TBD
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Seed/approve list
 
-
 annette.paul@utoronto.ca
 alison.sasso@utoronto.ca
 advancement.dlsph@utoronto.ca
-
 leanne.boutwell@utoronto.ca
 john.tolentino@utoronto.ca
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Unsubscribe:
 mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_DLSPH_ALL_ALL_SOLICITATION_INITIAL_##OptionalParameter3##%20Invest%20in%20the%20Next%20Generation%20Public%20Health
-
+mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_DLSPH_ALL_ALL_SOLICITATION_REMINDER_##OptionalParameter3##%20Invest%20in%20the%20Next%20Generation%20Public%20Health
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Solicitation URL:

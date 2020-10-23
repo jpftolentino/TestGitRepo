@@ -4,8 +4,8 @@
 
 Email Subject
 
-From: 
-Reply to: 
+From: University of Toronto
+Reply to: regional.programs@alumni.utoronto.ca
 Campaign: Ontario Virtual Events newsletter
 Subject: Join fellow alumni for U of T lectures
 Preview: Attend our virtual lecture series by top U of T professors&mdash;online from anywhere.
@@ -14,14 +14,18 @@ Preview: Attend our virtual lecture series by top U of T professors&mdash;online
 
 Seed/approve list
 
-derek.mletzko@utoronto.ca
 morgan.tilley@utoronto.ca 
+derek.mletzko@utoronto.ca
 john.tolentino@utoronto.ca
+
+susan.fischer@utoronto.ca
+sd.baker@utoronto.ca
+katherine.carney@utoronto.ca
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Unsubscribe:
-mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_APSE_ALL_ALL_INVITATION_INITIAL_##OptionalParameter3##%20Join%20fellow%20alumni%20for%20U%20of%20T%20lectures
+mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_DUA_ALR_ALL_INVITATION_INITIAL_##OptionalParameter3##%20Join%20fellow%20alumni%20for%20U%20of%20T%20lectures
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

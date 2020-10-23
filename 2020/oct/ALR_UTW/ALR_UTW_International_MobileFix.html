@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+            display: none !important;
+            opacity: 0.01 !important;
+        }
+        /* If the above doesn't work, add a .g-img class to any image in question. */
+        img.g-img + div {
+            display: none !important;
+        }
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+        .event-header {
+            color: #00204e;
+            font-size: 26px;
+            line-height: 26px;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .event-subheader {
+            color: #027fa3;
+            margin: 10px 0 0;
+            font-weight: 700;
+        }
+
+        .event-description {
+            color: #000000;
+            font-weight: 400;
+            margin: 5px 0 5px;
+        }
+
+        .event-date {
+            color: #000000;
+            margin: 20px 0 5px;
+            font-weight: 700;
+        }
+
+        .event-timezone {
+            color: #027fa3;
+        }
+
+        .event-link {
+            margin: 0 0 10px;
+        }
+
+        .event-container {
+            padding: 25px 0 0 20px;
+        }
+        
+	    /* Media Queries */
+        
+	    @media screen and (max-width: 480px) {
+
+	        /* What it does: Forces table cells into full-width rows. */
+	        .stack-column,
+	        .stack-column-center {
+	            display: block !important;
+	            width: 100% !important;
+	            max-width: 100% !important;
+	            direction: ltr !important;
+	        }
+	        /* And center justify these ones. */
+	        .stack-column-center {
+	            text-align: center !important;
+	        }
+
+	        /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+	        .center-on-narrow {
+	            text-align: center !important;
+	            display: block !important;
+	            margin-left: auto !important;
+	            margin-right: auto !important;
+	            float: none !important;
+	        }
+	        table.center-on-narrow {
+	            display: inline-block !important;
+	        }
+
+            .event-header {
+                font-size: 26px !important;
+            }
+
+	        /* What it does: Adjust typography on small screens to improve readability */
+	        .email-container p {
+	            font-size: 17px;
+	        }
+
+            /* What it does: changes the size of hr element to make it mobile responsive */
+            hr {
+                max-width: 100%;
+            }
+
+            .event-container {
+                padding: 0;
+            }
+
+	    }
+
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #f2f4f7;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #f2f4f7;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f2f4f7;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
+            Attend our virtual lecture series by top U of T professors&mdash;online from anywhere.
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+	        &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!--
+            Set the email width. Defined in two places:
+            1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+            2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+            Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+        -->
+        <div style="max-width: 680px; margin: 0 auto;" class="email-container">
+            <!--[if mso]>
+            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+            <tr>
+            <td>
+            <![endif]-->
+
+        <!-- Email Body : BEGIN -->
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+            <!-- Email Header : BEGIN -->
+            <tr>
+                <td style="text-align: center; padding-bottom: 10px; padding-top: 10px; font-family: arial,sans-serif; background-color: #ffffff; border-bottom: 1px solid #f2f4f7;">
+                    <a href="##HTMLNewsletterURL##" style="text-decoration: none !important; color: #000000; font-size: 12px;text-align: center !important;">
+                    <strong>View this email online</strong>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <!-- dir=rtl is where the magic happens. This can be changed to dir=ltr to swap the alignment on wide while maintaining stack order on narrow. -->
+                <td dir="rtl" height="100%" valign="top" width="100%" style="padding: 10px 0; background-color: #ffffff;">
+                    <!--[if mso]>
+                    <table align="center" role="presentation" border="0" cellspacing="0" cellpadding="0" width="680" style="width: 680px;" bgcolor="white">
+                    <tr>
+                    <td valign="top" width="680" bgcolor="white">
+                    <![endif]-->
+                    <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:680px;" bgcolor="white">
+                        <tbody><tr>
+                            <td align="center" valign="top" style="font-size:0; padding: 10px 0;" bgcolor="white">
+                                <!--[if mso]>
+                                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="680" style="width: 680px;">
+                                <tr>
+                                <td valign="bottom" width="220" style="width: 220px;" border="0" bgcolor="white">
+                                <![endif]-->
+                                <div style="display:inline-block; margin: 0 -2px; max-width: 200px; min-width: 160px; vertical-align:bottom; width:100%;" class="stack-column">
+                                </div>
+                                <!--[if mso]>
+                                </td>
+                                <td valign="top" width="440" style="width: 440px;">
+                                <![endif]-->
+                                <div style="display:inline-block; margin: 0 -2px; max-width:66.66%; min-width:320px; vertical-align:top;" class="stack-column">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tbody><tr>
+                                            <td dir="ltr" style="font-family: sans-serif; color: #555555; padding: 0 40px; text-align: left;" class="">
+                                                <img src="https://adcomms.utoronto.ca/email-templates/landmark/uoft-signature.png" width="300" height="64" alt="U&nbsp;of&nbsp;T Signature">
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                </div>
+                                <!--[if mso]>
+                                </td>
+                                </tr>
+                                </table>
+                                <![endif]-->
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <!--[if mso]>
+                    </td>
+                    </tr>
+                    </table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <!-- Email Header : END -->
+
+            <!-- 1 Column Text + Button : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 10px 60px 0; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                                <h1 style="margin: 0 0 10px; font-size: 38px; line-height: 46px; color: #00204e;">
+                                    SEE LIVE TALKS BY
+                                    U&nbsp;OF&nbsp;T’S&nbsp;TOP THINKERS.
+                                </h1>
+                                <h1 style="margin: 0 0 10px; font-size: 38px; line-height: 46px; color: #027fa3;">
+                                    VIRTUALLY ANYWHERE.
+                                </h1>
+                                <p style="margin: 0; font-size: 18px; line-height: 24px; color: #000000;">
+                                    Now that alumni events have gone virtual, they can cross borders
+                                    and time zones to engage you wherever you live. U&nbsp;of&nbsp;T Where You Are
+                                    brings the University to your device through an eclectic lecture series
+                                    by U&nbsp;of&nbsp;T’s award-winning faculty and groundbreaking researchers. Check
+                                    out the fall lineup, choose your time zone and join fellow alumni online.
+                                    For concerts, workouts and other events, visit our <a href="https://alumni.utoronto.ca/hub" style="color: #027fa3">virtual hub</a>.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text + Button : END -->
+
+	        <!-- Thumbnail Left, Text Right : BEGIN -->
+	        <tr>
+                <td dir="ltr" width="100%" style="padding: 10px 40px; background-color: #ffffff;">
+                    <hr style="width: 560px; margin-bottom: 0;border-color: #027fa3;">
+	                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                    <tr>
+	                        <!-- Column : BEGIN -->
+	                        <th width="33.33%" class="stack-column-center" style="vertical-align: top;">
+	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                                <tr>
+	                                    <td dir="ltr" valign="top" style="padding: 25px 18px; mso-padding-right-alt: 18px;mso-padding-left-alt: 18px; mso-padding-top-alt: 0;">
+	                                        <img src="https://adcomms.utoronto.ca/email-templates/alr/2020/10/Insulin100_Stacked_Colour_Digital.png" width="170" height="auto" alt="alt_text" border="0" class="center-on-narrow" style="height: auto; background: #027fa3; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+	                                    </td>
+	                                </tr>
+	                            </table>
+	                        </th>
+	                        <!-- Column : END -->
+	                        <!-- Column : BEGIN -->
+	                        <th width="66.66%" class="stack-column-center">
+	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                                <tr>
+	                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; text-align: left;" class="center-on-narrow event-container">
+                                            <p class="event-header">
+                                                How did Banting and
+                                                Best&nbsp;change
+                                                the&nbsp;world?
+                                            </p>
+                                            <p class="event-subheader">
+                                                The 100th Anniversary of the Discovery of&nbsp;Insulin:&nbsp;The Early Years
+                                            </p>
+                                            <p class="event-description">
+                                                A talk plus Q & A with<br>
+                                                Prof. Gary Lewis
+                                            </p>
+                                            <p class="event-date">
+                                                November 13, 2020<br>
+                                                7:30&ndash;8:30 p.m. <span style="color: #027fa3;font-weight:400;"><strong>IST</strong></span>
+                                            </p>
+                                            <p class="event-link">
+                                                <a href="https://boundless.utoronto.ca/timeanddate" style="color: #027fa3;font-weight:400;text-decoration: underline; font-size: 12px;">Convert to my time zone.</a>
+                                            </p>
+                                            <p class="event-description">
+                                                Live or on demand. Free.
+                                            </p>
+	                                        <!-- Button : BEGIN -->
+	                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;">
+	                                            <tr>
+		                                            <td class="button-td button-td-primary" style="background: #00204e;">
+														<a class="button-a button-a-primary" href="https://alumni.utoronto.ca/events-and-programs/u-t-where-you-are-100th-anniversary-discovery-insulin-early-years-and-their" style="background: #00204e; border: 1px solid #00204e; font-family: sans-serif; font-weight: 400; font-size: 17px; line-height: 15px; text-decoration: none; padding: 10px 10px; color: #ffffff; display: block;">Register Now</a>
+													</td>
+	                                          </tr>
+	                                      </table>
+	                                      <!-- Button : END -->
+	                                    </td>
+	                                </tr>
+	                            </table>
+	                        </th>
+	                        <!-- Column : END -->
+	                    </tr>
+	                </table>
+	            </td>
+	        </tr>
+            <!-- Thumbnail Left, Text Right : END -->
+
+	        <!-- Thumbnail Left, Text Right : BEGIN -->
+	        <tr>
+                <td dir="ltr" width="100%" style="padding: 10px 40px; background-color: #ffffff;">
+                    <hr style="width: 560px; margin-bottom: 0;border-color: #027fa3;">
+	                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                    <tr>
+	                        <!-- Column : BEGIN -->
+	                        <th width="33.33%" class="stack-column-center" style="vertical-align: top;">
+	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                                <tr>
+	                                    <td dir="ltr" valign="top" style="padding: 25px 18px; mso-padding-right-alt: 18px;mso-padding-left-alt: 18px; mso-padding-top-alt: 0;">
+	                                        <img src="https://adcomms.utoronto.ca/email-templates/alr/2020/10/prabhatjha_photo.jpeg" width="170" height="auto" alt="alt_text" border="0" class="center-on-narrow" style="height: auto; background: #027fa3; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+	                                    </td>
+	                                </tr>
+	                            </table>
+	                        </th>
+	                        <!-- Column : END -->
+	                        <!-- Column : BEGIN -->
+	                        <th width="66.66%" class="stack-column-center">
+	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                                <tr>
+	                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; text-align: left;" class="center-on-narrow event-container">
+                                            <p class="event-header">
+                                                What can we learn<br>
+                                                from death?
+                                            </p>
+                                            <p class="event-subheader">
+                                                Science in a Time of Cholera:&nbsp;Reliable Quantification&nbsp;of Causes 
+                                                of&nbsp;Death&nbsp;Worldwide
+                                            </p>
+                                            <p class="event-description">
+                                                A talk plus Q & A with<br>
+                                                Prof. Prabhat Jha
+                                            </p>
+                                            <p class="event-date">
+                                                November 19, 2020<br>
+                                                6:00&ndash;7:00 p.m. <span style="color: #027fa3;font-weight:400;"><strong>PST</strong></span>
+                                            </p>
+                                            <p class="event-link">
+                                                <a href="https://boundless.utoronto.ca/timeanddate" style="color: #027fa3;font-weight:400;text-decoration: underline; font-size: 12px;">Convert to my time zone.</a>
+                                            </p>
+                                            <p class="event-description">
+                                                Live or on demand. Free.
+                                            </p>
+	                                        <!-- Button : BEGIN -->
+	                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;">
+	                                            <tr>
+		                                            <td class="button-td button-td-primary" style="background: #00204e;">
+														<a class="button-a button-a-primary" href="https://alumni.utoronto.ca/events-and-programs/u-t-where-you-are-science-not-only-love-time-cholera-reliable-quantification" style="background: #00204e; border: 1px solid #00204e; font-family: sans-serif; font-weight: 400; font-size: 17px; line-height: 15px; text-decoration: none; padding: 10px 10px; color: #ffffff; display: block;">Register Now</a>
+													</td>
+	                                          </tr>
+	                                      </table>
+	                                      <!-- Button : END -->
+	                                    </td>
+	                                </tr>
+	                            </table>
+	                        </th>
+	                        <!-- Column : END -->
+	                    </tr>
+	                </table>
+	            </td>
+	        </tr>
+            <!-- Thumbnail Left, Text Right : END -->
+
+	        <!-- Thumbnail Left, Text Right : BEGIN -->
+	        <tr>
+                <td dir="ltr" width="100%" style="padding: 10px 40px; background-color: #ffffff;">
+                    <hr style="width: 560px; margin-bottom: 0;border-color: #027fa3;">
+	                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                    <tr>
+	                        <!-- Column : BEGIN -->
+	                        <th width="33.33%" class="stack-column-center" style="vertical-align: top;">
+	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                                <tr>
+	                                    <td dir="ltr" valign="top" style="padding: 25px 18px; mso-padding-right-alt: 18px;mso-padding-left-alt: 18px; mso-padding-top-alt: 0;">
+	                                        <img src="https://adcomms.utoronto.ca/email-templates/alr/2020/10/Jessica_Burgner_Kahrs_UTM_JBK.png" width="170" height="auto" alt="alt_text" border="0" class="center-on-narrow" style="height: auto; background: #027fa3; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+	                                    </td>
+	                                </tr>
+	                            </table>
+	                        </th>
+	                        <!-- Column : END -->
+	                        <!-- Column : BEGIN -->
+	                        <th width="66.66%" class="stack-column-center">
+	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+	                                <tr>
+	                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; text-align: left;" class="center-on-narrow event-container">
+                                            <p class="event-header">
+                                                What makes continuum robots&nbsp;different?
+                                            </p>
+                                            <p class="event-subheader">
+                                                Rethinking Robotics: Worms, 
+                                                Tongues&nbsp;and&nbsp;Elephant&nbsp;Trunks
+                                            </p>
+                                            <p class="event-description">
+                                                A talk plus Q & A with<br>
+                                                Prof. Jessica Burgner-Kahrs
+                                            </p>
+                                            <p class="event-date">
+                                                November 26, 2020<br>
+                                                6:00&ndash;7:00 p.m. <span style="color: #027fa3;font-weight:400;"><strong>CET</strong></span>
+                                            </p>
+                                            <p class="event-link">
+                                                <a href="https://boundless.utoronto.ca/timeanddate" style="color: #027fa3;font-weight:400;text-decoration: underline; font-size: 12px;">Convert to my time zone.</a>
+                                            </p>
+                                            <p class="event-description">
+                                                Live or on demand. Free.
+                                            </p>
+	                                        <!-- Button : BEGIN -->
+	                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;">
+	                                            <tr>
+		                                            <td class="button-td button-td-primary" style="background: #00204e;">
+														<a class="button-a button-a-primary" href="https://alumni.utoronto.ca/events-and-programs/u-t-where-you-are-rethinking-robotics-worms-tongues-and-elephant-trunks" style="background: #00204e; border: 1px solid #00204e; font-family: sans-serif; font-weight: 400; font-size: 17px; line-height: 15px; text-decoration: none; padding: 10px 10px; color: #ffffff; display: block;">Register Now</a>
+													</td>
+	                                          </tr>
+	                                      </table>
+	                                      <!-- Button : END -->
+	                                    </td>
+	                                </tr>
+	                            </table>
+	                        </th>
+	                        <!-- Column : END -->
+	                    </tr>
+	                </table>
+	            </td>
+	        </tr>
+            <!-- Thumbnail Left, Text Right : END -->
+            
+            <!-- Clear Spacer : BEGIN -->
+                <tr>
+                    <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px; background: white;">
+                        &nbsp;
+                    </td>
+                </tr>
+            <!-- Clear Spacer : END -->
+
+        </table>
+        <!-- Email Body : END -->
+
+        <!-- Email Footer : BEGIN -->
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 680px;">
+
+            <!-- Clear Spacer : BEGIN -->
+                <tr>
+                    <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px; background: white;">
+                        &nbsp;
+                    </td>
+                </tr>
+            <!-- Clear Spacer : END -->
+
+            <!-- Social Media Icons : BEGIN -->
+                <tr>
+                    <td height="100%" valign="top" width="100%" style="padding: 10px 0; background-color: #25355a;">
+                        <!--[if mso]>
+                        <table align="center" role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                        <tr>
+                        <td valign="top" width="660">
+                        <![endif]-->
+                        <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:660px;">
+                            <tbody><tr>
+                                <td align="center" valign="top" style="font-size:0;">
+                                    <!--[if mso]>
+                                    <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                                    <tr>
+                                    <td valign="top" width="340">
+                                    <![endif]-->
+                                    <div style="display:inline-block; margin: 0 -2px; max-width:51.1%; min-width:340px; vertical-align:top; width:100%;" class="stack-column-center">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tbody><tr>
+                                                <td style="padding: 10px 40px;">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="text-align: left;">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td style="font-family: sans-serif; font-size: 15px; color: #555555; padding-top: 10px;" class="stack-column-center">
+                                                                <a href="##TrackClick##https://www.facebook.com/uoftalumni" style="border:0;text-decoration: none;">
+                                                                <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/facebook-fff-128.png" alt="Facebook" border="0" width="28" height="28" class="social">
+                                                                </a>&nbsp;
+                                                                <a href="##TrackClick##https://twitter.com/uoftalumni" style="border:0;text-decoration: none;">
+                                                                <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/twitter-fff-128.png" alt="Twitter" border="0" width="28" height="28" class="social">
+                                                                </a>&nbsp;
+                                                                <a href="##TrackClick##https://www.instagram.com/uoftalumni" style="border:0;text-decoration: none;">
+                                                                <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/instagram-fff-128.png" alt="" border="0" width="28" height="28" class="social">
+                                                                </a>&nbsp;
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </div>
+                                    <!--[if mso]>
+                                    </td>
+                                    <td valign="top" width="200">
+                                    <![endif]-->
+                                    <div style="display:inline-block; margin: 0 -2px; max-width:30.30%; min-width:200px; vertical-align:top; width:100%;" class="stack-column-center">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tbody><tr>
+                                                <td class="hide" style="padding: 10px 10px;">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td height="5" style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="stack-column">
+                                                            
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </div>
+                                    <!--[if mso]>
+                                    </td>
+                                    <td valign="bottom" width="120" style="padding-bottom: 8px;">
+                                    <![endif]-->
+                                    <div style="display:inline-block; margin: 0 -2px; max-width:18.18%; min-width:120px; vertical-align:bottom; width:100%;" class="stack-column-center">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tbody><tr>
+                                                <td style="padding: 10px 10px;">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td style="font-family: sans-serif; font-size: 15px; color: #555555; padding-top: 10px;" class="stack-column">
+                                                                <!-- <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/boundless-reverse%402x.png" alt="Boundless Logo" width="100" height="17" border="0"> -->
+                                                            </td>
+                                                        </tr>
+                                                    </tbody></table>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </div>
+                                    <!--[if mso]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+            <!-- Social Media Icons : END -->
+
+            <!-- Clear Spacer : BEGIN -->
+                <tr>
+                    <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px; background: white;">
+                        &nbsp;
+                    </td>
+                </tr>
+            <!-- Clear Spacer : END -->
+
+            <!-- Contact Information : BEGIN -->
+                <tr>
+                    <td style="padding: 10px 60px; background-color: #ffffff;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <!-- Column : BEGIN -->
+                                <th valign="top" width="50%" class="stack-column-center">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; text-align: left;font-weight: 400;" class="stack-column">
+                                                <p style="margin: 0;">
+                                                    The University&nbsp;of&nbsp;Toronto <br>
+                                                    21 King's College Circle <br>
+                                                    Toronto, Ontario <br>
+                                                    M5S 3J3 
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                                <!-- Column : BEGIN -->
+                                <th valign="bottom" width="50%" class="stack-column-center">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding-top: 10px;font-weight:400; text-align: right;" class="stack-column">
+                                                <a href="##TrackClick##https://secureca.imodules.com/s/731/index_clean.aspx?sid=731&gid=1&pgid=1363&cid=2576&post_id=0" style="font-family: 'Arial';border: none; text-decoration: none;color: #007FA3;">
+                                                Update&nbsp;contact&nbsp;information
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->                                
+                            </tr>
+                        </table>  
+                    </td>
+                </tr>
+            <!-- Contact Information : END -->
+
+
+            <!-- Clear Spacer : BEGIN -->
+                <tr>
+                    <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px; background: white;">
+                        &nbsp;
+                    </td>
+                </tr>
+            <!-- Clear Spacer : END -->
+
+            <!-- Copyright : BEGIN -->
+                <tr>
+                    <td class="stack-column" style="background-color: #ffffff;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tbody><tr>
+                                <td style="padding: 0 20px;text-align:center;font-size:11px;color:#000000;line-height:16px;font-family:Arial, sans-serif;font-weight:normal;">
+                                The University&nbsp;of&nbsp;Toronto respects your privacy. We do not rent, trade or sell our mailing lists.
+                                <br>
+                                Copyright &#169; 2020 University&nbsp;of&nbsp;Toronto. All rights reserved.
+                                <br><br>
+                                This e-mail was sent to ##SubscriberEmail##<br>
+                                To opt out of future messages of this kind, please <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_APSE_ALL_ALL_INVITATION_INITIAL_##OptionalParameter3##%20Join%20fellow%20alumni%20for%20U%20of%20T%20lectures" style="color: #000000; text-decoration: underline; color: #007FA3;">contact us.</a>
+                                <br><br>
+                                ##OptionalParameter3##
+                                <br><br>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            <!-- Copyright : END -->
+        </table>
+        <!-- Email Footer : END -->
+
+            <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </div>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+    <style data-ignore-inlining>@media print{ #_t { background-image: url('https://vgi02i5c.emltrk.com/vgi02i5c?p&d=##OptionalParameter3##');}} div.OutlookMessageHeader {background-image:url('https://vgi02i5c.emltrk.com/vgi02i5c?f&d=##OptionalParameter3##')} table.moz-email-headers-table {background-image:url('https://vgi02i5c.emltrk.com/vgi02i5c?f&d=##OptionalParameter3##')} blockquote #_t {background-image:url('https://vgi02i5c.emltrk.com/vgi02i5c?f&d=##OptionalParameter3##')} #MailContainerBody #_t {background-image:url('https://vgi02i5c.emltrk.com/vgi02i5c?f&d=##OptionalParameter3##')}</style><div id="_t"></div>
+<img src="https://vgi02i5c.emltrk.com/vgi02i5c?d=##OptionalParameter3##" width="1" height="1" border="0" alt="" />
+##TrackImpression##</body>
+</html>

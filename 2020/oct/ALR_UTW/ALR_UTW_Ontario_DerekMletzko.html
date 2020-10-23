@@ -147,26 +147,50 @@
         .event-subheader {
             color: #027fa3;
             margin: 10px 0 0;
+            font-weight: 700
         }
 
         .event-description {
             color: #000000;
             font-weight: 400;
-            margin: 5px 0 5px;
+            margin: 5px 0 0;
         }
 
         .event-date {
             color: #000000;
             margin: 20px 0 5px;
+            font-weight: 700;
         }
 
         .event-timezone {
             color: #027fa3;
         }
+
+        .event-container {
+            padding: 25px 0 0 20px;
+        }
         
+        .image-left {
+            width: 45.0%;
+        }
+
+        .text-right {
+            width: 55.0%;
+        }
 
 	    /* Media Queries */
         
+        @media screen and (max-width: 640px) {
+            .image-left {
+                width: 45%;
+            }
+
+            .text-right{
+                width: 55%;
+            }
+        }
+
+
 	    @media screen and (max-width: 480px) {
 
 	        /* What it does: Forces table cells into full-width rows. */
@@ -194,14 +218,22 @@
 	            display: inline-block !important;
 	        }
 
+            .event-header {
+                font-size: 26px !important;
+            }
+
 	        /* What it does: Adjust typography on small screens to improve readability */
 	        .email-container p {
-	            font-size: 17px !important;
+	            font-size: 17px;
 	        }
 
             /* What it does: changes the size of hr element to make it mobile responsive */
             hr {
                 max-width: 100%;
+            }
+
+            .event-container {
+                padding: 0;
             }
 
 	    }
@@ -315,8 +347,8 @@
                         <tr>
                             <td style="padding: 10px 60px 0; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
                                 <h1 style="margin: 0 0 10px; font-size: 38px; line-height: 46px; color: #00204e;">
-                                    SEE LIVE TALKS BY<br>
-                                    U&nbsp;OF&nbsp;T’S TOP THINKERS.
+                                    SEE LIVE TALKS BY
+                                    U&nbsp;OF&nbsp;T’S&nbsp;TOP THINKERS.
                                 </h1>
                                 <h1 style="margin: 0 0 10px; font-size: 38px; line-height: 46px; color: #027fa3;">
                                     VIRTUALLY ANYWHERE.
@@ -327,7 +359,7 @@
                                     You Are brings the University to your device through an eclectic
                                     lecture series by U&nbsp;of&nbsp;T’s award-winning faculty and groundbreaking
                                     researchers. Check out the fall lineup and join fellow alumni online.
-                                    For concerts, workouts and other events, visit our <a href="" style="color: #027fa3">virtual hub</a>.
+                                    For concerts, workouts and other events, visit our <a href="https://alumni.utoronto.ca/hub" style="color: #027fa3">virtual hub</a>.
                                 </p>
                             </td>
                         </tr>
@@ -336,54 +368,80 @@
             </tr>
             <!-- 1 Column Text + Button : END -->
 
+
+
 	        <!-- Thumbnail Left, Text Right : BEGIN -->
 	        <tr>
                 <td dir="ltr" width="100%" style="padding: 10px 40px; background-color: #ffffff;">
-                    <hr style="width: 560px; margin-bottom: 0;border-color: #027fa3;">
+                    <!--[if !mso]>-->
+                        <hr style="width: 560px; margin-bottom: 0;border-color: #027fa3;">
+                    <!--<![endif]-->
+                    <!--[if mso]>
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="560" style="line-height:0;">
+                            <tr>
+                                <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px; background: white;">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="560" style="line-height:0;" align="center">
+                            <tr>
+                                <td class="stack-column-center" style="border-top: 2px solid #027fa3;">&nbsp;</td>
+                            </tr>
+                        </table>
+                    
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="560" style="line-height:0;">
+                            <tr>
+                                <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px; background: white;">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </table> 
+                    <![endif]-->    
 	                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
 	                    <tr>
 	                        <!-- Column : BEGIN -->
-	                        <th width="33.33%" class="stack-column-center" style="vertical-align: top;">
+	                        <th class="stack-column-center image-left" style="vertical-align: top;">
 	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
 	                                <tr>
-	                                    <td dir="ltr" valign="top" style="padding: 25px 18px;">
-	                                        <img src="https://via.placeholder.com/170" width="170" height="170" alt="alt_text" border="0" class="center-on-narrow" style="height: auto; background: #027fa3; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+	                                    <td dir="ltr" valign="top" style="padding: 25px 18px; mso-padding-right-alt: 18px;mso-padding-left-alt: 18px; mso-padding-top-alt: 0;text-align:center;">
+	                                        <img src="https://adcomms.utoronto.ca/email-templates/alr/2020/10/music-healing-resized.png" width="170" height="auto" alt="alt_text" border="0" class="center-on-narrow" style="height: auto; background: #ffffff; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
 	                                    </td>
 	                                </tr>
 	                            </table>
 	                        </th>
 	                        <!-- Column : END -->
 	                        <!-- Column : BEGIN -->
-	                        <th width="66.66%" class="stack-column-center">
+	                        <th class="stack-column-center text-right">
 	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
 	                                <tr>
-	                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 25px 0 0 20px; text-align: left;" class="center-on-narrow">
+	                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; text-align: left;" class="center-on-narrow event-container">
                                             <p class="event-header">
-                                                Can we overcome<br>
-                                                what divides us?
+                                                Can music help us heal?
                                             </p>
                                             <p class="event-subheader">
-                                                Media and the Role of Values<br>
-                                                in Political Conversations
+                                                Music, Health and Well-Being: An Exploration of Music and Medicine
                                             </p>
                                             <p class="event-description">
-                                                A talk plus Q & A with Prof. Matthew Feinberg
+                                                A talk plus Q & A with Dr.&nbsp;Gary&nbsp;Rodin, Dr. SarahRose&nbsp;Black and Dr. Andrew&nbsp;Ascenzo
                                             </p>
                                             <p class="event-date">
-                                                October 19, 2020<br>
-                                                12&mdash;1 p.m. EDT
+                                                October 28, 2020<br>
+                                                7&ndash;8:30 p.m. EDT
                                             </p>
                                             <p class="event-description">
                                                 Live or on demand. Free.
                                             </p>
-	                                        <!-- Button : BEGIN -->
+                                            <!-- Button : BEGIN -->
+                                            <br>
 	                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;">
 	                                            <tr>
 		                                            <td class="button-td button-td-primary" style="background: #00204e;">
-														<a class="button-a button-a-primary" href="https://google.com/" style="background: #00204e; border: 1px solid #00204e; font-family: sans-serif; font-weight: 400; font-size: 17px; line-height: 15px; text-decoration: none; padding: 10px 10px; color: #ffffff; display: block;">Register Now</a>
+														<a class="button-a button-a-primary" href="https://alumni.utoronto.ca/events-and-programs/u-t-where-you-are-music-health-and-well-being-exploration-music-and-medicine" style="background: #00204e; border: 1px solid #00204e; font-family: sans-serif; font-weight: 400; font-size: 17px; line-height: 15px; text-decoration: none; padding: 10px 10px; color: #ffffff; display: block;">Register Now</a>
 													</td>
 	                                          </tr>
-	                                      </table>
+	                                        </table>
 	                                      <!-- Button : END -->
 	                                    </td>
 	                                </tr>
@@ -399,46 +457,72 @@
 	        <!-- Thumbnail Left, Text Right : BEGIN -->
 	        <tr>
                 <td dir="ltr" width="100%" style="padding: 10px 40px; background-color: #ffffff;">
+                    <!--[if !mso]>-->
                     <hr style="width: 560px; margin-bottom: 0;border-color: #027fa3;">
+                    <!--<![endif]-->
+                    <!--[if mso]>
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="560" style="line-height:0;">
+                            <tr>
+                                <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px; background: white;">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="560" style="line-height:0;" align="center">
+                            <tr>
+                                <td class="stack-column-center" style="border-top: 2px solid #027fa3;">&nbsp;</td>
+                            </tr>
+                        </table>
+                    
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="560" style="line-height:0;">
+                            <tr>
+                                <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px; background: white;">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </table> 
+                    <![endif]-->    
 	                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
 	                    <tr>
 	                        <!-- Column : BEGIN -->
-	                        <th width="33.33%" class="stack-column-center" style="vertical-align: top;">
+	                        <th class="stack-column-center image-left" style="vertical-align: top;">
 	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
 	                                <tr>
-	                                    <td dir="ltr" valign="top" style="padding: 25px 18px;">
-	                                        <img src="https://via.placeholder.com/170" width="170" height="170" alt="alt_text" border="0" class="center-on-narrow" style="height: auto; background: #027fa3; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+	                                    <td dir="ltr" valign="top" style="padding: 25px 18px; mso-padding-right-alt: 18px;mso-padding-left-alt: 18px; mso-padding-top-alt: 0;text-align:center;">
+	                                        <img src="https://adcomms.utoronto.ca/email-templates/alr/2020/10/diamond.jpg" width="170" height="auto" alt="alt_text" border="0" class="center-on-narrow" style="height: auto; background: #027fa3; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
 	                                    </td>
 	                                </tr>
 	                            </table>
 	                        </th>
 	                        <!-- Column : END -->
 	                        <!-- Column : BEGIN -->
-	                        <th width="66.66%" class="stack-column-center">
+	                        <th class="stack-column-center text-right">
 	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
 	                                <tr>
-	                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 25px 0 0 20px; text-align: left;" class="center-on-narrow">
+	                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; text-align: left;" class="center-on-narrow event-container">
                                             <p class="event-header">
-                                                How are Canadians doing?
+                                                How can Canadians reduce&nbsp;their&nbsp;carbon footprint?
                                             </p>
                                             <p class="event-subheader">
-                                                Exploring TBD with U&nbsp;of&nbsp;T Magazine
+                                                Why Should You Care and What Can You Do About Climate Change?
                                             </p>
                                             <p class="event-description">
-                                                A talk plus Q & A with TBD
+                                                A talk plus Q & A with Dr.&nbsp;Miriam&nbsp;Diamond
                                             </p>
                                             <p class="event-date">
-                                                November 3, 2020<br>
-                                                12&mdash;1 p.m. EST
+                                                November 25, 2020<br>
+                                                7&ndash;8 p.m. EST
                                             </p>
                                             <p class="event-description">
                                                 Live or on demand. Free.
                                             </p>
-	                                        <!-- Button : BEGIN -->
+                                            <!-- Button : BEGIN -->
+                                            <br>
 	                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;">
 	                                            <tr>
 		                                            <td class="button-td button-td-primary" style="background: #00204e;">
-														<a class="button-a button-a-primary" href="https://google.com/" style="background: #00204e; border: 1px solid #00204e; font-family: sans-serif; font-weight: 400; font-size: 17px; line-height: 15px; text-decoration: none; padding: 10px 10px; color: #ffffff; display: block;">Register Now</a>
+														<a class="button-a button-a-primary" href="https://alumni.utoronto.ca/events-and-programs/u-t-where-you-are-why-should-you-care-and-what-can-you-do-about-climate-change" style="background: #00204e; border: 1px solid #00204e; font-family: sans-serif; font-weight: 400; font-size: 17px; line-height: 15px; text-decoration: none; padding: 10px 10px; color: #ffffff; display: block;">Register Now</a>
 													</td>
 	                                          </tr>
 	                                      </table>
@@ -457,50 +541,72 @@
 	        <!-- Thumbnail Left, Text Right : BEGIN -->
 	        <tr>
                 <td dir="ltr" width="100%" style="padding: 10px 40px; background-color: #ffffff;">
+                    <!--[if !mso]>-->
                     <hr style="width: 560px; margin-bottom: 0;border-color: #027fa3;">
+                    <!--<![endif]-->
+                    <!--[if mso]>
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="560" style="line-height:0;">
+                            <tr>
+                                <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px; background: white;">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="560" style="line-height:0;" align="center">
+                            <tr>
+                                <td class="stack-column-center" style="border-top: 2px solid #027fa3;">&nbsp;</td>
+                            </tr>
+                        </table>
+                    
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="560" style="line-height:0;">
+                            <tr>
+                                <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px; background: white;">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </table> 
+                    <![endif]-->    
 	                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
 	                    <tr>
 	                        <!-- Column : BEGIN -->
-	                        <th width="33.33%" class="stack-column-center" style="vertical-align: top;">
+	                        <th class="stack-column-center image-left" style="vertical-align: top;">
 	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
 	                                <tr>
-	                                    <td dir="ltr" valign="top" style="padding: 25px 18px;">
-	                                        <img src="https://via.placeholder.com/170" width="170" height="170" alt="alt_text" border="0" class="center-on-narrow" style="height: auto; background: #027fa3; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+	                                    <td dir="ltr" valign="top" style="padding: 25px 18px; mso-padding-right-alt: 18px;mso-padding-left-alt: 18px; mso-padding-top-alt: 0;text-align:center;">
+	                                        <img src="https://adcomms.utoronto.ca/email-templates/alr/2020/10/whicher.jpg" width="125" height="auto" alt="alt_text" border="0" class="center-on-narrow" style="height: auto; background: #027fa3; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
 	                                    </td>
 	                                </tr>
 	                            </table>
 	                        </th>
 	                        <!-- Column : END -->
 	                        <!-- Column : BEGIN -->
-	                        <th width="66.66%" class="stack-column-center">
+	                        <th class="stack-column-center text-right">
 	                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
 	                                <tr>
-	                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 25px 0 0 20px; text-align: left;" class="center-on-narrow">
+	                                    <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; text-align: left;" class="center-on-narrow event-container">
                                             <p class="event-header">
-                                                How does diabetes<br>
-                                                affect immigrant and<br>
-                                                Indigenous health?
+                                                How do you celebrate the&nbsp;festive&nbsp;season?
                                             </p>
                                             <p class="event-subheader">
-                                                Insulin at 100:<br>
-                                                Diabetes in Vulnerable Populations
+                                                Songs of the Season
                                             </p>
                                             <p class="event-description">
-                                                A talk plus Q & A with Dr. Baiju Shah<br>
-                                                Sunnybrook Health Sciences Centre
+                                                Featuring performances by Faculty of Music students and hosted by soprano Monica Whicher
                                             </p>
                                             <p class="event-date">
-                                                November 18, 2020<br>
-                                                6&mdash;7 p.m. EST
+                                                December 2, 2020<br>
+                                                7&ndash;8 p.m. EST
                                             </p>
                                             <p class="event-description">
                                                 Live or on demand. Free.
                                             </p>
-	                                        <!-- Button : BEGIN -->
+                                            <!-- Button : BEGIN -->
+                                            <br>
 	                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;">
 	                                            <tr>
 		                                            <td class="button-td button-td-primary" style="background: #00204e;">
-														<a class="button-a button-a-primary" href="https://google.com/" style="background: #00204e; border: 1px solid #00204e; font-family: sans-serif; font-weight: 400; font-size: 17px; line-height: 15px; text-decoration: none; padding: 10px 10px; color: #ffffff; display: block;">Register Now</a>
+														<a class="button-a button-a-primary" href="https://alumni.utoronto.ca/events-and-programs/u-t-where-you-are-songs-season" style="background: #00204e; border: 1px solid #00204e; font-family: sans-serif; font-weight: 400; font-size: 17px; line-height: 15px; text-decoration: none; padding: 10px 10px; color: #ffffff; display: block;">Register Now</a>
 													</td>
 	                                          </tr>
 	                                      </table>
@@ -557,7 +663,7 @@
                                     <div style="display:inline-block; margin: 0 -2px; max-width:51.1%; min-width:340px; vertical-align:top; width:100%;" class="stack-column-center">
                                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                                             <tbody><tr>
-                                                <td style="padding: 10px 40px;">
+                                                <td style="padding: 10px 40px; mso-padding-alt: 10px 40px;">
                                                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="text-align: left;">
                                                         <tbody>
                                                         <tr>
@@ -570,9 +676,6 @@
                                                                 </a>&nbsp;
                                                                 <a href="##TrackClick##https://www.instagram.com/uoftalumni" style="border:0;text-decoration: none;">
                                                                 <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/instagram-fff-128.png" alt="" border="0" width="28" height="28" class="social">
-                                                                </a>&nbsp;
-                                                                <a href="##TrackClick##https://www.instagram.com/uoftalumni" style="border:0;text-decoration: none;">
-                                                                    <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/instagram-fff-128.png" alt="" border="0" width="28" height="28" class="social">
                                                                 </a>&nbsp;
                                                             </td>
                                                         </tr>
@@ -652,10 +755,32 @@
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                             <tr>
                                 <!-- Column : BEGIN -->
-                                <th valign="top" width="50%" class="stack-column-center">
+                                <th valign="bottom" width="100%" class="stack-column-center">
                                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                                         <tr>
-                                            <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; text-align: left;font-weight: 400;" class="stack-column">
+                                            <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding-top: 10px;font-weight:400; text-align: center;" class="stack-column">
+                                                <a href="##TrackClick##https://secureca.imodules.com/s/731/index_clean.aspx?sid=731&gid=1&pgid=1363&cid=2576&post_id=0" style="font-family: 'Arial';border: none; text-decoration: none;color: #007FA3;">
+                                                Update&nbsp;contact&nbsp;information
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->    
+                            </tr>
+                            <!-- Clear Spacer : BEGIN -->
+                            <tr>
+                                <td aria-hidden="true" height="10" style="font-size: 0px; line-height: 0px; background: white;">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <!-- Clear Spacer : END -->
+                            <tr>
+                                <!-- Column : BEGIN -->
+                                <th valign="top" width="100%" class="stack-column-center">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; text-align: center;font-weight: 400;" class="stack-column">
                                                 <p style="margin: 0;">
                                                     The University&nbsp;of&nbsp;Toronto <br>
                                                     21 King's College Circle <br>
@@ -667,33 +792,11 @@
                                     </table>
                                 </th>
                                 <!-- Column : END -->
-                                <!-- Column : BEGIN -->
-                                <th valign="bottom" width="50%" class="stack-column-center">
-                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                        <tr>
-                                            <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding-top: 10px;font-weight:400; text-align: right;" class="stack-column">
-                                                <a href="##TrackClick##https://secureca.imodules.com/s/731/index_clean.aspx?sid=731&gid=1&pgid=1363&cid=2576&post_id=0" style="font-family: 'Arial';border: none; text-decoration: none;color: #007FA3;">
-                                                Update&nbsp;contact&nbsp;information
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </th>
-                                <!-- Column : END -->                                
                             </tr>
                         </table>  
                     </td>
                 </tr>
             <!-- Contact Information : END -->
-
-
-            <!-- Clear Spacer : BEGIN -->
-                <tr>
-                    <td aria-hidden="true" height="30" style="font-size: 0px; line-height: 0px; background: white;">
-                        &nbsp;
-                    </td>
-                </tr>
-            <!-- Clear Spacer : END -->
 
             <!-- Copyright : BEGIN -->
                 <tr>
