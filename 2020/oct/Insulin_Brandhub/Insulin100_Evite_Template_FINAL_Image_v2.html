@@ -136,111 +136,18 @@
     <!-- Progressive Enhancements : BEGIN -->
     <style>
 
-        td.stack-column-center.left-column {
-            text-align: left;
-            padding-left: 25px;
-            padding-right: 30px;
-        }
-
-        .left-column-content {
-            padding-left: 10px;
-        }
-
-        td.stack-column-center.right-column {
-            text-align: left;
+        .right-column {
             padding: 0 25px;
         }
 
-        .register-button {
-            font-weight: 400; 
-            background: #0580A4; 
-            border: 1px solid #0580A4; 
-            color: #ffffff; 
-            font-family: 'Arial', sans-serif; 
-            font-size: 18px; 
-            line-height: 18px; 
-            text-decoration: none; 
-            padding: 10px 22px; 
-            display: block;
-        }
-
-        .register-button-container {
-            border-radius: 4px; 
-            background: #0580A4;
-        }
-
-        .content-container {
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
-        }
-
-        .content-banner {
-            color: #ffffff;
-            text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 19px;
-        }
-
-        .content-header {
-            font-size: 36px;
-            font-weight: 700;
-            color: #002952;
-            line-height: 1.0;
-            margin-top: 15px;
-            margin-bottom: 20px;
-        }
-
-        .content-image {
-            width: 265px;
-        }
-
-        .content-sub-header {
-            color: #0580A4;
-            line-height: 1.35;
-            font-weight: 700;
-            margin-bottom: 35px;
-        }
-
-        .content-date {
-            color: #555555;
-            line-height: 1.35;
-        }
-
-        .content-address {
-            color: #555555;
-            line-height: 1.35;
-            font-size: 16px;
-        }
-
-        .content-description {
-            color: #555555;
-            line-height: 1.35;
-            font-size: 17px;
-        }
-
-        .content-description-i {
-            color: #555555;
-            line-height: 1.35;
-            font-size: 16px;
-            font-style: italic;
+        .left-column {
+            padding-left: 25px;
+            padding-right: 30px;
 
         }
 
-        .footer-logo {
+        .logo-header {
             text-align: left;
-        }
-
-        .social-media-icons {
-            text-align: right;
-        }
-
-        .footer-content {
-            font-family: Arial, Helvetica, sans-serif;
-            text-align:center;
-            font-size:13px;
-            color:#000000;
-            line-height:16px;
-            padding: 0 50px;
         }
 
 	    @media screen and (max-width: 480px) {
@@ -269,6 +176,19 @@
 	        table.center-on-narrow {
 	            display: inline-block !important;
 	        }
+            
+            .right-column {
+                padding: 0;
+            }
+
+            .left-column{
+                padding: 0;
+            }
+
+            .logo-header {
+                text-align: center;
+            }
+
 
 	    }
 
@@ -292,7 +212,7 @@
 
         <!-- Visually Hidden Preheader Text : BEGIN -->
         <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
-            Please share the wording you’d like inscribed on your Landmark Project ##OptionalParameter21##
+            Update Preview Pane Copy
         </div>
         <!-- Visually Hidden Preheader Text : END -->
 
@@ -328,7 +248,7 @@
             </tr>
                 <tr>
                 <!-- dir=rtl is where the magic happens. This can be changed to dir=ltr to swap the alignment on wide while maintaining stack order on narrow. -->
-                <td dir="rtl" height="100%" valign="top" width="100%" style="padding: 15px 0; background-color: #ffffff;">
+                <td dir="rtl" height="100%" valign="top" width="100%" style="padding: 25px 0; background-color: #ffffff;">
                     <!--[if mso]>
                     <table align="center" role="presentation" border="0" cellspacing="0" cellpadding="0" width="680" style="width: 680px;" bgcolor="white">
                     <tr>
@@ -351,7 +271,7 @@
                                 <div style="display:inline-block; margin: 0 15px; vertical-align:top;" class="stack-column">
                                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                                         <tbody><tr>
-                                            <td dir="ltr" style="font-family: sans-serif; color: #555555; padding: 0 10px; text-align: left;" class="">
+                                            <td dir="ltr" style="font-family: sans-serif; color: #555555; padding: 0 10px;" class="logo-header">
                                                     <img src="https://adcomms.utoronto.ca/email-templates/insulin-newsletter/Insulin_100_Lock-Up_Colour_Signature_Digital.png" width="250" height="auto" alt="U&nbsp;of&nbsp;T Signature">
                                             </td>
                                         </tr>
@@ -372,7 +292,6 @@
                     <![endif]-->
                 </td>
             </tr>
-
             <!-- Hero Image, Flush : BEGIN -->
             <tr>
                 <td style="background-color: #ffffff;">
@@ -392,7 +311,8 @@
             <!-- Clear Spacer : END -->
             <!-- Announcement : BEGIN -->
             <tr>
-                <td style="background-color: #ffffff;" class="content-container">
+                <td style="background-color: #ffffff;" style="font-family: Arial, Helvetica, sans-serif;
+                text-align: center;">
                     <table>
                         <!-- Content, Paragraph : BEGIN -->
                         <tr>
@@ -400,18 +320,29 @@
                                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                                     <tbody>
                                         <tr>
-                                                                            <!-- Column : BEGIN -->
+                            <!-- Column : BEGIN -->
                                 <td valign="top" width="100%" class="stack-column-center left-column">
-                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="text-align: left;">
                                         <tr>
                                             <td>
-                                                <p class="content-header left-column-content">
+                                                <p style="
+                                                font-family: Arial, Helvetica, sans-serif;
+                                                padding-left: 10px;font-size: 36px;
+                                                font-weight: 700;
+                                                color: #002952;
+                                                line-height: 1.0;
+                                                margin-top: 25px;
+                                                margin-bottom: 20px;">
                                                     UM SASQUO
                                                     MAGNI MASE
                                                     MO LORNOST
                                                     LAES TESE
                                                 </p>
-                                                <p class="content-sub-header left-column-content">
+                                                <p style="font-family: Arial, Helvetica, sans-serif;
+                                                padding-left: 10px;color: #0580A4;
+                                                line-height: 1.35;
+                                                font-weight: 700;
+                                                margin-bottom: 35px;">
                                                     Alitatem experem quid ulpa
                                                     cusses dolupic iiscia alitatusdae
                                                     nim dolestis eossunt lature
@@ -422,32 +353,43 @@
                                 </td>
                                 <!-- Column : END -->                            
                                 <!-- Column : BEGIN -->
-                                <td valign="bottom" width="100%" class="stack-column-center right-column">
+                                <td valign="bottom" width="100%" class="stack-column-center right-column" style="text-align: left;">
                                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                                         <tr>
                                             <td>
-                                                <p class="content-date">
+                                                <p style="font-family: Arial, Helvetica, sans-serif;color: #555555;
+                                                line-height: 1.35;">
                                                     Thursday, November 15, 2020<br>
                                                     6:00 – 9:00 p.m.
                                                 </p>
-                                                <p class="content-address">
+                                                <p style="font-family: Arial, Helvetica, sans-serif;color: #555555;
+                                                line-height: 1.35;
+                                                font-size: 16px;">
                                                     Address line 1<br>
                                                     Address line 2<br>
                                                     Address line 3<br>
                                                 </p>
-                                                <p class="content-description">
+                                                <p style="font-family: Arial, Helvetica, sans-serif;color: #555555;
+                                                line-height: 1.35;
+                                                font-size: 17px;">
                                                     Alitatem experem quid ulpa cuses
                                                     dolupic iiscia alitatusdae nim dolestis
                                                     eossunt latur, id quiam quia cuame,
                                                     ommoluptaque illupta turiti uaudae.
                                                 </p>
-                                                <p class="content-description">
+                                                <p 
+                                                style="font-family: Arial, Helvetica, sans-serif;color: #555555;
+                                                line-height: 1.35;
+                                                font-size: 17px;">
                                                     Pero veniam dollandi asit venderios
                                                     labor ad min pel ilignihil moluptatunis
                                                     accus ium nullicias experum adiquia
                                                     et, consequae occaerunt volorep.
                                                 </p>
-                                                <p class="content-description">
+                                                <p 
+                                                style="font-family: Arial, Helvetica, sans-serif;color: #555555;
+                                                line-height: 1.35;
+                                                font-size: 17px;">
                                                     Reiusan deseque endi abovoluptium
                                                     untia dunt volorias et eost, odignises
                                                     sitatquiam ipsapicia non nestenisqui
@@ -462,8 +404,18 @@
                                                 <!-- BUTTON : BEGIN -->                                           
                                                     <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 10px auto!important;">
                                                         <tr>
-                                                            <td class="button-td button-td-primary register-button-container">
-                                                                <a class="button-a button-a-primary register-button" href="">Register</a>
+                                                            <td class="button-td button-td-primary " style="border-radius: 4px; 
+                                                            background: #0580A4;">
+                                                                <a class="button-a button-a-primary" style="font-weight: 400; 
+                                                                background: #0580A4; 
+                                                                border: 1px solid #0580A4; 
+                                                                color: #ffffff; 
+                                                                font-family: 'Arial', sans-serif; 
+                                                                font-size: 18px; 
+                                                                line-height: 18px; 
+                                                                text-decoration: none; 
+                                                                padding: 10px 22px; 
+                                                                display: block;" href="">Register</a>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -472,8 +424,14 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <p class="content-description-i">
-                                                    Sitatquiam ipsapicia non nestenisqui qui is ducia verrore nimint lab illo iums eos re nobit, is dernate nectusam etmo eaquatus derchilitam hsit, ventiam.
+                                                <p style="font-family: Arial, Helvetica, sans-serif;color: #555555;
+                                                line-height: 1.35;
+                                                font-size: 16px;
+                                                font-style: italic;">
+                                                    Sitatquiam ipsapicia non nestenisqui
+                                                    qui is ducia verrore nimint lab illo iums
+                                                    eos re nobit, is dernate nectusam etmo
+                                                    eaquatus derchilitam hsit, ventiam.
                                                 </p>
                                             </td>
                                         </tr>
@@ -614,5 +572,5 @@
     </table>
     <![endif]-->
     </center>
-</body>
+    </body>
 </html>
