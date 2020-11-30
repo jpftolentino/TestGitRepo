@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: #555555 !important;
+	        border-color: #555555 !important;
+	    }
+
+        #right-column {
+            margin-left: 50px;
+        }
+
+        #left-column {
+            text-align: left;
+        }
+
+        #footer-right{
+            padding-left: 40px;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+
+            /* .footer-left{
+                padding: 0 20px 20px 20px;
+            } */
+
+            #uoft-logo{
+                width: 80%;
+            }
+
+            #left-column {
+                text-align: left;
+                padding: 0 20px 20px 20px;
+            }
+
+            #right-column {
+                text-align: left;
+                margin-left: 0;
+                margin-top: 10px;
+                padding: 0 20px 20px 20px;
+            }
+
+            #button {
+                text-align: center;
+            }
+
+            #footer-right{
+                padding-right: 5px;
+                padding-left: 0px !important;
+            }
+
+            #footer-left{
+                padding-left: 5px;
+            }
+
+            #footer-bottom{
+                padding: 0 20px;
+            }
+
+        }
+
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #ffffff;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #ffffff;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
+            Quantum Computers – Spooky but Powerful: lecture by Christopher Monroe (University of Maryland, Duke University, IonQ)
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680" style="margin: auto;" class="email-container">
+            <!-- Email Header : BEGIN -->
+            
+            <!-- View Email Online : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff; text-align: center;">
+                    <a href="##HTMLNewsletterURL##"style="color: #000000;text-decoration: none; font-weight: bold;font-size:11px;font-family: Arial, Helvetica, sans-serif;">View email online</a>
+                </td>
+            </tr>
+            <!-- View Email Online : END -->
+
+            <!-- U of T Logo : BEGIN -->
+            <tr>
+                <td width="680" style="text-align: left; background-color: #ffffff; padding-top: 15px; padding-bottom: 15px;" valign="top" class="banner">
+                    <a href="##TrackClick##https://www.artsci.utoronto.ca/" style="border: none !important; color: #005cc9;">
+                    <img src="https://adcomms.utoronto.ca/email-templates/logos/UofT-AAS-logo.jpg" id="uoft-logo" style="padding-left: 20px;" width="40%" height="auto" alt="University of Toronto Faculty of Arts & Science logo">
+                    </a>
+                </td>
+            </tr>
+            <!-- U of T Logo : END -->
+        
+            <!-- Hero Image, Flush : BEGIN -->
+            <tr>
+                <td width="680" align="center" valign="top" class="full">
+                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43907/MartinLectureHeader.jpg" width="100%" height="auto" class="full" alt="alt_text">
+                </td>
+            </tr>
+            <!-- Hero Image, Flush : END -->
+
+            <!-- CLEAR SPACE : BEGIN -->
+            <tr>
+                <td height="20" style="background-color: #ffffff;">
+                </td>
+            </tr>
+            <!-- CLEAR SPACE : END -->
+
+            <!-- CONTENT : BEGIN -->
+            <tr>
+                <td>
+                    <table>
+                    <!-- Column : BEGIN -->
+                    <th width="35%" class="stack-column-center" style="vertical-align: top;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td id="left-column" dir="ltr" valign="top" style="font-family: sans-serif;">
+                                  <p style="color: #002a5c; line-height: 22px;"><span style="font-size:18px;font-weight: 700;">The Martin Lecture Series 2020: The Martin Lecture in Physics</span>
+                                  <br>
+                                  <span style="display: block;font-weight:400;margin-top:10px;">Quantum Computers &mdash; Spooky but Powerful</span></p>
+                                  <p style="color:#2dadc7;font-weight:400;font-size: 14px;margin: 20px 0;">
+                                    With Keynote Speaker<br>
+                                    Professor Christopher Monroe</p>
+
+                                  <span style="border: solid 1px #ededee;display: block;">
+                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43907/Monroe.jpg"  width="210" height="auto" alt="Picture of Monroe">
+                                  </span>
+
+                                  <p style="margin: 30px 0;font-weight: 400;font-size: 14px; line-height: 20px;"><strong>Monday, November 30, 2020</strong><br>
+                                    4 pm EST<br>
+                                    Online</p>
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                    <tr>
+                                        <td id="button">
+                                            <a href="##TrackClick##https://forms.office.com/Pages/ResponsePage.aspx?id=JsKqeAMvTUuQN7RtVsVSEDtZiLDmAE5KofGHFJW3ULFUQlZKNlBaM1lQUjI2N1ZYSFRMQ0VNWkdMUi4u"><img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43907/RegisterButton.jpg" width="60%" height="auto" alt="alt_text"></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                                  
+                                </td>
+                            </tr>
+                        </table>
+                    </th>
+                    <!-- Column : END -->
+                    <!-- Column : BEGIN -->
+                    <th width="65%" style="vertical-align: top;" class="stack-column-center">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                  <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 13px; line-height: 20px; text-align: left;" class="center-on-narrow">
+                                      <p id="right-column" style="font-weight: 400;font-size: 14px;">
+                                        Quantum computers exploit the bizarre features of quantum physics &mdash; uncertainty, entanglement and measurement &mdash; to perform tasks that are impossible using conventional means. Join Professor Christopher Monroe as he describes the architecture of a quantum computer, the challenge of building a quantum computer big enough to be useful for society and the limitless possibilities ahead.
+                                        <br><br>
+                                        Monroe is a leading atomic physicist, quantum information scientist and quantum computer engineer at the University of Maryland. He demonstrated the first quantum logic gate realized in any system and has since pioneered new ways to scale individual atoms as quantum bits and simplify their control with semiconductor chip atom traps, ultrafast lasers and photonic interfaces for long-distance quantum networking. He is co-founder and chief scientist at IonQ, Inc., a startup that builds full-stack quantum computers. He is also an architect of the U.S. National Quantum Initiative and a member of the U.S. National Academy of Sciences.
+                                        <br><br>
+                                        The Martin Lecture Series recognizes the generosity of the late Mary Louise and Ronald Laidlaw Martin. The Martin Graduate Scholarships in the Faculty of Arts & Science at the University of Toronto illustrate the Martin family’s enduring commitment to supporting students in astronomy and astrophysics, ecology and evolutionary biology, physics and public policy.
+                                      </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </th>
+                    <!-- Column : END -->
+                </table>
+                </td>
+            </tr>
+            <!-- CONTENT : END -->
+            <!-- CLEAR SPACE : BEGIN -->
+            <tr>
+                <td height="40" style="background-color: #ffffff;">
+                </td>
+            </tr>
+            <!-- CLEAR SPACE : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+        <!-- Email Footer : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680" style="margin: auto;" class="email-container">
+            <tr>
+              <td width="50%" id="footer-left" valign="top" style="background-color: #ffffff;  text-align: left;">
+                 <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                       <td style="font-family: arial, sans-serif; font-size: 13px; padding-bottom: 20px; text-align: left; color:#002a5c;">
+                          <strong style="font-size: 16px;">FOLLOW A&S ALUMNI</strong>
+                       </td>
+                    </tr>
+                    <tr>
+                       <td valign="top" style="padding-bottom: 20px; text-align: left;">
+                          <a href="##TrackClick##https://www.facebook.com/ArtsandScienceAlumni/" style="border: none; text-decoration: none;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/engineering/2020/02/icon-circle-fb.png" alt="U&nbsp;of&nbsp;T Facebook" width="45" height="45" style="border: none;" />
+                          </a>&nbsp;&nbsp;&nbsp;
+                          <a href="##TrackClick##https://www.linkedin.com/company/university-of-toronto-faculty-of-arts-science-alumni/?viewAsMember=true" style="border: none; text-decoration: none;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/engineering/2020/02/icon-circle-linkedin.png" alt="U&nbsp;of&nbsp;T LinkedIn" width="45" height="45" style="border: none;" />
+                          </a>
+                       </td>
+                    </tr>
+                    <tr>
+                       <td style="font-family: arial, sans-serif; font-size: 13px; padding-bottom: 20px; text-align: left; color:#002a5c;">
+                          <strong style="font-size: 16px;">FOLLOW ARTS & SCIENCE</strong>
+                       </td>
+                    </tr>
+                    <tr>
+                       <td valign="top" style="padding-bottom: 20px; text-align: left;">
+                          <a href="##TrackClick##https://www.facebook.com/UofTArtSci/" style="border: none; text-decoration: none;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/engineering/2020/02/icon-circle-fb.png" alt="U&nbsp;of&nbsp;T Facebook" width="45" height="45" style="border: none;" />
+                          </a>&nbsp;&nbsp;&nbsp;
+                          <a href="##TrackClick##https://www.instagram.com/uoftartsci/" style="border: none; text-decoration: none;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/engineering/2020/02/icon-circle-insta.png" alt="U&nbsp;of&nbsp;T Instagram" width="45" height="45"  style="border: none;"/>
+                          </a>&nbsp;&nbsp;&nbsp;
+                          <a href="##TrackClick##https://twitter.com/UofTArtSci" style="border: none; text-decoration: none;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/engineering/2020/02/icon-circle-twitter.png" alt="U&nbsp;of&nbsp;T Twitter" width="45" height="45" style="border: none;" />
+                          </a>&nbsp;&nbsp;&nbsp;
+                          <a href="##TrackClick##https://www.youtube.com/channel/UCXRrb_NqDU5IN2ensLpWbcg" style="border: none; text-decoration: none;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/engineering/2020/02/icon-circle-yt.png" alt="U&nbsp;of&nbsp;T LinkedIn" width="45" height="45" style="border: none;" />
+                          </a>
+                       </td>
+                    </tr>
+                 </table>
+              </td>
+              <td width="200" valign="top" style="text-align: left; font-family: arial; font-size: 13px; color: #002a5c; background-color: #ffffff;" id="footer-right">
+                  <p style="margin: 0;">
+                 <strong>Faculty of Arts & Science<br> Office of Advancement</strong>
+                 <br />
+                 University&nbsp;of&nbsp;Toronto
+                 <br />
+                 Suite 2036, Sidney Smith Hall
+                 <br>
+                 100 St George Street
+                 <br>
+                 Toronto ON M5S 3G3
+                 </p>
+              </td>
+           </tr>
+      </table>
+
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680" style="margin: auto;" class="email-container">
+            <tr>
+                <td class="footer" height="20" style="background-color: #ffffff;">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left; font-size: 10px; font-family: helvetica, arial, sans-serif; padding-top: 0px; color: #002a5c; background-color: #ffffff;" valign="top" id="footer-bottom">
+                    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                        <td valign="top" align="center" height="20" style="height: 20px; border-top: 1px solid #000000;">
+                        </td>
+                    </tr>
+                    </table>
+                    The University&nbsp;of&nbsp;Toronto respects your privacy.
+                    We do not rent, trade or sell our mailing lists.
+                    Copyright &copy; 2020 University&nbsp;of&nbsp;Toronto. All rights reserved.
+                    <NoWebVersion>This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #002a5c;">##SubscriberEmail##</a>.
+                    To opt out of future messages of this kind, please <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_ARTSC_PHYSICS_ALL_INVITATION_INITIAL_##OptionalParameter3##%20Join%20Us%20for%20The%20Martin%20Lecture%20Series%20The%20Martin%20Lecture%20in%20Physics" style="color: #002a5c;">contact us</a>. ##OptionalParameter3##<br /></NoWebVersion>
+                    <br /><br />
+                </td>
+            </tr>
+        </table>
+	    <!-- Email Footer : END -->
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+##TrackImpression##</body>
+</html>

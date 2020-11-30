@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: #555555 !important;
+	        border-color: #555555 !important;
+	    }
+
+        #right-column {
+            margin-left: 50px;
+        }
+
+        #left-column {
+            text-align: left;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+
+            #uoft-logo{
+                width: 80%;
+            }
+
+            #left-column {
+                text-align: center;
+            }
+
+            #right-column {
+                margin-left: 0;
+            }
+
+        }
+
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #ffffff;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #ffffff;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
+            Quantum Computers – Spooky but Powerful: lecture by Christopher Monroe (University of Maryland, Duke University, IonQ)
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680" style="margin: auto;" class="email-container">
+            <!-- Email Header : BEGIN -->
+            
+            <!-- View Email Online : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff; text-align: center;">
+                    <a href="##HTMLNewsletterURL##"style="color: #000000;text-decoration: none; font-weight: bold;font-size:11px;font-family: Arial, Helvetica, sans-serif;">View email online</a>
+                </td>
+            </tr>
+            <!-- View Email Online : END -->
+
+            <!-- U of T Logo : BEGIN -->
+            <tr>
+                <td width="680" style="text-align: left; background-color: #ffffff; padding-top: 15px; padding-bottom: 15px;" valign="top" class="banner">
+                    <a href="##TrackClick##https://www.artsci.utoronto.ca/" style="border: none !important; color: #005cc9;">
+                    <img src="https://adcomms.utoronto.ca/email-templates/logos/UofT-AAS-logo.jpg" id="uoft-logo" style="padding-left: 20px;" width="40%" height="auto" alt="University of Toronto Faculty of Arts & Science logo">
+                    </a>
+                </td>
+            </tr>
+            <!-- U of T Logo : END -->
+        
+            <!-- Hero Image, Flush : BEGIN -->
+            <tr>
+                <td width="680" align="center" valign="top" class="full">
+                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43907/MartinLectureHeader.jpg" width="100%" height="auto" class="full" alt="alt_text">
+                </td>
+            </tr>
+            <!-- Hero Image, Flush : END -->
+
+            <!-- CLEAR SPACE : BEGIN -->
+            <tr>
+                <td height="20" style="background-color: #ffffff;">
+                </td>
+            </tr>
+            <!-- CLEAR SPACE : END -->
+
+            <!-- CONTENT : BEGIN -->
+                  <tr>
+                      <td width="300" valign="top" style="font-family: arial; font-size: 14px; color:#002A5C; line-height: 20px; text-align: left;" class="inner">
+                      <strong>Munk School Black Diaspora Excellence Scholarship</strong>
+                      <br><br>
+                      <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43991/munk-banner.png" width="550" height="393" alt="alt_text" class="img-full">
+                      <br><br>
+                      The Munk School of Global Affairs and Public Policy grapples with some of the world’s toughest challenges. At a time when countries are reckoning with systemic racism, climate change, and a global health crisis that has exposed the fragility of our social and economic structures, expertise in global affairs and public policy has never been more <strong>urgently needed</strong>. 
+                      <br><br>
+                      <strong>That is why we are writing to you today &mdash; to ask you to support the education and training of a diverse group of aspiring leaders who have the knowledge, skills and passion to create a more equitable, inclusive and sustainable society.</strong>
+                      <br><br>
+                      The brightest, most creative and most entrepreneurial students come to the Munk School from across Canada and around the world because they want to make positive changes. They represent a rich diversity of lived experiences; tapping and nurturing that diversity is crucial if future leaders are to address the systems that marginalize, oppress and exclude.
+                      <br><br>
+                      <p>
+                      <table style="float:left;">
+                          <tr>
+                              <td>
+                                  
+                                  <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43991/judith.png" width="250" height="250" alt="Photo of two girls skating" id="judith-photo"  class="img-full">
+                              </td>
+                          </tr>
+                      </table>
+
+                              <strong>Judith Nwachebelu</strong> was one of these students. In 2018, she traveled to Toronto from her home in Nigeria to pursue a Master of Global Affairs at the Munk School. She wanted to build a career as a global leader, and she sought access to the world-class faculty, students, alumni and resources of the Munk School and the University of Toronto. But academic life in an expensive city and so far from her support networks was even more difficult than she had anticipated, and she struggled to meet all the costs. She persevered, and she graduated, but she learned along the way how important it is to have access to dedicated support systems that address the specific challenges and barriers faced by students like herself.    
+                              </p>
+
+                              As a result, she made an inaugural donation for future scholars, launching what is now the  <strong>Munk School Black Diaspora Excellence Scholarship</strong>. With her contribution, Judith hopes to make it easier for students from African countries to benefit from the transformative education she was able to access at the Munk School. 
+                              <br><br>
+                              “Because of the difficulties I faced securing funds for my education, I wanted to give back to African students coming to the program each year,” says Judith. "I really want to make it a bit easier for them.”
+                              <br><br>
+                              The scholarship will support students from the Black diaspora who seek to join the Master of Global Affairs or Master of Public Policy programs. It’s a powerful start, and we are hoping all members of the Munk School community will join together to grow the scholarship so it can have a sustainable impact. 
+                              <br><br>
+                      <strong>Will you help create opportunity for more students like Judith?</strong>
+                      <br><br>
+                      The <strong>Munk School Black Diaspora Excellence Scholarship</strong> aims to help attract and remove barriers for students from diverse backgrounds. As part of our alumni community, <strong>we are asking you to donate today in support of the <a href="https://donate.utoronto.ca/munk?utm_source=ARTSCI&utm_medium=Solicitation&utm_campaign=FY21%20ARTSCI%20Munk%20School%20Black%20Diaspora%20Excellence%20MGA%20and%20MPP%20Alumni%20Scholarship%20Campaign%20Email&sid=DIS-##OptionalParameter3##|SRC-##OptionalParameter5##|FN-##OptionalParameter6##">Black Diaspora Excellence Scholarship</a></strong>. Your contribution &mdash; no matter the size &mdash; helps us to leverage matching funds to ensure that exceptional Black students from around the globe have access to the opportunities they deserve.
+                      <br><br>
+                      <strong>Join us!</strong>
+                      <br><br>
+                      <a href="https://donate.utoronto.ca/munk?utm_source=ARTSCI&utm_medium=Solicitation&utm_campaign=FY21%20ARTSCI%20Munk%20School%20Black%20Diaspora%20Excellence%20MGA%20and%20MPP%20Alumni%20Scholarship%20Campaign%20Email&sid=DIS-##OptionalParameter3##|SRC-##OptionalParameter5##|FN-##OptionalParameter6##"><img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43991/DonateButton.jpg" width="25%" height="auto" alt="Picture of Monroe"></a>
+                      <br><br>
+                      Munk School Black Student Association Executive Team (2020- 2021)
+                      <ul>
+                      <li>Ruvimbo Chidziva (Co-President-MGA)</li>
+                      <li>An-Noûra Compaoré (Co-President-MPP)</li>
+                      <li>Sapphira Thompson-Bled (Director of External Affairs-MGA)</li>
+                      <li>Jennifer Oduro (Director of External Affairs-MPP)</li>
+                      <li>Kuuku Quagraine (Director of Finance)</li>
+                      <li>Tabitha Oni (Director of Activities)</li>
+                      <li>Adam Lake (Director of Advocacy) </li>
+                      </ul>
+
+                      Should you have any questions, please contact Monica Ham, Director of Development at <a href="mailto:monica.hahm@utoronto.ca">monica.hahm@utoronto.ca</a>
+                      
+                      </br></br>
+                      </td>
+                      
+                </tr>
+              
+
+                 <tr>
+                 <td colspan="2" valign="top" style="text-align:left; font-family:Arial,sans serif; font-size:14px; line-height:20px; color:#002A5C; background-color:#fffff;">
+
+              </tr>
+            <!-- CLEAR SPACE : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+        <!-- Email Footer : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680" style="margin: auto;" class="email-container">
+            <tr>
+              <td width="50%" class="inner" valign="top" style="background-color: #ffffff;  text-align: left;">
+                 <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                       <td style="font-family: arial, sans-serif; font-size: 13px; padding-bottom: 20px; text-align: left; color:#002a5c;">
+                          <strong style="font-size: 16px;">FOLLOW A&S ALUMNI</strong>
+                       </td>
+                    </tr>
+                    <tr>
+                       <td valign="top" style="padding-bottom: 20px; text-align: left;">
+                          <a href="##TrackClick##https://www.facebook.com/ArtsandScienceAlumni/" style="border: none; text-decoration: none;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/engineering/2020/02/icon-circle-fb.png" alt="U&nbsp;of&nbsp;T Facebook" width="45" height="45" style="border: none;" />
+                          </a>&nbsp;&nbsp;&nbsp;
+                          <a href="##TrackClick##https://www.linkedin.com/company/university-of-toronto-faculty-of-arts-science-alumni/?viewAsMember=true" style="border: none; text-decoration: none;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/engineering/2020/02/icon-circle-linkedin.png" alt="U&nbsp;of&nbsp;T LinkedIn" width="45" height="45" style="border: none;" />
+                          </a>
+                       </td>
+                    </tr>
+                    <tr>
+                       <td style="font-family: arial, sans-serif; font-size: 13px; padding-bottom: 20px; text-align: left; color:#002a5c;">
+                          <strong style="font-size: 16px;">FOLLOW ARTS & SCIENCE</strong>
+                       </td>
+                    </tr>
+                    <tr>
+                       <td valign="top" style="padding-bottom: 20px; text-align: left;">
+                          <a href="##TrackClick##https://www.facebook.com/UofTArtSci/" style="border: none; text-decoration: none;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/engineering/2020/02/icon-circle-fb.png" alt="U&nbsp;of&nbsp;T Facebook" width="45" height="45" style="border: none;" />
+                          </a>&nbsp;&nbsp;&nbsp;
+                          <a href="##TrackClick##https://www.instagram.com/uoftartsci/" style="border: none; text-decoration: none;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/engineering/2020/02/icon-circle-insta.png" alt="U&nbsp;of&nbsp;T Instagram" width="45" height="45"  style="border: none;"/>
+                          </a>&nbsp;&nbsp;&nbsp;
+                          <a href="##TrackClick##https://twitter.com/UofTArtSci" style="border: none; text-decoration: none;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/engineering/2020/02/icon-circle-twitter.png" alt="U&nbsp;of&nbsp;T Twitter" width="45" height="45" style="border: none;" />
+                          </a>&nbsp;&nbsp;&nbsp;
+                          <a href="##TrackClick##https://www.youtube.com/channel/UCXRrb_NqDU5IN2ensLpWbcg" style="border: none; text-decoration: none;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/engineering/2020/02/icon-circle-yt.png" alt="U&nbsp;of&nbsp;T LinkedIn" width="45" height="45" style="border: none;" />
+                          </a>
+                       </td>
+                    </tr>
+                 </table>
+              </td>
+              <td width="200" valign="top" style="text-align: left; font-family: arial; font-size: 13px; color: #002a5c; background-color: #ffffff;" class="inner2">
+                  <p style="padding-left: 40px;margin: 0 0;">
+                 <strong>Faculty of Arts & Science<br> Office of Advancement</strong>
+                 <br />
+                 University&nbsp;of&nbsp;Toronto
+                 <br />
+                 Suite 2036, Sidney Smith Hall
+                 <br>
+                 100 St George Street
+                 <br>
+                 Toronto ON M5S 3G3
+                 </p>
+              </td>
+           </tr>
+      </table>
+
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680" style="margin: auto;" class="email-container">
+            <tr>
+                <td class="footer" height="20" style="background-color: #ffffff;">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left; font-size: 10px; font-family: helvetica, arial, sans-serif; padding-top: 0px; color: #002a5c; background-color: #ffffff;" valign="top" class="footer">
+                    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                        <td valign="top" align="center" height="20" style="height: 20px; border-top: 1px solid #000000;">
+                        </td>
+                    </tr>
+                    </table>
+                    The University&nbsp;of&nbsp;Toronto respects your privacy.
+                    We do not rent, trade or sell our mailing lists.
+                    Copyright &copy; 2020 University&nbsp;of&nbsp;Toronto. All rights reserved.
+                    <NoWebVersion>This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #002a5c;">##SubscriberEmail##</a>.
+                    To opt out of future messages of this kind, please <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_ARTSC_PHYSICS_ALL_INVITATION_INITIAL_##OptionalParameter3##%20Join%20Us%20for%20The%20Martin%20Lecture%20Series%20The%20Martin%20Lecture%20in%20Physics" style="color: #002a5c;">contact us</a>. ##OptionalParameter3##<br /></NoWebVersion>
+                    <br /><br />
+                </td>
+            </tr>
+        </table>
+	    <!-- Email Footer : END -->
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>

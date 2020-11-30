@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: Arial, Helvetica, sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            /* table-layout: fixed !important; */
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+        a {
+            font-weight: 400;
+            text-decoration: underline;
+            color: #3974dc;
+        }
+
+        td.footer-icons a{
+            color: #002a5b;
+        }
+
+        /* two column resize based on screen size */
+
+        .two-column-container{
+            padding: 15px 50px 0 50px;
+        }
+
+        .two-column-button-container {
+            font-size: 15px;
+            line-height: 15px;
+            width: 50%;
+        }
+
+        .two-column-img-container{
+            text-align: left;
+        }
+
+
+        /* .two-column-text-container{
+            padding: 0 0 0 50px;   
+        } */
+        
+        .three-column-container{
+            padding: 15px 10px 0 10px;
+        }
+
+        .three-column-img-container{
+            text-align: left;
+        }
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: #555555 !important;
+	        border-color: #555555 !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            td.center-on-narrow p.one-column-text {
+                margin: 0 !important;
+            }
+
+            td.center-on-narrow p {
+                margin: 20px 50px !important;
+            }
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                /* text-align: center !important; */
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                /* text-align: center !important; */
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+                width: 90% !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 20px !important;
+                line-height: 22px !important;
+            }
+
+            .email-container span {
+                font-size: 20px !important;
+                line-height: 22px !important;
+            }
+
+            .email-container h2 {
+                font-size: 20px !important;
+                line-height: 22px !important;
+            }
+
+            .two-column-container{
+                padding: 10px 20px 0 10px;
+            }
+
+            .two-column-img-container{
+                text-align: center;
+                width: 90% !important;
+                max-width: none !important;
+            }
+
+            .three-column-container{
+                padding: 10px 20px 0 10px;
+            }
+
+            .three-column-img-container{
+                text-align: center;
+                width: 90% !important;
+                max-width: none !important;
+            }
+
+            td.center-on-narrow p.two-column-button-container {
+                width: 100%;
+                margin: 0 !important;
+            }
+
+            /* .two-column-text-container{
+                padding: 0;
+            } */
+
+            td.center-on-narrow p.two-column-text-container {
+                width: 90%;
+                margin: 20px 20px !important;
+            }
+
+            td.center-on-narrow p.three-column-text-container{
+                width: 90%;
+                margin: 20px 20px !important;
+            }
+
+            #fb-banner-icon{
+                padding-top: 13px !important;
+                width: 100px !important;
+            }
+
+            #linkedin-banner-icon{
+                width: 125px !important;
+            }
+
+        }
+
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #f2f4f7;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #f2f4f7;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #222222;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
+            Congratulations to Class of 2020, a gift from The Weeknd, a Giller Prize winner and much more!
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: Arial, Helvetica, sans-serif;">
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="700" style="margin: auto;" class="email-container">
+            <tr>
+                <td style="background-color: #ffffff; text-align: center;">
+                    <a href="##HTMLNewsletterURL##"style="color: #000000;text-decoration: none; font-weight: bold;font-size:11px;font-family: Arial, Helvetica, sans-serif;">Click to view this email online</a>
+                </td>
+            </tr>
+
+        <!-- BANNER ONE : BEGIN -->
+            <tr>
+                <td style="padding: 10px 0 0 0; text-align: center;background: #ffffff;">
+                    <a href="##TrackClick##http://www.alumni.artsci.utoronto.ca/" target="_blank"><img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/09/42636/01-ARTSCI-Header.jpg" style="border: none !important;width: 700px" width="700" alt="University of Toronto, Faculty of Arts and Science" /></a>
+                </td>
+            </tr>
+        <!-- BANNER ONE : END -->
+
+        <!-- BANNER ONE : BEGIN -->
+            <tr>
+                <td style="text-align: center;background: #ffffff;">
+                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43550/00-ArtsScienceImage.jpg" style="border: none !important;width: 700px" width="700" alt="University of Toronto, Faculty of Arts and Science" />
+                </td>
+            </tr>
+        <!-- BANNER ONE : END -->
+
+        <!-- ANNOUNCEMENT : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;padding: 0 30px;">
+                    <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                        <tr>
+                            <td style="background-color: #ffffff;padding: 0 30px;">
+                                <h2 style="font-family:Arial, Helvetica, sans-serif;font-size: 20px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 15px;margin-top: 15px;">In this edition:
+                                </h2>
+                            </td>
+                        </tr>
+                        <!-- Column : BEGIN -->
+                        <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td dir="ltr" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; padding: 0 30px 15px 30px; text-align: left;" class="center-on-narrow">
+                                        <p class="one-column-text" style="margin: 0 0 10px 0;mso-margin-top-alt:  15px;">
+                                            We have so many exciting things to share with you. First, the <a href="https://www.artsci.utoronto.ca/news/u-ts-ethiopic-program-soars-past-500000-endowment-goal-strength-community-support">Ethiopic program hit its $500,000 endowment goal</a>, thanks to community support and a $30,000 gift from The Weeknd. (Yes, the international award-winning artist!) Just last week, <a href="https://www.artsci.utoronto.ca/news/u-t-community-celebrates-class-2020-fall-convocation">we celebrated the remarkable accomplishments of A&S grads</a> at Fall Convocation 2020, and welcomed them to the U&nbsp;of&nbsp;T alumni family. <a href="https://www.artsci.utoronto.ca/news/giller-prize-winner-found-her-confidence-university-toronto">An alumna wins the 2020 Scotiabank Giller Prize</a>, and <a href="https://www.artsci.utoronto.ca/news/deepmind-establishes-four-new-graduate-scholarships-u-t-under-represented-students-computer">four new graduate scholarships for under-represented students have been established</a> in the Department of Computer Science, thanks to a recent gift from U.K.-based artificial intelligence company, DeepMind.
+                                            <br><br>
+                                            Plus, an <a href="https://www.artsci.utoronto.ca/news/old-school-inspiration-behind-alumnus-david-pelechs-new-tv-show-decoys">A&amp;S grad creates “Decoys,”</a> we announce June’s crossword winners and introduce a new puzzle, and so much more.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </th>
+                        <!-- Column : END -->
+                    </table>
+                </td>
+            </tr>
+        <!-- ANNOUNCEMENT : END -->
+
+        <!-- TOP STORIES : BEGIN -->
+            <!-- SECTION HEADING : BEGIN -->
+                <tr>
+                    <td style="background-color: #002A5C;padding: 0 30px;">
+                        <table width="100%" align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;text-align: center">
+                            <tr>
+                                <td style="background-color: #002A5C;padding: 7px 15px;">
+                                    <span class="email-container" style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 18px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 15px;margin-top: 15px;mso-margin-bottom-alt: 15px;margin-bottom: 15px;">TOP STORIES</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            <!-- SECTION HEADING : END -->
+
+	        <!-- Thumbnail Left, Text Right : BEGIN -->
+                <tr>
+                    <td dir="ltr" width="100%" style="padding: 20px 0 0 0; background-color: #ffffff;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <!-- Column : BEGIN -->
+                                <th width="45%" class="stack-column-center" style="vertical-align: top;">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="padding: 0 10px;mso-padding-alt: 0 0 0 40px">
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43550/01-Weeknd.jpg" width="270" height="168" alt="Image of students studying" border="0" class="center-on-narrow" style="height: auto; background: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #555555;padding-left: 20px;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                                <!-- Column : BEGIN -->
+                                <th width="55%" style="vertical-align: top;" class="stack-column-center">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; padding-right: 40px; text-align: left;" class="center-on-narrow">
+                                                <p style="margin: 0 0 10px 0;font-size: 18px;">
+                                                    <strong>Ethiopic program reaches $500,000 endowment goal, thanks to community support &mdash; and another gift from The Weeknd</strong>
+                                                </p>
+                                                <p style="margin: 0 0 10px 0;">
+                                                    The future of the Ethiopic program &mdash; the only one of its kind in North America and among very few in the world &mdash; just got brighter. Recent support, including from The Weeknd, means U&nbsp;of&nbsp;T can offer at least one Ge’ez language course each year.
+                                                    <br><br>
+                                                    “Our heartfelt thanks to The Weeknd for <a href="https://www.artsci.utoronto.ca/news/u-ts-ethiopic-program-soars-past-500000-endowment-goal-strength-community-support">his ongoing commitment to Ethiopic studies at U&nbsp;of&nbsp;T,”</a> said Professor Melanie Woodin, dean of the Faculty of Arts &amp; Science.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                            </tr>
+                        </table>
+                        
+                    </td>
+                </tr>
+            <!-- Thumbnail Left, Text Right : END -->
+            <!-- HR LINE : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;">
+                        <hr style="width: 90%;" width="90%">
+                    </td>
+                </tr>
+            <!-- HR LINE : END -->
+
+	        <!-- Thumbnail Left, Text Right : BEGIN -->
+                <tr>
+                    <td dir="ltr" width="100%" style="padding: 20px 0 0 0; background-color: #ffffff;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <!-- Column : BEGIN -->
+                                <th width="45%" class="stack-column-center" style="vertical-align: top;">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="padding: 0 10px;mso-padding-alt: 0 0 0 40px">
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43550/Man-YinTsang.jpg" width="270" height="168" alt="Image of students studying" border="0" class="center-on-narrow" style="height: auto; background: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #555555;padding-left: 20px;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                                <!-- Column : BEGIN -->
+                                <th width="55%" style="vertical-align: top;" class="stack-column-center">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; padding-right: 40px; text-align: left;" class="center-on-narrow">
+                                                <p style="margin: 0 0 10px 0;font-size: 18px;">
+                                                    <strong>U&nbsp;of&nbsp;T community celebrates remarkable Class of 2020</strong>
+                                                </p>
+                                                <p style="margin: 0 0 10px 0;">
+                                                    “Clearly no challenge is too great for the Class of 2020.” 
+                                                    These words, delivered by fall convocation keynote speaker Professor Maydianne Andrade, wonderfully capture the spirit and drive of U&nbsp;of&nbsp;T’s Class of 2020. On November 21, the newest members of U&nbsp;of&nbsp;T’s alumni family were celebrated by fellow graduands and the greater U&nbsp;of&nbsp;T community in a virtual ceremony, starting with a virtual event hosted by Arts & Science Dean Melanie Woodin. <a href="https://www.artsci.utoronto.ca/news/you-did-it-u-t-community-celebrates-class-2020-fall-convocation">Read about what they accomplished, how they celebrated &mdash; and what they’re doing next</a>.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                            </tr>
+                        </table>
+                        
+                    </td>
+                </tr>
+            <!-- Thumbnail Left, Text Right : END -->
+            <!-- HR LINE : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;">
+                        <hr style="width: 90%;" width="90%">
+                    </td>
+                </tr>
+            <!-- HR LINE : END -->
+
+	        <!-- Thumbnail Left, Text Right : BEGIN -->
+                <tr>
+                    <td dir="ltr" width="100%" style="padding: 20px 0 0 0; background-color: #ffffff;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <!-- Column : BEGIN -->
+                                <th width="45%" class="stack-column-center" style="vertical-align: top;">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="padding: 0 10px;mso-padding-alt: 0 0 0 40px">
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43550/02-Rossi.jpg" width="270" height="168" alt="Image of students studying" border="0" class="center-on-narrow" style="height: auto; background: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #555555;padding-left: 20px;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                                <!-- Column : BEGIN -->
+                                <th width="55%" style="vertical-align: top;" class="stack-column-center">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; padding-right: 40px; text-align: left;" class="center-on-narrow">
+                                                <p style="margin: 0 0 10px 0;font-size: 18px;">
+                                                    <strong>A&amp;S alumnus proud to play part in promising COVID-19 vaccine</strong>
+                                                </p>
+                                                <p style="margin: 0 0 10px 0;">
+                                                    An <a href="https://www.artsci.utoronto.ca/news/media-covid-19-vaccine-research-how-canadians-glowing-mouse-may-lead-vaccine">A&amp;S alumnus has played a key role in the development of Moderna’s COVID-19 vaccine</a>, which has demonstrated 94.5 per cent effectiveness.
+                                                    <br><br>
+                                                    Derrick Rossi, who earned his bachelor of science and master of science from U&nbsp;of&nbsp;T and co-founded Moderna, helped pioneer the use of modified messenger RNA (or mRNA) to produce selected proteins &mdash; technology the Toronto Star reports is central to Moderna’s experimental vaccine.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                            </tr>
+                        </table>
+                        
+                    </td>
+                </tr>
+            <!-- Thumbnail Left, Text Right : END -->
+            <!-- HR LINE : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;">
+                        <hr style="width: 90%;" width="90%">
+                    </td>
+                </tr>
+            <!-- HR LINE : END -->
+
+            <!-- Thumbnail Left, Text Right : BEGIN -->
+                <tr>
+                    <td dir="ltr" width="100%" style="padding: 20px 0 0 0; background-color: #ffffff;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <!-- Column : BEGIN -->
+                                <th width="45%" class="stack-column-center" style="vertical-align: top;">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="padding: 0 10px;mso-padding-alt: 0 0 0 40px">
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43550/03-Giller.jpg" width="270" height="168" alt="Image of students studying" border="0" class="center-on-narrow" style="height: auto; background: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #555555;padding-left: 20px;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                                <!-- Column : BEGIN -->
+                                <th width="55%" style="vertical-align: top;" class="stack-column-center">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; padding-right: 40px; text-align: left;" class="center-on-narrow">
+                                                <p style="margin: 0 0 10px 0;font-size: 18px;">
+                                                    <strong>Alumni authors celebrated in 2020 Giller Prize</strong>
+                                                </p>
+                                                <p style="margin: 0 0 10px 0;">
+                                                    A&amp;S alumni clearly have the “write stuff.” Souvankham Thammavongsa is the <a href="https://www.artsci.utoronto.ca/news/giller-prize-winner-found-her-confidence-university-toronto">winner of the 2020 Scotiabank Giller Prize</a> for her short story collection, How To Pronounce Knife, and Gil Adamson is a finalist for her novel Ridgerunner.
+                                                    <br><br>
+                                                    Read more about what it means to receive such a prestigious honour and what’s next for these celebrated authors.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                            </tr>
+                        </table>
+                        
+                    </td>
+                </tr>
+            <!-- Thumbnail Left, Text Right : END -->                  
+            
+            <tr style="background-color: #ffffff">
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <!-- CONNECT WITH US : BEGIN -->
+                <tr>
+                    <td dir="ltr" width="100%" style="padding: 0 60px; background-color: #ffffff;">
+                        <table style="background-color: #ffd161;" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <!-- Column : BEGIN -->
+                                <th width="70%" class="stack-column-center">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px;text-align: left;" class="center-on-narrow">
+                                                <p style="margin: 0 0 10px 0;padding-left:20px;font-size: 15px;">
+                                                    <strong>Connect with us</strong> on LinkedIn and stay up to date with the latest
+                                                        alumni stories and news. You can also join us on Facebook!
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                                <!-- Column : BEGIN -->
+                                <th width="10%" class="stack-column-center" style="vertical-align: top;">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top">
+                                                <a href="https://www.facebook.com/ArtsandScienceAlumni" target="_blank">
+                                                    <img id="fb-banner-icon" src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/09/42636/FB-icon.png" width="50" height="50" alt="facebook logo" border="0" class="center-on-narrow" style="height: auto; padding-top: 6px;">
+                                                </a>
+                                            </td>
+                                            <td dir="ltr" valign="top">
+                                                <a href="https://www.linkedin.com/company/university-of-toronto-faculty-of-arts-science-alumni/" target="_blank">
+                                                    <img id="linkedin-banner-icon" src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/09/42636/LI-icon.png" width="63" height="63" alt="facebook logo" border="0" class="center-on-narrow" style="height: auto;width: 63px;">
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                                <!-- Column : BEGIN -->
+                                <!-- <th width="10%" class="stack-column-center" style="vertical-align: top;">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top">
+                                                <a href="https://www.linkedin.com/company/university-of-toronto-faculty-of-arts-science-alumni/">
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/09/42636/LI-icon.png" width="62" height="62" alt="facebook logo" border="0" class="center-on-narrow" style="height: auto; background: #ffffff;">
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th> -->
+                                <!-- Column : END -->
+                            </tr>
+                            <tr>
+                                <td>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            <!-- CONNECT WITH US : END -->
+            <tr style="background-color: #ffffff">
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr style="background-color: #ffffff">
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+        <!-- TOP STORIES : END -->
+
+        <!-- HIGHLIGHTS : BEGIN -->
+            <!-- SECTION HEADING : BEGIN -->
+                <tr>
+                    <td style="background-color: #0d8eab;padding: 0 30px;">
+                        <table width="100%" align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;text-align: center">
+                            <tr>
+                                <td style="background-color: #0d8eab;padding: 7px 15px;">
+                                    <span class="email-container" style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 18px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 15px;margin-top: 15px;mso-margin-bottom-alt: 15px;margin-bottom: 15px;">HIGHLIGHTS</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            <!-- SECTION HEADING : END -->
+
+	        <!-- Thumbnail Left, Text Right : BEGIN -->
+                <tr>
+                    <td dir="ltr" width="100%" style="padding: 20px 0 0 0; background-color: #ffffff;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <!-- Column : BEGIN -->
+                                <th width="45%" class="stack-column-center" style="vertical-align: top;">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="padding: 0 10px;mso-padding-alt: 0 0 0 40px">
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43550/04-Woodin.jpg" width="270" height="168" alt="Image of students studying" border="0" class="center-on-narrow" style="height: auto; background: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #555555;padding-left: 20px;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                                <!-- Column : BEGIN -->
+                                <th width="55%" style="vertical-align: top;" class="stack-column-center">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; padding-right: 40px; text-align: left;" class="center-on-narrow">
+                                                <p style="margin: 0 0 10px 0;font-size: 18px;">
+                                                    <strong>New U&nbsp;of&nbsp;T partnership to boost economy, help workers develop skills</strong>
+                                                </p>
+                                                <p style="margin: 0 0 10px 0;">
+                                                    U&nbsp;of&nbsp;T and Palette Inc., a national non-profit organization, have <a href="https://www.artsci.utoronto.ca/news/u-t-and-palette-inc-announce-novel-partnership-drive-reskilling-canadian-workers-displaced">launched a partnership to develop bold new strategies</a> to equip people with the tools they need to succeed in Canada’s rapidly changing economy &mdash; including those impacted by COVID-19.
+                                                    <br><br>
+                                                    Palette recently welcomed Dean Melanie Woodin as its newest board member.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                            </tr>
+                        </table>
+                        
+                    </td>
+                </tr>
+            <!-- Thumbnail Left, Text Right : END -->
+            <!-- HR LINE : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;">
+                        <hr style="width: 90%;" width="90%">
+                    </td>
+                </tr>
+            <!-- HR LINE : END -->
+
+	        <!-- Thumbnail Left, Text Right : BEGIN -->
+                <tr>
+                    <td dir="ltr" width="100%" style="padding: 20px 0 0 0; background-color: #ffffff;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <!-- Column : BEGIN -->
+                                <th width="45%" class="stack-column-center" style="vertical-align: top;">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="padding: 0 10px;mso-padding-alt: 0 0 0 40px">
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43550/05-Pelech.jpg" width="270" height="168" alt="Image of students studying" border="0" class="center-on-narrow" style="height: auto; background: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #555555;padding-left: 20px;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                                <!-- Column : BEGIN -->
+                                <th width="55%" style="vertical-align: top;" class="stack-column-center">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; padding-right: 40px; text-align: left;" class="center-on-narrow">
+                                                <p style="margin: 0 0 10px 0;font-size: 18px;">
+                                                    <strong>Alumnus heads to familiar grounds for inspiration</strong>
+                                                </p>
+                                                <p style="margin: 0 0 10px 0;">
+                                                    U&nbsp;of&nbsp;T’s Robarts Library provided the inspiration alumnus David Pelech needed as he finished the script for <i>Decoys</i>, featured on CBC’s Gem streaming service.
+                                                    <br><br>
+                                                    “When you see all those students around you really focusing, you can’t help but wonder if you’re working hard enough,” says Pelech, <a href="https://www.artsci.utoronto.ca/news/old-school-inspiration-behind-alumnus-david-pelechs-new-tv-show-decoys">who wrote <i>Decoys</i> and stars as one of the main characters</a>.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                            </tr>
+                        </table>
+                        
+                    </td>
+                </tr>
+            <!-- Thumbnail Left, Text Right : END -->
+            <!-- HR LINE : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;">
+                        <hr style="width: 90%;" width="90%">
+                    </td>
+                </tr>
+            <!-- HR LINE : END -->
+
+            <!-- Thumbnail Left, Text Right : BEGIN -->
+                <tr>
+                    <td dir="ltr" width="100%" style="padding: 20px 0 0 0; background-color: #ffffff;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <!-- Column : BEGIN -->
+                                <th width="45%" class="stack-column-center" style="vertical-align: top;">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="padding: 0 10px;mso-padding-alt: 0 0 0 40px">
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43550/06-Crossword.jpg" width="270" height="168" alt="Image of students studying" border="0" class="center-on-narrow" style="height: auto; background: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #555555;padding-left: 20px;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                                <!-- Column : BEGIN -->
+                                <th width="55%" style="vertical-align: top;" class="stack-column-center">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; padding-right: 40px; text-align: left;" class="center-on-narrow">
+                                                <p style="margin: 0 0 10px 0;font-size: 18px;">
+                                                    <strong>Win prizes in the A&amp;S Year in Review crossword contest</strong>
+                                                </p>
+                                                <p style="margin: 0 0 10px 0;">
+                                                    We’ve gathered some of the accomplishments made by our remarkable alumni over the past year into a Year in Review crossword created just for you.
+                                                    <br><br>
+                                                    Completing it correctly &mdash; and quickly &mdash; just may win you one of three $50 gift cards to the U&nbsp;of&nbsp;T Bookstore!
+                                                    <br><br>
+                                                    And congratulations to Andrea Battiston, Maira Hassan and Paul Allan Kay, the winners of our June crossword contest. Way to go!
+                                                    <br><br>
+                                                    Try the <a href="https://www.artsci.utoronto.ca/alumni-friends/crossword/year-review-crossword">A&amp;S Crossword</a>!
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                            </tr>
+                        </table>
+                        
+                    </td>
+                </tr>
+            <!-- Thumbnail Left, Text Right : END -->                  
+
+            <tr style="background-color: #ffffff">
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr style="background-color: #ffffff">
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+        <!-- HIGHLIGHTS : END -->
+
+        <!-- THE IMPACT OF GIVING : BEGIN -->
+            <!-- SECTION HEADING : BEGIN -->
+                <tr>
+                    <td style="background-color: #f2002f;padding: 0 30px;">
+                        <table width="100%" align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;text-align: center">
+                            <tr>
+                                <td style="background-color: #f2002f;padding: 7px 15px;">
+                                    <span style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 18px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 15px;margin-top: 15px;mso-margin-bottom-alt: 15px;margin-bottom: 15px;">THE IMPACT OF GIVING</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            <!-- SECTION HEADING : END -->
+            <!-- 2 Even Columns : BEGIN -->
+                <tr>
+                    <td class="two-column-container" style="background-color: #ffffff;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <!-- Column : BEGIN -->
+                                <th valign="top" width="50%" class="stack-column-center">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <td class="two-column-img-container" style="padding: 10px;">
+                                                <img class="two-column-img-container" src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43550/07-AI.jpg" width="270" height="168" alt="alt_text" border="0" style="width: 100%;height: auto; background: #dddddd; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; color: #000000; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
+                                                <p class="two-column-text-container" style="margin: 0;">
+                                                    <strong><span style="font-size: 18px;">Under-represented computer science students get boost from U.K.-based AI firm</span></strong>
+                                                    <br><br>
+                                                    <a href="https://www.artsci.utoronto.ca/news/deepmind-establishes-four-new-graduate-scholarships-u-t-under-represented-students-computer">Four new graduate scholarships for under-represented students have been established</a> in the Department of Computer Science, thanks to a recent gift from U.K.-based artificial intelligence company, DeepMind.
+                                                    <br><br>
+                                                    “We want AI to be an inclusive technology, and that means it must be shaped by a range of different perspectives,” says Obum Ekeke, University and Educational Partnerships lead at DeepMind.
+                                                </p>
+                                                <br>
+                                                <!-- Button : BEGIN -->
+                                                    <!-- <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;">
+                                                        <tr>
+                                                            <td class="button-td button-td-primary" style="border-radius: 4px; background: #222222;"> -->
+                                                                <p class="two-column-button-container"><a class="button-a button-a-primary" href="https://donate.utoronto.ca/give/show/54" style="background: #ffffff; border: 1px solid #000000; font-family: Arial, Helvetica, sans-serif; text-decoration: none; padding: 13px 17px; color: #f2002f; display: block;text-align: center;font-weight: 700;">Donate</a></p>
+                                                            <!-- </td>
+                                                        </tr>
+                                                    </table> -->
+                                                <!-- Button : END -->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                                <!-- Column : BEGIN -->
+                                <th valign="top" width="50%" class="stack-column-center">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <td class="two-column-img-container" style="padding: 10px;">
+                                                <img class="two-column-img-container" src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43550/08-Tamara.jpg" width="270" height="168" alt="alt_text" border="0" style="width: 100%;height: auto; background: #dddddd; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; color: #000000; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
+                                                <p class="two-column-text-container" style="margin: 0;">
+                                                    <strong><span style="font-size: 18px;">Staff and faculty open up about why they support U&nbsp;of&nbsp;T</span></strong>
+                                                    <br><br>
+                                                    Just ahead of Giving Tuesday on December 1, U&nbsp;of&nbsp;T faculty and staff shared their powerful reasons for supporting U&nbsp;of&nbsp;T.
+                                                    <br><br>
+                                                    <a href="https://www.artsci.utoronto.ca/news/immediate-impact-donations-huge-incentive-give">The hardships highlighted by COVID-19</a>, helping attract the best specialists to the University and <a href="https://www.artsci.utoronto.ca/news/students-are-amazing-and-worthy-support">the immediate impact support has on students</a> are just a few of their reasons &mdash; and the list goes on.
+                                                    <br><br>
+                                                    “I am very happy that I’m able to contribute to some of these funds to support them,” says Department of Philosophy Chair Martin Pickav&eacute;.
+                                                </p>
+                                                <br>
+                                                <!-- Button : BEGIN -->
+                                                    <!-- <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;">
+                                                        <tr>
+                                                            <td class="button-td button-td-primary" style="border-radius: 4px; background: #222222;"> -->
+                                                                <p class="two-column-button-container"><a class="button-a button-a-primary" href="https://donate.utoronto.ca/give/show/12" target="_blank" style="background: #ffffff; border: 1px solid #000000; font-family: Arial, Helvetica, sans-serif; text-decoration: none; padding: 13px 17px; color: #f2002f; display: block;text-align: center;font-weight: 700;">Donate</a></p>
+                                                            <!-- </td>
+                                                        </tr>
+                                                    </table> -->
+                                                <!-- Button : END -->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            <!-- 2 Even Columns : END -->
+        <!-- THE IMPACT OF GIVING : END -->
+
+        <!-- EVENTS : BEGIN -->
+            <!-- SECTION HEADING : BEGIN -->
+                <tr>
+                    <td style="background-color: #002A5C;padding: 0 30px;">
+                        <table width="100%" align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;text-align: center">
+                            <tr>
+                                <td style="background-color: #002A5C;padding: 7px 15px;">
+                                    <span style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 18px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 15px;margin-top: 15px;mso-margin-bottom-alt: 15px;margin-bottom: 15px;">EVENTS</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            <!-- SECTION HEADING : END -->
+	        <!-- 3 Even Columns : BEGIN -->
+                <tr>
+                    <td class="three-column-container" style="background-color: #ffffff;text-align: center;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <!-- Column : BEGIN -->
+                                <th valign="top" width="33.33%" class="stack-column-center">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <td class="three-column-img-container" style="padding: 10px;">
+                                                <img class="three-column-img-container" src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43550/10-Monroe.jpg" width="200" height="123" alt="alt_text" border="0" style="width: 200px;height: auto; background: #dddddd;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
+                                                <p class="two-column-text-container" style="margin: 0;">
+                                                    <span style="font-size: 18px;"><strong>The 2020 Martin Lecture in Physics</strong></span>
+                                                    <br><br>
+                                                    <span><strong>&#9632; November 30, 4 pm</strong></span>
+                                                    <br><br>
+                                                    Join us for the Martin Lecture in Physics: Quantum Computers &mdash; Spooky but Powerful, with keynote speaker Professor Christopher Monroe (University of Maryland, Duke University, IonQ).
+                                                    <br><br>
+                                                    <a href="https://www.physics.utoronto.ca/news-and-events/events/dept-events/quantum-computers-spooky-but-powerful-the-martin-lecture-in-physics/?utm_source=ARTSCI&utm_medium=Newsletter&utm_campaign=Physics%20e-Newsletter%202020">Register here</a>
+                                                    <br><br>
+                                                    Photo credit: University of Maryland
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->                                
+                                <!-- Column : BEGIN -->
+                                <th valign="top" width="33.33%" class="stack-column-center">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <td class="three-column-img-container" style="padding: 10px;">
+                                                <img class="three-column-img-container" src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43550/11-LGBTQ.jpg" width="200" height="123" alt="alt_text" border="0" style="width: 200px;height: auto; background: #dddddd;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
+                                                <p class="two-column-text-container" style="margin: 0;">
+                                                    <span style="font-size: 18px;"><strong>Mario Prizek: A Queer Toronto Broadcast Pioneer</strong></span>
+                                                    <br><br>
+                                                    <span><strong>&#9632; November 30, 6 pm</strong></span>
+                                                    <br><br>
+                                                    <span><strong>Registration deadline is October 4</strong></span>
+                                                    <br><br>
+                                                    See clips from CBC producer Mario Prizek’s stunning home movies and an episode of the 1965 CBC show, Eye Opener, to gain a better understanding of his lasting impact. Followed by a discussion with Dan Bazuin, former co-owner of Church Street’s This Ain’t the Rosedale Library, and Daniel Laurin, PhD student in the Cinema Studies Institute. Via Zoom.
+                                                    <br><br>
+                                                    <a href="https://secureca.imodules.com/s/731/form-blank/index.aspx?sid=731&gid=1&pgid=17854&cid=29550&_ga=2.230698911.1822676898.1605537456-653065159.1594747873">Register here</a>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                                <!-- Column : BEGIN -->
+                                <th valign="top" width="33.33%" class="stack-column-center">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <td class="three-column-img-container" style="padding: 10px;">
+                                                <img class="three-column-img-container" src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43550/12-carbon.jpg" width="200" height="123 alt="alt_text" border="0" style="width: 200px;height: auto; background: #dddddd; ">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
+                                                <p class="two-column-text-container" style="margin: 0;">
+                                                    <span style="font-size: 18px;"><strong>Carbon footprints, pension plans and other financial institutions</strong></span>
+                                                    <br><br>
+                                                    <span><strong>&#9632; December 2, 5 pm</strong></span>
+                                                    <br><br>
+                                                    Join us for Carbon Footprint Reductions by Pension Plans and Other Financial Institutions: Why, How, and When? as we address efforts to reduce carbon footprints, the possibility of a dramatic increase in the pace of decarbonization, the carbon accounting for such reductions and the related disclosure and transparency issues.
+                                                    <br><br>
+                                                    <a href="https://www.eventbrite.ca/e/willis-and-white-memorial-lecture-tickets-128293139233">Register here</a>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            <!-- 3 Even Columns : END -->
+	        <!-- 3 Even Columns : BEGIN -->
+                <tr>
+                    <td class="three-column-container" style="background-color: #ffffff;text-align: center;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <!-- Column : BEGIN -->
+                                <th valign="top" width="33.33%" class="stack-column-center">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <td class="three-column-img-container" style="padding: 10px;">
+                                                <img class="three-column-img-container" src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43550/13-piano.jpg" width="200" height="123" alt="alt_text" border="0" style="width: 200px;height: auto; background: #dddddd;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
+                                                <p class="two-column-text-container" style="margin: 0;">
+                                                    <span style="font-size: 18px;"><strong>U&nbsp;of&nbsp;T Where You Are: Songs of the Season</strong></span>
+                                                    <br><br>
+                                                    <span><strong>&#9632; December 2, 7 pm, on-demand afterwards</strong></span>
+                                                    <br><br>
+                                                    Join fellow U&nbsp;of&nbsp;T alumni and friends for an evening  of holiday music, featuring performances by singers in the Faculty of Music’s Voice Studies Program and pianist David Eliakis. This special selection of warm-hearted music is hosted by Monica Whicher, Chair of Voice Studies. Performers will share their own traditions through a program of solos and carols.
+                                                    <br><br>
+                                                    <a href="https://alumni.utoronto.ca/events-and-programs/u-t-where-you-are-songs-season">Register here</a>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->                                
+                                <!-- Column : BEGIN -->
+                                <th valign="top" width="33.33%" class="stack-column-center">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <td class="three-column-img-container" style="padding: 10px;">
+                                                <img class="three-column-img-container" src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43550/14-data.jpg" width="200" height="123" alt="alt_text" border="0" style="width: 200px;height: auto; background: #dddddd;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
+                                                <p class="two-column-text-container" style="margin: 0;">
+                                                    <span style="font-size: 18px;"><strong>Data Resources for Entrepreneurs</strong></span>
+                                                    <br><br>
+                                                    <span><strong>&#9632; December 3, 2:30 pm</strong></span>
+                                                    <br><br>
+                                                    Hosted by U&nbsp;of&nbsp;T Libraries, this session will help you identify your data needs, find relevant data using specialized library resources and evaluate and synthesize data using critical thinking.
+                                                    <br><br>
+                                                    <a href="https://libcal.library.utoronto.ca/calendar/libraryworkshops/entrepreneurship-data">Register here</a>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                                <!-- Column : BEGIN -->
+                                <th valign="top" width="33.33%" class="stack-column-center">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <td class="three-column-img-container" style="padding: 10px;">
+                                                <img class="three-column-img-container" src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43550/Entrepreneur-crop.png" width="200" height="123" alt="alt_text" border="0" style="width: 200px;height: auto; background: #dddddd;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
+                                                <p class="two-column-text-container" style="margin: 0;">
+                                                    <span style="font-size: 18px;"><strong>Learn about the Centre for Entrepreneurship</strong></span>
+                                                    <br><br>
+                                                    <span><strong>&#9632; January 14, 2021, 12 pm</strong></span>
+                                                    <br><br>
+                                                    Join Arts & Science Dean Melanie Woodin to learn about the Centre for Entrepreneurship and opportunities to get involved through its new Venture Mentoring Service. Details and registration coming soon, visit <a href="https://www.entrepreneurship.artsci.utoronto.ca"><span style="word-break: break-all;">www.entrepreneurship.artsci.utoronto.ca</span>.</a>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            <!-- 3 Even Columns : END -->
+            <tr style="background-color: #ffffff">
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr style="background-color: #ffffff">
+                <td>
+                    &nbsp;
+                </td>
+            </tr>       
+        <!-- EVENTS : END -->
+
+        <!-- BENEFITS JUST FOR YOU : BEGIN -->
+            <!-- SECTION HEADING : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffd161;padding: 0 30px;">
+                        <table width="100%" align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;text-align: center">
+                            <tr>
+                                <td style="background-color: #ffd161;padding: 7px 15px;">
+                                    <span class="email-container" style="font-family:Arial, Helvetica, sans-serif;font-size: 18px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 15px;margin-top: 15px;mso-margin-bottom-alt: 15px;margin-bottom: 15px;">BENEFITS JUST FOR YOU</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            <!-- SECTION HEADING : END -->
+            <!-- Thumbnail Left, Text Right : BEGIN -->
+                <tr>
+                    <td dir="ltr" width="100%" style="padding: 20px 0 0 0; background-color: #ffffff;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <!-- Column : BEGIN -->
+                                <th width="45%" class="stack-column-center" style="vertical-align: top;">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="padding: 0 10px;mso-padding-alt: 0 0 0 40px">
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43876/NextSteps.jpg" width="270" height="168" alt="solidarity" border="0" class="center-on-narrow" style="height: auto; background: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #555555;padding-left: 20px;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                                <!-- Column : BEGIN -->
+                                <th width="55%" style="vertical-align: top;" class="stack-column-center">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; padding-right: 40px; text-align: left;" class="center-on-narrow">
+                                                <p style="margin: 0 0 10px 0;font-size: 18px;">
+                                                    <strong>Students and recent alumni: get ready to take your Next Steps!</strong>
+                                                </p>
+                                                <p style="margin: 0 0 10px 0;">
+                                                    <a href="https://my.alumni.utoronto.ca/s/731/form-blank/index.aspx?sid=731&gid=1&pgid=17806&cid=29468&ecid=29468">Registration is now open</a> for our <a href="https://www.artsci.utoronto.ca/alumni/backpack-briefcase-b2b/next-steps-conference">Next Steps Conference</a>, an inspiring and energizing &mdash; and, this year, virtual! &mdash; event for Arts &amp; Science students and recent grads as they prepare to embark on their next adventure.  
+                                                    <br><br>
+                                                    Held January 25 to 27, 2021, the event will feature a range of speakers, career exploration panels, personal and professional development seminars and networking opportunities. Panels will address life after undergrad, leveraging an Arts &amp; Science degree, internships and transitioning smoothly into the workforce, among many other topics. 
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                            </tr>
+                        </table>
+                        
+                    </td>
+                </tr>
+            <!-- Thumbnail Left, Text Right : END -->
+            <!-- HR LINE : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;">
+                        <hr style="width: 90%;" width="90%">
+                    </td>
+                </tr>
+            <!-- HR LINE : END -->
+
+            <!-- Thumbnail Left, Text Right : BEGIN -->
+                <tr>
+                    <td dir="ltr" width="100%" style="padding: 20px 0 0 0; background-color: #ffffff;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <!-- Column : BEGIN -->
+                                <th width="45%" class="stack-column-center" style="vertical-align: top;">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="padding: 0 10px;mso-padding-alt: 0 0 0 40px">
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/11/43550/16-yoga.jpg" width="270" height="168" alt="solidarity" border="0" class="center-on-narrow" style="height: auto; background: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #555555;padding-left: 20px;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                                <!-- Column : BEGIN -->
+                                <th width="55%" style="vertical-align: top;" class="stack-column-center">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; padding-right: 40px; text-align: left;" class="center-on-narrow">
+                                                <p style="margin: 0 0 10px 0;font-size: 18px;">
+                                                    <strong>Stay connected with us through our virtual hub</strong>
+                                                </p>
+                                                <p style="margin: 0 0 10px 0;">
+                                                    Keep learning and exploring through <a href="https://alumni.utoronto.ca/hub">our virtual hub for U&nbsp;of&nbsp;T alumni</a>. U&nbsp;of&nbsp;T experts share insights on everything from masks to mindfulness, cosmology to careers. Expand your mind through workshops, book clubs, concerts, lectures and even ways to get active &mdash; just for our alumni.
+                                                    <br><br>
+                                                    Check back often &mdash; there’s always something new for you.
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                            </tr>
+                        </table>
+                        
+                    </td>
+                </tr>
+            <!-- Thumbnail Left, Text Right : END -->
+
+            <tr style="background-color: #ffffff">
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr style="background-color: #ffffff">
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+        <!-- BENEFITS JUST FOR YOU : END -->
+        <!-- </table> -->
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="700" style="margin: auto;background: #002A5C;" class="">
+            <!-- <tr>
+                <td style="text-align: center;padding:0px;mso-padding-alt:20px;" align="center">
+                </td>
+            </tr> -->
+            <tr style="background-color: #002A5C">
+                <td>
+                    &nbsp;
+                </td>
+            </tr> 
+            <tr style="background-color: #002A5C">
+                <td>
+                    &nbsp;
+                </td>
+            </tr>            
+            <tr>
+                <td style="text-align:center;background-color: #002A5C;;">
+                    <img src="https://www.artsci.utoronto.ca/sites/www.artsci.utoronto.ca/files/faculty-artsandscience_white.png" style="width: 360px; height: auto;" width="360" height="auto" alt="icon">
+                </td>
+            </tr>
+            <tr>
+	            <td style="padding: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;background-color: #002A5C;">
+                    <!-- <p> -->
+                    <table>
+                        <tr>
+                            <td class="footer-icons">
+                                <span style="color: #ffffff"><strong>FOLLOW A&amp;S ALUMNI</strong></span>
+                                <br><br>
+                                    <a href="##TrackClick##https://www.facebook.com/ArtsandScienceAlumni/" target="_blank" style="padding: 0 5px;">
+                                        <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Facebook.png" width="60" height="60" alt="icon">
+                                        </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+                                        <a href="##TrackClick##https://www.linkedin.com/company/university-of-toronto-faculty-of-arts-science-alumni/?viewAsMember=true" target="_blank" style="padding: 0 5px;">
+                                        <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/linkedin.png" width="60" height="60" alt="icon">
+                                        </a>
+                                <!-- </p> -->
+                                <!-- <p style="vertical-align: middle;"> -->
+                                
+                            </td>
+                            <td style="width:10%;">
+                            &nbsp; 
+                            </td>
+                            <td class="footer-icons">
+                                <span style="color: #ffffff"><strong>FOLLOW ARTS &amp; SCIENCE</strong></span>
+                                <br><br>
+                                <a href="##TrackClick##https://www.facebook.com/UofTArtSci/" target="_blank" style="padding: 0 5px;color:#002a5b">
+                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Facebook.png" width="60" height="60" alt="icon">
+                                    </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+                                    <a href="##TrackClick##https://www.instagram.com/uoftartsci/?hl=en" target="_blank" style="padding: 0 5px;">
+                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/instagram.png" width="60" height="60" alt="icon">
+                                    </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+                                    <a href="##TrackClick##https://twitter.com/uoftartsci" target="_blank" style="padding: 0 5px;">
+                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/twitter.png" width="60" height="60" alt="icon">
+                                    </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+                                    <a href="##TrackClick##https://www.youtube.com/channel/UCXRrb_NqDU5IN2ensLpWbcg" target="_blank" style="padding: 0 5px;">
+                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/youtube.png" width="60" height="60" alt="icon">
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- </p> -->
+                    <br><br>
+                    <strong>Produced by the Office of Communications &amp; Public Affairs,
+                    <br>
+                    for the Office of Advancement.</strong>
+                    <br><br>
+                    Contact Communications at: <a href="mailto:artsci.communications@utoronto.ca" target="_blank" style="color: #13778d;">artsci.communications@utoronto.ca</a>
+                    <br>
+                    Contact Advancement at: <a href="mailto:alumni@artsci.utoronto.ca" target="_blank" style="color: #13778d;">alumni@artsci.utoronto.ca</a> | 416-978-4179
+                    <br>
+                    Support Arts &amp; Science here: <a href="https://donate.utoronto.ca/give/show/50?utm_source=ARTSCI&utm_medium=Newsletter&utm_campaign=A%26S%20News" target="_blank" style="color: #13778d;">donate.utoronto.ca/artsandscience</a>
+                    <br><br><br>
+                    This e-mail was sent to <a href="mailto:##SubscriberEmail##" target="_blank" style="color: #13778d;">##SubscriberEmail##</a>
+                    <br>
+                    <a href="##TrackClick##https://secureca.imodules.com/s/731/index_clean.aspx?sid=731&gid=1&pgid=1363&cid=2576&post_id=0" target="_blank" style="color: #13778d; text-decoration: underline;">Update contact information</a>
+                    <br>
+                    <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_ARTSCI_ALL_ALL_Newsletter_Initial_##OptionalParameter3##%20Whats%20New%20at%20AAS%20segment%202016-2019" target="_blank" style="color: #13778d; text-decoration: underline;">Opt out of future messages</a>
+                    <br>
+                    <hr style="width:90%; margin: 10px auto;" width="90%">
+                    <span style="font-size: 10px">
+                        The University&nbsp;of&nbsp;Toronto respects your privacy. We do not rent, trade or sell our mailing lists.
+                        <br>
+                        Copyright &copy; 2020 University&nbsp;of&nbsp;Toronto. All rights reserved. This e-mail was sent to <a href="mailto:##SubscriberEmail##" target="_blank" style="color: #13778d;">##SubscriberEmail##</a>
+                    </span>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Email Footer : END -->
+
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
