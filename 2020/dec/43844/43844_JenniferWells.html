@@ -1,0 +1,676 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title></title>
+    <style>
+    a {
+      color: #005cc9;text-decoration: none;
+    }
+    @media only screen and (min-width: 480px) and (max-width: 599px) {
+    table[class=outer] { width: 480px !important;}
+    td[class=outer] { width: 480px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 440px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 440px !important;}
+    td[class=inner] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 400px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 480px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 440px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 400px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 480px !important; height: auto !important;}
+    img[class=img-rect] { width: 440px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 285px !important; height: auto !important;}
+    strong[class=banner] { font-size: 28px !important;}
+    .section-heading { width: 440px !important; }
+    .section-heading td { width: 440px !important; }
+    .full-story { width: 440px !important; }
+    .image-block img { width: 440px !important; height: auto !important; }
+    .button { width: 440px !important; }
+    .two-col-section { width: 440px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 440px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    @media only screen and (min-width: 360px) and (max-width: 479px) {
+    table[class=outer] { width: 360px !important;}
+    td[class=outer] { width: 360px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 320px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 320px !important;}
+    td[class=inner] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 300px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 360px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 320px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 300px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 360px !important; height: auto !important;}
+    img[class=img-rect] { width: 320px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 260px !important; height: auto !important;}
+    strong[class=banner] { font-size: 22px !important;}
+    .section-heading { width: 320px !important; }
+    .section-heading td { width: 320px !important; }
+    .image-block img { width: 320px !important; height: auto !important; }
+    .button { width: 320px !important; }
+    .two-col-section { width: 320px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 320px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    @media only screen and (max-width: 359px) {
+    table[class=outer] { width: 320px !important;}
+    td[class=outer] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 280px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 280px !important;}
+    td[class=inner] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 260px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 280px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 260px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 320px !important; height: auto !important;}
+    img[class=img-rect] { width: 280px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 240px !important; height: auto !important;}
+    strong[class=banner] { font-size: 20px !important;}
+    .section-heading { width: 280px !important; }
+    .section-heading td { width: 280px !important; }
+    .full-story { width: 280px !important; }
+    .image-block img { width: 280px !important; height: auto !important; }
+    .button { width: 280px !important; }
+    .two-col-section { width: 280px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 280px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0;">
+    <!-- Preheader : BEGIN -->
+    <div style="display:none;font-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">
+      Catch up on the latest news from DSR alumni, faculty and students
+    </div>
+    <!-- Preheader : END -->
+    <table cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td width="100%" align="center" valign="top">
+          <!-- end of top portion of outer table -->
+
+          <!-- HEADER SECTION (web version link, banner) : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td width="600" valign="top" style="text-align: center; padding-bottom: 15px; padding-top: 10px; font-family: arial; background-color: #ffffff;" class="content-outer">
+                <a href="##HTMLNewsletterURL##" style="text-decoration: none !important; color: #000000; font-size: 12px;"><strong>View this email online</strong></a>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px; color:#002A5C; background-color:#ffffff;">
+                <strong>FALL 2020 - Issue 1</strong>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="header" width="600" valign="top" style="font-size:20px; background-color: #002a5c; color: #ffffff; text-align: center; padding-top: 40px; padding-bottom: 35px; font-family: arial; line-height: 36px;">
+                <a href="" style="border: none !important;" alt="alt_text" class="img-full"/>
+                <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43844/religion_KnockedOut.png" style="max-width: 600px;width:65%">
+                </a>
+              <!-- <br/>
+              <span style="font-size: 15px;">OCTOBER 2020 | Issue 12</span> -->
+            </td>
+            </tr>
+          </table>
+          <!-- HEADER SECTION (web version link, banner) : END -->
+
+          <!-- LETTER FROM THE CHAIR : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-top:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px; color:#002A5C; background-color:#dde1e8;">
+                <strong>MESSAGE FROM THE CHAIR</strong>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:15px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td width="550" valign="top" class="content-outer" style="text-align: left; font-family: arial; padding: 15px 25px 10px 25px; font-size: 14px; line-height: 20px; background-color: #ffffff; color: #000000;">
+                Dear students, faculty, staff and alumni,
+                <br><br>
+                I am delighted to present the Department for the Study of Religion (DSR) fall newsletter, written and compiled by the multi-talented Nicole Bergot, our new communications lead.  
+                <br><br>
+                Becoming chair in the midst of a global pandemic has certainly posed its share of challenges, which I discuss in an interview with Nicole that you will find below. I’m grateful to be working with such incredible staff, faculty and students to keep our research and teaching going despite everything.  
+                <br><br>
+                And keeping on we are! This newsletter collects the accomplishments, upcoming events and insights of DSR faculty, students and alumni. You can read about how DSR undergrads are faring during this strange semester, listen to Professor Arti Dhand’s COVID-19-inspired Mahabharata podcast and learn more about Walid Saleh and Amanda Goodman’s research grant that grew out of a U&nbsp;of&nbsp;T reading group. Also included are Professor J. Barton Scott’s take on an eccentric astrologist, Professor Nada Moumtaz’s critique of disaster charity and PhD candidate Suzanne van Geuns’ analysis of hate speech on the internet. 
+                <br><br>
+                We also caught up with DSR alumna Audrey Rochette (‘20) to talk about her role as the Indigenous Partnerships & Relations Specialist at Woodsworth College. Amir Hussain (‘01) spoke with us about his experiences as chair and professor of Theological Studies at Loyola Marymount University and about becoming vice-president of the American Academy of Religion.
+                <br><br>
+                We recently celebrated the graduation of three PhDs, four MAs, one specialist, three majors and six minors from our department with our first online convocation celebration. Family, friends, students and faculty joined from Egypt, British Columbia, Alberta, Alabama, Georgia, Quebec, California and more. We wish our graduates the very best as they embark on their next adventures and look forward to all the ways in which they will bring the study of religion into the world. 
+                <br><br>
+                No matter where in the world this newsletter finds you, I welcome the opportunity to keep you informed of the exciting and vital work being done at the Department for the Study of Religion. Please be in touch with your own news &mdash; I'd love to hear from you!  
+                <br><br>
+                <strong><i>&mdash; Pamela Klassen FRSC</i></strong><br>
+                <i>Professor & Chair of the Department for the Study of Religion</i>
+              </td>
+            </tr>
+          </table>
+          <!-- LETTER FROM THE CHAIR : END -->
+
+          <!-- NEWS AND EVENTS : BEGIN -->
+          <table cellspacing="0" cellpadding="0" border="0" width="600" class="two-col-section" align="center" style="width:600px;">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px; border-top: 1px solid #002A5C;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px; color:#002A5C; background-color:#dde1e8;">
+                <strong>NEWS AND EVENTS</strong>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:15px;font-size:7px;">&nbsp;</td>
+            </tr>
+
+          <!-- Even Columns 1 : BEGIN -->
+          <tr>
+            <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+              <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                <tr>
+
+                  <td valign="top" class="col-story-wrap" width="280">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43844/image-1.png" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                            A conversation with new Chair Pamela Klassen on taking on this role during a pandemic and her vision for the department moving forward.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #005cc9;text-align: center;">
+                          <a href="https://www.religion.utoronto.ca/news/conversation-new-chair-pamela-klassen" style="text-decoration: underline;">READ MORE</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                  <td class="divider" width="15"></td>
+
+                  <td valign="top" class="col-story-wrap" width="280">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43844/image-2.png" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                          DSR specialist and Religion Undergrad Student Association President Mukti Patel discusses her love for the study of religion and how this weird semester is shaking out for U&nbsp;of&nbsp;T undergrads.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #005cc9;text-align: center;">
+                          <a href="https://www.religion.utoronto.ca/news/profile-undergrad-dsr-specialist-and%C2%A0rusa%C2%A0president-mukti-patel" style="text-decoration: underline;">READ MORE</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- Even Columns 1 : END -->   
+
+          <!-- Even Columns 1 : BEGIN -->
+          <tr>
+            <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+              <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                <tr>
+
+                  <td valign="top" class="col-story-wrap" width="280">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43844/image-3.png" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                            Audrey Rochette (‘20) speaks about her work decolonizing spaces and dispelling stereotypes through her professional platforms. She encourages students to take courses that help them unpack their “own understanding of Indigenous peoples and their continued resistance, resilience and commitment to challenging the misrepresentation of historical and contemporary narratives.”
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #005cc9;text-align: center;">
+                          <a href="https://www.religion.utoronto.ca/notable-alumni-dsr-audrey-rochette" style="text-decoration: underline;">READ MORE</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                  <td class="divider" width="15"></td>
+
+                  <td valign="top" class="col-story-wrap" width="280">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43844/image-4.png" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                            Amir Hussain (‘01) discusses his approach to teaching the study of religion. “You try to be relevant and understand what they’re into. I ask them what they’re listening to, and they tell me ‘I like old school rock and roll, like Nirvana and Pearl Jam’, and I’m like, ‘that’s old school to you?’”
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #005cc9;text-align: center;">
+                          <a href="https://www.religion.utoronto.ca/alumni-friends/notable-alumni-dsr-dr-amir-hussain" style="text-decoration: underline;">READ MORE</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- Even Columns 1 : END -->   
+
+          <!-- Even Columns 1 : BEGIN -->
+          <tr>
+            <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+              <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                <tr>
+
+                  <td valign="top" class="col-story-wrap" width="280">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43844/image-5.png" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                            DSR Professor Arti Dhand brings the Indian Epic to life in her weekly podcast on <i>The Mahabharata</i>.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #005cc9;text-align: center;">
+                          <a href="https://www.religion.utoronto.ca/news/dsr-professor-arti-dhand-podcast" style="text-decoration: underline;">READ MORE</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                  <td class="divider" width="15"></td>
+
+                  <td valign="top" class="col-story-wrap" width="280">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43844/image-6.png" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                            DSR Professor J. Barton Scott in The Revealer:  Mucho Mucho Amor, Mucho Mucho Religion, a review of a documentary about Puerto Rican  astrologer Walter Mercado.                             
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #005cc9;text-align: center;">
+                          <a href="https://boundless.utoronto.ca/redirects/religion/mucho-mucho" style="text-decoration: underline;">READ MORE</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- Even Columns 1 : END -->   
+
+          <!-- Even Columns 1 : BEGIN -->
+          <tr>
+            <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+              <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                <tr>
+
+                  <td valign="top" class="col-story-wrap" width="280">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43844/image-7.png" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                            DSR Professor Nada Moumtaz in U Chicago Divinity School: The Donation Dilemma &mdash; Charity in the aftermath of the Beirut Explosion. 
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #005cc9;text-align: center;">
+                          <a href="https://boundless.utoronto.ca/redirects/religion/donation-dilemma" style="text-decoration: underline;">READ MORE</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                  <td class="divider" width="15"></td>
+
+                  <td valign="top" class="col-story-wrap" width="280">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43844/image-8.png" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                          DSR PhD candidate Suzanne van Geuns examines the intersection of religion and digital communications technologies to better understand right-wing online subcultures.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #005cc9;text-align: center;">
+                          <a href="https://www.artsci.utoronto.ca/news/study-religions-suzanne-van-geuns-receives-inaugural-schwartz-reisman-graduate-fellowship" style="text-decoration: underline;">READ MORE</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- Even Columns 1 : END -->   
+
+          <!-- Even Columns 1 : BEGIN -->
+          <tr>
+            <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+              <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                <tr>
+
+                  <td valign="top" class="col-story-wrap" width="280">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43844/image-9.png" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                            DSR researchers have been awarded a five-year Social Sciences and Humanities Research Council (SSHRC) Insight Grant for their "Practices of Commentary" project. Principle investigators include Walid Saleh and Amanda Goodman.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #005cc9;text-align: center;">
+                          <a href="https://www.religion.utoronto.ca/news/congratulations-dsr-researchers" style="text-decoration: underline;">READ MORE</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                  <td class="divider" width="15"></td>
+
+                  <td valign="top" class="col-story-wrap" width="280">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43844/image-10.png" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                            Professor Pamela Klassen and Dr. Krista Barclay have received an award from the Connaught Community Partnerships Research Program for their project, Treaty Teachings: How Universities, Communities, and Museums Can Work Together to Tell the History of Treaty 3.                  
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #005cc9;text-align: center;">
+                          <a href="https://www.religion.utoronto.ca/news/congratulations-pamela-klassen-0" style="text-decoration: underline;">READ MORE</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- Even Columns 1 : END -->   
+
+          <!-- Even Columns 1 : BEGIN -->
+          <tr>
+            <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+              <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                <tr>
+
+                  <td valign="top" class="col-story-wrap" width="280">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43844/image-11.png" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                            Professor Alexander J.B. Hampton has won an SSHRC Connections Grant to support his Cambridge Companion to Religion, Nature and the Environment in the West.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #005cc9;text-align: center;">
+                          <a href="https://www.religion.utoronto.ca/news/congratulations-alexander-jb-hampton" style="text-decoration: underline;">READ MORE</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                  <td class="divider" width="15"></td>
+
+                  <td valign="top" class="col-story-wrap" width="280">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43844/image-12.png" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                            Professor David Novak has won the Canadian Jewish Literary Award for his book, <i>Athens and Jerusalem: God, Humans, and Nature</i>.                
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #005cc9;text-align: center;">
+                          <a href="https://www.religion.utoronto.ca/news/congratulations-professor-david-novak" style="text-decoration: underline;">READ MORE</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- Even Columns 1 : END -->   
+
+          <!-- Even Columns 1 : BEGIN -->
+          <tr>
+            <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+              <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                <tr>
+
+                  <td valign="top" class="col-story-wrap" width="280">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43844/image-13.png" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                            Congratulations to Fall 2020 Department for the Study of Religion Graduates!
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #005cc9;text-align: center;">
+                          <a href="https://www.religion.utoronto.ca/news/congratulations-all-fall-2020-dsr-graduates" style="text-decoration: underline;">READ MORE</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                  <td class="divider" width="15"></td>
+
+                  <td valign="top" class="col-story-wrap" width="280">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43844/image-14.png" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                            DSR Celebrations! Promotions, Appointments and Acknowledgements.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #005cc9;text-align: center;">
+                          <a href="https://www.religion.utoronto.ca/news/dsr-celebrates-promotions-appointments-and-acknowledgements" style="text-decoration: underline;">READ MORE</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- Even Columns 1 : END -->   
+
+          </table>
+          <!-- NEWS AND EVENTS : END -->
+
+          <!-- SOCIAL MEDIA : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr><td width="600" align="center" height="20" style="background-color: #ffffff;"></td></tr>
+            <tr>
+              <td width="300" class="inner" valign="top" style="background-color: #ffffff;text-align: center;">
+                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                  <td style="width:5%" width="5%" text-align="center"></td>
+                    <td valign="top" style="padding-bottom: 20px; text-align: center;">
+                        <a href="##TrackClick##https://www.facebook.com/UofTReligion/" style="border: none; text-decoration: none;" target="_blank">
+                          <img src="https://adcomms.utoronto.ca/images/dua/facebookCircleIcon.png" alt="U&nbsp;of&nbsp;T Facebook" width="45" height="45" style="border: none;" />
+                        </a>&nbsp;&nbsp;&nbsp;
+                        <!-- <a href="##TrackClick##https://www.instagram.com/uoftcompsci/" style="border: none; text-decoration: none;" target="_blank">
+                          <img src="https://adcomms.utoronto.ca/images/dua/instagramCircleIcon.png" alt="U&nbsp;of&nbsp;T LinkedIn" width="45" height="45" style="border: none;" />
+                        </a>
+                        </a>&nbsp;&nbsp;&nbsp; -->
+                        <a href="##TrackClick##https://twitter.com/UofTReligion" style="border: none; text-decoration: none;" target="_blank">
+                          <img src="https://adcomms.utoronto.ca/images/dua/twitterCircleIcon.png" alt="U&nbsp;of&nbsp;T Twitter" width="45" height="45" style="border: none;" />
+                      </a>&nbsp;&nbsp;&nbsp;
+                      <!-- <a href="##TrackClick##https://www.linkedin.com/school/uoftcompsci/" style="border: none; text-decoration: none;" target="_blank">
+                        <img src="https://adcomms.utoronto.ca/icons/linkedin-icon-blue.png" alt="U&nbsp;of&nbsp;T LinkedIn" width="45" height="45" style="border: none;" />
+                      </a> -->
+                    </td>
+                    <td style="width:5%" width="5%"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr><td width="600" align="center" height="20" style="background-color: #ffffff;" class="outer"></td></tr>
+          </table>
+          <!-- SOCIAL MEDIA : END -->
+
+          <!-- WHITE SPACE : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:15px;font-size:7px;">&nbsp;</td>
+            </tr>
+          </table>
+          <!-- WHITE SPACE : END -->
+
+          <!-- FOOTER : BEGIN -->
+          <table cellspacing="0" cellpadding="0" width="600" class="outer" align="center">
+            <tr>
+              <td width="550" style="background-color: #dde1e8; padding: 30px 25px;" valign="top" class="content-outer">
+                <table width="550" cellspacing="0" cellpadding="0" class="inner">
+                  <tr>
+                    <td style="line-height:16px; text-align: left; font-size: 12px; font-family: arial, helvetica, sans-serif; padding-bottom: 10px;" valign="top" class="inner--centered">
+                      <strong>Department for the Study of Religion</strong><br>
+                      170 St. George Street<br>
+                      Tel: 416-978-0877<br>
+                      web: <a href="https://www.religion.utoronto.ca/">religion.utoronto.ca</a><br>
+                      give: <a href="https://donate.utoronto.ca/give/show/62?utm_source=ARTSCI&utm_medium=Newsletter&utm_campaign=Religion%20Newsletter%202020&sid=DIS-##OptionalParameter3##|SRC-##OptionalParameter5##|FN-##OptionalParameter6##" target="_blank">donate.utoronto.ca/religion</a>
+                    </td>
+                    <td style="line-height:16px; text-align: right; font-size: 12px; font-family: arial, helvetica, sans-serif; padding-bottom: 20px;" valign="top" class="inner--centered">
+                      This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #005cc9;text-decoration: none;">##SubscriberEmail##</a><br/>
+                      <a href="##TrackClick##https://secureca.imodules.com/s/731/index_clean.aspx?sid=731&gid=1&pgid=1363&cid=2576&post_id=0" style="color: #005cc9; text-decoration: none;">Update contact information</a><br />
+                      <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_ARTSCI_REL_ALL_Newsletter_Initial_##OptionalParameter3##%20Religion%20Newsletter%202020" style="color: #005cc9; text-decoration: none;">Opt out of future messages</a>
+                    </td>
+                  </tr>
+                  <!--                   <tr>
+                    <td height="50"></td>
+                  </tr> -->
+                  <tr>
+                    <td style="text-align: left; padding-top: 20px;" class="inner--centered" width="285" valign="top">
+                      <a href="##TrackClick##http://www.alumni.artsci.utoronto.ca/" style="color: #005cc9;"><img src="https://alumni.utoronto.ca/sites/default/files/inline-images/header.gif" style="border: none !important;" alt="University of Toronto, Faculty of Arts and Science" st-image="footer-logo" class="footer-logo-left" /></a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- FOOTER : END -->
+
+          <!-- COPYRIGHT AREA : BEGIN -->
+          <table width="600" cellpadding="0" cellspacing="0" class="outer" align="center">
+            <tr>
+              <td style="text-align: center; font-size: 11px; font-family: arial, helvetica;background-color: #ffffff; color: #777777; padding: 10px 60px 20px 60px; line-height: 14px;" valign="top" width="600" class="content">
+                The University&nbsp;of&nbsp;Toronto respects your privacy.
+                We do not rent, trade or sell our mailing lists.
+                Copyright &copy; 2020 University&nbsp;of&nbsp;Toronto. All rights reserved. This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #005cc9;">##SubscriberEmail##</a>.<br />
+                ##OptionalParameter3##<br />
+                ##TrackImpression##
+              </td>
+            </tr>
+          </table>
+          <!-- COPYRIGHT AREA : END -->
+
+          </td>
+        </tr>
+      </table>
+
+    </body>
+  </html>

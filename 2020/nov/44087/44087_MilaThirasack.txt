@@ -14,10 +14,9 @@ Preview: Thank you for expressing interest in participating in the Computer Scie
 
 Seed/approve list
 jennifer.wells@utoronto.ca
-michael.mckinnon@utoronto.ca
 lucianna.ciccocioppo@utoronto.ca
 matt.hintsa@cs.toronto.edu
-
+michael.mckinnon@utoronto.ca
 mila.thirasack@utoronto.ca
 john.tolentino@utoronto.ca
 

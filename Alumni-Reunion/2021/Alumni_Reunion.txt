@@ -1,0 +1,36 @@
+AR_AR21_Email_Template_1
+AR_AR21_Email_Template_2
+AR_AR21_Email_Template_3
+
+ALUMNI_REUNION
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Email Subject
+
+From: tbd
+Reply to: tbd
+Campaign: tbd
+Subject: tbd
+Preview: tbd
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Seed/approve list
+
+john.tolentino@utoronto.ca
+j.silveira@utoronto.ca
+rachel.chochinov@utoronto.ca
+rohini.chopra@utoronto.ca
+sd.baker@utoronto.ca
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Unsubscribe:
+mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%20DUA_ALL_AR_Invitations_##OptionalParameter3##%20|%20REUNION21-REGISTRATION-EMAIL-##OptionalParameter21##|YOUNG|ESTABLISHED
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Solicitation URL:
+https://donate.utoronto.ca/religion?utm_source=ARTSCI&utm_medium=Newsletter&utm_campaign=Religion%20Newsletter%202020&sid=DIS-##OptionalParameter3##|SRC-##OptionalParameter5##|FN-##OptionalParameter6##

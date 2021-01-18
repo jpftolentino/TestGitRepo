@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+	<meta charset="utf-8"> <!-- utf-8 works for most cases -->
+	<meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+	<meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+	<meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+	<meta name="color-scheme" content="light">
+	<meta name="supported-color-schemes" content="light">
+	<title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+	<!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+	<!--[if gte mso 9]>
+	<xml>
+		<o:OfficeDocumentSettings>
+			<o:AllowPNG/>
+			<o:PixelsPerInch>96</o:PixelsPerInch>
+		</o:OfficeDocumentSettings>
+	</xml>
+	<![endif]-->
+
+	<!-- Web Font / @font-face : BEGIN -->
+	<!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
+
+	<!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+	<!--[if mso]>
+		<style>
+			* {
+				font-family: sans-serif !important;
+			}
+		</style>
+	<![endif]-->
+
+	<!-- CSS Reset : BEGIN -->
+	<style>
+
+		/* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+		:root {
+			color-scheme: light;
+			supported-color-schemes: light;
+		}
+
+		/* What it does: Remove spaces around the email design added by some email clients. */
+		/* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+		html,
+		body {
+			margin: 0 auto !important;
+			padding: 0 !important;
+			height: 100% !important;
+			width: 100% !important;
+		}
+
+		/* What it does: Stops email clients resizing small text. */
+		* {
+			-ms-text-size-adjust: 100%;
+			-webkit-text-size-adjust: 100%;
+		}
+
+		/* What it does: Centers email on Android 4.4 */
+		div[style*="margin: 16px 0"] {
+			margin: 0 !important;
+		}
+		/* What it does: forces Samsung Android mail clients to use the entire viewport */
+		#MessageViewBody, #MessageWebViewDiv{
+			width: 100% !important;
+		}
+		/* What it does: Stops Outlook from adding extra spacing to tables. */
+		table,
+		td {
+			-mso-table-lspace: 0pt !important;
+			-mso-table-rspace: 0pt !important;
+		}
+		/* What it does: Fixes webkit padding issue. */
+		table {
+			border-spacing: 0 !important;
+			border-collapse: collapse !important;
+			table-layout: fixed !important;
+			margin: 0 auto !important;
+		}
+		/* What it does: Uses a better rendering method when resizing images in IE. */
+		img {
+			-ms-interpolation-mode:bicubic;
+		}
+		/* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+		a {
+			text-decoration: none;
+		}
+		/* What it does: A work-around for email clients meddling in triggered links. */
+		a[x-apple-data-detectors],  /* iOS */
+		.unstyle-auto-detected-links a,
+		.aBn {
+			border-bottom: 0 !important;
+			cursor: default !important;
+			color: inherit !important;
+			text-decoration: none !important;
+			font-size: inherit !important;
+			font-family: inherit !important;
+			font-weight: inherit !important;
+			line-height: inherit !important;
+		}
+
+		/* What it does: Prevents Gmail from changing the text color in conversation threads. */
+		.im {
+			color: inherit !important;
+		}
+
+		/* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+		.a6S {
+			display: none !important;
+			opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+			display: none !important;
+		}
+
+		/* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+		/* Create one of these media queries for each additional viewport size you'd like to fix */
+
+		/* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+		@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+			u ~ div .email-container {
+				min-width: 320px !important;
+			}
+		}
+		/* iPhone 6, 6S, 7, 8, and X */
+		@media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+			u ~ div .email-container {
+				min-width: 375px !important;
+			}
+		}
+		/* iPhone 6+, 7+, and 8+ */
+		@media only screen and (min-device-width: 414px) {
+			u ~ div .email-container {
+				min-width: 414px !important;
+			}
+		}
+
+	</style>
+	<!-- CSS Reset : END -->
+
+	<!-- Progressive Enhancements : BEGIN -->
+	<style>
+
+		/* What it does: Hover styles for buttons */
+		.button-td,
+		.button-a {
+			transition: all 100ms ease-in;
+		}
+		.button-td-primary:hover,
+		.button-a-primary:hover {
+			background: #555555 !important;
+			border-color: #555555 !important;
+		}
+		.stack-column-left {
+			float: left;
+		}
+		.stack-column-right {
+			float: right;
+		}
+
+		/* Media Queries */
+		@media screen and (max-width: 480px) {
+
+			/* What it does: Forces table cells into full-width rows. */
+			.stack-column,
+			.stack-column-center {
+				display: block !important;
+				width: 100% !important;
+				max-width: 100% !important;
+				direction: ltr !important;
+				float: none;
+			}
+			/* And center justify these ones. */
+			.stack-column-center {
+				text-align: center !important;
+			}
+
+			/* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+			.center-on-narrow {
+				text-align: center !important;
+				display: block !important;
+				margin-left: auto !important;
+				margin-right: auto !important;
+				float: none !important;
+			}
+			table.center-on-narrow {
+				display: inline-block !important;
+			}
+
+			/* What it does: Adjust typography on small screens to improve readability */
+			.email-container p {
+				font-size: 17px !important;
+			}
+		}
+
+	</style>
+	<!-- Progressive Enhancements : END -->
+
+</head>
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important;-mso-line-height-rule: exactly; background-color: #ffffff;">
+	<center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #ffffff;">
+	<!--[if mso | IE]>
+	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff;">
+	<tr>
+	<td>
+	<![endif]-->
+
+		<!-- Visually Hidden Preheader Text : BEGIN -->
+		<div style="display: none; font-size: 0; line-height: 0; max-height:0; overflow:hidden; -mso-hide:all;" aria-hidden="true">
+      We are delighted to invite you to be among the first to join U of T Medicine Connect -- our new online career development and networking platform. 
+    </div>
+		<!-- Visually Hidden Preheader Text : END -->
+
+		<!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+		<!-- Preview Text Spacing Hack : BEGIN -->
+		<div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; -mso-hide: all; font-family: sans-serif;">
+			&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+		</div>
+		<!-- Preview Text Spacing Hack : END -->
+
+		<!--
+			Set the email width. Defined in two places:
+			1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+			2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+			Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+		-->
+		<div style="max-width: 680px; margin: 0 auto;" class="email-container">
+			<!--[if mso]>
+			<table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+			<tr>
+			<td>
+			<![endif]-->
+
+			<!-- Email Body : BEGIN -->
+			<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+
+				<tr>
+					<td style="padding: 20px 20px 10px 20px; text-align: left">
+						&nbsp;
+					</td>
+				</tr>
+				<!-- Email Header : BEGIN -->
+				<tr>
+					<td style="padding: 0 20px; text-align: right;">
+							<a href="##HTMLNewsletterURL##" style="font-size: 13px; font-family: arial, sans-serif; color: #008bb0; text-decoration: none;">View this message online</a>
+					</td>
+				</tr>
+				<!-- Email Header : BEGIN -->
+				<tr>
+					<td style="padding: 0 20px; text-align: left">
+						&nbsp;
+					</td>
+				</tr>
+
+				<!-- Email Header : END -->
+				
+				<!-- New Email Header - 2 column -->
+				<tr>
+					<td align="center" valign="top" style="font-size:0; background-color: #ffffff; padding: 0 13px;">
+						<!--[if mso]>
+						<table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+						<tr>
+						<td valign="top" width="320">
+						<![endif]-->
+						<div style="display:inline-block; margin: 0 -1px; width:50%; min-width:200px; max-width:320px; vertical-align:top;" class="stack-column stack-column-left">
+							<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+								<tr>
+									<td> <!-- <td style="padding: 10px;"> -->
+										<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+											<tr>
+												<td>
+                          <a href="##TrackClick##https://www.tanz.med.utoronto.ca/" style="text-decoration: none; border: 0;">
+                            <img src="https://adcomms.utoronto.ca/email-templates/medicine/logos/tanz-centre-for-research-in-neuro-degenerative-diseases-logo.jpg" width="316" alt="Tanz centre for research - Temerty Faculty of Medicine Logo" border="0" style="height: auto; background: #ffffff; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #011A49;">
+                          </a>
+												</td>
+											</tr>
+											
+										</table>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<!--[if mso]>
+						</td>
+						<td valign="top" width="320">
+						<![endif]-->
+						<div style="display:inline-block; margin: 0 -1px; width:50%; min-width:200px; max-width:320px; vertical-align:top;" class="stack-column stack-column-right">
+							<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+								<tr>
+									<td style="padding: 10px;">
+										<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: right;">
+											<tr>
+												<td height="20px">
+                          &nbsp;
+                        </td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<!--[if mso]>
+						</td>
+						</tr>
+						</table>
+						<![endif]-->
+					</td>
+				</tr>
+
+				<tr>
+					<td align="center" valign="top" style="font-size:0; background-color: #ffffff;">
+						<!--[if mso]>
+						<table role="presentation" border="0" cellspacing="0" cellpadding="0" width="680">
+						<tr>
+						<td valign="top" width="680">
+						<![endif]-->
+						<div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:680px; vertical-align:top;" class="stack-column">
+							<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+								<tr>
+									<td valign="top" align="center" style="padding: 7px 0 5px 0; max-width:600px; border-bottom: 2px solid #007fa3;">
+								</tr>
+							</table>
+						</div>
+						<!--[if mso]>
+						</td>
+						</tr>
+						</table>
+						<![endif]-->
+					</td>
+				</tr>
+
+				<!-- Hero Image, Flush : BEGIN | Banner - Line Toggle -->
+				<!-- <tr>
+					<td style="background-color: #ffffff;">
+						<img src="https://via.placeholder.com/1360x600" width="680" height="" alt="alt_text" border="0" style="width: 100%; max-width: 680px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;" class="g-img">
+					</td>
+					<td valign="top" align="center" style="padding: 0 20px 15px 20px; max-width:600px; border-bottom: 2px solid #007fa3;" width="540">
+					</td>
+				</tr> -->
+				<!-- Hero Image, Flush : END -->
+
+				<!-- 1 Column Text + Button : BEGIN -->
+				<tr>
+					<td style="background-color: #ffffff;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tr>
+								<td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #002a5c;">
+                  <p style="margin: 0 0 21px;">
+                    Dear ##OptionalParameter1##,
+                  </p>
+                  
+                  <p style="margin: 0 0 21px; display: inline; "><img src="https://adcomms.utoronto.ca/email-templates/medicine/2018/dec/James_Lamont_Hunter.jpg" alt="James Hunter" width="213" height="" style="float: right; padding: 0 13px 13px 13px; width: 100%; max-width: 226px; height: auto; background: #ffffff; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #ffffff;"> I would like to take this opportunity to thank you for your generous support of the <strong>James Hunter Family ALS Initiative</strong> and to provide a brief update on the impact of your donation over the past year.<br><br>
+                  We have faced challenging times this year with the COVID-19 pandemic, but ALS does not stop and neither does the research. ALS is a terrible disease. It starts innocuously, perhaps as a mild weakness in the hand or the foot, or slurring of speech, but then rapidly progresses to complete body paralysis. For some this can be as short as 6 months, with death ensuing because they can no longer breathe. It is devastating.<br><br></p>
+
+                  <p style="margin: 0 0 21px;">At the moment, there is no cure or effective treatment, but there is progress and there is hope. Dr. Janice Robertson, the James Hunter Family Chair in ALS Research at the University of Toronto, continues to make significant strides toward developing a therapy for ALS. Working with medicinal chemists, computational biologists, medical biophysicists and molecular cell biologists, I am excited to share that Dr. Robertson and her team have identified several lead compounds that are currently undergoing pre-clinical therapeutic testing. She and the team also continue to work on understanding the complexity of the human brain, using innovative sequencing technologies to identify the cell-type specific gene changes occurring in the nervous system of individuals with ALS. This work is aided by close collaborations with researchers across Europe and will help in the understanding of the underlying mechanisms that cause ALS. 
+                  </p>
+
+                  <p style="margin: 0 0 21px; display: inline; "><img src="https://adcomms.utoronto.ca/email-templates/medicine/2020/12/Dr_Robertson.png" alt="Dr. Robertson" width="452px" height="auto" style="float: right; padding: 0 13px 13px 13px; width: 100%; max-width: 452px; height: auto; background: #ffffff; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #ffffff;"> From all of this, Dr. Robertson has created a strong international reputation for her team, which is further strengthened in her work leading, convening, and presenting at a number of global research forums. For example, Dr. Robertson is a member of the organizing committee for the 31st International Symposium on ALS/MND (Motor Neurone Disease), which in December will virtually bring together leading researchers from across the globe to share research findings. Alongside this symposium, there will be an International Alliance of ALS/MND Associations meeting, and Dr. Robertson will be one of only four presenters, and the only Canadian.<br><br></p>
+
+                  <p style="margin: 0 0 21px;">In speaking with Dr. Robertson recently, she shared that &ldquo;during these difficult COVID days, I am reminded of Jim. His tenacity, his courage, his desire to find a cure for ALS. I am inspired by his memory, and the immense honour to hold the James Hunter Family Chair in ALS Research.&rdquo;</p>
+
+                  <p style="margin: 0 0 21px;">And I could not agree more. As you plan your philanthropic activities for the end of 2020, I encourage you to please consider supporting the James Hunter Family ALS Initiative. You can <a style="color:#008bb0" href="##TrackClick##https://donate.utoronto.ca/give/show/120?utm_source=MED&utm_medium=Solicitation&utm_campaign=Jim-Hunter-Fund&sid=DIS-9000645980|SRC-MED20LA5EMEDECPROSPE|FN-"><u>make a donation online</u></a> or by contacting Katie Rock at <a style="color:#008bb0" href="mailto:katie.rock@utoronto.ca"><u>katie.rock@utoronto.ca</u></a> or 416-559-2731.</p>
+
+                  <p style="margin: 0 0 21px;">Sincerely, </p>
+
+                  <p style="margin: 0 0 21px;">Heather</p>
+                    
+                  <p style="margin: 0 0 21px;"><strong>Heather Hunter </strong><br>
+                    Chair, James Hunter Family ALS Initiative Advisory Committee<br>
+                    Temerty Faculty of Medicine, University of Toronto
+                  </p>
+
+                </td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+        <!-- 1 Column Text + Button : END -->
+
+        <!-- Background Image with Text : BEGIN -->
+				<tr>
+					<!-- Bulletproof Background Images c/o https://backgrounds.cm -->
+					<td style="text-align: center; background-color: #25355a; background-position: center center !important; background-size: cover !important;">
+						<div>
+							<!--[if mso]>
+							<table align="center" role="presentation" border="0" cellspacing="0" cellpadding="0" width="680">
+							<tr>
+							<td width="680">
+							<![endif]-->
+							<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:680px; margin: auto;">
+								
+								<!-- 2 Even Columns : BEGIN -->
+								<tr>
+									<td align="center" valign="top" style="font-size:0; padding: 20px 20px 0 20px; background-color: #25355a;">
+										<!--[if mso]>
+										<table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+										<tr>
+										<td valign="top" width="440">
+										<![endif]-->
+										<div style="display:inline-block; margin: 0 -1px; width:65%; min-width:280px; max-width:440px; vertical-align:top;" class="stack-column stack-column-left">
+											<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+												<tr>
+													<td>
+														<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+															<tr>
+																<td style="text-align: left; font-family: arial; font-size: 13px; color: #ffffff; ">
+                                  <p>The Temerty Faculty of Medicine&apos;s Advancement Office connects a community of alumni, volunteers and donors to meaningful and transformative initiatives advancing health and health care. </p>
+																	<p>As the research and educational hub within Toronto&apos;s robust health sciences network, the University of Toronto&apos;s Temerty Faculty of Medicine is uniquely positioned for impact.</p>
+																</td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+											</table>
+										</div>
+										<!--[if mso]>
+										</td>
+										<td valign="top" width="200">
+										<![endif]-->
+										<div style="display:inline-block; margin: 0 -1px; width:35%; min-width:165px; max-width:165px; vertical-align:top;" class="stack-column stack-column-right">
+											<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+												<tr>
+													<td>
+														<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+															<tr>
+																<td style="text-align: right;" class="stack-column-center">
+																	<a href="mailto:alumni.medicine@utoronto.ca" style="border:0;text-decoration: none;"><img src="https://alumni.utoronto.ca/sites/default/files/inline-images/email-reverse.png" alt="Send us Email" width="28" height="28" class="social"></a>&nbsp;&nbsp;&nbsp;
+																	<a href="##TrackClick##http://www.facebook.com/uoftmedicine" style="border:0;text-decoration: none;"><img src="https://alumni.utoronto.ca/sites/default/files/inline-images/facebook-fff-128.png" alt="Facebook" width="28" height="28" class="social"></a>&nbsp;&nbsp;&nbsp;
+																	<a href="##TrackClick##http://twitter.com/uoftmedicine" style="border:0;text-decoration: none;"><img src="https://alumni.utoronto.ca/sites/default/files/inline-images/twitter-fff-128.png" alt="Twitter" width="28" height="28" class="social"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+																	<a href="##TrackClick##http://instagram.com/uoftmedicine" style="border:0;text-decoration: none;"><img src="https://alumni.utoronto.ca/sites/default/files/inline-images/instagram-fff-128.png" alt="Instagram" width="28" height="28" class="social"></a>
+																</td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+											</table>
+										</div>
+										<!--[if mso]>
+										</td>
+										</tr>
+										</table>
+										<![endif]-->
+									</td>
+								</tr>
+								<!-- 2 Even Columns : END -->
+
+								<!-- Clear Spacer : BEGIN -->
+								<tr>
+									<td aria-hidden="true" height="10" style="font-size: 0px; line-height: 0px;">
+										&nbsp;
+									</td>
+								</tr>
+								<!-- Clear Spacer : END -->
+
+								<!-- 2 Even Columns : BEGIN -->
+								<tr>
+									<td align="center" valign="top" style="font-size:0; padding: 15px 20px 20px 20px; background-color: #25355a;">
+										<!--[if mso]>
+										<table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+										<tr>
+										<td valign="top" width="440">
+										<![endif]-->
+										<div style="display:inline-block; margin: 0 -1px; width:55%; min-width:200px; max-width:440px; vertical-align:top;" class="stack-column stack-column-left">
+											<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+												<tr>
+													<td>
+														<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+															<tr>
+																<td class="stack-column-center" style="text-align: left; font-family: arial; font-size: 13px; color: #ffffff; ">
+																	<a href="##TrackClick##http://medicine.utoronto.ca" style="text-decoration: none; border: 0;"><img src="https://adcomms.utoronto.ca/email-templates/medicine/logos/MED_Temerty-Faculty-of-Medicine_Colour-Signature_Digital_white_small.png" width="226px" height="auto" alt="Faculty of Medicine, University of Toronto" style="border:0; width:226px; height:auto; max-width:352px;" class="center-on-narrow" /></a>
+																</td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+											</table>
+										</div>
+										<!--[if mso]>
+										</td>
+										<td valign="top" width="200">
+										<![endif]-->
+										<div style="display:inline-block; margin: 0 -1px; width:45%; min-width:200px; max-width:200px; vertical-align:top;" class="stack-column stack-column-right">
+											<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+												<tr>
+													<td>
+														<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+															<tr>
+																<td height="20px">&nbsp;</td>
+															</tr>
+															<tr>
+																<td style="text-align: right;" class="stack-column-center">
+																	&nbsp;
+																</td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+											</table>
+										</div>
+										<!--[if mso]>
+										</td>
+										</tr>
+										</table>
+										<![endif]-->
+									</td>
+								</tr>
+								<!-- 2 Even Columns : END -->
+
+							</table>
+							<!--[if mso]>
+							</td>
+							</tr>
+							</table>
+							<![endif]-->
+						</div>
+						<!--[if gte mso 9]>
+						</v:fill>
+						</v:rect>
+						</v:image>
+						<![endif]-->
+					</td>
+				</tr>
+				<!-- Background Image with Text : END -->				
+
+			</table>
+			<!-- Email Body : END -->
+
+			<!-- Email Footer : BEGIN -->
+			<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 680px;">
+				<tr>
+					<td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; line-height: 18px;">
+            Temerty Faculty of Medicine Advancement Office<br>
+            6 Queen&apos;s Park Crescent West / Toronto, ON Canada M5S 3H2<br /><br />
+            The University of Toronto respects your privacy.<br>
+            We do not rent, trade or sell our mailing lists.<br>
+            Copyright &copy; 2020 University&nbsp;of&nbsp;Toronto. All rights reserved.<br>
+            To unsubscribe from emails of this type, please <a href="mailto:subscriptions@utoronto.ca?subject=Unsubscribe%20MED_PSY_ALG_Solicitation_##OptionalParameter3##%20|%20Rakoff%20Alumni%20Solicitation%Reminder" style="color: #008bb0;">contact us</a>.<br>ID ##OptionalParameter3## ##TrackImpression##
+          </td>
+				</tr>
+			</table>
+			<!-- Email Footer : END -->
+
+			<!--[if mso]>
+			</td>
+			</tr>
+			</table>
+			<![endif]-->
+		</div>
+
+	<!--[if mso | IE]>
+	</td>
+	</tr>
+	</table>
+	<![endif]-->
+	</center>
+</body>
+</html>
