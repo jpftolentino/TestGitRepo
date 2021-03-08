@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Replaces default bold style. */
+        th {
+        	font-weight: normal;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            /* table-layout: fixed !important; */
+            margin: 0 auto!important;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+		}
+		/* If the above doesn't work, add a .g-img class to any image in question. */
+		img.g-img + div {
+		   display: none !important;
+		}
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+        a {
+            font-weight: 700;
+        }
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: #555555 !important;
+	        border-color: #555555 !important;
+	    }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            td.center-on-narrow p.one-column-text {
+                margin: 0 !important;
+            }
+
+            td.center-on-narrow p {
+                margin: 20px 50px !important;
+            }
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                /* text-align: center !important; */
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                /* text-align: center !important; */
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+                width: 90% !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 30px !important;
+                line-height: 40px !important;
+            }
+
+            .email-container h2 {
+                font-size: 40px !important;
+                line-height: 40px !important;
+            }
+        }
+
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #f2f4f7;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #f2f4f7;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #222222;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
+            Catch up on St. Mike’s news!
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="700" style="margin: auto;" class="email-container">
+            <tr>
+                <td style="background-color: #ffffff; text-align: center;">
+                    <a href="##HTMLNewsletterURL##"style="color: #000000;text-decoration: none; font-weight: bold;font-size:11px;font-family: Arial, Helvetica, sans-serif;">Click to view this email online</a>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 50px 0 10px 0; text-align: center;background: #ffffff;">
+                    
+                    <a href="https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=1&ID=7797&NL=6364&N=8132&SI=1118735&URL=https%3a%2f%2fstmikes.utoronto.ca%2f" style="color: #005cc9;"><img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/05/logo.png" style="border: none !important;width:550px" width="500" alt="University of Toronto, Faculty of Arts and Science" /></a>
+                </td>
+            </tr>
+
+
+            <!-- St. Mike’s 180: Rooted in the Future : BEGIN -->
+                <!-- Section Heading : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;padding: 20px 30px 0 30px;text-align: center">
+                        <table width="100%" align="middle" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                            <tr>
+                                <td style="background-color: #002A5C;padding: 0 15px;text-align: center">
+                                    <h2 style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 26px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 25px;margin-top: 25px; mso-margin-bottom-alt: 25px;margin-bottom: 25px;">
+                                        St. Mike’s 180: Rooted in the Future</h2>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Section Heading : END -->
+                <!-- 1 Column Text + Button : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;padding: 0 30px;">
+                        <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                            <!-- Column : BEGIN -->
+                            <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: center;" class="center-on-narrow">
+                                            <br>
+                                            <h3 style="font-weight:400;color:#002a5c;">Your advice is helping to shape our future</h3>
+                                            <br>
+                                            <table align="center" role="presentation" border="0" cellpadding="0" cellspacing="0" width="550" style="width: 550px; height: auto;text-align: center;">
+                                                <tr>
+                                                    <td>
+                                                        <a href="https://www.youtube.com/watch?v=lEOL9wepazY&feature=emb_logo">
+                                                            <img src="https://adcomms.utoronto.ca/images/stmikes/2020/08/PresidentSylvester.png" width="90%" style="border: none !important;padding-bottom:10px;width: 90%;" alt="Video thumbnail of David Sylvester" class="img-full">
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </th>
+                            <!-- Column : END -->
+                        </table>
+                    </td> 
+                </tr>
+                <!-- 1 Column Text + Button : END -->
+                <!-- 1 Column Text + Button : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;padding: 0 30px;">
+                        <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                            <!-- Column : BEGIN -->
+                            <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: left;" class="center-on-narrow">
+                                            <p class="one-column-text" style="mso-margin-top-alt: 15px;margin-top: 15px;">
+                                                Over the past year, alumni have played an important role in shaping the vision for “St. Mike’s 180 – Rooted in the Future” by joining with students, faculty, staff, collegium members and community partners to share valuable perspectives about how we can build on our historical and current strengths and ensure this community flourishes in the years ahead.
+                                                <br><br>
+                                                Now, as President Sylvester explains <a href="https://stmikes.utoronto.ca/st-mikes-180-rooted-in-the-future/" style="text-decoration: none;color:#002a5b">here</a> we are sharing the emerging high-level priorities and goals that have developed through these consultations and discussions and asking you for your feedback as we finalize the plan.
+                                                <br><br>
+                                                Thank you to all who have provided feedback so far. Alumni engagement in this important process will help St. Michael’s ensure a vital and relevant future in service to our students and the common good. I hope you can take a moment to look through this progress report and share your thoughts and suggestions through the survey below. 
+                                                <br><br>
+                                                If you have any questions or wish to arrange a telephone conversation to share your ideas please contact me at 416-926-7261 or <a href="mailto:kathryn.elton@utoronto.ca" style="text-decoration: none;color:#002a5b">kathryn.elton@utoronto.ca</a>.
+                                                <br><br>
+                                            </p>
+                                            <table cellspacing="0" cellpadding="0" border="0" style="margin: 0!important;">
+                                                <tr>
+                                                    <td>
+                                                        <img src="https://adcomms.utoronto.ca/images/stmikes/2020/08/KathrynEltonSignature.png">
+                                                        <br>
+                                                        <span style="font-family: sans-serif; font-size: 15px; line-height: 20px;">Kathryn Elton
+                                                        <br>
+                                                        Chief Advancement Officer
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <br>
+                                            <p class="one-column-text" style="mso-margin-top-alt: 15px;margin-top: 15px;">
+                                                <span style="font-size: 12px;line-height:13px;"><strong>Advancement and Alumni Team:</strong><br/>
+                                                Brittany Davila, Senior Manager, Alumni Programming: 416-926-7260 <a href="mailto:brittany.davila@utoronto.ca" style="text-decoration: none;color:#002a5b">brittany.davila@utoronto.ca</a><br>
+                                                <!-- Kathryn Elton, Chief Advancement Officer, 416-926-7261, <a href="mailto:kathryn.elton@utoronto.ca" style="text-decoration: none;color:#002a5b">kathryn.elton@utoronto.ca</a><br/> -->
+                                                Matt Doyle, Advancement Officer, Special Projects: 416-926-2331, <a href="mailto:smcdevcrd@utoronto.ca" style="text-decoration: none;color:#002a5b">smcdevcrd@utoronto.ca</a><br/>
+                                                Klim Khomenko, Senior Development Manager: 416-926-7279, <a href="mailto:klim.khomenko@utoronto.ca" style="text-decoration: none;color:#002a5b">klim.khomenko@utoronto.ca</a><br/>
+                                                Betty Noakes, Advancement Associate, Stewardship: 416-926-2251, <a href="mailto:betty.noakes@utoronto.ca" style="text-decoration: none;color:#002a5b">betty.noakes@utoronto.ca</a><br/>
+                                                Ken Schnell, Advancement Manager, Annual Campaigns: 416-926-7281, <a href="mailto:kenneth.schnell@utoronto.ca" style="text-decoration: none;color:#002a5b">kenneth.schnell@utoronto.ca</a><br/>
+                                                </span>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </th>
+                            <!-- Column : END -->
+                        </table>
+                    </td> 
+                </tr>
+                <!-- 1 Column Text + Button : END -->
+            <!-- St. Mike’s 180: Rooted in the Future : END -->            
+
+            <!-- Three Strategic Priorities and Goals : BEGIN -->
+                <!-- Section Heading : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;padding: 20px 30px 0 30px;">
+                        <!--[if mso]>
+                            <hr>
+                        <![endif]-->
+                        <!--[if !mso]><!-->
+                            <hr style="mso-margin-bottom-alt: 10px;">
+                        <!--<![endif]-->
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color: #ffffff;padding: 0px 30px 0 30px;text-align: center;">
+                        <!-- <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto 8px !important;"> -->
+                        <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" >
+                            <tr>
+                                <td id="president-video" name="president-video" jumpthis="president-video" style="background-color: #002A5C;padding: 0 15px;text-align: center">
+                                    <h2 style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 26px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 25px;margin-top: 25px; mso-margin-bottom-alt: 25px;margin-bottom: 25px;">
+                                        Three Strategic Priorities and Goals
+                                    </h2>
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color: #ffffff;padding: 0 30px 0 30px;">
+                        <hr>
+                    </td>
+                </tr>
+                <!-- Section Heading : END -->
+                <!-- 3 Even Columns : BEGIN -->
+                <tr>
+                    <td style="padding: 0 30px 30px 30px; background-color: #ffffff;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <!-- Column : BEGIN -->
+                                <th valign="top" width="33.33%" class="stack-column-center">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <td style="padding: 10px; text-align: left">
+                                                <img src="https://adcomms.utoronto.ca/images/stmikes/2020/08/StrategicPriority1.jpg" width="170" height="" alt="alt_text" border="0" style="width: 100%; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
+                                                <h4 style="color: #002a5b;">Strategic Priority 1: Cultivate a Connected and Supportive Community</h4>
+                                                <p style="margin: 0;"><i>Foster a diverse and engaged community that has the tools to succeed on and beyond campus and tackle the world’s most important challenges with compassion.</i></p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                                <!-- Column : BEGIN -->
+                                <th valign="top" width="33.33%" class="stack-column-center">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <td style="padding: 10px; text-align: left">
+                                                <img src="https://adcomms.utoronto.ca/images/stmikes/2020/08/StrategicPriority2.jpg" width="170" height="" alt="alt_text" border="0" style="width: 100%; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
+                                                <h4 style="color: #002a5b;">Strategic Priority 2: Champion a Transformative Educational Experience</h4>
+                                                <p style="margin: 0;"><i>Provide students with a transformative educational experience that extends beyond the classroom and has lifelong value.</i></p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                                <!-- Column : BEGIN -->
+                                <th valign="top" width="33.33%" class="stack-column-center">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <td style="padding: 10px; text-align: left">
+                                                <img src="https://adcomms.utoronto.ca/images/stmikes/2020/08/StrategicPriority3.jpg" width="170" height="" alt="alt_text" border="0" style="width: 100%; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 0 10px 10px; text-align: left;" class="center-on-narrow">
+                                                <h4 style="color: #002a5b;">Strategic Priority 3: Steward a financially resilient, socially conscious and environmentally sustainable institution</h4>
+                                                <p style="margin: 0;"><i>Ensure a resilient and thriving institution that is led with transparency and integrity.</i></p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- 3 Even Columns : END -->
+                <tr>
+                    <td style="padding: 0 20px 20px;background: #ffffff;">
+
+                    <!-- Button : BEGIN -->
+                    <center>
+                    <div style="margin: 0 auto;">
+                    <!--[if mso]>
+                            <br>
+                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://stmikes.utoronto.ca/st-mikes-180-rooted-in-the-future/st-mikes-180-three-strategic-priorities/" style="height:50px;v-text-anchor:middle;width:325px;" arcsize="100%" strokecolor="f" fillcolor="#324789">
+                                <w:anchorlock/>
+                                <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;">Learn More about These Priorities</center>
+                            </v:roundrect>
+                        <![endif]-->
+                        <!--[if !mso]><!-->
+                            <table align="center" cellpadding="0" cellspacing="0" height="50" width="325" style="margin: 0 auto; mso-hide:all;">
+                                <tbody>
+                                    <tr>
+                                        <td align="center" bgcolor="#324789" height="50" style="vertical-align:middle;background-color:#324789;mso-hide:all;border-radius: 30px;" width="325">
+                                            <a class="button-a button-a-primary" href="https://stmikes.utoronto.ca/st-mikes-180-rooted-in-the-future/st-mikes-180-three-strategic-priorities/" style="font-size:15px;-webkit-text-size-adjust:none; font-weight: bold; font-family:sans-serif; text-decoration: none; text-decoration: none; padding: 13px 17px; display:inline-block;border-radius: 30px;">
+                                                <span style="color:#ffffff">Learn More about These Priorities</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    </center>
+                    <!--<![endif]-->
+                    <!-- Button : END -->
+                    </td>
+                </tr>
+            <!-- Three Strategic Priorities and Goals : END -->       
+
+            <!-- The Consultations : BEGIN -->
+                <!-- Section Heading : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;padding: 20px 30px 0 30px;">
+                        <!--[if mso]>
+                            <hr>
+                        <![endif]-->
+                        <!--[if !mso]><!-->
+                            <hr style="mso-margin-bottom-alt: 10px;">
+                        <!--<![endif]-->
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color: #ffffff;padding: 0 30px 0 30px;text-align: center;">
+                        <!-- <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto 8px !important;"> -->
+                        <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" >
+                            <tr>
+                                <td style="background-color: #002A5C;padding: 0 15px;text-align: center">
+                                    <h2 style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 26px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 25px;margin-top: 25px; mso-margin-bottom-alt: 25px;margin-bottom: 25px;">
+                                        The Consultations
+                                    </h2>
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color: #ffffff;padding: 0 30px 0 30px;">
+                        <hr>
+                    </td>
+                </tr>
+                <!-- Section Heading : END -->
+                <!-- 1 Column Text + Button : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;padding: 0 30px;">
+                        <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                            <!-- Column : BEGIN -->
+                            <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: center;" class="center-on-narrow">
+                                            <h2 style="color:#002a5c;line-height: 40px; display: inline-block;vertical-align: middle;">Who we heard from and what we 
+                                            <!--[if mso]>
+                                                <img src="https://adcomms.utoronto.ca/images/stmikes/2020/08/SMC_doubleunderline.png" width="auto" style="width:100%;vertical-align:bottom;">
+                                            <![endif]-->
+                                            <!--[if !mso]><!-->
+                                                <span style="text-decoration-line: underline;text-decoration-style: double;-webkit-text-decoration-color:#002a5c;text-decoration-color:#002a5c;">heard</span>
+                                            <!--<![endif]-->
+                                            </h2>
+                                            <br>
+                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="height: auto;text-align: center;">
+                                                <tr>
+                                                    <td>
+                                                        <img src="https://adcomms.utoronto.ca/images/stmikes/2020/08/Cards-highres.png" align="center" width="100%" height="auto" style="width: 100%;height:auto;">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </th>
+                            <!-- Column : END -->
+                        </table>
+                    </td> 
+                </tr>
+                <!-- Thumbnail Left, Text Right : BEGIN -->
+                <tr>              
+                    <td dir="ltr" width="100%" style="padding: 30px 10px; background-color: #ffffff;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <!-- Column : BEGIN -->
+                                <th width="50%" style="vertical-align: top;" class="stack-column-center">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; text-align: left;" class="center-on-narrow">
+                                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="height: auto;text-align: center;">
+                                                    <tr>
+                                                        <td>
+                                                            <img src="https://adcomms.utoronto.ca/images/stmikes/2020/08/PostNotes-highres.png" width="320" height="auto" alt="alt_text" border="0" style="width: 100%;max-width: 320px;height: auto;background: #dddddd;font-family: sans-serif;font-size: 15px;line-height: 15px;color: #555555;">
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                                <!-- Column : BEGIN -->
+                                <th width="45%" style="vertical-align: top;padding: 0 30px 30px 0" class="stack-column-center">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px;  text-align: left;" class="center-on-narrow">
+                                                <ul style="padding:0;mso-padding-alt:0;">
+                                                    <li>Highlights from <a href="https://stmikes.utoronto.ca/wp-content/uploads/2020/07/180-Alumni-Feedback-v2.pdf" style="text-decoration: none;color:#002a5b">Alumni Comments</a></li>
+                                                    <li>Students Describe <a href="https://www.youtube.com/watch?v=bCztgj0TvEM&feature=youtu.be" style="text-decoration: none;color:#002a5b">St. Mike’s in one word</a></li>
+                                                    <li>Read the <a href="https://stmikes.utoronto.ca/wp-content/uploads/2020/07/180-Community-Engagement-Report.pdf" style="text-decoration: none;color:#002a5b">community engagement report</a></li>
+                                                    <li><a href="https://stmikes.utoronto.ca/wp-content/uploads/2020/07/180-Collegium-Document-v2.pdf" style="text-decoration: none;color:#002a5b">Collegium Consultation</a></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!-- Column : END -->
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Thumbnail Left, Text Right : END -->
+                <tr>
+                    <td style="background-color: #ffffff;padding: 0 30px;">
+                        <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                            <!-- Column : BEGIN -->
+                            <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: center;" class="center-on-narrow">
+                                            <h2 style="color:#002a5c">Where we’ve been and where we’re going</h2>
+                                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="height: auto;text-align: center;">
+                                                <tr>
+                                                    <td>
+                                                        <img src="https://adcomms.utoronto.ca/images/stmikes/2020/08/Phases-highres.png" align="center" width="100%" height="auto" style="width: 100%;height:auto;">
+                                                    </td>
+                                            
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </th>
+                            <!-- Column : END -->
+                        </table>
+                    </td> 
+                </tr>
+            <!-- The Consultations : END -->      
+
+            <!-- We want to hear from you : BEGIN -->
+                <!-- Section Heading : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;padding: 20px 30px 0 30px;">
+                        <!--[if mso]>
+                            <hr>
+                        <![endif]-->
+                        <!--[if !mso]><!-->
+                            <hr style="mso-margin-bottom-alt: 10px;">
+                        <!--<![endif]-->
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color: #ffffff;padding: 0px 30px 0 30px;text-align: center;">
+                        <!-- <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto 8px !important;"> -->
+                        <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" >
+                            <tr>
+                                <td id="president-video" name="president-video" jumpthis="president-video" style="background-color: #002A5C;padding: 0 15px;text-align: center">
+                                    <h2 style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 26px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 25px;margin-top: 25px; mso-margin-bottom-alt: 25px;margin-bottom: 25px;">
+                                        We want to hear from you
+                                    </h2>
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color: #ffffff;padding: 0 30px 0 30px;">
+                        <hr>
+                    </td>
+                </tr>
+                <!-- 1 Column Text + Button : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;padding: 0 30px 0 30px;">
+                        <table width="100%" align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                            <!-- Column : BEGIN -->
+                            <th width="100%" style="vertical-align: top;" class="stack-column-center">
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td dir="ltr" valign="top" style="font-family: sans-serif; font-size: 15px; line-height: 20px; padding: 0 30px 0 30px; text-align: center;" class="center-on-narrow">
+                                            <p class="one-column-text" style="mso-margin-top-alt: 15px;margin-top: 15px;">
+                                                Your feedback is important to us and to this community.
+                                                <br>
+                                                We hope you will fill out a short survey providing insight about St. Mike’s 180 process to date.                                        
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </th>
+                            <!-- Column : END -->
+                        </table>
+                    </td>
+                </tr>
+                <!-- 1 Column Text + Button : END -->
+                <!-- Section Heading : END -->
+                <tr>
+                    <td style="padding: 0 20px 20px;background: #ffffff;">
+
+                    <!-- Button : BEGIN -->
+                    <center>
+                    <div style="margin: 0 auto;">
+                    <!--[if mso]>
+                            <br>
+                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://stmikes.utoronto.ca/st-mikes-180-rooted-in-the-future/#add-your-voice" style="height:50px;v-text-anchor:middle;width:250px;" arcsize="100%" strokecolor="f" fillcolor="#324789">
+                                <w:anchorlock/>
+                                <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;"> St. Mike’s 180 Survey</center>
+                            </v:roundrect>
+                        <![endif]-->
+                        <!--[if !mso]><!-->
+                            <table align="center" cellpadding="0" cellspacing="0" height="50" width="250" style="margin: 0 auto; mso-hide:all;">
+                                <tbody>
+                                    <tr>
+                                        <td align="center" bgcolor="#324789" height="50" style="vertical-align:middle;background-color:#324789;mso-hide:all;border-radius: 30px;" width="250">
+                                            <a class="button-a button-a-primary" href="https://stmikes.utoronto.ca/st-mikes-180-rooted-in-the-future/#add-your-voice" style="font-size:15px;-webkit-text-size-adjust:none; font-weight: bold; font-family:sans-serif; text-decoration: none; text-decoration: none; padding: 13px 17px; display:inline-block;border-radius: 30px;">
+                                                <span style="color:#ffffff">St. Mike’s 180 Survey</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    </center>
+                    <!--<![endif]-->
+                    <!-- Button : END -->
+                    </td>
+                </tr>
+            <!-- We want to hear from you : END -->   
+  
+
+	    <!-- Email Body : END -->
+
+	    <!-- Email Footer : BEGIN -->
+        <!-- <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="700" style="margin: auto;max-width: 700px;background: #002A5C;" class="email-container"> -->
+            <tr>
+                <td style="text-align: center;padding:0px;mso-padding-alt:10px;background-color: #ffffff" align="center">
+                </td>
+            </tr>
+            <tr>
+	            <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;background-color: #002A5C;">
+                    <br><br>
+                    <strong>FOLLOW USMC</strong>
+                    <br><br>
+                        <table>
+                            <tr>
+                                <td>
+                                <a href="https://www.facebook.com/USMCUofT/" target="_blank" style="padding: 0 5px;">
+                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Facebook.png" width="60" height="60" alt="icon">
+                                    </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+                                    <a href="https://ca.linkedin.com/school/university-of-toronto---university-of-st.-michael's-college/" target="_blank" style="padding: 0 5px;">
+                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/linkedin.png" width="60" height="60" alt="icon">
+                                    </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+                                    <a href="https://twitter.com/uStMikes/" target="_blank" style="padding: 0 5px;">
+                                    <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/twitter.png" width="60" height="60" alt="icon">
+                                    </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+                                </td>
+                            </tr>
+                        </table>
+                    <br><br>
+                    <strong>University of St. Michael's College</strong>
+                    <br>
+                    <strong>Advancement and Alumni Affairs</strong>
+                    <br>
+                    81 St. Mary Street
+                    <br>
+                    Toronto, Ontario
+                    <br>
+                    M5S 1J4 
+                    <br><br>
+                    Give: <a href="https://stmikes.utoronto.ca/giving/" style="color: #13778d;">stmikes.utoronto.ca/alumni/giving</a>
+                    <br>
+                    E-mail: <a href="mailto:smc.alumniaffairs@utoronto.ca" style="color: #13778d;">smc.alumniaffairs@utoronto.ca</a>
+                    <br>
+                    Website: <a href="https://stmikes.utoronto.ca/alumni/" style="color: #13778d;">stmikes.utoronto.ca/alumni</a>
+                    <br><br><br>
+                    This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #13778d;">##SubscriberEmail##</a>
+                    <br>
+                    <a href="##TrackClick##https://secureca.imodules.com/s/731/index_clean.aspx?sid=731&gid=1&pgid=1363&cid=2576&post_id=0" style="color: #13778d; text-decoration: underline;">Update contact information</a>
+                    <br>
+                    <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_USMC_ALL_ALL_Newsletter_Initial_##OptionalParameter3##%20SMC%20E-Newsletter%20March%2045872" style="color: #13778d; text-decoration: underline;">Opt out of future messages</a>
+                    <br>
+                    <hr style="max-width: 660px; margin: 30px 0 15px 0;" width="660">
+                    <span style="font-size: 10px">
+                        The University&nbsp;of&nbsp;Toronto respects your privacy. We do not rent, trade or sell our mailing lists.
+                        <br>
+                        Copyright &copy; 2020 University&nbsp;of&nbsp;Toronto. All rights reserved. This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #13778d;">##SubscriberEmail##</a>
+                    </span>
+	            </td>
+	        </tr>
+	    </table>
+	    <!-- Email Footer : END -->
+
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>

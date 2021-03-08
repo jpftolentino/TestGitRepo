@@ -1,0 +1,21 @@
+2020-21_DUA_ANN_INNIS_Solicitation_Initial_FY20 Acquisition Campaign Spring Email - EM6_20210303 - DONE
+
+2020-21_DUA_ANN_ISCHOOL_Solicitation_Initial_FY20 Acquisition Campaign Spring Email - EM6_20210303 - DONE
+
+2020-21_DUA_ANN_KPE_Solicitation_Initial_FY20 Acquisition Campaign Spring Email - EM6_20210303 - DONE
+
+2020-21_DUA_ANN_LAW_Solicitation_Initial_FY20 Acquisition Campaign Spring Email - EM6_20210303 - DONE
+
+2020-21_DUA_ANN_LIB_Solicitation_Initial_FY20 Acquisition Campaign Spring Email - EM6_20210303 - DONE
+
+2020-21_DUA_ANN_MED_Solicitation_Initial_FY20 Acquisition Campaign Spring Email - EM6_20210303 - DONE
+
+2020-21_DUA_ANN_NEW_Solicitation_Initial_FY20 Acquisition Campaign Spring Email - EM6_20210303 - DONE
+
+
+
+Email - Email Address
+Constituent ID - ConstituentLookupId
+Salutation - Salutation
+Finder Number - FinderNumber
+Parm25 - SourceCode 

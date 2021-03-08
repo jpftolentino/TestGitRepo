@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: arial !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+            display: none !important;
+            opacity: 0.01 !important;
+        }
+        /* If the above doesn't work, add a .g-img class to any image in question. */
+        img.g-img + div {
+            display: none !important;
+        }
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+	    /* What it does: Hover styles for buttons */
+	    .button-td,
+	    .button-a {
+	        transition: all 100ms ease-in;
+	    }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: #555555 !important;
+	        border-color: #555555 !important;
+	    }
+
+	    /* Media Queries */
+	    @media screen and (max-width: 480px) {
+
+	        /* What it does: Forces table cells into full-width rows. */
+	        .stack-column,
+	        .stack-column-center {
+	            display: block !important;
+	            width: 100% !important;
+	            max-width: 100% !important;
+	            direction: ltr !important;
+	        }
+	        /* And center justify these ones. */
+	        .stack-column-center {
+	            text-align: center !important;
+	        }
+
+	        /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+	        .center-on-narrow {
+	            text-align: center !important;
+	            display: block !important;
+	            margin-left: auto !important;
+	            margin-right: auto !important;
+	            float: none !important;
+	        }
+	        table.center-on-narrow {
+	            display: inline-block !important;
+	        }
+
+	        /* What it does: Adjust typography on small screens to improve readability */
+	        .email-container p {
+	            font-size: 17px !important;
+	        }
+	    }
+
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+<!--
+	The email background color (#eeeeee) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #eeeeee;">
+	<center style="width: 100%; background-color: #eeeeee;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #eeeeee;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: arial;">
+            Plus, Dentistry staff member and U&nbsp;of&nbsp;T alumna shares her perspective on the importance of Black History Month
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: arial;">
+	        &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!--
+            Set the email width. Defined in two places:
+            1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+            2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+            Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+        -->
+        <div style="max-width: 680px; margin: 0 auto;" class="email-container">
+            <!--[if mso]>
+            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+            <tr>
+            <td>
+            <![endif]-->
+
+	        <!-- Email Body : BEGIN -->
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+
+                <!-- Top Header : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;padding:0 10px;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td valign="top" style="text-align: center; padding-bottom: 20px; padding-top: 10px; font-family: Arial; background-color: #ffffff; border-bottom: 1px solid #002A5C;">
+                                    <a href="##HTMLNewsletterURL##" style="text-decoration: none !important; color: #000000; font-size: 12px;"><strong>View this email online</strong></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" style="text-align: center; padding-bottom: 10px; padding-top: 10px; color:#002A5C; font-size: 14px; line-height:14px; font-family: arial; background-color: #ffffff; border-bottom: 1px solid #002A5C;" >
+                                    <strong>FEBRUARY 2021</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center; padding:20px 30px;"  width="100%" valign="top">
+                                    <a href="##TrackClick##https://www.dentistry.utoronto.ca/" target="_blank" style="color: #007fa3;"><img src="https://adcomms.utoronto.ca/email-templates/dentistry/2020/04/Dentistry.jpg" style="border: none !important;width: 100%;height: auto;" alt="University of Toronto, Faculty of Dentistry Logo" ></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Top Header : END -->
+
+                <!-- Donate Button : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td style="padding: 0 20px 20px;">
+                                    <!-- Button : BEGIN -->
+                                    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                                        <tr>
+                                            <td class="button-td" style="border-radius: 0px; background: #007fa3;">
+                                                <a class="button-a" target="_blank" href="##TrackClick##https://engage.utoronto.ca/site/SPageServer?pagename=donate#/faculty/5" style="background: #007fa3; border: 1px solid #007fa3; font-family: Arial; font-size: 12px; line-height: 12px; font-weight:bold; text-decoration: none; padding: 14px; color: #ffffff; display: block; border-radius: 0px; text-transform: uppercase;">Donate<span style="font-size: 16px;"></span></a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- Button : END -->
+                                </td>
+                            </tr>
+
+                        </table>
+                    </td>
+                </tr>
+                <!-- Donate Button : END -->
+
+
+                <!-- Spacer : BEGIN -->
+                <tr>
+                    <td aria-hidden="true" height="10" style="font-size: 0px; line-height: 0px; background-color: #ffffff;">
+                        &nbsp;
+                    </td>
+                </tr>
+                <!-- Spacer : END -->
+
+                <!-- Heading: BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff; padding: 0 30px;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td valign="middle" align="center" width="100%" style="font-size: 22px; line-height:26px; border-bottom: 2px solid #25355a; padding-top: 10px; padding-bottom: 10px; text-align: center; color: #25355a; font-family: Arial; width: 100%;">
+                                    <strong>A MESSAGE FROM SELINA ESTEVES</strong>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Heading: END -->
+
+                <!-- 1 Column Text : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff; padding: 20px 30px;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td class="content" style="padding-bottom: 10px; text-align: left; font-size: 14px; font-family: Arial; line-height: 20px;">
+                                    February is Black History Month. We acknowledge this important time with a beautiful feature written by a colleague and U&nbsp;of&nbsp;T alumna as she shares how family, love and education impacted her life.
+                                    <br><br>
+                                    In this issue, we connect with an anonymous donor who challenged their colleagues to give back to the Faculty and the graduate program that provided them with meaningful careers. We also learn how U&nbsp;of&nbsp;T Dentistry’s new satellite clinic will support our students and patients through the realities and confines of COVID-19, and future challenges ahead.
+                                    <br><br>
+                                    We are in the depths of winter, but I hope in reading the features below, like me, you will feel the warmth of our alumni and the promise of renewal ahead.
+                                    <br><br>
+                                    Sincerely,<br>
+                                    Selina Esteves<br>
+                                    Director, Advancement and Alumni Relations<br>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- 1 Column Text : END -->
+
+                <!-- Heading: BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff; padding: 0 30px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                            <td valign="middle" align="center" width="100%" style="font-size: 22px; line-height:26px; border-bottom: 2px solid #25355a; padding-top: 10px; padding-bottom: 10px; text-align: center; color: #25355a; font-family: Arial; width: 100%;">
+                                                    <strong>DENTISTRY ALUMNI SURVEY</strong>
+                                            </td>
+                                    </tr>
+                            </table>
+                        </td>
+                </tr>
+                <!-- Heading: END -->
+
+                <!-- 1 Column Text : BEGIN -->
+                <tr>
+                        <td style="background-color: #ffffff; padding: 20px 30px;">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                                <td class="content" style="padding-bottom: 10px; text-align: left; font-size: 14px; font-family: Arial; line-height: 20px;">
+                                                    The Faculty of Dentistry needs you! We are trying to learn more about your needs as alumni and donors so we can provide you with meaningful and engaging opportunities to connect with your friends, colleagues, and the Faculty.
+                                                    <br><br>
+                                                    All it takes is 5 minutes. <strong>Complete the alumni survey by Monday, March 15, 2021.</strong>
+                                                    <br><br>
+                                                    We value all our alumni and donors as life-long members of our community and strive to centre our outreach around your experiences, needs and interests. 
+                                                    <br><br>
+                                                    Thank you for your time. We appreciate your participation.
+                                                    <br><br>
+                                                    <i>The first 200 participants to complete the survey have a chance to win 1 of 5 $50 Amazon gift cards.</i>
+                                                    
+                                                    <br><br>
+
+                                                    <!-- Button : BEGIN -->
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;padding: 10px 0;">
+                                                        <tr>
+                                                            <td class="button-td" style="border-radius: 0px; background: #ffffff;">
+                                                                <a class="button-a" target="_blank" href="https://survey.alchemer.com/s3/6146708/Faculty-of-Dentistry-2021-Alumni-Engagement-Survey" style="background: #ffffff; border: 1px solid #25355a; font-family: Arial; font-size: 12px; line-height: 12px; font-weight:bold; text-decoration: none; padding: 14px; color: #25355a; display: block; border-radius: 0px; text-transform: uppercase;">START NOW<span style="font-size: 16px;"></span></a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <!-- Button : END -->
+                                                </td>
+                                        </tr>
+                                </table>
+                        </td>
+                </tr>
+                <!-- 1 Column Text : END -->
+
+                <!-- Heading: BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff; padding: 0 30px;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td valign="middle" align="center" width="100%" style="font-size: 22px; line-height:26px; border-bottom: 2px solid #25355a; padding-top: 10px; padding-bottom: 10px; text-align: center; color: #25355a; font-family: Arial; width: 100%;">
+                                    <strong>OUR ALUMNI COMMUNITY</strong>
+                                </td>                                
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Heading: END -->
+
+                <!-- 2 Even Columns : BEGIN -->
+                <tr>
+                    <td align="center" valign="top" style="font-size:0; padding: 10px 10px; background-color: #ffffff;">
+                        <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                        <tr>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 20px 20px; padding-bottom: 0">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td>
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/dentistry/2021/02/marsha-malcolm.png" width="290" height="209.5" border="0" alt="Acknowledging influence" style="width: 100%; max-width: 290px; height: auto; background: #ffffff;">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 20px 20px; padding-bottom: 0">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td valign="top" style="padding-top: 0;padding-bottom: 10px; text-align: left; font-family: arial;">
+                                                    <a href="https://www.dentistry.utoronto.ca/news/what-black-history-month-means-me" target="_blank" style="font-weight: bold; font-size: 14px; color: #000000; text-decoration: none; line-height: 18px;">
+														What Black History Month means to me
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" style="padding-top: 5px;padding-bottom: 5px; text-align: left; font-size: 14px; font-family: arial; line-height: 18px; color: #000000;">
+													Racism and the legacy of Black heroes impact lives all year long.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: Arial; padding-top: 10px;">
+                                                    <!-- Button : BEGIN -->
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;padding: 10px 0;">
+                                                        <tr>
+                                                            <td class="button-td" style="border-radius: 0px; background: #ffffff;">
+                                                                <a class="button-a" target="_blank" href="https://www.dentistry.utoronto.ca/news/what-black-history-month-means-me" style="background: #ffffff; border: 1px solid #25355a; font-family: Arial; font-size: 12px; line-height: 12px; font-weight:bold; text-decoration: none; padding: 14px; color: #25355a; display: block; border-radius: 0px; text-transform: uppercase;">Read More <span style="font-size: 16px;"></span></a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <!-- Button : END -->
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+                <!-- 2 Even Columns : END -->
+
+                <!-- 2 Even Columns : BEGIN -->
+                <tr>
+                    <td align="center" valign="top" style="font-size:0; padding: 10px 10px; background-color: #ffffff;">
+                        <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                        <tr>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 20px 20px; padding-bottom: 0">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td>
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/dentistry/2021/02/gamifying-gifts.png" width="290" height="209.5" border="0" alt="Dentistry alumni share their feedback" style="width: 100%; max-width: 290px; height: auto; background: #ffffff;">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 20px 20px; padding-bottom: 0">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td valign="top" style="padding-top: 0;padding-bottom: 10px; text-align: left; font-family: arial;">
+                                                    <a href="https://www.dentistry.utoronto.ca/news/gamifying-gifts" target="_blank" style="font-weight: bold; font-size: 14px; color: #000000; text-decoration: none; line-height: 18px;">
+                                                        Gamifying gifts
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" style="padding-top: 5px;padding-bottom: 5px; text-align: left; font-size: 14px; font-family: arial; line-height: 18px; color: #000000;">
+                                                    A fundraising challenge among oral radiologists raises money for the Faculty.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: Arial; padding-top: 10px;">
+                                                    <!-- Button : BEGIN -->
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;padding: 10px 0;">
+                                                        <tr>
+                                                            <td class="button-td" style="border-radius: 0px; background: #ffffff;">
+                                                                <a class="button-a" target="_blank" href="https://www.dentistry.utoronto.ca/news/gamifying-gifts" style="background: #ffffff; border: 1px solid #25355a; font-family: Arial; font-size: 12px; line-height: 12px; font-weight:bold; text-decoration: none; padding: 14px; color: #25355a; display: block; border-radius: 0px; text-transform: uppercase;">Read More <span style="font-size: 16px;"></span></a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <!-- Button : END -->
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+                <!-- 2 Even Columns : END -->
+
+                <!-- 2 Even Columns : BEGIN -->
+                <tr>
+                    <td align="center" valign="top" style="font-size:0; padding: 10px 10px; background-color: #ffffff;">
+                        <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                        <tr>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 20px 20px; padding-bottom: 0">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td>
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/dentistry/2021/02/mega-gifts.png" width="290" height="209.5" border="0" alt="Dentistry alumni share their feedback" style="width: 100%; max-width: 290px; height: auto; background: #ffffff;">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 20px 20px; padding-bottom: 0">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td valign="top" style="padding-top: 0;padding-bottom: 10px; text-align: left; font-family: arial;">
+                                                    <a href="https://www.theglobeandmail.com/canada/article-university-mega-donations-of-more-than-10-million-are-on-the-rise/" target="_blank" style="font-weight: bold; font-size: 14px; color: #000000; text-decoration: none; line-height: 18px;">
+                                                        University ‘mega’ donations of more than $10-million are on the rise
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" style="padding-top: 5px;padding-bottom: 5px; text-align: left; font-size: 14px; font-family: arial; line-height: 18px; color: #000000;">
+                                                    David Palmer, vice-president, advancement, discusses the university’s success in earning the largest philanthropic gifts in Canadian history.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: Arial; padding-top: 10px;">
+                                                    <!-- Button : BEGIN -->
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;padding: 10px 0;">
+                                                        <tr>
+                                                            <td class="button-td" style="border-radius: 0px; background: #ffffff;">
+                                                                <a class="button-a" target="_blank" href="https://www.theglobeandmail.com/canada/article-university-mega-donations-of-more-than-10-million-are-on-the-rise/" style="background: #ffffff; border: 1px solid #25355a; font-family: Arial; font-size: 12px; line-height: 12px; font-weight:bold; text-decoration: none; padding: 14px; color: #25355a; display: block; border-radius: 0px; text-transform: uppercase;">Read More <span style="font-size: 16px;"></span></a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <!-- Button : END -->
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+                <!-- 2 Even Columns : END -->
+
+
+                <!-- Heading: BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff; padding: 30px 30px 0;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td valign="middle" align="center" width="100%" style="font-size: 22px; line-height:26px; border-bottom: 2px solid #25355a; padding-top: 10px; padding-bottom: 10px; text-align: center; color: #25355a; font-family: Arial; width: 100%;">
+                                    <strong>NEWS &amp; UPDATES</strong>
+                                </td>                                
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Heading: END -->
+
+                <!-- 2 Even Columns : BEGIN -->
+                <tr>
+                    <td align="center" valign="top" style="font-size:0; padding: 10px 10px; background-color: #ffffff;">
+                        <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                        <tr>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 20px 20px; padding-bottom: 0">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td>
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/dentistry/2021/02/reception.png" width="290" height="209.5" border="0" alt="Faculty fibrosis research earns provincial grant" style="width: 100%; max-width: 290px; height: auto; background: #ffffff;">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 20px 20px; padding-bottom: 0">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td valign="top" style="padding-top: 0;padding-bottom: 10px; text-align: left; font-family: arial;">
+                                                    <a href="https://www.dentistry.utoronto.ca/news/new-satellite-clinic-uoft-dentistry" target="_blank" style="font-weight: bold; font-size: 14px; color: #000000; text-decoration: none; line-height: 18px;">
+                                                        New satellite clinic for U&nbsp;of&nbsp;T Dentistry
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" style="padding-top: 5px;padding-bottom: 5px; text-align: left; font-size: 14px; font-family: arial; line-height: 18px; color: #000000;">
+                                                    In response to the COVID-19 pandemic, off-campus student clinic set to open in the fall.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: Arial; padding-top: 10px;">
+                                                    <!-- Button : BEGIN -->
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;padding: 10px 0;">
+                                                        <tr>
+                                                            <td class="button-td" style="border-radius: 0px; background: #ffffff;">
+                                                                <a class="button-a" target="_blank" href="https://www.dentistry.utoronto.ca/news/new-satellite-clinic-uoft-dentistry" style="background: #ffffff; border: 1px solid #25355a; font-family: Arial; font-size: 12px; line-height: 12px; font-weight:bold; text-decoration: none; padding: 14px; color: #25355a; display: block; border-radius: 0px; text-transform: uppercase;">Read More <span style="font-size: 16px;"></span></a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <!-- Button : END -->
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+                <!-- 2 Even Columns : END -->
+
+                <!-- 2 Even Columns : BEGIN -->
+                <tr>
+                    <td align="center" valign="top" style="font-size:0; padding: 10px 10px; background-color: #ffffff;">
+                        <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                        <tr>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 20px 20px; padding-bottom: 0">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td>
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/dentistry/2021/02/vaccine-advocacy.png" width="290" height="209.5" border="0" alt="Opinion: Dental services are essential — and never more so than during COVID-19" style="width: 100%; max-width: 290px; height: auto; background: #ffffff;">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 20px 20px; padding-bottom: 0">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td valign="top" style="padding-top: 0;padding-bottom: 10px; text-align: left; font-family: arial;">
+                                                    <a href="https://www.dentistry.utoronto.ca/news/vaccine-advocacy-prioritize-dentistry" target="_blank" style="font-weight: bold; font-size: 14px; color: #000000; text-decoration: none; line-height: 18px;">
+                                                        Vaccine advocacy to prioritize dentistry
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" style="padding-top: 5px;padding-bottom: 5px; text-align: left; font-size: 14px; font-family: arial; line-height: 18px; color: #000000;">
+                                                    National and provincial dental associations like the ODA have lobbied for dental professionals to receive priority considerations for COVID-19 vaccines.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: Arial; padding-top: 10px;">
+                                                    <!-- Button : BEGIN -->
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;padding: 10px 0;">
+                                                        <tr>
+                                                            <td class="button-td" style="border-radius: 0px; background: #ffffff;">
+                                                                <a class="button-a" target="_blank" href="https://www.dentistry.utoronto.ca/news/vaccine-advocacy-prioritize-dentistry" style="background: #ffffff; border: 1px solid #25355a; font-family: Arial; font-size: 12px; line-height: 12px; font-weight:bold; text-decoration: none; padding: 14px; color: #25355a; display: block; border-radius: 0px; text-transform: uppercase;">Read More <span style="font-size: 16px;"></span></a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <!-- Button : END -->
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+                <!-- 2 Even Columns : END -->
+
+                <!-- 2 Even Columns : BEGIN -->
+                <tr>
+                    <td align="center" valign="top" style="font-size:0; padding: 10px 10px; background-color: #ffffff;">
+                        <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                        <tr>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 20px 20px; padding-bottom: 0">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td>
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/dentistry/2021/02/communicating-research.png" width="290" height="209.5" border="0" alt="Opinion: Dental services are essential — and never more so than during COVID-19" style="width: 100%; max-width: 290px; height: auto; background: #ffffff;">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 20px 20px; padding-bottom: 0">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td valign="top" style="padding-top: 0;padding-bottom: 10px; text-align: left; font-family: arial;">
+                                                    <a href="https://www.dentistry.utoronto.ca/news/communicating-research-virtually" target="_blank" style="font-weight: bold; font-size: 14px; color: #000000; text-decoration: none; line-height: 18px;">
+                                                        Communicating research, virtually
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" style="padding-top: 5px;padding-bottom: 5px; text-align: left; font-size: 14px; font-family: arial; line-height: 18px; color: #000000;">
+                                                    Both the 3 Minute Thesis and Research Day ran online this year, enabling new skills.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: Arial; padding-top: 10px;">
+                                                    <!-- Button : BEGIN -->
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;padding: 10px 0;">
+                                                        <tr>
+                                                            <td class="button-td" style="border-radius: 0px; background: #ffffff;">
+                                                                <a class="button-a" target="_blank" href="https://www.dentistry.utoronto.ca/news/communicating-research-virtually" style="background: #ffffff; border: 1px solid #25355a; font-family: Arial; font-size: 12px; line-height: 12px; font-weight:bold; text-decoration: none; padding: 14px; color: #25355a; display: block; border-radius: 0px; text-transform: uppercase;">Read More <span style="font-size: 16px;"></span></a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <!-- Button : END -->
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+                <!-- 2 Even Columns : END -->
+
+
+                <!-- Heading: BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff; padding: 30px 30px 0;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                        <td valign="middle" align="center" width="100%" style="font-size: 22px; line-height:26px; border-bottom: 2px solid #25355a; padding-top: 10px; padding-bottom: 10px; text-align: center; color: #25355a; font-family: Arial; width: 100%;">
+                                                <strong>ONLINE EVENTS &amp; ACTIVITIES</strong>
+                                        </td>
+                                </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Heading: END -->
+
+                <!-- 1 Column Text : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff; padding: 30px 30px; padding-bottom: 0">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">  
+                            <tr>
+                                <td class="content" style="padding-bottom: 30px; text-align: left; font-size: 14px; font-family: Arial; line-height: 20px;">
+                                        <table cellspacing="0" cellpadding="0" border="0" class="events-listing" align="center" width="290" style="width: 100%;">
+                                            <tbody>
+                                                <tr>
+                                                    <td valign="top" align="center" width="65">
+                                                        <table cellspacing="0" cellpadding="0" border="0" width="65">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td valign="top" align="center" width="35" style="text-align: center; font-size: 15px; line-height:15px; font-weight: normal; color: #ffffff; background-color: #25355a; padding: 15px 10px; width:40px; font-family: arial;">
+                                                                        <span style="color:#ffffff;font-size: 15px; line-height:15px;">FEB<br>24
+                                                                        </span>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                    <td class="divider" width="15"></td>
+                                                    <td valign="top" style="font-size: 14px; line-height:22px; text-align: left; font-family: Arial;">                                                 
+                                                            <strong style="font-size: 22px; line-height:28px; color: #25355a;">Planning for your financial future</strong>
+                                                            <br>
+                                                            <strong>A live alumni webinar</strong>
+                                                    </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    Need some guidance on how to manage your money now that you’ve graduated? Join fellow alum, <strong>Imre Gams (Honours Bachelor of Arts (History &amp; English) 2012 UTM)</strong> as he shares his tips and tricks for managing personal finances like you would manage a business.
+                                    <br><br>
+                                    Q&amp;A moderated by <strong>Sarah Girgis (BCom 2019 UTM)</strong>, Staff Accountant at KPMG Canada
+                                    <br><br>
+                                    <i>Unable to attend this webinar live? All registrants will receive a copy of the recording which can be viewed on demand.</i>
+                                    <br><br>
+                                    <!-- Button : BEGIN -->
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;padding: 10px 0;">
+                                        <tr>
+                                            <td class="button-td" style="border-radius: 0px; background: #ffffff;">
+                                                    <a class="button-a" target="_blank" href="https://alumni.utoronto.ca/events-and-programs/planning-your-financial-future-0" style="background: #ffffff; border: 1px solid #25355a; font-family: Arial; font-size: 12px; line-height: 12px; font-weight:bold; text-decoration: none; padding: 14px 20px; color: #25355a; display: block; border-radius: 0px; text-transform: uppercase;">REGISTER</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- Button : END -->
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- 1 Column Text : END -->
+
+                <!-- 1 Column Text : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff; padding: 30px 30px; padding-bottom: 0">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">  
+                            <tr>
+                                <td class="content" style="padding-bottom: 30px; text-align: left; font-size: 14px; font-family: Arial; line-height: 20px;">
+                                        <table cellspacing="0" cellpadding="0" border="0" class="events-listing" align="center" width="290" style="width: 100%;">
+                                            <tbody>
+                                                <tr>
+                                                    <td valign="top" align="center" width="65">
+                                                        <table cellspacing="0" cellpadding="0" border="0" width="65">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td valign="top" align="center" width="35" style="text-align: center; font-size: 15px; line-height:15px; font-weight: normal; color: #ffffff; background-color: #25355a; padding: 15px 10px; width:40px; font-family: arial;">
+                                                                        <span style="color:#ffffff;font-size: 15px; line-height:15px;">FEB<br>24
+                                                                        </span>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                    <td class="divider" width="15"></td>
+                                                    <td valign="top" style="font-size: 14px; line-height:22px; text-align: left; font-family: Arial;">                                                 
+                                                            <strong style="font-size: 22px; line-height:28px; color: #25355a;">How to plan for the future in historic times</strong>
+                                                            <br>
+                                                            <strong>A special online presentation</strong>
+                                                    </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    We all have a lot on our mind right now, including our financial future. This may be the time to consider adjustments. In her online presentation, <strong>Tina Tehranchian</strong> shares tax and estate planning strategies you can apply today. Learn key strategies at this free webinar such as how to protect you, your family, and your estate, as well as how to change your estate plans during this COVID-19 pandemic. 
+                                    <br><br>
+                                    Do not miss this opportunity to hear one of our nation’s most knowledgeable, entertaining and engaging speakers on the topic of how you can save income and minimize estate taxes.
+                                    <br><br>
+                                    <!-- Button : BEGIN -->
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;padding: 10px 0;">
+                                        <tr>
+                                            <td class="button-td" style="border-radius: 0px; background: #ffffff;">
+                                                    <a class="button-a" target="_blank" href="mailto:kimberley.wright@utoronto.ca" style="background: #ffffff; border: 1px solid #25355a; font-family: Arial; font-size: 12px; line-height: 12px; font-weight:bold; text-decoration: none; padding: 14px 20px; color: #25355a; display: block; border-radius: 0px; text-transform: uppercase;">REGISTER</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- Button : END -->
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- 1 Column Text : END -->
+
+                <!-- 2 Even Columns : BEGIN -->
+                <tr>
+                    <td align="center" valign="top" style="font-size:0; padding: 10px 10px; background-color: #ffffff;">
+                        <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                        <tr>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 20px 20px; padding-bottom: 0">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td>
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/dentistry/2021/02/disinherit-cra.png" width="290" height="209.5" border="0" alt="Opinion: Dental services are essential — and never more so than during COVID-19" style="width: 100%; max-width: 290px; height: auto; background: #ffffff;">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 20px 20px; padding-bottom: 0">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td valign="top" style="padding-top: 0;padding-bottom: 10px; text-align: left; font-family: arial;">
+                                                    In case you missed it! 
+                                                    <a href="https://boundless.utoronto.ca/redirects/dent/how-to-disinherit-the-cra" target="_blank" style="font-weight: bold; font-size: 14px; color: #007fa3; text-decoration: none; line-height: 18px;">
+                                                        Now on YouTube.
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" style="padding-top: 5px;padding-bottom: 5px; text-align: left; font-size: 14px; font-family: arial; line-height: 18px; color: #000000;">
+                                                    <i>How to disinherit the CRA</i> as a beneficiary and maximize your legacy with Jo-Anne Ryan, Vice President, Philanthropy, TD Wealth.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: Arial; padding-top: 10px;">
+                                                    <!-- Button : BEGIN -->
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;padding: 10px 0;">
+                                                        <tr>
+                                                            <td class="button-td" style="border-radius: 0px; background: #ffffff;">
+                                                                <a class="button-a" target="_blank" href="https://boundless.utoronto.ca/redirects/dent/how-to-disinherit-the-cra" style="background: #ffffff; border: 1px solid #25355a; font-family: Arial; font-size: 12px; line-height: 12px; font-weight:bold; text-decoration: none; padding: 14px; color: #25355a; display: block; border-radius: 0px; text-transform: uppercase;">Watch now<span style="font-size: 16px;"></span></a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <!-- Button : END -->
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+                <!-- 2 Even Columns : END -->                
+
+
+                <!-- Heading: BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff; padding: 30px 30px 0;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td valign="middle" align="center" width="100%" style="font-size: 22px; line-height:26px; border-bottom: 2px solid #25355a; padding-top: 10px; padding-bottom: 10px; text-align: center; color: #25355a; font-family: Arial; width: 100%;">
+                                    <strong>VIRTUAL ALUMNI REUNIONS</strong>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Heading: END -->
+                
+                <!-- 1 Column Text : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff; padding: 0px 30px; padding-bottom: 0">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">  
+                            <tr>
+                                <td class="content" style="padding-bottom: 30px; text-align: left; font-size: 14px; font-family: Arial; line-height: 20px;">
+                                    <br>
+                                    <strong style="color: #007fa3;">Thinking of planning a virtual DDS Class reunion? </strong>
+                                    <br><br>
+                                    The Faculty of Dentistry Office of Advancement is happy to provide you with a list of class email addresses to help you plan your event. Contact us at <a href="mailto:alumni@dentistry.utoronto.ca" style="color: #007fa3;">alumni@dentistry.utoronto.ca</a> to get started.
+                                    <!-- Button : END -->
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- 1 Column Text : END -->
+
+                <!-- Heading: BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff; padding: 0 30px;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td valign="middle" align="center" width="100%" style="font-size: 22px; line-height:26px; border-bottom: 2px solid #25355a; padding-top: 10px; padding-bottom: 10px; text-align: center; color: #25355a; font-family: Arial; width: 100%;">
+                                    <strong>STAY CONNECTED</strong>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Heading: END -->
+
+                <!-- 1 Column Text : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff; padding: 20px 30px 0;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td class="content" style="padding-bottom: 10px; text-align: left; font-size: 14px; font-family: Arial; line-height: 18px;">
+                                    We want to hear from you! <strong>Inspire your community.</strong> Share your stories, updates, publications, accomplishments, or exciting news at <a href="mailto:alumni@dentistry.utoronto.ca" target="_blank" style="font-size: 14px; color: #25355a; text-decoration: none;"><span style="color: #007fa3; text-decoration: underline;">alumni@dentistry.utoronto.ca</span></a>.
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- 1 Column Text : END -->
+
+                <!-- 3 Even Columns : BEGIN -->
+                <tr>
+                    <td align="center" valign="top" style="font-size:0; padding: 10px; background-color: #ffffff;">
+                        <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                        <tr>
+                        <td valign="top" width="220">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; max-width: 220px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 10px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                            <tr>
+                                                <td>
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/dentistry/2021/02/successful-alumni.png" width="200" height="" border="0" alt="alt_text" style="width: 100%; max-width: 200px; height: auto; background: #dddddd; font-family: arial; font-size: 14px; line-height: 18px;" class="center-on-narrow">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: arial; font-size: 14px; line-height: 18px; padding-top: 10px;" class="stack-column-center">
+                                                    <p style="margin: 0;">
+                                                        How do successful U&nbsp;of&nbsp;T alumni feel about their university experience?
+                                                        <br><br>
+                                                        <a href="https://thevarsity.ca/2021/01/24/how-do-successful-u-of-t-alumni-feel-about-their-university-experience/" style="color: #007fa3; text-decoration: underline;">Read</a> perspectives from Mayor John Tory, Heather Mallick, and Dr. Kenneth Montague DDS 1987.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        <td valign="top" width="220">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; max-width: 220px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 10px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                            <tr>
+                                                <td>
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/dentistry/2020/07/connected-1.jpg" width="200" height="" border="0" alt="alt_text" style="width: 100%; max-width: 200px; height: auto; background: #dddddd; font-family: arial; font-size: 14px; line-height: 18px; color: #555555;" class="center-on-narrow">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: arial; font-size: 14px; line-height: 18px; padding-top: 10px;" class="stack-column-center">
+                                                    <p style="margin: 0;">
+                                                        Stay connected with your friends and colleagues.
+                                                        <br><br>
+                                                        <a href="##TrackClick##https://www.facebook.com/groups/uoftdentistryalumni" style="color: #007fa3; text-decoration: underline;">Join</a> our Facebook group.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        <td valign="top" width="220">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; max-width: 220px; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 10px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                            <tr>
+                                                <td>
+                                                    <img src="https://adcomms.utoronto.ca/email-templates/dentistry/2020/07/connected-2.jpg" width="200" height="" border="0" alt="alt_text" style="width: 100%; max-width: 200px; height: auto; background: #dddddd; font-family: arial; font-size: 14px; line-height: 18px;" class="center-on-narrow">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: arial; font-size: 14px; line-height: 18px; padding-top: 10px;" class="stack-column-center">
+                                                    <p style="margin: 0;">
+                                                        Interested in receiving invitations to our webinars and live events, or the newest issue of the U&nbsp;of&nbsp;T Dentistry magazine?
+                                                        <br><br>
+                                                        <a href="##TrackClick##https://secureca.imodules.com/s/731/form-blank/index.aspx?sid=731&gid=1&pgid=11544&cid=19864" style="color: #007fa3; text-decoration: underline;">Update</a> your contact information.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+                <!-- 3 Even Columns : END -->                
+
+                <!-- Spacer : BEGIN -->
+                <tr>
+                    <td aria-hidden="true" height="25" style="font-size: 0px; line-height: 0px; background-color: #ffffff;">
+                        &nbsp;
+                    </td>
+                </tr>
+                <!-- Spacer : END -->
+
+                <!-- Divider Wrap : START -->
+                <tr>
+                    <td style="padding: 0 10px 0px 10px; background-color: #ffffff;">
+                        <!--Divider: START-->
+                        <table cellspacing="0" cellpadding="0" border="0" width="100%" style="width: 100% !important;">
+                            <tbody>
+                                <tr>
+                                    <td align="center" valign="top" width="100%" height="1" style="background-color: #000000; border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; mso-line-height-rule: exactly; line-height: 1px;">
+                                        <!--[if gte mso 15]>&nbsp;<![endif]-->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!--Divider: END-->
+                    </td>
+                </tr>
+                <!-- Divider Wrap : END -->
+
+                <!-- Footer 2 Columns : Begin -->
+                <tr>
+                    <td align="center" valign="top" style="font-size:0; padding: 0px 30px; background-color: #ffffff;">
+                        <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="620">
+                            <tr>
+                                <td valign="top" width="310">
+                                    <![endif]-->
+                                    <div style="display:inline-block; width:100%; min-width:200px; max-width:310px; vertical-align:top;" class="stack-column-center">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="padding-top: 20px;font-family: arial; font-size: 13px; color: #666666;" align="left" class="stack-column-center">
+                                                        <a href="##TrackClick##https://www.dentistry.utoronto.ca/" target="_blank" style="color: #008bb0;"> 
+                                                        <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/dentistry-logo-small.jpg" alt="Faculty of Dentistry Logo" height="50" width="220" border="0" style="width:220px; border: 0 !important;"> 
+                                                        </a>
+                                                        <br><br>
+                                                        <strong>
+                                                        University&nbsp;of&nbsp;Toronto<br>
+                                                        Faculty of Dentistry<br>
+                                                        Office of Advancement 
+                                                        </strong>
+                                                        <br> 124 Edward Street
+                                                        <br> Toronto, Ontario M5G 1G6
+                                                        <br> Tel: 416-864-8200
+                                                        <br> web: <a href="##TrackClick##https://www.dentistry.utoronto.ca/alumni" target="_blank" style="color: #008bb0; text-decoration: underline;">dentistry.utoronto.ca/alumni</a>
+                                                        <br> give: <a href="##TrackClick##https://engage.utoronto.ca/site/SPageServer?pagename=donate#/faculty/5" target="_blank" style="color: #008bb0; text-decoration: underline;">donate.utoronto.ca/dentistry</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!--[if mso]>
+                                </td>
+                                <td valign="top" width="310">
+                                    <![endif]-->
+                                    <!-- 2 Even Columns : BEGIN -->
+                                    <div style="display:inline-block; width:100%; min-width:200px; max-width:310px; vertical-align:top;" class="stack-column">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td align="center" style="padding-top: 20px; padding-left: 40px;">
+                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="text-align: left;" class="stack-column-center">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="font-family: arial, sans-serif; font-size: 14px; line-height: 16px; padding-top: 10px;padding-bottom: 10px;" class="pl-0-on-narrow">
+                                                                        <strong style="font-size: 18px;font-family: arial, sans-serif; text-align: left; color:#002a5c;">Follow Us &amp; Share Your Story</strong>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="font-family: arial, sans-serif; font-size: 14px;color:#002a5c; line-height: 14px; padding-top: 10px;padding-bottom: 10px;" class="pl-0-on-narrow">
+                                                                        <strong>@uoftdentistry</strong> | <strong>#uoftdentistry</strong>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="font-family: arial, sans-serif; font-size: 15px; line-height: 45px; padding-top: 10px;" class="pl-0-on-narrow">
+                                                                        <a href="##TrackClick##https://www.facebook.com/UofTDentistry" target="_blank" style="border: none; text-decoration: none;">
+                                                                        <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/facebook.gif" alt="U&nbsp;of&nbsp;T Facebook" width="38" height="38" style="border: none;">
+                                                                        </a>&nbsp;&nbsp;&nbsp;
+                                                                        <a href="##TrackClick##https://twitter.com/UofTDentistry" target="_blank" style="border: none; text-decoration: none;">
+                                                                        <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/twitter.gif" alt="U&nbsp;of&nbsp;T Twitter" width="38" height="38" style="border: none;">
+                                                                        </a>&nbsp;&nbsp;&nbsp;
+                                                                        <a href="##TrackClick##https://www.youtube.com/channel/UCtnHbcZUjQa3NnttGcvHGJw" target="_blank" style="border: none; text-decoration: none;">
+                                                                        <img src="https://adcomms.utoronto.ca/email-templates/dentistry/2020/02/youtube.png" alt="U&nbsp;of&nbsp;T Instagram" width="35" height="35" style="border: none;">
+                                                                        </a>&nbsp;&nbsp;&nbsp;
+                                                                        <a href="##TrackClick##https://www.facebook.com/groups/299575967294555/" target="_blank" style="border: none; text-decoration: none;">
+                                                                        <img src="https://adcomms.utoronto.ca/email-templates/dentistry/2020/02/fb-groups.png" alt="U&nbsp;of&nbsp;T LinkedIn" width="35" height="35" style="border: none;">
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!--[if mso]>
+                                </td>
+                            </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+                <!-- Footer 2 Columns : End -->
+
+                <!-- Footer 1 Column : Begin -->
+                <tr>
+                    <td style="background-color: #ffffff;text-align: center;" align="center">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 20px 25px; font-family: helvetica, arial, sans-serif; font-size: 10px; line-height: 11px; color: #000000;line-height: 18px;text-align: center;" align="center">
+                                        The University&nbsp;of&nbsp;Toronto respects your privacy.
+                                        We do not rent, trade or sell our mailing lists.<br>
+                                        Copyright © 2021 University&nbsp;of&nbsp;Toronto. All rights reserved.<br>
+                                        <nowebversion>
+                                            To opt out of future messages of this kind, please <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_DENT_ALL_ALL_Newsletter_Initial_##OptionalParameter3##%20Dentistry%20February%20Alumni%20e-Newsletter
+                                            " style="color: #008bb0; text-decoration: underline;">contact us</a>.
+                                        </nowebversion>
+                                        <br>##OptionalParameter3##<br>
+                                        ##TrackImpression##
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Footer 1 Column : End -->
+
+            </table>
+            <!-- Email Body : END -->
+
+            <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </div>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+
+    <style data-ignore-inlining>@media (prefers-color-scheme: dark) { #_t::before {content:url('https://xnl4ofnc.emltrk.com/v2/xnl4ofnc?rd&d=##OptionalParameter3##');}} @media (prefers-color-scheme: light) { #_t::before {content:url('https://xnl4ofnc.emltrk.com/v2/xnl4ofnc?rl&d=##OptionalParameter3##');}} @media print{ #_t {background-image:url('https://xnl4ofnc.emltrk.com/v2/xnl4ofnc?p&d=##OptionalParameter3##');}} div.OutlookMessageHeader {background-image:url('https://xnl4ofnc.emltrk.com/v2/xnl4ofnc?f&d=##OptionalParameter3##')} table.moz-email-headers-table {background-image:url('https://xnl4ofnc.emltrk.com/v2/xnl4ofnc?f&d=##OptionalParameter3##')} blockquote #_t {background-image:url('https://xnl4ofnc.emltrk.com/v2/xnl4ofnc?f&d=##OptionalParameter3##')} #MailContainerBody #_t {background-image:url('https://xnl4ofnc.emltrk.com/v2/xnl4ofnc?f&d=##OptionalParameter3##')}</style><div id="_t"></div>
+    <img src="https://xnl4ofnc.emltrk.com/v2/xnl4ofnc?d=##OptionalParameter3##" width="1" height="1" border="0" alt="" />
+    
+</body>
+</html>

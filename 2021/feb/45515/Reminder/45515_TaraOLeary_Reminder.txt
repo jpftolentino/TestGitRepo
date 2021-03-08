@@ -1,0 +1,28 @@
+2020-21_PHARM_LDFP_ALL_INVITATION_REMINDER_Upcoming Events at the Leslie Dan Faculty - 45515_20210225
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Email Subject
+
+From: Pharmacy Alumni
+Reply to: alumni.pharmacy@utoronto.ca
+Campaign: Upcoming Events at the Leslie Dan Faculty of Pharmacy
+Subject: Reminder: Upcoming Events at the Leslie Dan Faculty of Pharmacy
+Preview: Register now!
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Seed/approve list
+
+tara.oleary@utoronto.ca
+john.tolentino@utoronto.ca
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Unsubscribe
+mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_PHARM_LDFP_ALL_INVITATION_REMINDER_##OptionalParameter3##%20Upcoming%20Events%20at%20the%20Leslie%20Dan%20Faculty
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Solicitation URL:
+https://donate.utoronto.ca/give/show/6?utm_source=PHARM&utm_medium=Newsletter&utm_campaign=rxcellence&sid=DIS-##OptionalParameter3##|SRC-PHM21ANNEPHARMALUMNI|SRC-PHM21ANNEPHARMDONORS|EffortID-5377|FN-##OptionalParameter24##
