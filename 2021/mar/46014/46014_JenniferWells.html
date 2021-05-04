@@ -1,0 +1,461 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title></title>
+    <style>
+    a {
+      color: #005cc9;text-decoration: none;
+    }
+    @media only screen and (min-width: 480px) and (max-width: 599px) {
+    table[class=outer] { width: 480px !important;}
+    td[class=outer] { width: 480px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 440px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 440px !important;}
+    td[class=inner] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 400px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 480px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 440px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 400px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 480px !important; height: auto !important;}
+    img[class=img-rect] { width: 440px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 285px !important; height: auto !important;}
+    strong[class=banner] { font-size: 28px !important;}
+    .section-heading { width: 440px !important; }
+    .section-heading td { width: 440px !important; }
+    .full-story { width: 440px !important; }
+    .image-block img { width: 440px !important; height: auto !important; }
+    .button { width: 440px !important; }
+    .two-col-section { width: 440px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 440px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    @media only screen and (min-width: 360px) and (max-width: 479px) {
+    table[class=outer] { width: 360px !important;}
+    td[class=outer] { width: 360px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 320px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 320px !important;}
+    td[class=inner] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 300px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 360px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 320px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 300px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 360px !important; height: auto !important;}
+    img[class=img-rect] { width: 320px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 260px !important; height: auto !important;}
+    strong[class=banner] { font-size: 22px !important;}
+    .section-heading { width: 320px !important; }
+    .section-heading td { width: 320px !important; }
+    .image-block img { width: 320px !important; height: auto !important; }
+    .button { width: 320px !important; }
+    .two-col-section { width: 320px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 320px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    @media only screen and (max-width: 359px) {
+    table[class=outer] { width: 320px !important;}
+    td[class=outer] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 280px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 280px !important;}
+    td[class=inner] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 260px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 280px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 260px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 320px !important; height: auto !important;}
+    img[class=img-rect] { width: 280px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 240px !important; height: auto !important;}
+    strong[class=banner] { font-size: 20px !important;}
+    .section-heading { width: 280px !important; }
+    .section-heading td { width: 280px !important; }
+    .full-story { width: 280px !important; }
+    .image-block img { width: 280px !important; height: auto !important; }
+    .button { width: 280px !important; }
+    .two-col-section { width: 280px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 280px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0;">
+    <!-- Preheader : BEGIN -->
+    <div style="display:none;font-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">
+      The latest news and information from the Department of Philosophy 
+    </div>
+    <!-- Preheader : END -->
+    <table cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td width="100%" align="center" valign="top">
+          <!-- end of top portion of outer table -->
+
+          <!-- HEADER SECTION (web version link, banner) : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td width="600" valign="top" style="text-align: center; padding-bottom: 15px; padding-top: 10px; font-family: arial; background-color: #ffffff;" class="content-outer">
+                <a href="##HTMLNewsletterURL##" style="text-decoration: none !important; color: #000000; font-size: 12px;"><strong>View this email online</strong></a>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left;width:100%; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <!-- <tr>
+              <td style="text-align: center; padding-top: 20px; padding-bottom: 20px;" class="inner--centered" width="285" valign="top">
+                <a href="https://adcomms.utoronto.ca/email-templates/arts-science/philosophy/images/philosophy-logo.jpg" style="border: none !important;" alt="University of Toronto, Faculty of Arts and Science - Department of Germanic Languages and Literatures" class="img-full" /></a>
+              </td>
+            </tr> -->
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left;width:100%; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px; color:#002A5C; background-color:#ffffff;">
+                <strong>FACULTY OF ARTS &amp; SCIENCE</strong>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <!-- <tr>
+              <td style="text-align: center; padding-top: 20px; padding-bottom: 20px;" class="inner--centered" width="285" valign="top">
+                <a href="https://philosophy.utoronto.ca" style="border: none !important;" alt="alt_text" class="img-full"/>
+                <img src="https://adcomms.utoronto.ca/email-templates/arts-science/philosophy/images/philosophy-logo.jpg">
+                </a>
+              </td>
+            </tr> -->
+            <tr>
+              <td class="header" width="600" valign="top" style="font-size:20px; background-color: #002a5c; color: #ffffff; text-align: center; padding-top: 40px; padding-bottom: 30px; font-family: arial; line-height: 36px;width:100%;max-width:600px;">
+                <a href="https://philosophy.utoronto.ca" style="border: none !important;" alt="alt_text" class="img-full"/>
+                <img src="https://adcomms.utoronto.ca/email-templates/arts-science/philosophy/logos/philosophy-white.png" width="540" height="auto" style="width:90%;max-width:540px;">
+                </a>
+              <br/>
+              <span style="font-size: 15px;">MARCH 2021 | Issue 13</span>
+            </td>
+            </tr>
+          </table>
+          <!-- HEADER SECTION (web version link, banner) : END -->
+
+          <!-- LETTER FROM THE CHAIR : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px; color:#002A5C; background-color:#dde1e8;">
+                <strong>MESSAGE FROM THE CHAIR</strong>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:15px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td width="550" valign="top" class="content-outer" style="text-align: left; font-family: arial; padding: 15px 25px 10px 25px; font-size: 14px; line-height: 20px; background-color: #ffffff; color: #000000;">
+                Dear Alumni and Friends,
+                <br><br>
+                Exactly a year ago, the COVID-19 pandemic forced us to suddenly move all our activities online. Who would have thought we’d still be working from home a year later? Without a doubt, the current situation continues to take a substantive toll on all of us &mdash; students, faculty, and staff. Yet with the vaccine rollout picking up steam and warmer months ahead, we can now see the end of a long tunnel. In the midst of this adversity I am impressed &mdash; or rather &mdash; <i>inspired</i> by the continued resourcefulness, resilience, and goodwill of our community. I am especially grateful to the Philosophy Course Union and the Graduate Philosophy Student Union (GPSU) for their leadership and hard work; the recently formed <a href="https://philosophy.utoronto.ca/news/support-and-solidarity-the-gpsu-mental-health-disability-caucus/">GPSU Mental Health &amp; Disability Caucus</a> deserves a special shout-out in this respect.
+                <br><br>
+                I think I speak for everyone when I say that I can’t wait to see you again in person, hopefully this summer. And although the department has dealt with quite a bit of sad news recently, I hope you also enjoy reading here about some of our plentiful accomplishments. The 2020-21 academic year is not over yet, and we still have lots of exciting events on offer for the coming months. Please check our <a href="https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=1&ID=0&NL=6879&N=8773&SI=0&URL=https%3a%2f%2fphilosophy.utoronto.ca%2f">website</a> or social media for more news and upcoming events.
+                <br><br>
+                <strong><i>&mdash; Martin Pickav&eacute;</i></strong><br>
+                <i>Chair and Graduate Chair of Philosophy
+                  <br> (Faculty of Arts & Science, St. George Campus)</i>
+                <br><br>
+              </td>
+            </tr>
+          </table>
+          <!-- LETTER FROM THE CHAIR : END -->
+
+          <!-- NEWS AND EVENTS : BEGIN -->
+          <table cellspacing="0" cellpadding="0" border="0" width="600" class="two-col-section" align="center" style="width:600px;">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px; border-top: 1px solid #002A5C;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px; color:#002A5C; background-color:#dde1e8;">
+                <strong>NEWS AND EVENTS</strong>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:15px;font-size:7px;">&nbsp;</td>
+            </tr>
+
+            <!-- Even Columns 1 : BEGIN -->
+            <tr>
+              <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                  <tr>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/images/artsc/2021/46014/HussainWaheed.png" alt="An image of Hussain Waheed" width="280" height="auto"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #000000;">
+                            <strong>In memoriam</strong>
+                            <br>
+                            The department has suffered tremendous loss this year with the passing of three cherished and highly respected colleagues and friends. Professor Emerita <a href="https://philosophy.utoronto.ca/news/department-mourns-professor-margaret-c-morrison/"><strong>Margaret (Margie) Morrison</strong></a> died on January 9, 2021. She was 66 years old. Professor <a href="https://philosophy.utoronto.ca/news/waheed-hussain-1972-2021/"><strong>Waheed Hussain</strong></a> (University of Toronto Mississauga &amp; Graduate Studies; pictured) passed away on January 30, 2021, age 48, and Professor Emeritus <a href="https://philosophy.utoronto.ca/news/in-memoriam-graeme-nicholson-1936-2021/"><strong>Graeme Nicholson</strong></a> on February 21, 2021 at the age of 84. We deeply mourn them all and are keeping their families and friends in our thoughts.
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                    <td class="divider" width="15"></td>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/images/artsc/2021/46014/ArthurRipstein.png" alt="An image of Arthur Ripstein" width="280" height="auto"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #000000;">
+                            <strong style="color: #002A5C">Faculty Awards &amp; Promotions</strong>
+                            <br>
+                            We are proud of our faculty members’ numerous accolades in the past six months. The Canada Council for the Arts recognized <strong>Arthur Ripstein</strong> (pictured) with the distinguished <a href="https://philosophy.utoronto.ca/news/arthur-ripstein-awarded-prestigious-killam-prize/">2021 Killam Prize</a> for his outstanding contributions to scholarship in the humanities. <strong>George Boys-Stones</strong>, <strong>Mohan Matthen</strong>, and <strong>Sophia Moreau</strong> each received <a href="https://philosophy.utoronto.ca/news/jhi-research-fellowships-for-george-boys-stones-mohan-matthen-and-sophia-moreau/">research fellowships from the Jackman Humanities Institute</a> for work under the annual theme of “Pleasure.” <a href="https://philosophy.utoronto.ca/news/new-administrative-positions-for-cheryl-misak-and-michael-rosenthal/"><strong>Cheryl Misak</strong> and <strong>Michael Rosenthal </strong>have taken on new administrative positions</a>, Misak as interim director of the Munk School of Global Affairs & Public Policy and Rosenthal as acting director of the Anne Tanenbaum Centre for Jewish Studies.
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Even Columns 1 : END -->
+
+            <!-- Even Columns 1 : BEGIN -->
+            <tr>
+              <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                  <tr>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/images/artsc/2021/46014/AristotleContest2021PosterImage.png" alt="An image of Aristotle Contest 2021 Poster Image" width="280" height="auto"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #000000;">
+                            <strong style="color: #002A5C">2021 Aristotle Contest</strong>
+                            <br>
+                            It’s that time of year again: For the fourth year running, the Department of Philosophy has teamed up with the Ontario Philosophy Teachers’ Association to host the 2021 Aristotle Contest, a philosophy essay writing competition open to all high school students in Canada. This year’s prompts give participants the opportunity to consider the just distribution of vaccines, examine the status of non-human animals, or think through the rationality of opinions. Find the details on our <a href="https://philosophy.utoronto.ca/the-aristotle-a-high-school-philosophy-essay-contest/">website</a>. Submission deadline is June 30, 2021.
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                    <td class="divider" width="15"></td>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/images/artsc/2021/46014/TenenbaumKingwellBookCovers.png" alt="An image of Tenenbaum Kingwell Book Covers" width="280" height="auto"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #000000;">
+                            <strong style="color: #002A5C">Faculty Bookshelf</strong>
+                            <br>
+                            Members of the department have been busy writing, with multiple recent book publications to show for it: <strong>Mark Kingwell</strong>, <a href="https://boundless.utoronto.ca/redirects/artsci/ebook-The-Ethics-of-Architecture"><i>The Ethics of Architecture</i></a> (Oxford University Press, 2021); <strong>Arthur Ripstein</strong>, <a href="https://boundless.utoronto.ca/redirects/artsci/ebook-Rules-for-Wrongdoers"><i>Rules for Wrongdoers: Law, Morality, War</i></a> (Oxford University Press, 2021); <strong>Sergio Tenenbaum</strong>, <a href="https://boundless.utoronto.ca/redirects/artsci/ebook-Rational-Powers-in-Action"><i>Rational Powers in Action: Instrumental Rationality and Extended Agency</i></a> (Oxford University Press, 2021); and <strong>Owen Ware</strong>, <a href="https://boundless.utoronto.ca/redirects/artsci/ebook-Kants-Justification-of-Ethics"><i>Kant’s Justification of Ethics</i></a> (Oxford University Press, 2021).
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Even Columns 1 : END -->
+
+            <!-- Even Columns 1 : BEGIN -->
+            <tr>
+              <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                  <tr>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/images/artsc/2021/46014/RobertoGranieriParis.png" alt="An image of Roberto Granieri Paris" width="280" height="auto"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #000000;">
+                            <strong style="color: #002A5C">Theses Defended</strong>
+                            <br>
+                            Strange and challenging times did not keep two of our graduate students from successfully defending their doctoral theses and becoming the latest PhDs in the department. Congratulations are due to <a href="https://philosophy.utoronto.ca/news/robbie-matyasi-our-latest-phd/"><strong>Robbie Matyasi</strong></a>, who passed his dissertation defence for “Spinoza’s Metaphysics of the Finite: Composition, Essence, Modality” on January 25, 2021. <a href="https://philosophy.utoronto.ca/directory/karolina-hubner/"><strong>Karolina H&uuml;bner</strong></a> had served as his PhD supervisor. Robbie will now focus his attention on a new research project about holistic conceptions of nature in the 17th century. On March 1, 2021, <a href="https://philosophy.utoronto.ca/news/roberto-granieri-completes-doctoral-degree/"><strong>Roberto Granieri</strong></a> (pictured) joined Robbie as a freshly minted PhD, having defended his thesis titled “Being as a Kind in Plato’s <i>Sophist</i>,” written under the supervision of <a href="https://philosophy.utoronto.ca/directory/lloyd-gerson/"><strong>Lloyd Gerson</strong></a>. On April 1, Roberto will begin a three-year postdoctoral fellowship at KU Leuven in the framework of a European Research Council project titled “Not Another History of Platonism: The Role of Aristotle’s Criticisms of Plato in the Development of Ancient Platonism,” led by Jan Opsomer.
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                    <td class="divider" width="15"></td>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/images/artsc/2021/46014/SophiaWhicher.png" alt="An image of Sophia Whicher" width="280" height="auto"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #000000;">
+                            <strong style="color: #002A5C">Student Successes</strong>
+                            <br>
+                            Our students, both graduate and undergraduate, continue to amaze us with their achievements. <strong>Henry Krahn</strong>’s careful argumentation in his “The Dilemma of Sanctioning: Blame, Responsibility, and the Participant Stance” won him the <a href="https://philosophy.utoronto.ca/news/henry-krahn-wins-2020-martha-lile-love-essay-award/">2020 Martha Lile Love Essay Award</a>. The <a href="https://philosophy.utoronto.ca/news/lu-vada-dunford-receives-martha-lile-love-teaching-award-for-2019-2020/">Martha Lile Love Teaching Award for 2019-2020</a> went to <strong>Lu-Vada Dunford</strong> for her exceptional course design in PHL204H5F Philosophy in Everyday Life, taught at the UTM campus. <strong>Rashad Rehman</strong>’s essay “Pieper’s Defense of Aquinas on Peace” received the <a href="https://philosophy.utoronto.ca/news/rashad-rehman-wins-outstanding-graduate-student-paper-award-for-2020-cpp-conference/">Outstanding Graduate Student Paper Award for the 2020 Annual Concerned Philosophers for Peace Conference</a>, while <strong>Zain Raza</strong> and <strong>Dwight Crowell</strong> jointly took home the 2019-20 Robinson Essay Prize from the Collaborative Specialization in Ancient and Medieval Philosophy. Our recent graduate <strong>Sophia Whicher</strong> (pictured) impressed adjudicators with an essay titled “Legal Positivism and a Dynamic Picture of the Law” to win the <a href="https://philosophy.utoronto.ca/news/ending-on-a-high-note-sophia-whicher-wins-the-brian-m-keenan-prize/">2020 Brian M. Keenan Prize</a>, while undergraduates <strong>Molly Dea-Stephenson</strong> and <strong>Sanghoon Oh</strong> were both honoured with a <a href="https://philosophy.utoronto.ca/news/cressy-awards-for-molly-dea-stephenson-and-sanghoon-oh/">2021 University of Toronto Student Leadership Award</a> for their services to the student community. They all do us proud.
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Even Columns 1 : END -->            
+
+            <!-- Even Columns 1 : BEGIN -->
+            <tr>
+              <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
+                <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                  <tr>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/images/artsc/2021/46014/AlexandraGustafsonfilmedbyZainDar.png" alt="An image of Alexandra Gustafson filmed by ZainDar" width="280" height="auto"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #000000;">
+                            <strong style="color: #002A5C">Video Graduate Stories</strong>
+                            <br>
+                            What better way to describe our graduate programs than to let the people in them speak? Guided by this idea, the department produced a number of <a href="https://boundless.utoronto.ca/redirects/artsci/videos-University-of-Toronto-Philosophy">videos</a> in February and March that highlight the student stories of <strong>Jack Beaulieu</strong>, <strong>Andriy Bilenkyy</strong>, <strong>Alexandra Gustafson</strong> (pictured), <strong>Julia Lei</strong>, and <strong>Zain Raza</strong>, as well as of our director of graduate studies, <strong>Amy Mullin</strong>. There is also one about the department in general, and another offering application tips to prospective grad students. Still in the making is a video about our new master’s concentration in philosophy of science.
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                    <td class="divider" width="15"></td>
+
+                    <td valign="top" class="col-story-wrap" width="280">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/images/artsc/2021/46014/EthicsBowlLogo.png" alt="An image of Second Ontario Ethics Bowl Logo" width="280" height="auto"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #000000;">
+                            <strong style="color: #002A5C">Second Ontario Ethics Bowl</strong>
+                            <br>
+                            It may have had to be moved online this year, but the <a href="https://boundless.utoronto.ca/redirects/artsci/Second-Ontario-High-School-Ethics-Bowl">second Ontario High School Ethics Bowl</a>, organized by the Department of Philosophy (UTM), proved another smashing success, with teams from 20 schools debating on controversial topics of the day with a mixture of passion and cool calculation. In the end, Canterbury High School of the Performing Arts in Ottawa took the crown, with the team from Loyola Catholic Secondary School in Mississauga coming in a close second. Both teams will move on to the national Ethics Bowl competition in April.
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Even Columns 1 : END -->      
+
+          </table>
+          <!-- NEWS AND EVENTS : END -->
+
+          <!-- WHITE SPACE : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:15px;font-size:7px;">&nbsp;</td>
+            </tr>
+          </table>
+          <!-- WHITE SPACE : END -->
+
+          <!-- FOOTER : BEGIN -->
+          <table cellspacing="0" cellpadding="0" width="600" class="outer" align="center">
+            <tr>
+              <td width="550" style="background-color: #dde1e8; padding: 30px 25px;" valign="top" class="content-outer">
+                <table width="550" cellspacing="0" cellpadding="0" class="inner">
+                  <tr>
+                    <td style="line-height:16px; text-align: left; font-size: 12px; font-family: arial, helvetica, sans-serif; padding-bottom: 10px;" valign="top" class="inner--centered">
+                      <strong>Department of Philosophy </strong><br>
+                      170 St. George Street<br>
+                      Tel: 416-978-3311<br>
+                      web: <a href="https://philosophy.utoronto.ca">philosophy.utoronto.ca</a><br>
+                      give: <a href="https://donate.utoronto.ca/give/show/48?utm_source=ARTSCI&utm_medium=Newsletter&utm_campaign=Department%20of%20Philosophy%20e-Newsletter%20October%202020" target="_blank">donate.utoronto.ca/philosophy </a>
+                    </td>
+                    <td style="line-height:16px; text-align: right; font-size: 12px; font-family: arial, helvetica, sans-serif; padding-bottom: 20px;" valign="top" class="inner--centered">
+                      This e-mail was sent to<br> <a href="mailto:##SubscriberEmail##" style="color: #005cc9;text-decoration: none;">##SubscriberEmail##</a><br/>
+                      <a href="##TrackClick##https://secureca.imodules.com/s/731/index_clean.aspx?sid=731&gid=1&pgid=1363&cid=2576&post_id=0" style="color: #005cc9; text-decoration: none;">Update contact information</a><br />
+                      <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_ARTSCI_ALL_ALL_Newsletter_Initial_##OptionalParameter3##%20Philosophy%20Spring%202021%20Newsletter%20-%2046014" style="color: #005cc9; text-decoration: none;">Opt out of future messages</a>
+                    </td>
+                  </tr>
+                  <!--                   <tr>
+                    <td height="50"></td>
+                  </tr> -->
+                  <tr>
+                    <td style="text-align: left; padding-top: 20px;" class="inner--centered" width="285" valign="top">
+                      <a href="##TrackClick##http://www.alumni.artsci.utoronto.ca/" style="color: #005cc9;"><img src="https://alumni.utoronto.ca/sites/default/files/inline-images/header.gif" style="border: none !important;" alt="University of Toronto, Faculty of Arts and Science" st-image="footer-logo" class="footer-logo-left" /></a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- FOOTER : END -->
+
+          <!-- COPYRIGHT AREA : BEGIN -->
+          <table width="600" cellpadding="0" cellspacing="0" class="outer" align="center">
+            <tr>
+              <td style="text-align: center; font-size: 11px; font-family: arial, helvetica;background-color: #ffffff; color: #777777; padding: 10px 60px 20px 60px; line-height: 14px;" valign="top" width="600" class="content">
+                The University&nbsp;of&nbsp;Toronto respects your privacy.
+                We do not rent, trade or sell our mailing lists.
+                Copyright &copy; 2020 University&nbsp;of&nbsp;Toronto. All rights reserved. This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #005cc9;">##SubscriberEmail##</a>.<br />
+                ##OptionalParameter3##<br />
+                ##TrackImpression##
+              </td>
+            </tr>
+          </table>
+          <!-- COPYRIGHT AREA : END -->
+
+          </td>
+        </tr>
+      </table>
+
+    </body>
+  </html>

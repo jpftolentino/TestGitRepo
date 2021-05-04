@@ -1,0 +1,1200 @@
+Received: from YTBPR01MB2623.CANPRD01.PROD.OUTLOOK.COM (2603:10b6:b01:1b::15)
+ by YTBPR01MB2336.CANPRD01.PROD.OUTLOOK.COM with HTTPS; Thu, 17 Dec 2020
+ 22:09:54 +0000
+Received: from QB1PR01CA0030.CANPRD01.PROD.OUTLOOK.COM (2603:10b6:c00:2d::43)
+ by YTBPR01MB2623.CANPRD01.PROD.OUTLOOK.COM (2603:10b6:b01:1b::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3676.25; Thu, 17 Dec
+ 2020 22:09:53 +0000
+Received: from QB1CAN01FT013.eop-CAN01.prod.protection.outlook.com
+ (2603:10b6:c00:2d:cafe::4a) by QB1PR01CA0030.outlook.office365.com
+ (2603:10b6:c00:2d::43) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3654.12 via Frontend
+ Transport; Thu, 17 Dec 2020 22:09:53 +0000
+Received: from bureau131.ns.utoronto.ca (128.100.132.141) by
+ QB1CAN01FT013.mail.protection.outlook.com (10.152.120.145) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3676.22 via Frontend Transport; Thu, 17 Dec 2020 22:09:53 +0000
+Received: from dua-appsmtp1.eis.utoronto.ca (dua-appsmtp1.eis.utoronto.ca [128.100.132.70])
+	by bureau131.ns.utoronto.ca (Postfix) with ESMTP id 4CxmPs15fGzPjdm
+	for <sarah.macfarlane@utoronto.ca>; Thu, 17 Dec 2020 17:09:53 -0500 (EST)
+Received: from utoronto.ca (unknown [142.150.157.18])
+	by dua-appsmtp1.eis.utoronto.ca (Postfix) with ESMTP id 0EB2420024A
+	for <sarah.macfarlane@utoronto.ca>; Thu, 17 Dec 2020 17:09:53 -0500 (EST)
+From: Art History Dept <arthistory@utoronto.ca>
+To: Sarah MacFarlane <sarah.macfarlane@utoronto.ca>
+Subject: Art History e-Newsletter, Winter 2020
+Thread-Topic: Art History e-Newsletter, Winter 2020
+Thread-Index: AQHW1MFZ1hFzKrE7oUmk6JDcxIbM5w==
+X-MS-Exchange-MessageSentRepresentingType: 1
+Date: Thu, 17 Dec 2020 22:09:53 +0000
+Message-ID: <714dc3aa578341c4b2f3a097cf733ce5@utoronto.ca>
+Reply-To: Alumni Arts and Science <alumni.artsci@utoronto.ca>
+Content-Language: en-US
+X-MS-Exchange-Organization-AuthSource:
+	QB1CAN01FT013.eop-CAN01.prod.protection.outlook.com
+X-Hashtags: #NewslettersPlus
+X-MS-Has-Attach:
+X-MS-Exchange-Organization-Network-Message-Id:
+	f46601cf-75cd-4e0f-3163-08d8a2d87b12
+X-MS-TNEF-Correlator:
+X-MS-Exchange-Organization-RecordReviewCfmType: 0
+x-ms-publictraffictype: Email
+received-spf: Pass (protection.outlook.com: domain of utoronto.ca designates
+ 128.100.132.141 as permitted sender) receiver=protection.outlook.com;
+ client-ip=128.100.132.141; helo=bureau131.ns.utoronto.ca;
+x-forefront-antispam-report:
+	CIP:128.100.132.141;CTRY:CA;LANG:en;SCL:-1;SRV:;IPV:CAL;SFV:SKN;H:bureau131.ns.utoronto.ca;PTR:bureau131.ns.utoronto.ca;CAT:NONE;SFS:;DIR:INB;
+authentication-results: spf=pass (sender IP is 128.100.132.141)
+ smtp.mailfrom=utoronto.ca; utoronto.ca; dkim=test (signature was verified)
+ header.d=utoronto.ca;utoronto.ca; dmarc=pass action=none
+ header.from=utoronto.ca;
+x-originatororg: utoronto.onmicrosoft.com
+x-ms-office365-filtering-correlation-id: f46601cf-75cd-4e0f-3163-08d8a2d87b12
+x-ms-traffictypediagnostic: YTBPR01MB2623:
+x-ms-oob-tlc-oobclassifiers: OLM:4714;
+x-microsoft-antispam: BCL:0;
+x-ms-exchange-crosstenant-network-message-id:
+	f46601cf-75cd-4e0f-3163-08d8a2d87b12
+x-ms-exchange-crosstenant-originalarrivaltime: 17 Dec 2020 22:09:53.3730 (UTC)
+x-ms-exchange-crosstenant-fromentityheader: HybridOnPrem
+x-ms-exchange-crosstenant-id: 78aac226-2f03-4b4d-9037-b46d56c55210
+x-ms-exchange-transport-crosstenantheadersstamped: YTBPR01MB2623
+x-eopattributedmessage: 0
+x-ms-exchange-transport-endtoendlatency: 00:00:00.7808423
+x-ms-exchange-abp-guid: f19341ea-666d-4951-b705-d77b28a4575f
+x-ms-exchange-processed-by-bccfoldering: 15.20.3654.025
+dkim-signature: v=1; a=rsa-sha256; c=relaxed/simple; d=utoronto.ca; s=beta;
+	t=1608242993; bh=smxHTQaSEMTPEcbI4r9mrZrCr8o3hwkosGxPRifdpF0=;
+	h=Reply-To:From:To:Date:Subject:From;
+	b=GJbWUusYeUkzA5lg+FbQdQnp/x3MmSACGGGfkneGYB5Euyl70XUveE8mi9oqGbddH
+	 16LVlS3ejrKQfWQ04QBeydjpf6YFgg+ZyJRlLh3YC0HNrc2D1VLxY+LuILzNHWWFET
+	 WPm1BSh9fSw3b4kP4/MjEbcrbBnm8jE0yHarQGSI=
+x-ms-exchange-crosstenant-authas: Anonymous
+x-ms-exchange-crosstenant-authsource:
+	QB1CAN01FT013.eop-CAN01.prod.protection.outlook.com
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(750128)(520011016)(944506458)(944626604);
+X-Microsoft-Antispam-Message-Info:
+	=?Windows-1252?Q?IWPqsvEIuDv/I7kFn3y11YR6iPdC7Rk/dnX6Ye1fO2dBucTtyJDV5FIH?=
+ =?Windows-1252?Q?TkwvjX8jq+3ML/QrvuMXlvLhpSMq289jQuSS71EofY5W5T35fs4clKsz?=
+ =?Windows-1252?Q?VpqPW5U+J45VoXD30/uNu5K2QGUqbktvWty16LTgJTGbiE9JgSoxEYFA?=
+ =?Windows-1252?Q?kb/IdCdAsZs3BJvUGgZxsCk1IWYaamCGCDB2YoPlMZWhYGYZQ7k8p9i5?=
+ =?Windows-1252?Q?Z1Yjzk+qUuUhv9Wi1ak9YA4Izdmv5E8PlQ2eK7LDOib/PJx5OHGwBjQL?=
+ =?Windows-1252?Q?RHfnOhbFCxRNR17NtjBVQSCfkfXxWc+OjZZEKXFbVe43q/m5k6l3gErd?=
+ =?Windows-1252?Q?KXCGnhTbxNOau69rS2LwmX+Py3fYA07HqaBDg8SP7CbNx8dVhDB1dVO4?=
+ =?Windows-1252?Q?itsO1ulG97AtrrEZQg1bsXwDYRF9U83ukMDrBX6ZDMQjUGxqgzZrJ1gq?=
+ =?Windows-1252?Q?v1zbcJz6xzlDvcNaVQlainu2pK5T/j0lKuRYOpYyJGmdtVoMIgffVcV4?=
+ =?Windows-1252?Q?xgpvGdo8dM5RnufvF172rTzfS62vtKfqHa5Z1ACOxIjIzswApxWPdYa3?=
+ =?Windows-1252?Q?M5TCyF1kGz2C6MNAVR3VFYjyDgiUdH3V0s18ENxPoIafFuhxyYyo6KJl?=
+ =?Windows-1252?Q?mBt3ekXT2trPrG+SLajSpkx3ZbOW5N+jFrh4bGir89+E8C0gpSOgKKkf?=
+ =?Windows-1252?Q?43CUwggVeFK5m0Cq01x31C2Rr2y1ynYjTpZQkzHRFWPqgn2XNhGqojYC?=
+ =?Windows-1252?Q?z8q26WXE/RhUKMQ2TlVPvLYBhxEcFrA/ezJ3tgr3er9YgHWQwhzKgV9S?=
+ =?Windows-1252?Q?e8GqVYuTfrSD7C1dxGlNqR2A/sqZ/HuSwyt3z/txmNY/ebCWJ61wGEB5?=
+ =?Windows-1252?Q?/GxK/lFITZ4MPame5Clf44nAEXQR8evV2bY+252VYJybmtQvEFDiwq5z?=
+ =?Windows-1252?Q?clutALAU8fBu9HSlTFAMxUxjiEB9HzWQ47R76X2uqhFblePVVvPUzdNS?=
+ =?Windows-1252?Q?cK4qIkmFvRSD/iCb8LEbpjso37ypmGm8ru1UN/TrwppcDuSFiVRcX9Q4?=
+ =?Windows-1252?Q?Tn2vsxOdqx1zg6tUBQMsP7/qCQnuy8Y9ukKzoZbHGZMNEiK7nnsgs+RH?=
+ =?Windows-1252?Q?3AtLr36xVhBRevT4YfpAM1cwZCJwSzznMSu8gqTKaAD2Ygh02MT21o4h?=
+ =?Windows-1252?Q?ziYyR/Si0gKRdrGVCCw5GX+6dHLuRjHWb99s9JpPgBXv8vsFSkykjLlb?=
+ =?Windows-1252?Q?Zi0NXI+mbSfCKWluo7mKvajqwddQ1NlkmzaaC1f0WkC2uDBVpOTN5a8G?=
+ =?Windows-1252?Q?95f8tvYMJQiIF+ecc0FuLfooRgYmlApT6zMCHvJ4iAtFnwyq4ztk/e+w?=
+ =?Windows-1252?Q?BjPwWrTeQiCGWLPfpDLOAqxYBcMWQYsv2hBUe6KSwrSnyKOh153/7YiA?=
+ =?Windows-1252?Q?FRH/ClpqY0N1XJz+1NXfDUK+Fzfb2PAraXz0y2Xd/Uu8qUB/uQ5u2xwN?=
+ =?Windows-1252?Q?39KsGQneJ6PbLxJIMiX0dxsKCXMduTTRh2RQK7cIt4V0SxLni/oFFv93?=
+ =?Windows-1252?Q?PYXdAwMqUxOhXKE3K4lyhIxjr2oiQiQ3mNfVjEuYSU0x3ryECG7k97Ef?=
+ =?Windows-1252?Q?Y8+WwwLjV/ZIymBUykopUxL7gSs0zh15oaVjo7nOVDmNsgrzxItNxppM?=
+ =?Windows-1252?Q?YSrYBBofGiIWrCjW8dG+OC9ZP48k2WNBj8KLzhG30gMSgpaCfdg5Gw?=
+ =?Windows-1252?Q?=3D=3D?=
+Content-Type: multipart/alternative;
+	boundary="_000_714dc3aa578341c4b2f3a097cf733ce5utorontoca_"
+MIME-Version: 1.0
+
+--_000_714dc3aa578341c4b2f3a097cf733ce5utorontoca_
+Content-Type: text/plain; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+The latest news and information from the Department of Art History
+View this email online<https://prdenpfe1.utorcsi.utoronto.ca/v.aspx?SI=3D13=
+17054&E=3Dsarah.macfarlane%40utoronto.ca&S=3D1&N=3D9074&ID=3D8733&NL=3D7144=
+>
+
+
+ <https://adcomms.utoronto.ca/email-templates/logos/UofT-AAS-logo.jpg>
+DEPARTMENT OF ART HISTORY
+YOUR ALUMNI NEWS
+December 2020 | Issue 6
+
+
+MESSAGE FROM THE CHAIR
+
+
+Dear Alumni and Friends,
+
+A fall semester like no other is coming to a close. It has been difficult f=
+or faculty and students alike to interact remotely, but everyone has manage=
+d quite remarkably. It seems that the measures we put in place through the =
+summer have paid off, and students have adapted with great spirit and resil=
+ience. Actually, our numbers have grown =97 we now have more art history ma=
+jors than we have had for five years or so. It is wonderful to see this gro=
+wth and interest in our discipline during these trying moments. I would lik=
+e to thank our outgoing director of undergraduate studies, Professor Christ=
+y Anderson<https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&ID=3D8733&NL=
+=3D7144&N=3D9074&SI=3D1317054&URL=3Dhttps%3a%2f%2farthistory.utoronto.ca%2f=
+people%2fdirectories%2fall-faculty%2fchristy-anderson>, for the pedagogical=
+ innovations she has championed and the inspiration she has provided to our=
+ undergraduates. Professor Philip Sapirstein<https://prdenpfe1.utorcsi.utor=
+onto.ca/t.aspx?S=3D1&ID=3D8733&NL=3D7144&N=3D9074&SI=3D1317054&URL=3Dhttps%=
+3a%2f%2farthistory.utoronto.ca%2fpeople%2fdirectories%2fall-faculty%2fphili=
+p-n-sapirstein> takes over the reins in January, and I am sure he too will =
+do a fantastic job in this position.
+
+We can also look back with great satisfaction on the first two events in ou=
+r inaugural departmental speaker series. It was wonderful to hear from Prof=
+essors Heather Igloliorte and Carla Taunton on new directions in writing In=
+digenous art histories, and Professor Sonal Khullar gave us a superb presen=
+tation on contemporary art in India. We continue to take steps to promote e=
+quity, diversity and inclusion in our department and the field through our =
+forum, workshops and other initiatives, such as fundraising for diversity s=
+cholarships for graduate students.
+
+With a lot of work still to do in preparing for my new undergraduate class =
+on ceramics next semester, I was very pleased to see the University push ba=
+ck the start of the winter semester by a week! This move is recognition of =
+the need for us all to take advantage of the break before another challengi=
+ng term. But I am optimistic that instructors, students and staff will rise=
+ to the challenge and cope with any difficulties together, collaboratively.=
+ I wish all of you a restful break over the holidays and my very best for 2=
+021!
+
+
+
+ <https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43866/ca=
+rl-knappett.png>
+=97 Carl Knappett
+Professor & Chair
+
+
+
+NEWS AND EVENTS
+
+
+ <https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43866/im=
+age-1-update.png>
+Save the Dates!
+Our undergraduate and graduate student associations recently announced the =
+dates for their annual research symposia:
+
+*       The History of Art Students' Association (HASA) seventh annual Unde=
+rgraduate Research Symposium<https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=
+=3D1&ID=3D8733&NL=3D7144&N=3D9074&SI=3D1317054&URL=3Dhttps%3a%2f%2farthisto=
+ry.utoronto.ca%2fevents%2fhasa-symposium-reconnecting>, (Re)Connecting, tak=
+es place on March 13, 2021.
+*       The Graduate Union of the Students of Art (GUStA) eighth annual Wol=
+lesen Memorial Graduate Symposium<https://prdenpfe1.utorcsi.utoronto.ca/t.a=
+spx?S=3D1&ID=3D8733&NL=3D7144&N=3D9074&SI=3D1317054&URL=3Dhttps%3a%2f%2fart=
+history.utoronto.ca%2fevents%2f8th-annual-wollesen-memorial-graduate-sympos=
+ium-matrix-mobility>, Matrix of Mobility: Networks of Objects and Exchange,=
+ takes place March 4 to 5, 2021.
+
+Both events are scheduled to be online and symposia registration will soon =
+be available on the HASA<https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1=
+&ID=3D8733&NL=3D7144&N=3D9074&SI=3D1317054&URL=3Dhttps%3a%2f%2farthistory.u=
+toronto.ca%2fundergraduate%2fresources-students%2fhasa> and GUStA<https://p=
+rdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&ID=3D8733&NL=3D7144&N=3D9074&SI=
+=3D1317054&URL=3Dhttps%3a%2f%2farthistory.utoronto.ca%2fgraduate%2fresource=
+s-graduate-students%2fgusta> websites. Please consider registering and supp=
+orting our students on their wonderful initiatives!
+         <https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/=
+43866/image-2.png>
+2020-21 Peter H. Brieger Memorial Lecture
+We are pleased to announce that this year's Peter H. Brieger Memorial Lectu=
+rer is Professor Stephen J. Campbell from Johns Hopkins University. Everyon=
+e is welcome to attend this public lecture on February 25, 2021. Further de=
+tails will be posted shortly on the Department of Art History website<https=
+://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&ID=3D8733&NL=3D7144&N=3D9074&=
+SI=3D1317054&URL=3Dhttps%3a%2f%2farthistory.utoronto.ca%2f>.
+
+This lecture series is in honour of Professor Peter H. Brieger (1898-1983).=
+ Brieger joined the newly founded University of Toronto Department of Fine =
+Art in 1936, became acting head of the department in 1947 and remained so u=
+ntil 1964. The Peter H. Brieger Fellowship is awarded to graduate students =
+in the Department of Art History. Support this award<https://prdenpfe1.utor=
+csi.utoronto.ca/t.aspx?S=3D1&ID=3D8733&NL=3D7144&N=3D9074&SI=3D1317054&URL=
+=3Dhttps%3a%2f%2fdonate.utoronto.ca%2fgive%2fshow%2f50%3futm_source%3dARTSC=
+I%26utm_medium%3dNewsletter%26utm_campaign%3dArt%2520Art%2520History%2520De=
+c%25202020%26sid%3dDIS-+%7cSRC-ANS21ANNEARTSCALLAFF%7cFN-16371520>.
+
+
+ <https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43866/im=
+age-3.png>
+Art History Speaker Series
+The Department of Art History Speaker Series continues in the new year with=
+ Charmaine Nelson, who is scheduled to speak on January 22, 2021. The Speak=
+er Series talks are meant to inspire and educate students, alumni and commu=
+nity members about past, current and future contours of the discipline glob=
+ally. Previous events in the series included Heather Igloliorte (Concordia =
+University) and Carla Taunton (NSCAD University) reflecting on new directio=
+ns in writing Indigenous art histories, as well as a sneak peek into Sonal =
+Khullar's (University of Pennsylvania) new book about contemporary art in I=
+ndia. Please visit the Department of Art History website<https://prdenpfe1.=
+utorcsi.utoronto.ca/t.aspx?S=3D1&ID=3D8733&NL=3D7144&N=3D9074&SI=3D1317054&=
+URL=3Dhttps%3a%2f%2farthistory.utoronto.ca%2f> for details on the upcoming =
+talks.
+         <https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/=
+43866/image-4.png>
+Meet our Postdocs!
+Our postdoctoral fellows, Katherine Jackson<https://prdenpfe1.utorcsi.utoro=
+nto.ca/t.aspx?S=3D1&ID=3D8733&NL=3D7144&N=3D9074&SI=3D1317054&URL=3Dhttps%3=
+a%2f%2farthistory.utoronto.ca%2fpeople%2fdirectories%2fpostdoctoral-fellows=
+%2fkatherine-jackson> and Jessica Mace<https://prdenpfe1.utorcsi.utoronto.c=
+a/t.aspx?S=3D1&ID=3D8733&NL=3D7144&N=3D9074&SI=3D1317054&URL=3Dhttps%3a%2f%=
+2farthistory.utoronto.ca%2fpeople%2fdirectories%2fpostdoctoral-fellows%2fje=
+ssica-mace>, share their stories and discuss the projects they are undertak=
+ing during their fellowships. "I wanted to come back to U of T because of t=
+he supportive faculty that nurtured my master's experience and will provide=
+ the mentorship and resources necessary for my current project," says Jacks=
+on. Mace says, "I am delighted to be at the University of Toronto, not just=
+ to share my experience and expertise, but also to learn from such an amazi=
+ng faculty and to have access to world-class facilities to further develop =
+my own career and research." Read more about Jackson and Mace on their feat=
+ured news stories here<https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&I=
+D=3D8733&NL=3D7144&N=3D9074&SI=3D1317054&URL=3Dhttps%3a%2f%2farthistory.uto=
+ronto.ca%2fnews%2fmeet-our-postdoctoral-fellows-katherine-jackson> and here=
+<https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&ID=3D8733&NL=3D7144&N=
+=3D9074&SI=3D1317054&URL=3Dhttps%3a%2f%2farthistory.utoronto.ca%2fnews%2fme=
+et-our-postdoctoral-fellows-jessica-mace>.
+
+
+ <https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43866/im=
+age-5.png>
+Keep Up With Us
+We are pleased to announce the update of our social media channels to bette=
+r engage with digital audiences! Find information on our programs, event li=
+stings, photos, videos and much more! Follow us on:
+
+*       Facebook<https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&ID=3D87=
+33&NL=3D7144&N=3D9074&SI=3D1317054&URL=3Dhttps%3a%2f%2fwww.facebook.com%2fU=
+ofTarthistory%2f> @UofTarthistory
+*       Instagram<https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&ID=3D8=
+733&NL=3D7144&N=3D9074&SI=3D1317054&URL=3Dhttps%3a%2f%2fwww.instagram.com%2=
+fuoftarthistory%2f> @uoftarthistory
+*       Twitter<https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&ID=3D873=
+3&NL=3D7144&N=3D9074&SI=3D1317054&URL=3Dhttps%3a%2f%2ftwitter.com%2farthist=
+ory_uoft> @ArtHistory_uoft
+*       YouTube<https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&ID=3D873=
+3&NL=3D7144&N=3D9074&SI=3D1317054&URL=3Dhttps%3a%2f%2fboundless.utoronto.ca=
+%2fredirects%2fartsci%2fartsci-youtube-channel>
+
+Have a story or event that may be of interest to our community? We would lo=
+ve to hear from you and share it across our social media channels. Please r=
+each out to us via email<mailto:art.alumni@utoronto.ca>.
+         <https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/=
+43866/image-6.png>
+Congratulations to our Graduates!
+Due to the COVID-19 pandemic, U of T's 2020 Fall Convocation ceremony was p=
+resented virtually on November 21. Please join us in congratulating our gra=
+duates and wishing them all the best in their future endeavours: Jenica Bro=
+wn (MA), Emily Doucet (PhD), Rupert Nuttle (MA), Michaela Rife (PhD), Eyal =
+Pundik Sagie (MA), Peter Sproule (MA), Akshaya Tankha (PhD) and Alan Grange=
+r Webb (MA). The virtual ceremony is available to view on U of T's YouTube =
+page<https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&ID=3D8733&NL=3D7144=
+&N=3D9074&SI=3D1317054&URL=3Dhttps%3a%2f%2fboundless.utoronto.ca%2fredirect=
+s%2fartsci%2fuoft-dec-2020-ceremony>.
+
+
+
+
+
+
+Department of Art History
+100 St. George Street
+web: https://arthistory.utoronto.ca/<https://prdenpfe1.utorcsi.utoronto.ca/=
+t.aspx?S=3D1&ID=3D8733&NL=3D7144&N=3D9074&SI=3D1317054&URL=3Dhttps%3a%2f%2f=
+arthistory.utoronto.ca%2f>
+give: https://donate.utoronto.ca/give/show/50<https://prdenpfe1.utorcsi.uto=
+ronto.ca/t.aspx?S=3D1&ID=3D8733&NL=3D7144&N=3D9074&SI=3D1317054&URL=3Dhttps=
+%3a%2f%2fdonate.utoronto.ca%2fgive%2fshow%2f50%3futm_source%3dARTSCI%26utm_=
+medium%3dNewsletter%26utm_campaign%3dArt%2520Art%2520History%2520Dec%252020=
+20%26sid%3dDIS-+%7cSRC-ANS21ANNEARTSCALLAFF%7cFN-16371520>      This e-mail=
+ was sent to sarah.macfarlane@utoronto.ca<mailto:sarah.macfarlane@utoronto.=
+ca>
+Update contact information<https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=
+=3D1&ID=3D8733&NL=3D7144&N=3D9074&SI=3D1317054&URL=3Dhttps%3a%2f%2fsecureca=
+.imodules.com%2fs%2f731%2findex_clean.aspx%3fsid%3d731%26gid%3d1%26pgid%3d1=
+363%26cid%3d2576%26post_id%3d0>
+Opt out of future messages<https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=
+=3D1&ID=3D8733&NL=3D7144&N=3D9074&SI=3D1317054&URL=3Dsubject=3DUNSUBSCRIBE%=
+202020-21_ARTSCI_ALL_ALL_Newsletter_Initial_%20%20Art%20Art%20History%20Dec=
+%202020>
+<https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&ID=3D8733&NL=3D7144&N=
+=3D9074&SI=3D1317054&URL=3Dhttp%3a%2f%2fwww.alumni.artsci.utoronto.ca%2f>
+The University of Toronto respects your privacy. We do not rent, trade or s=
+ell our mailing lists. Copyright =A9 2020 University of Toronto. All rights=
+ reserved. This e-mail was sent to sarah.macfarlane@utoronto.ca<mailto:sara=
+h.macfarlane@utoronto.ca>.
+
+ <https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&ID=3D8733&NL=3D7144&N=
+=3D9074&Imp=3DTrue&SI=3D1317054>
+
+--_000_714dc3aa578341c4b2f3a097cf733ce5utorontoca_
+Content-Type: text/html; charset="Windows-1252"
+Content-ID: <040FE16B0896A944817A8870FD7E8F2D@CANPRD01.PROD.OUTLOOK.COM>
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xml:lang=3D"en">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DWindows-1=
+252">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0">
+<title></title>
+<style>
+    @media only screen and (min-width: 480px) and (max-width: 599px) {
+    table[class=3Douter] { width: 480px !important;}
+    td[class=3Douter] { width: 480px !important; padding-left: 0 !important=
+; padding-right: 0 !important; display: block !important;}
+    td[class=3Dcontent-outer] { width: 440px !important; padding-right: 20p=
+x !important; padding-left: 20px !important; height: auto !important; displ=
+ay: block !important;}
+    td[class=3Dheader] { width: auto !important; padding-right: 10px !impor=
+tant; padding-left: 10px !important;}
+    table[class=3Dinner] { width: 440px !important;}
+    td[class=3Dinner] { width: 440px !important; padding-left: 0 !important=
+; padding-right: 0 !important; display: block !important; padding-top: 10px=
+ !important;}
+    td[class=3Dcontent-inner] { width: 400px !important; padding-right: 20p=
+x !important; padding-left: 20px !important; height: auto !important; displ=
+ay: block !important;}
+    td[class=3Douter--centered] { width: 480px !important; padding-left: 0 =
+!important; padding-right: 0 !important; text-align: center !important; dis=
+play: block !important;}
+    td[class=3Dcontent-outer--centered] { width: 440px !important; padding-=
+right: 20px !important; padding-left: 20px !important; height: auto !import=
+ant; text-align: center !important; display: block !important;}
+    td[class=3Dinner--centered] { width: 440px !important; padding-left: 0 =
+!important; padding-right: 0 !important; height: auto !important; text-alig=
+n: center !important; display: block !important;}
+    td[class=3Dcontent-inner--centered] { width: 400px !important; padding-=
+right: 20px !important; padding-left: 20px !important; height: auto !import=
+ant; text-align: center !important; display: block !important;}
+    td[class=3Dinner-button] { width: 440px !important; padding-left: 0 !im=
+portant; padding-right: 0 !important; display: block !important; padding-to=
+p: 10px !important;}
+    table[class=3Dbutton] { width: 150px !important;}
+    td[class=3Dbutton] { width: 150px !important; display: block !important=
+;}
+    img[class=3Dimg-full] { width: 480px !important; height: auto !importan=
+t;}
+    img[class=3Dimg-rect] { width: 440px !important; height: auto !importan=
+t;}
+    img[class=3Dimg-circle] { width: 250px !important; height: auto !import=
+ant;}
+    img[class=3Dfooter-logo-left] { width: 285px !important; height: auto !=
+important;}
+    strong[class=3Dbanner] { font-size: 28px !important;}
+    .section-heading { width: 440px !important; }
+    .section-heading td { width: 440px !important; }
+    .full-story { width: 440px !important; }
+    .image-block img { width: 440px !important; height: auto !important; }
+    .button { width: 440px !important; }
+    .two-col-section { width: 440px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 440px !im=
+portant; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    @media only screen and (min-width: 360px) and (max-width: 479px) {
+    table[class=3Douter] { width: 360px !important;}
+    td[class=3Douter] { width: 360px !important; padding-left: 0 !important=
+; padding-right: 0 !important; display: block !important;}
+    td[class=3Dcontent-outer] { width: 320px !important; padding-right: 20p=
+x !important; padding-left: 20px !important; height: auto !important; displ=
+ay: block !important;}
+    td[class=3Dheader] { width: auto !important; padding-right: 10px !impor=
+tant; padding-left: 10px !important;}
+    table[class=3Dinner] { width: 320px !important;}
+    td[class=3Dinner] { width: 320px !important; padding-left: 0 !important=
+; padding-right: 0 !important; display: block !important; padding-top: 10px=
+ !important;}
+    td[class=3Dcontent-inner] { width: 300px !important; padding-right: 10p=
+x !important; padding-left: 10px !important; height: auto !important; displ=
+ay: block !important;}
+    td[class=3Douter--centered] { width: 360px !important; padding-left: 0 =
+!important; padding-right: 0 !important; text-align: center !important; dis=
+play: block !important;}
+    td[class=3Dcontent-outer--centered] { width: 320px !important; padding-=
+right: 20px !important; padding-left: 20px !important; height: auto !import=
+ant; text-align: center !important; display: block !important;}
+    td[class=3Dinner--centered] { width: 320px !important; padding-left: 0 =
+!important; padding-right: 0 !important; height: auto !important; text-alig=
+n: center !important; display: block !important;}
+    td[class=3Dcontent-inner--centered] { width: 300px !important; padding-=
+right: 10px !important; padding-left: 10px !important; height: auto !import=
+ant; text-align: center !important; display: block !important;}
+    td[class=3Dinner-button] { width: 320px !important; padding-left: 0 !im=
+portant; padding-right: 0 !important; display: block !important; padding-to=
+p: 10px !important;}
+    table[class=3Dbutton] { width: 150px !important;}
+    td[class=3Dbutton] { width: 150px !important; display: block !important=
+;}
+    img[class=3Dimg-full] { width: 360px !important; height: auto !importan=
+t;}
+    img[class=3Dimg-rect] { width: 320px !important; height: auto !importan=
+t;}
+    img[class=3Dimg-circle] { width: 250px !important; height: auto !import=
+ant;}
+    img[class=3Dfooter-logo-left] { width: 260px !important; height: auto !=
+important;}
+    strong[class=3Dbanner] { font-size: 22px !important;}
+    .section-heading { width: 320px !important; }
+    .section-heading td { width: 320px !important; }
+    .image-block img { width: 320px !important; height: auto !important; }
+    .button { width: 320px !important; }
+    .two-col-section { width: 320px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 320px !im=
+portant; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    @media only screen and (max-width: 359px) {
+    table[class=3Douter] { width: 320px !important;}
+    td[class=3Douter] { width: 320px !important; padding-left: 0 !important=
+; padding-right: 0 !important; display: block !important;}
+    td[class=3Dcontent-outer] { width: 280px !important; padding-right: 20p=
+x !important; padding-left: 20px !important; height: auto !important; displ=
+ay: block !important;}
+    td[class=3Dheader] { width: auto !important; padding-right: 10px !impor=
+tant; padding-left: 10px !important;}
+    table[class=3Dinner] { width: 280px !important;}
+    td[class=3Dinner] { width: 280px !important; padding-left: 0 !important=
+; padding-right: 0 !important; display: block !important; padding-top: 10px=
+ !important;}
+    td[class=3Dcontent-inner] { width: 260px !important; padding-right: 10p=
+x !important; padding-left: 10px !important; height: auto !important; displ=
+ay: block !important;}
+    td[class=3Douter--centered] { width: 320px !important; padding-left: 0 =
+!important; padding-right: 0 !important; text-align: center !important; dis=
+play: block !important;}
+    td[class=3Dcontent-outer--centered] { width: 280px !important; padding-=
+right: 20px !important; padding-left: 20px !important; height: auto !import=
+ant; text-align: center !important; display: block !important;}
+    td[class=3Dinner--centered] { width: 280px !important; padding-left: 0 =
+!important; padding-right: 0 !important; height: auto !important; text-alig=
+n: center !important; display: block !important;}
+    td[class=3Dcontent-inner--centered] { width: 260px !important; padding-=
+right: 10px !important; padding-left: 10px !important; height: auto !import=
+ant; text-align: center !important; display: block !important;}
+    td[class=3Dinner-button] { width: 280px !important; padding-left: 0 !im=
+portant; padding-right: 0 !important; display: block !important; padding-to=
+p: 10px !important;}
+    table[class=3Dbutton] { width: 150px !important;}
+    td[class=3Dbutton] { width: 150px !important; display: block !important=
+;}
+    img[class=3Dimg-full] { width: 320px !important; height: auto !importan=
+t;}
+    img[class=3Dimg-rect] { width: 280px !important; height: auto !importan=
+t;}
+    img[class=3Dimg-circle] { width: 250px !important; height: auto !import=
+ant;}
+    img[class=3Dfooter-logo-left] { width: 240px !important; height: auto !=
+important;}
+    strong[class=3Dbanner] { font-size: 20px !important;}
+    .section-heading { width: 280px !important; }
+    .section-heading td { width: 280px !important; }
+    .full-story { width: 280px !important; }
+    .image-block img { width: 280px !important; height: auto !important; }
+    .button { width: 280px !important; }
+    .two-col-section { width: 280px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 280px !im=
+portant; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    </style>
+</head>
+<body style=3D"margin: 0; padding: 0;">
+<!-- Preheader : BEGIN -->
+<div style=3D"display:none;font-size:1px;color:#333333;line-height:1px;max-=
+height:0px;max-width:0px;opacity:0;overflow:hidden;">
+The latest news and information from the Department of Art History </div>
+<!-- Preheader : END -->
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td width=3D"100%" align=3D"center" valign=3D"top"><!-- end of top portion =
+of outer table --><!-- HEADER SECTION (web version link, banner) : BEGIN --=
+>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"600" class=3D"outer" al=
+ign=3D"center">
+<tbody>
+<tr>
+<td width=3D"600" valign=3D"top" style=3D"text-align: center; padding-botto=
+m: 15px; padding-top: 10px; font-family: arial; background-color: #ffffff;"=
+ class=3D"content-outer">
+<a href=3D"https://prdenpfe1.utorcsi.utoronto.ca/v.aspx?SI=3D1317054&amp;E=
+=3Dsarah.macfarlane%40utoronto.ca&amp;S=3D1&amp;N=3D9074&amp;ID=3D8733&amp;=
+NL=3D7144" style=3D"text-decoration: none !important; color: #000000; font-=
+size: 12px;"><strong>View this email online</strong></a>
+</td>
+</tr>
+<tr>
+<td class=3D"bar" colspan=3D"2" valign=3D"top" style=3D"border-collapse: co=
+llapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; te=
+xt-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:=
+7px;">
+&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"bar" colspan=3D"2" valign=3D"top" style=3D"border-collapse: co=
+llapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; te=
+xt-align:center; line-height:7px;font-size:7px;">
+&nbsp;</td>
+</tr>
+<tr>
+<!-- <td style=3D"padding: 20px 0;" class=3D"stack-column-center"> -->
+<td style=3D"padding-top: 5px;padding-bottom: 20px;" class=3D"stack-column-=
+center">
+<table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"=
+0" width=3D"100%" style=3D"font-size: 14px;text-align: left;">
+<tbody>
+<tr>
+<!-- <td style=3D"mso-padding-alt: 0 0 0 20px;padding-left: 20px;"> -->
+<td style=3D"text-align: center;"><img src=3D"https://adcomms.utoronto.ca/e=
+mail-templates/logos/UofT-AAS-logo.jpg" width=3D"300" height=3D"auto" alt=
+=3D"alt_text" border=3D"0" style=3D"height: auto; background: #ffffff; font=
+-family: sans-serif; font-size: 15px; line-height: 15px; color: #ffffff;">
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<!-- <tr>
+              <td colspan=3D"2" valign=3D"top" style=3D"text-align:center; =
+font-family:Arial,sans serif; font-size:16px; padding:10px 0px 10px 3px; li=
+ne-height:18px; color:#002A5C; background-color:#ffffff;">
+                <strong>FACULTY OF ARTS & SCIENCE</strong>
+              </td>
+            </tr> -->
+<tr>
+<td class=3D"header" width=3D"600" valign=3D"top" style=3D"font-size:20px; =
+background-color: #002a5c; color: #ffffff; text-align: center; padding-top:=
+ 40px; padding-bottom: 30px; font-family: arial; line-height: 36px;">
+<span style=3D"line-height: 24px;">DEPARTMENT OF ART HISTORY</span> <br>
+<strong style=3D"font-size:36px">YOUR ALUMNI NEWS</strong> <br>
+<span style=3D"font-size: 15px;">December 2020 | Issue 6</span> </td>
+</tr>
+</tbody>
+</table>
+<!-- HEADER SECTION (web version link, banner) : END --><!-- MESSAGE FROM T=
+HE CHAIR : BEGIN -->
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"600" class=3D"outer" al=
+ign=3D"center">
+<tbody>
+<tr>
+<td class=3D"bar" colspan=3D"2" valign=3D"top" style=3D"border-collapse: co=
+llapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; te=
+xt-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:=
+7px;">
+&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"bar" colspan=3D"2" valign=3D"top" style=3D"border-collapse: co=
+llapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; te=
+xt-align:center; line-height:7px;font-size:7px;">
+&nbsp;</td>
+</tr>
+<tr>
+<td colspan=3D"2" valign=3D"top" style=3D"text-align:center; font-family:Ar=
+ial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px=
+; color:#002A5C; background-color:#dde1e8;">
+<strong>MESSAGE FROM THE CHAIR</strong> </td>
+</tr>
+<tr>
+<td class=3D"bar" colspan=3D"2" valign=3D"top" style=3D"border-collapse: co=
+llapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; te=
+xt-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:=
+7px;">
+&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"bar" colspan=3D"2" valign=3D"top" style=3D"border-collapse: co=
+llapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; te=
+xt-align:center; line-height:15px;font-size:7px;">
+&nbsp;</td>
+</tr>
+<tr>
+<td width=3D"550" valign=3D"top" class=3D"content-outer" style=3D"text-alig=
+n: left; font-family: arial; padding: 15px 25px 10px 25px; font-size: 14px;=
+ line-height: 20px; background-color: #ffffff; color: #000000;">
+Dear Alumni and Friends, <br>
+<br>
+A fall semester like no other is coming to a close. It has been difficult f=
+or faculty and students alike to interact remotely, but everyone has manage=
+d quite remarkably. It seems that the measures we put in place through the =
+summer have paid off, and students
+ have adapted with great spirit and resilience. Actually, our numbers have =
+grown =97 we now have more art history majors than we have had for five yea=
+rs or so. It is wonderful to see this growth and interest in our discipline=
+ during these trying moments. I would
+ like to thank our outgoing director of undergraduate studies, <a href=3D"h=
+ttps://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&amp;ID=3D8733&amp;NL=3D71=
+44&amp;N=3D9074&amp;SI=3D1317054&amp;URL=3Dhttps%3a%2f%2farthistory.utoront=
+o.ca%2fpeople%2fdirectories%2fall-faculty%2fchristy-anderson">
+Professor Christy Anderson</a>, for the pedagogical innovations she has cha=
+mpioned and the inspiration she has provided to our undergraduates.
+<a href=3D"https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&amp;ID=3D8733=
+&amp;NL=3D7144&amp;N=3D9074&amp;SI=3D1317054&amp;URL=3Dhttps%3a%2f%2farthis=
+tory.utoronto.ca%2fpeople%2fdirectories%2fall-faculty%2fphilip-n-sapirstein=
+">
+Professor Philip Sapirstein</a> takes over the reins in January, and I am s=
+ure he too will do a fantastic job in this position.
+<br>
+<br>
+We can also look back with great satisfaction on the first two events in ou=
+r inaugural departmental speaker series. It was wonderful to hear from Prof=
+essors Heather Igloliorte and Carla Taunton on new directions in writing In=
+digenous art histories, and Professor
+ Sonal Khullar gave us a superb presentation on contemporary art in India. =
+We continue to take steps to promote equity, diversity and inclusion in our=
+ department and the field through our forum, workshops and other initiative=
+s, such as fundraising for diversity
+ scholarships for graduate students. <br>
+<br>
+With a lot of work still to do in preparing for my new undergraduate class =
+on ceramics next semester, I was very pleased to see the University push ba=
+ck the start of the winter semester by a week! This move is recognition of =
+the need for us all to take advantage
+ of the break before another challenging term. But I am optimistic that ins=
+tructors, students and staff will rise to the challenge and cope with any d=
+ifficulties together, collaboratively. I wish all of you a restful break ov=
+er the holidays and my very best
+ for 2021! <br>
+<br>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"550" class=3D"outer" al=
+ign=3D"center">
+<tbody>
+<tr>
+<td style=3D"height: 10px;background-color: #ffffff;" colspan=3D"2" class=
+=3D"outer"></td>
+</tr>
+<tr>
+<td width=3D"550" align=3D"center" valign=3D"top" style=3D"background-color=
+:#ffffff; padding: 10px;" class=3D"content-outer">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"550" class=3D"inner">
+<tbody>
+<tr>
+<td width=3D"275" valign=3D"bottom" style=3D"text-align: center; height: 10=
+0px;" class=3D"inner--centered">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"275" class=3D"inner">
+<tbody>
+<tr>
+<td width=3D"50%" style=3D"width:50%; text-align: center;"><img src=3D"http=
+s://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43866/carl-kna=
+ppett.png" width=3D"130" height=3D"" alt=3D"alt_text" border=3D"0" style=3D=
+"width: 100%;max-width: 130px;height: auto;background: #dddddd;font-family:=
+ sans-serif;font-size: 15px;line-height: 15px;color: #555555;">
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td valign=3D"middle" style=3D"color: #000000; font-family: arial; font-siz=
+e: 13px; text-align: center;" width=3D"50%" class=3D"inner--centered">
+<strong><em>=97 Carl Knappett</em></strong> <br>
+<em>Professor &amp; Chair</em> </td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- MESSAGE FROM THE CHAIR : END --><!-- NEWS AND EVENTS : BEGIN -->
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"600" class=
+=3D"two-col-section" align=3D"center" style=3D"width:600px;">
+<tbody>
+<tr>
+<td class=3D"bar" colspan=3D"2" valign=3D"top" style=3D"border-collapse: co=
+llapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; te=
+xt-align:center; line-height:7px;font-size:7px; border-top: 1px solid #002A=
+5C;">
+&nbsp;</td>
+</tr>
+<tr>
+<td colspan=3D"2" valign=3D"top" style=3D"text-align:center; font-family:Ar=
+ial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px=
+; color:#002A5C; background-color:#dde1e8;">
+<strong>NEWS AND EVENTS</strong> </td>
+</tr>
+<tr>
+<td class=3D"bar" colspan=3D"2" valign=3D"top" style=3D"border-collapse: co=
+llapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; te=
+xt-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:=
+7px;">
+&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"bar" colspan=3D"2" valign=3D"top" style=3D"border-collapse: co=
+llapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; te=
+xt-align:center; line-height:15px;font-size:7px;">
+&nbsp;</td>
+</tr>
+<!-- Even Columns 1 : BEGIN -->
+<tr>
+<td valign=3D"top" align=3D"center" class=3D"section-inner--main" style=3D"=
+padding-top: 10px; padding-bottom: 10px;">
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center" cl=
+ass=3D"inner">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"col-story-wrap" width=3D"280">
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"image-block" style=3D"padding-bottom: 12px;"><i=
+mg src=3D"https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/=
+43866/image-1-update.png" alt=3D"" width=3D"280" height=3D"auto">
+</td>
+</tr>
+<tr>
+<td valign=3D"top" class=3D"story-heading" style=3D"padding-bottom: 15px; t=
+ext-align: left; font-family: arial; font-size: 15px; line-height: 18px; co=
+lor: #000000;">
+<strong>Save the Dates!</strong><br>
+Our undergraduate and graduate student associations recently announced the =
+dates for their annual research symposia:
+<ul>
+<li>The History of Art Students' Association (HASA) <a href=3D"https://prde=
+npfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&amp;ID=3D8733&amp;NL=3D7144&amp;N=3D=
+9074&amp;SI=3D1317054&amp;URL=3Dhttps%3a%2f%2farthistory.utoronto.ca%2feven=
+ts%2fhasa-symposium-reconnecting">
+seventh annual Undergraduate Research Symposium</a>, (Re)Connecting, takes =
+place on March 13, 2021.
+</li><li>The Graduate Union of the Students of Art (GUStA) <a href=3D"https=
+://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&amp;ID=3D8733&amp;NL=3D7144&a=
+mp;N=3D9074&amp;SI=3D1317054&amp;URL=3Dhttps%3a%2f%2farthistory.utoronto.ca=
+%2fevents%2f8th-annual-wollesen-memorial-graduate-symposium-matrix-mobility=
+">
+eighth annual Wollesen Memorial Graduate Symposium</a>, Matrix of Mobility:=
+ Networks of Objects and Exchange, takes place March 4 to 5, 2021.
+</li></ul>
+Both events are scheduled to be online and symposia registration will soon =
+be available on the
+<a href=3D"https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&amp;ID=3D8733=
+&amp;NL=3D7144&amp;N=3D9074&amp;SI=3D1317054&amp;URL=3Dhttps%3a%2f%2farthis=
+tory.utoronto.ca%2fundergraduate%2fresources-students%2fhasa">
+HASA</a> and <a href=3D"https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&=
+amp;ID=3D8733&amp;NL=3D7144&amp;N=3D9074&amp;SI=3D1317054&amp;URL=3Dhttps%3=
+a%2f%2farthistory.utoronto.ca%2fgraduate%2fresources-graduate-students%2fgu=
+sta">
+GUStA</a> websites. Please consider registering and supporting our students=
+ on their wonderful initiatives!
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class=3D"divider" width=3D"15"></td>
+<td valign=3D"top" class=3D"col-story-wrap" width=3D"280">
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"image-block" style=3D"padding-bottom: 12px;"><i=
+mg src=3D"https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/=
+43866/image-2.png" alt=3D"" width=3D"280" height=3D"auto">
+</td>
+</tr>
+<tr>
+<td valign=3D"top" class=3D"story-heading" style=3D"padding-bottom: 15px; t=
+ext-align: left; font-family: arial; font-size: 15px; line-height: 18px; co=
+lor: #000000;">
+<strong>2020-21 Peter H. Brieger Memorial Lecture</strong><br>
+We are pleased to announce that this year's Peter H. Brieger Memorial Lectu=
+rer is Professor Stephen J. Campbell from Johns Hopkins University. Everyon=
+e is welcome to attend this public lecture on February 25, 2021. Further de=
+tails will be posted shortly on
+ the <a href=3D"https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&amp;ID=
+=3D8733&amp;NL=3D7144&amp;N=3D9074&amp;SI=3D1317054&amp;URL=3Dhttps%3a%2f%2=
+farthistory.utoronto.ca%2f">
+Department of Art History website</a>. <br>
+<br>
+This lecture series is in honour of Professor Peter H. Brieger (1898-1983).=
+ Brieger joined the newly founded University of Toronto Department of Fine =
+Art in 1936, became acting head of the department in 1947 and remained so u=
+ntil 1964. The Peter H. Brieger
+ Fellowship is awarded to graduate students in the Department of Art Histor=
+y. <a href=3D"https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&amp;ID=3D8=
+733&amp;NL=3D7144&amp;N=3D9074&amp;SI=3D1317054&amp;URL=3Dhttps%3a%2f%2fdon=
+ate.utoronto.ca%2fgive%2fshow%2f50%3futm_source%3dARTSCI%26utm_medium%3dNew=
+sletter%26utm_campaign%3dArt%2520Art%2520History%2520Dec%25202020%26sid%3dD=
+IS-+%7cSRC-ANS21ANNEARTSCALLAFF%7cFN-16371520">
+Support this award</a>. <br>
+<br>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<!-- Even Columns 1 : END --><!-- Even Columns 1 : BEGIN -->
+<tr>
+<td valign=3D"top" align=3D"center" class=3D"section-inner--main" style=3D"=
+padding-top: 10px; padding-bottom: 10px;">
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center" cl=
+ass=3D"inner">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"col-story-wrap" width=3D"280">
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"image-block" style=3D"padding-bottom: 12px;"><i=
+mg src=3D"https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/=
+43866/image-3.png" alt=3D"" width=3D"280" height=3D"auto">
+</td>
+</tr>
+<tr>
+<td valign=3D"top" class=3D"story-heading" style=3D"padding-bottom: 15px; t=
+ext-align: left; font-family: arial; font-size: 15px; line-height: 18px; co=
+lor: #000000;">
+<strong>Art History Speaker Series</strong><br>
+The Department of Art History Speaker Series continues in the new year with=
+ Charmaine Nelson, who is scheduled to speak on January 22, 2021. The Speak=
+er Series talks are meant to inspire and educate students, alumni and commu=
+nity members about past, current
+ and future contours of the discipline globally. Previous events in the ser=
+ies included Heather Igloliorte (Concordia University) and Carla Taunton (N=
+SCAD University) reflecting on new directions in writing Indigenous art his=
+tories, as well as a sneak peek
+ into Sonal Khullar's (University of Pennsylvania) new book about contempor=
+ary art in India. Please visit the
+<a href=3D"https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&amp;ID=3D8733=
+&amp;NL=3D7144&amp;N=3D9074&amp;SI=3D1317054&amp;URL=3Dhttps%3a%2f%2farthis=
+tory.utoronto.ca%2f">
+Department of Art History website</a> for details on the upcoming talks. </=
+td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class=3D"divider" width=3D"15"></td>
+<td valign=3D"top" class=3D"col-story-wrap" width=3D"280">
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"image-block" style=3D"padding-bottom: 12px;"><i=
+mg src=3D"https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/=
+43866/image-4.png" alt=3D"" width=3D"280" height=3D"auto">
+</td>
+</tr>
+<tr>
+<td valign=3D"top" class=3D"story-heading" style=3D"padding-bottom: 15px; t=
+ext-align: left; font-family: arial; font-size: 15px; line-height: 18px; co=
+lor: #000000;">
+<strong>Meet our Postdocs!</strong><br>
+Our postdoctoral fellows, <a href=3D"https://prdenpfe1.utorcsi.utoronto.ca/=
+t.aspx?S=3D1&amp;ID=3D8733&amp;NL=3D7144&amp;N=3D9074&amp;SI=3D1317054&amp;=
+URL=3Dhttps%3a%2f%2farthistory.utoronto.ca%2fpeople%2fdirectories%2fpostdoc=
+toral-fellows%2fkatherine-jackson">
+Katherine Jackson</a> and <a href=3D"https://prdenpfe1.utorcsi.utoronto.ca/=
+t.aspx?S=3D1&amp;ID=3D8733&amp;NL=3D7144&amp;N=3D9074&amp;SI=3D1317054&amp;=
+URL=3Dhttps%3a%2f%2farthistory.utoronto.ca%2fpeople%2fdirectories%2fpostdoc=
+toral-fellows%2fjessica-mace">
+Jessica Mace</a>, share their stories and discuss the projects they are und=
+ertaking during their fellowships. &quot;I wanted to come back to U&nbsp;of=
+&nbsp;T because of the supportive faculty that nurtured my master's experie=
+nce and will provide the mentorship and resources
+ necessary for my current project,&quot; says Jackson. Mace says, &quot;I a=
+m delighted to be at the University of Toronto, not just to share my experi=
+ence and expertise, but also to learn from such an amazing faculty and to h=
+ave access to world-class facilities to further
+ develop my own career and research.&quot; Read more about Jackson and Mace=
+ on their featured news stories
+<a href=3D"https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&amp;ID=3D8733=
+&amp;NL=3D7144&amp;N=3D9074&amp;SI=3D1317054&amp;URL=3Dhttps%3a%2f%2farthis=
+tory.utoronto.ca%2fnews%2fmeet-our-postdoctoral-fellows-katherine-jackson">
+here</a> and <a href=3D"https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&=
+amp;ID=3D8733&amp;NL=3D7144&amp;N=3D9074&amp;SI=3D1317054&amp;URL=3Dhttps%3=
+a%2f%2farthistory.utoronto.ca%2fnews%2fmeet-our-postdoctoral-fellows-jessic=
+a-mace">
+here</a>. <br>
+<br>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<!-- Even Columns 1 : END --><!-- Even Columns 1 : BEGIN -->
+<tr>
+<td valign=3D"top" align=3D"center" class=3D"section-inner--main" style=3D"=
+padding-top: 10px; padding-bottom: 10px;">
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center" cl=
+ass=3D"inner">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"col-story-wrap" width=3D"280">
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"image-block" style=3D"padding-bottom: 12px;"><i=
+mg src=3D"https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/=
+43866/image-5.png" alt=3D"" width=3D"280" height=3D"auto">
+</td>
+</tr>
+<tr>
+<td valign=3D"top" class=3D"story-heading" style=3D"padding-bottom: 15px; t=
+ext-align: left; font-family: arial; font-size: 15px; line-height: 18px; co=
+lor: #000000;">
+<strong>Keep Up With Us</strong><br>
+We are pleased to announce the update of our social media channels to bette=
+r engage with digital audiences! Find information on our programs, event li=
+stings, photos, videos and much more! Follow us on:
+<ul>
+<li><a href=3D"https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&amp;ID=3D=
+8733&amp;NL=3D7144&amp;N=3D9074&amp;SI=3D1317054&amp;URL=3Dhttps%3a%2f%2fww=
+w.facebook.com%2fUofTarthistory%2f">Facebook</a>
+<span style=3D"color:#0001ee">@UofTarthistory</span></li><li><a href=3D"htt=
+ps://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&amp;ID=3D8733&amp;NL=3D7144=
+&amp;N=3D9074&amp;SI=3D1317054&amp;URL=3Dhttps%3a%2f%2fwww.instagram.com%2f=
+uoftarthistory%2f">Instagram</a>
+<span style=3D"color:#0001ee">@uoftarthistory</span></li><li><a href=3D"htt=
+ps://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&amp;ID=3D8733&amp;NL=3D7144=
+&amp;N=3D9074&amp;SI=3D1317054&amp;URL=3Dhttps%3a%2f%2ftwitter.com%2farthis=
+tory_uoft">Twitter</a>
+<span style=3D"color:#0001ee">@ArtHistory_uoft</span></li><li><a href=3D"ht=
+tps://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&amp;ID=3D8733&amp;NL=3D714=
+4&amp;N=3D9074&amp;SI=3D1317054&amp;URL=3Dhttps%3a%2f%2fboundless.utoronto.=
+ca%2fredirects%2fartsci%2fartsci-youtube-channel">YouTube</a></li></ul>
+Have a story or event that may be of interest to our community? We would lo=
+ve to hear from you and share it across our social media channels. Please r=
+each out to us via
+<a href=3D"mailto:art.alumni@utoronto.ca">email</a>. </td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class=3D"divider" width=3D"15"></td>
+<td valign=3D"top" class=3D"col-story-wrap" width=3D"280">
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"image-block" style=3D"padding-bottom: 12px;"><i=
+mg src=3D"https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/=
+43866/image-6.png" alt=3D"" width=3D"280" height=3D"auto">
+</td>
+</tr>
+<tr>
+<td valign=3D"top" class=3D"story-heading" style=3D"padding-bottom: 15px; t=
+ext-align: left; font-family: arial; font-size: 15px; line-height: 18px; co=
+lor: #000000;">
+<strong>Congratulations to our Graduates!</strong><br>
+Due to the COVID-19 pandemic, U of T's 2020 Fall Convocation ceremony was p=
+resented virtually on November 21. Please join us in congratulating our gra=
+duates and wishing them all the best in their future endeavours: Jenica Bro=
+wn (MA), Emily Doucet (PhD), Rupert
+ Nuttle (MA), Michaela Rife (PhD), Eyal Pundik Sagie (MA), Peter Sproule (M=
+A), Akshaya Tankha (PhD) and Alan Granger Webb (MA). The virtual ceremony i=
+s available to view on
+<a href=3D"https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&amp;ID=3D8733=
+&amp;NL=3D7144&amp;N=3D9074&amp;SI=3D1317054&amp;URL=3Dhttps%3a%2f%2fboundl=
+ess.utoronto.ca%2fredirects%2fartsci%2fuoft-dec-2020-ceremony">
+U of T's YouTube page</a>. <br>
+<br>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<!-- Even Columns 1 : END -->
+</tbody>
+</table>
+<!-- NEWS AND EVENTS : END --><!-- WHITE SPACE : BEGIN -->
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"600" class=3D"outer" al=
+ign=3D"center">
+<tbody>
+<tr>
+<td class=3D"bar" colspan=3D"2" valign=3D"top" style=3D"border-collapse: co=
+llapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; te=
+xt-align:center; line-height:15px;font-size:7px;">
+&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"bar" colspan=3D"2" valign=3D"top" style=3D"border-collapse: co=
+llapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; te=
+xt-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:=
+7px;">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<!-- WHITE SPACE : END --><!-- SOCIAL MEDIA : BEGIN -->
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"600" class=3D"outer" al=
+ign=3D"center">
+<tbody>
+<tr>
+<td width=3D"600" align=3D"center" height=3D"20" style=3D"background-color:=
+ #ffffff;"></td>
+</tr>
+<!-- <tr>
+              <td width=3D"600" align=3D"center" style=3D"background-color:=
+ #ffffff;">
+                <table cellpadding=3D"0" cellspacing=3D"0" width=3D"200">
+                  <tr>
+                    <td>
+                      <a href=3D"https://prdenpfe1.utorcsi.utoronto.ca/t.as=
+px?S=3D1&ID=3D8733&NL=3D7144&N=3D9074&SI=3D1317054&URL=3Dhttps%3a%2f%2fwww.=
+facebook.com%2fUofTarthistory%2f" style=3D"border:0 !important;">
+                        <img src=3D"https://alumni.utoronto.ca/sites/defaul=
+t/files/inline-images/facebook.png" width=3D"40" height=3D"40" />
+                      </a>
+                    </td>
+                    <td></td>
+                    <td>
+                      <a href=3D"https://prdenpfe1.utorcsi.utoronto.ca/t.as=
+px?S=3D1&ID=3D8733&NL=3D7144&N=3D9074&SI=3D1317054&URL=3Dhttps%3a%2f%2ftwit=
+ter.com%2fUofArt" style=3D"border:0 !important;">
+                        <img src=3D"https://alumni.utoronto.ca/sites/defaul=
+t/files/inline-images/twitter.png" width=3D"40" height=3D"40" />
+                      </a>
+                    </td>
+                    <td></td>
+                    <td>
+                      <a href=3D"https://prdenpfe1.utorcsi.utoronto.ca/t.as=
+px?S=3D1&ID=3D8733&NL=3D7144&N=3D9074&SI=3D1317054&URL=3Dhttps%3a%2f%2fwww.=
+instagram.com%2fuoftarthistory%2f" style=3D"border:0 !important;">
+                        <img src=3D"https://alumni.utoronto.ca/sites/defaul=
+t/files/inline-images/instagram_2.png" width=3D"40" height=3D"40" />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr> -->
+<tr>
+<td width=3D"600" align=3D"center" height=3D"20" style=3D"background-color:=
+ #ffffff;" class=3D"outer">
+</td>
+</tr>
+</tbody>
+</table>
+<!-- SOCIAL MEDIA : END  --><!-- FOOTER : BEGIN -->
+<table cellspacing=3D"0" cellpadding=3D"0" width=3D"600" class=3D"outer" al=
+ign=3D"center">
+<tbody>
+<tr>
+<td width=3D"550" style=3D"background-color: #dde1e8; padding: 30px 25px;" =
+valign=3D"top" class=3D"content-outer">
+<table width=3D"550" cellspacing=3D"0" cellpadding=3D"0" class=3D"inner">
+<tbody>
+<tr>
+<td style=3D"line-height:16px; text-align: left; font-size: 12px; font-fami=
+ly: arial, helvetica, sans-serif; padding-bottom: 10px;" valign=3D"top" cla=
+ss=3D"inner--centered">
+<strong>Department of Art History</strong> <br>
+<!-- <strong>
+                      Graduate Department of Art </strong> <br /> -->100 St=
+. George Street<br>
+web: <a style=3D"color:#000000;" href=3D"https://prdenpfe1.utorcsi.utoronto=
+.ca/t.aspx?S=3D1&amp;ID=3D8733&amp;NL=3D7144&amp;N=3D9074&amp;SI=3D1317054&=
+amp;URL=3Dhttps%3a%2f%2farthistory.utoronto.ca%2f">
+https://arthistory.utoronto.ca/</a><br>
+give: <a style=3D"color:#000000;" href=3D"https://prdenpfe1.utorcsi.utoront=
+o.ca/t.aspx?S=3D1&amp;ID=3D8733&amp;NL=3D7144&amp;N=3D9074&amp;SI=3D1317054=
+&amp;URL=3Dhttps%3a%2f%2fdonate.utoronto.ca%2fgive%2fshow%2f50%3futm_source=
+%3dARTSCI%26utm_medium%3dNewsletter%26utm_campaign%3dArt%2520Art%2520Histor=
+y%2520Dec%25202020%26sid%3dDIS-+%7cSRC-ANS21ANNEARTSCALLAFF%7cFN-16371520">
+https://donate.utoronto.ca/give/show/50</a> </td>
+<td style=3D"line-height:16px; text-align: right; font-size: 12px; font-fam=
+ily: arial, helvetica, sans-serif; padding-bottom: 20px;" valign=3D"top" cl=
+ass=3D"inner--centered">
+This e-mail was sent to <a href=3D"mailto:sarah.macfarlane@utoronto.ca" sty=
+le=3D"color: #005cc9;">
+sarah.macfarlane@utoronto.ca</a><br>
+<a href=3D"https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&amp;ID=3D8733=
+&amp;NL=3D7144&amp;N=3D9074&amp;SI=3D1317054&amp;URL=3Dhttps%3a%2f%2fsecure=
+ca.imodules.com%2fs%2f731%2findex_clean.aspx%3fsid%3d731%26gid%3d1%26pgid%3=
+d1363%26cid%3d2576%26post_id%3d0" style=3D"color: #005cc9; text-decoration:=
+ none;">Update
+ contact information</a><br>
+<a href=3D"https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&amp;ID=3D8733=
+&amp;NL=3D7144&amp;N=3D9074&amp;SI=3D1317054&amp;URL=3Dsubject=3DUNSUBSCRIB=
+E%202020-21_ARTSCI_ALL_ALL_Newsletter_Initial_ %20Art%20Art%20History%20Dec=
+%202020" style=3D"color: #005cc9; text-decoration: none;">Opt out of future
+ messages</a> </td>
+</tr>
+<!--                   <tr>
+                    <td height=3D"50"></td>
+                  </tr> -->
+<tr>
+<td style=3D"text-align: left; padding-top: 20px;" class=3D"inner--centered=
+" width=3D"285" valign=3D"top">
+<a href=3D"https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=3D1&amp;ID=3D8733=
+&amp;NL=3D7144&amp;N=3D9074&amp;SI=3D1317054&amp;URL=3Dhttp%3a%2f%2fwww.alu=
+mni.artsci.utoronto.ca%2f" style=3D"color: #005cc9;"><img src=3D"https://al=
+umni.utoronto.ca/sites/default/files/inline-images/header.gif" style=3D"bor=
+der: none !important;" alt=3D"University of Toronto, Faculty of Arts and Sc=
+ience" st-image=3D"footer-logo" class=3D"footer-logo-left"></a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- FOOTER : END --><!-- COPYRIGHT AREA : BEGIN -->
+<table width=3D"600" cellpadding=3D"0" cellspacing=3D"0" class=3D"outer" al=
+ign=3D"center">
+<tbody>
+<tr>
+<td style=3D"text-align: center; font-size: 11px; font-family: arial, helve=
+tica;background-color: #ffffff; color: #777777; padding: 10px 60px 20px 60p=
+x; line-height: 14px;" valign=3D"top" width=3D"600" class=3D"content">
+The University&nbsp;of&nbsp;Toronto respects your privacy. We do not rent, =
+trade or sell our mailing lists. Copyright =A9 2020 University&nbsp;of&nbsp=
+;Toronto. All rights reserved. This e-mail was sent to
+<a href=3D"mailto:sarah.macfarlane@utoronto.ca" style=3D"color: #005cc9;">s=
+arah.macfarlane@utoronto.ca</a>.<br>
+<br>
+<img width=3D"1" height=3D"1" src=3D"https://prdenpfe1.utorcsi.utoronto.ca/=
+t.aspx?S=3D1&amp;ID=3D8733&amp;NL=3D7144&amp;N=3D9074&amp;Imp=3DTrue&amp;SI=
+=3D1317054"><!-- </img> -->
+</td>
+</tr>
+</tbody>
+</table>
+<!-- COPYRIGHT AREA : END --></td>
+</tr>
+</tbody>
+</table>
+<!--
+X-MailPersonHistoryID: 8733
+X-MailPersonSubscriberID: 1317054
+X-MailPersonEmail: sarah.macfarlane@utoronto.ca
+-->
+</body>
+</html>
+
+--_000_714dc3aa578341c4b2f3a097cf733ce5utorontoca_--

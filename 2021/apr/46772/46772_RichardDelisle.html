@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+            display: none !important;
+            opacity: 0.01 !important;
+        }
+        /* If the above doesn't work, add a .g-img class to any image in question. */
+        img.g-img + div {
+            display: none !important;
+        }
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+	    /* What it does: Hover styles for buttons */
+	    .button-td,
+	    .button-a {
+	        transition: all 100ms ease-in;
+	    }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: #000000 !important;
+	        border-color: #000000 !important;
+	    }
+
+        #right-column {
+            /* padding-left: 30px; */
+        }
+
+	    /* Media Queries */
+	    @media screen and (max-width: 480px) {
+
+	        /* What it does: Forces table cells into full-width rows. */
+	        .stack-column,
+	        .stack-column-center {
+	            display: block !important;
+	            width: 100% !important;
+	            max-width: 100% !important;
+	            direction: ltr !important;
+	        }
+	        /* And center justify these ones. */
+	        .stack-column-center {
+	            text-align: center !important;
+	        }
+
+	        /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+	        .center-on-narrow {
+	            text-align: center !important;
+	            display: block !important;
+	            margin-left: auto !important;
+	            margin-right: auto !important;
+	            float: none !important;
+	        }
+	        table.center-on-narrow {
+	            display: inline-block !important;
+	        }
+
+	        /* What it does: Adjust typography on small screens to improve readability */
+	        .email-container p {
+	            font-size: 17px !important;
+	        }
+
+            #left-column {
+                padding-right: 0;
+            }
+
+            #right-column {
+                padding: 10px 10px 0 10px;
+            }
+	    }
+
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+<!--
+	The email background color (#ffffff) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #ffffff;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #ffffff;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
+            Help us continue Donald Fraser's remarkable legacy at U of T through this Memorial Award Fund
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+	        &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!--
+            Set the email width. Defined in two places:
+            1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+            2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+            Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+        -->
+        <div style="max-width: 680px; margin: 0 auto;" class="email-container">
+            <!--[if mso]>
+            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+            <tr>
+            <td>
+            <![endif]-->
+
+	        <!-- Email Body : BEGIN -->
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+                <!-- View Email Online : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff; text-align: center;padding-top:10px;">
+                        <a href="##HTMLNewsletterURL##"style="color: #002a5c;text-decoration: none; font-weight: bold;font-size:11px;font-family: Arial, Helvetica, sans-serif;">View email online</a>
+                    </td>
+                </tr>
+                <!-- View Email Online : END -->
+
+		        <!-- Email Header : BEGIN -->
+	            <tr>
+                    <td style="padding: 20px 0;" class="stack-column-center">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                            <tr>
+                                <td style="mso-padding-alt: 0 0 0 20px;padding-left: 20px;">
+                                    <img src="https://boundless.utoronto.ca/wp-content/uploads/UofT-AAS-logo.jpg" width="300" height="auto" alt="alt_text" border="0" style="height: auto; background: #ffffff; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #ffffff;">
+                                </td>
+                            </tr>
+                        </table>
+	                </td>
+	            </tr>
+		        <!-- Email Header : END -->
+
+	            <!-- Hero Image, Flush : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff; text-align: center;">
+                        <img src="https://adcomms.utoronto.ca/images/artsc/2021/46772/DonaldFraser_header.jpeg" align="center" width="680" height="auto" alt="alt_text" border="0" style="width: 100%; max-width: 660px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #000000; margin: auto; display: block;" class="g-img">
+                    </td>
+                </tr>
+                <!-- Hero Image, Flush : END -->
+
+               <!-- 1 Column Text + Button : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td style="padding: 40px 10px 0 10px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;">
+                                    <p style="margin: 0;">
+                                        Dear ##OptionalParameter1##
+                                        <br><br>
+                                        The world lost a titan of science recently with the passing of former University of Toronto Professor Donald Alexander Stuart Fraser. A trailblazer in the field of statistics, he passed away December 21, 2020 at the age of 95.
+                                        <br><br>
+                                        On a personal note, I was honoured and privileged to know Don as a colleague for almost 20 years. His research was inspirational to all of us, and we continue to strive to live up to his high standards and exemplary work ethic.
+                                        <br><br>
+                                        We are now asking you to join us in continuing his remarkable legacy with a <a href="http://engage.utoronto.ca/donaldfraser" style="color: #2dadc7;text-decoration: underline;">memorial fund that will support a new generation of young scholars</a>. The Department of Statistical Sciences will match the first $15,000 in donations, dollar for dollar.
+                                        <br><br>
+                                        Don’s role in establishing U&nbsp;of&nbsp;T and Canada at the epicentre of the “Big Data” boom that dominates today’s world cannot be overstated. Statistics was not yet recognized as its own academic discipline when he started his career 70 years ago. Today, the department is one of the largest in the Faculty of Arts & Science, and U&nbsp;of&nbsp;T is recognized as one of the world leaders in this field of study.
+                                        <br><br>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- 1 Column Text + Button : END -->                
+
+                <!-- 2 Even Columns : BEGIN -->
+                <tr>
+                  <td align="center" valign="top" style="font-size:0; padding: 0; background-color: #ffffff;">
+                      <!--[if mso]>
+                      <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="680">
+                      <tr>
+                      <td valign="top" width="180">
+                      <![endif]-->
+                      <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:180px; max-width: 180px; vertical-align:top;" class="stack-column">
+                          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;" id="left-column">
+    
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" >
+                                        <tr>
+                                            <td class="center-on-narrow" >
+                                                <img src="https://adcomms.utoronto.ca/images/artsc/2021/46772/Don_220x292.jpeg" width="80%" height="auto" alt="alt_text">
+                                            </td>
+                                        </tr>
+                                    </table>
+    
+
+                                </td>
+                            </tr>                     
+                          </table>
+                      </div>
+                      <!--[if mso]>
+                      </td>
+                      <td valign="top" width="480">
+                      <![endif]-->
+                      <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:120px; max-width:480px; vertical-align:top;" class="stack-column">
+                          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                              <tr>
+                                  <td>
+                                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                        <tr>
+                                            <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;" class="stack-column">
+                                                <p id="right-column" style="margin: 0;">                                            
+                                                    "Don started working in a different era, but he played a large role in making Canada a place where people go to talk statistics because he had students who had students who had students, and it grew from there," Nancy Reid, a University Professor and Don’s wife, who published more than 50 research papers with her husband, told me recently.
+                                                    <br><br>
+                                                    "In some sense, he laid the foundation for our department to flourish. For a long time, we were a small department in the faculty, but Don gave us a strong base for our recent explosive growth."
+                                                    
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                          </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+                <!-- 2 Even Columns : END -->
+
+               <!-- 1 Column Text + Button : BEGIN -->
+               <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 0 10px 0 10px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;">
+                                <p style="margin: 0;">
+                                    <br>
+                                    After graduating with a bachelor of arts as a member of Trinity College in 1946 and earning his master of arts and PhD from Princeton University, Don returned to U&nbsp;of&nbsp;T as an assistant professor in mathematics in 1949 and stayed for most of his career.
+                                    <br><br>
+                                    Don was responsible, almost single-handedly, for establishing U&nbsp;of&nbsp;T’s international reputation as a leader in the foundations of the statistical sciences. He played a key role in the establishment of the University’s Department of Statistical Sciences, serving as its first chairman from 1977 to 1983 and building a broadly based research group.
+                                    <br><br>
+                                    Don’s stature attracted talent that helped U&nbsp;of&nbsp;T become a centre of excellence in statistics, which it remains to this day. We want to keep it that way.
+                                    <br><br>
+                                    With your support, the Donald A. S. Fraser Memorial Award Fund will help inspire and attract the best and brightest statisticians and data scientists of tomorrow.
+                                    <br><br>
+                                    Thank you for considering a gift to honour Don’s legacy and keep U&nbsp;of&nbsp;T at the forefront of this rapidly evolving field.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 20px 10px 0 10px;">
+                                <br>
+                                <a href="http://engage.utoronto.ca/donaldfraser?utm_source=ARTSCI&utm_medium=Solicitation&utm_campaign=Donald%20A.%20S.%20Fraser%20Memorial%20Award%20Campaign&sid=DIS-##OptionalParameter3##|SRC-##OptionalParameter5##|FN-##OptionalParameter6##">
+                                    <img src="https://adcomms.utoronto.ca/images/artsc/2021/46772/CTA-Button.jpeg" width="170" height="" border="0" alt="alt_text" style="width: 100%; max-width: 170px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="center-on-narrow">
+                                </a>
+                                <br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0 10px 0 10px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;">
+                                <p style="margin: 0;">
+                                    <br>
+                                    Sincerely,
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 20px 10px 0 10px;">
+                                <img src="https://adcomms.utoronto.ca/images/artsc/2021/46772/Signature_272x76.jpeg" width="180" height="" border="0" alt="alt_text" style="width: 100%; max-width: 180px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="center-on-narrow">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0 10px 0 10px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;">
+                                <p style="margin: 0;">
+                                    <br>
+                                    <strong>Radu Craiu</strong>, PhD<br>
+                                    Professor and Chair<br>
+                                    Department of Statistical Sciences<br>
+                                    University of Toronto
+                                    <br><br>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text + Button : END -->                   
+
+            </table>
+            <!-- Email Body : END -->
+
+            <!-- Email Footer : BEGIN -->
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+
+                <!-- Clear space : BEGIN -->
+                <tr>
+                    <td height="30">
+                        &nbsp;
+                    </td>
+                </tr>
+                <!-- Clear space : END -->
+
+
+              <!-- 2 Even Columns : BEGIN -->
+              <tr>
+                  <td align="center" valign="top" style="font-size:0; padding: 10px; background-color: #ffffff;">
+                      <!--[if mso]>
+                      <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="680">
+                      <tr>
+                      <td valign="top" width="400" style="mso-padding-alt: 0 10px 0 10px">
+                      <![endif]-->
+                      <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width: 400px; vertical-align:top;" class="stack-column">
+                          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                              <tr>
+                                  <!-- <td style="mso-padding-alt: 10px 0 10px 0; padding: 10px;"> -->
+                                    <td>
+                                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                          <tr>
+                                              <td style="font-family: arial, sans-serif; font-size: 13px; padding-bottom: 20px; text-align: left; color:#002a5c;" class="stack-column-center">
+                                                 <strong style="font-size: 16px;">FOLLOW A&S ALUMNI</strong>
+                                              </td>
+                                           </tr>
+                                           <tr>
+                                              <td valign="top" style="padding-bottom: 20px; text-align: left;" class="stack-column-center">
+                                                 <a href="##TrackClick##https://www.facebook.com/ArtsandScienceAlumni/" style="border: none; text-decoration: none;">
+                                                 <img src="https://boundless.utoronto.ca/wp-content/uploads/icon-circle-fb.png" alt="U&nbsp;of&nbsp;T Facebook" width="45" height="45" style="border: none;" />
+                                                 </a>&nbsp;&nbsp;&nbsp;
+                                                 <a href="##TrackClick##https://www.linkedin.com/company/university-of-toronto-faculty-of-arts-science-alumni/?viewAsMember=true" style="border: none; text-decoration: none;">
+                                                 <img src="https://boundless.utoronto.ca/wp-content/uploads/icon-circle-linkedin.png" alt="U&nbsp;of&nbsp;T LinkedIn" width="45" height="45" style="border: none;" />
+                                                 </a>
+                                              </td>
+                                           </tr>
+                                           <tr>
+                                              <td style="font-family: arial, sans-serif; font-size: 13px; padding-bottom: 20px; text-align: left; color:#002a5c;" class="stack-column-center">
+                                                 <strong style="font-size: 16px;">FOLLOW ARTS & SCIENCE</strong>
+                                              </td>
+                                           </tr>
+                                           <tr>
+                                              <td valign="top" style="padding-bottom: 20px; text-align: left;" class="stack-column-center">
+                                                 <a href="##TrackClick##https://www.facebook.com/UofTArtSci/" style="border: none; text-decoration: none;">
+                                                 <img src="https://boundless.utoronto.ca/wp-content/uploads/icon-circle-fb.png" alt="U&nbsp;of&nbsp;T Facebook" width="45" height="45" style="border: none;" />
+                                                 </a>&nbsp;&nbsp;&nbsp;
+                                                 <a href="##TrackClick##https://www.instagram.com/uoftartsci/" style="border: none; text-decoration: none;">
+                                                 <img src="https://boundless.utoronto.ca/wp-content/uploads/icon-circle-insta.png" alt="U&nbsp;of&nbsp;T Instagram" width="45" height="45"  style="border: none;"/>
+                                                 </a>&nbsp;&nbsp;&nbsp;
+                                                 <a href="##TrackClick##https://twitter.com/UofTArtSci" style="border: none; text-decoration: none;">
+                                                 <img src="https://boundless.utoronto.ca/wp-content/uploads/icon-circle-twitter.png" alt="U&nbsp;of&nbsp;T Twitter" width="45" height="45" style="border: none;" />
+                                                 </a>&nbsp;&nbsp;&nbsp;
+                                                 <a href="##TrackClick##https://www.youtube.com/channel/UCXRrb_NqDU5IN2ensLpWbcg" style="border: none; text-decoration: none;">
+                                                 <img src="https://boundless.utoronto.ca/wp-content/uploads/icon-circle-yt.png" alt="U&nbsp;of&nbsp;T LinkedIn" width="45" height="45" style="border: none;" />
+                                                 </a>
+                                              </td>
+                                           </tr>
+                                      </table>
+                                  </td>
+                              </tr>
+                          </table>
+                      </div>
+                      <!--[if mso]>
+                      </td>
+                      <td valign="top" width="260">
+                      <![endif]-->
+                      <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:260px; vertical-align:top;" class="stack-column">
+                          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                              <tr>
+                                  <td style="padding: 0 10px;">
+                                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                          <tr>
+                                              <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #002a5c;" class="stack-column-center">
+                                                  <p style="margin: auto;">
+                                                      <strong>Faculty of Arts & Science<br> Office of Advancement</strong>
+                                                      <br />
+                                                      University&nbsp;of&nbsp;Toronto
+                                                      <br />
+                                                      Suite 2036, Sidney Smith Hall
+                                                      <br>
+                                                      100 St George Street
+                                                      <br>
+                                                      Toronto ON M5S 3G3
+                                                  </p>
+                                              </td>
+                                          </tr>
+                                      </table>
+                                  </td>
+                              </tr>
+                          </table>
+                      </div>
+                      <!--[if mso]>
+                      </td>
+                      </tr>
+                      <tr>
+                      <td valign="middle" width="680">
+                      <![endif]-->
+                      <!--[if !mso]><!-->
+                      <div style="display:inline-block; margin: 0 -1px; max-width: 660px; min-width:160px; vertical-align:middle; width:100%;" class="stack-column">
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                          <tr>
+                              <td>
+                                  <hr style="border-color: #002a5c">
+                              </td>
+                          </tr>
+                      </table>
+                      </div>
+                      <!--<![endif]-->
+                      <!--[if mso]>
+                      </td>
+                      </tr>                             
+                      </table>
+                      <![endif]-->
+                  </td>
+              </tr>
+              <!-- 2 Even Columns : END -->
+
+            <!-- MSO HR : BEGIN -->
+                <!-- 2 Even Columns : BEGIN -->
+                <tr>
+                    <td align="center" valign="top" style="font-size:0; background-color: #ffffff;">
+                <!--[if mso]>
+                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="border-bottom: solid 1px #002a5c;">
+                <tr>
+                <td style="font-size:0; background-color: #ffffff;" height="30">
+                    &nbsp;
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+                    </td>
+                </tr>
+            <!-- MSO HR : END -->
+
+              <tr>
+                  <td align="center" valign="top" style="font-size:0; background-color: #ffffff;">
+                    <!--[if mso]>
+                    <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="680">                        
+                    <tr>
+                    <td valign="middle" width="680">
+                    <![endif]-->
+                      <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:660px; vertical-align:top;" class="stack-column">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td>
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                        <tr>
+                                            <td style="font-family: sans-serif; font-size: 13px; line-height: 16px; color: #002a5c;background-color: #ffffff;" class="stack-column-center">
+                                                <p style="text-align: center;">
+                                                    The University&nbsp;of&nbsp;Toronto respects your privacy.
+                                                    We do not rent, trade or sell our mailing lists.
+                                                    Copyright &copy; 2020 University&nbsp;of&nbsp;Toronto. All rights reserved.
+                                                    <NoWebVersion>This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #002a5c;">##SubscriberEmail##</a>.
+                                                    To opt out of future messages of this kind, please <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_ARTSCI_STAT_ALL_SOLICITATION_INITIAL_##OptionalParameter3##%20Donald%20A.%20S.%20Fraser%20Memorial%20Award%20Campaign%20-%2046772" style="color: #002a5c;">contact us</a>. ##OptionalParameter3##<br /></NoWebVersion>
+                                                    ##TrackImpression##
+                                                    <br><br>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--[if mso]>    
+                    </td>
+                    </tr>                             
+                    </table>
+                    <![endif]-->                     
+                  </td>
+                </tr>  
+              </table>
+            <!-- Email Footer : END -->
+
+            <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </div>
+
+
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>

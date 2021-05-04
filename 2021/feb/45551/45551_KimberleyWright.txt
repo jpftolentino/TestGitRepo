@@ -1,4 +1,6 @@
 2020-21_DUA_GPL_ALL_Invitation_Initial_Professional Advisor Event - 45551_20210223
+2020-21_DUA_GPL_ALL_Invitation_Reminder_Professional Advisor Event - 45551_20210223
+2020-21_DUA_GPL_ALL_Invitation_ReminderTwo_Professional Advisor Event - 45551_20210223
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -7,6 +9,7 @@ Email Subject
 From: Michelle Osborne
 Reply to: kimberley.wright@utoronto.ca
 Subject: An Exclusive Invitation: The Pandemic Endgame - Where Do We Go From Here?
+Subject: Reminder: An Exclusive Invitation: The Pandemic Endgame - Where Do We Go From Here?
 Campaign: Professional Advisor Event
 Preview: An Exclusive Invitation: The Pandemic Endgame &mdash; Where Do We Go From Here?
 
@@ -14,9 +17,9 @@ Preview: An Exclusive Invitation: The Pandemic Endgame &mdash; Where Do We Go Fr
 
 Seed/approve list
 
-
 michelle.osborne@utoronto.ca
 kimberley.wright@utoronto.ca
+jim.lawson@utoronto.ca
 john.tolentino@utoronto.ca
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

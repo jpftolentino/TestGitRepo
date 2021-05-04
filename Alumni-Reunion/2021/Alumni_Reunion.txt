@@ -1,6 +1,6 @@
 AR_AR21_Email_Template_1
 AR_AR21_Email_Template_2
-AR_AR21_Email_Template_3
+AR_AR21_Email_Template_4AR_AR21_Email_Template_4
 
 ALUMNI_REUNION
 
@@ -19,12 +19,14 @@ Preview: tbd
 
 Seed/approve list
 
-john.tolentino@utoronto.ca
+
 j.silveira@utoronto.ca
-rachel.chochinov@utoronto.ca
-rohini.chopra@utoronto.ca
 sd.baker@utoronto.ca
 
+rachel.chochinov@utoronto.ca
+
+rohini.chopra@utoronto.ca
+john.tolentino@utoronto.ca
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Unsubscribe:
