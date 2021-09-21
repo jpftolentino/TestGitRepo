@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+            display: none !important;
+            opacity: 0.01 !important;
+        }
+        /* If the above doesn't work, add a .g-img class to any image in question. */
+        img.g-img + div {
+            display: none !important;
+        }
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+	    /* What it does: Hover styles for buttons */
+	    .button-td,
+	    .button-a {
+	        transition: all 100ms ease-in;
+	    }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: #000000 !important;
+	        border-color: #000000 !important;
+	    }
+
+        #right-column {
+            /* padding-left: 30px; */
+        }
+
+	    /* Media Queries */
+	    @media screen and (max-width: 480px) {
+
+	        /* What it does: Forces table cells into full-width rows. */
+	        .stack-column,
+	        .stack-column-center {
+	            display: block !important;
+	            width: 100% !important;
+	            max-width: 100% !important;
+	            direction: ltr !important;
+	        }
+	        /* And center justify these ones. */
+	        .stack-column-center {
+	            text-align: center !important;
+	        }
+
+	        /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+	        .center-on-narrow {
+	            text-align: center !important;
+	            display: block !important;
+	            margin-left: auto !important;
+	            margin-right: auto !important;
+	            float: none !important;
+	        }
+	        table.center-on-narrow {
+	            display: inline-block !important;
+	        }
+
+	        /* What it does: Adjust typography on small screens to improve readability */
+	        .email-container p {
+	            font-size: 17px !important;
+	        }
+
+            #left-column {
+                padding-right: 0;
+            }
+
+            #right-column {
+                padding-left: 0;
+            }
+	    }
+
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+<!--
+	The email background color (#ffffff) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #ffffff;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #ffffff;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
+            On behalf of U of T's Arts &amp; Science, thank you for your generosity, commitment and leadership over the past year
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+	        &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!--
+            Set the email width. Defined in two places:
+            1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+            2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+            Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+        -->
+        <div style="max-width: 680px; margin: 0 auto;" class="email-container">
+            <!--[if mso]>
+            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+            <tr>
+            <td>
+            <![endif]-->
+
+	        <!-- Email Body : BEGIN -->
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+                <!-- View Email Online : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff; text-align: center;padding-top:10px;">
+                        <a href="##HTMLNewsletterURL##"style="color: #002a5c;text-decoration: none; font-weight: bold;font-size:11px;font-family: Arial, Helvetica, sans-serif;">View email online</a>
+                    </td>
+                </tr>
+                <!-- View Email Online : END -->
+
+		        <!-- Email Header : BEGIN -->
+	            <tr>
+                    <td style="padding: 20px 0;" class="stack-column-center">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                            <tr>
+                                <td style="mso-padding-alt: 0 0 0 20px;padding-left: 20px;">
+                                    <img src="https://boundless.utoronto.ca/wp-content/uploads/UofT-AAS-logo.jpg" width="300" height="auto" alt="alt_text" border="0" style="height: auto; background: #ffffff; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #ffffff;">
+                                </td>
+                            </tr>
+                        </table>
+	                </td>
+	            </tr>
+		        <!-- Email Header : END -->
+
+	            <!-- Hero Image, Flush : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff; text-align: center;">
+                        <img src="https://adcomms.utoronto.ca/images/artsc/2021/48082/VolunteeringHeader-v2.png" align="center" width="680" height="auto" alt="alt_text" border="0" style="width: 100%; max-width: 660px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #000000; margin: auto; display: block;" class="g-img">
+                    </td>
+                </tr>
+                <!-- Hero Image, Flush : END -->
+
+                <!-- 1 Column Text + Button : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td style="padding: 30px 10px 10px 10px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;">
+                                    <p style="margin: 0 0 10px;">
+                                        Dear ##OptionalParameter1##,
+                                        <br><br>
+                                        I’ve had the privilege of being the Dean of the Faculty of Arts &amp; Science for two years now, and it has been such a rewarding and exciting role. In addition to our remarkable faculty, students and staff, I have you, our outstanding alumni, to thank for that.
+                                        <br><br>
+                                        The Arts &amp; Science alumni community is such an inspirational group, and especially so over the past year and a half. Through your various leadership and innovative roles, you have risen to the challenge to help the world recover from the pandemic, inequality and tremendous injustice. You
+                                        have demonstrated the strength of the collective in the face of adversity. Your determination, sense of fairness and compassion are remarkable, and the world needs all of these now more than ever.
+                                        <br><br>
+                                        Your mentorship is such a powerful resource for our students and recent graduates. The value of your support, guidance and lived experiences cannot be underestimated. A&amp;S students and new grads have learned from your personal journeys, benefited from your knowledge, gained valuable insight into career paths and have developed the skills and confidence needed to succeed in their careers, thanks to you.
+                                        <br><br>
+                                        While we could not get together in person, our students are grateful to have been able to continue learning from A&amp;S alumni. In February, more than 550 students and new grads signed up for our virtual Next Steps Conference, which featured dozens of A&amp;S alumni as panelists and contributors, showcasing their wide range of expertise, from multiple degrees to early work experience, from linear to meandering career paths. This was a tremendous opportunity for students and recent graduates to learn from those who had once been where they are now. This conference simply could not have been the success it was without people like you.
+                                        <br><br>
+                                        We’re also tremendously grateful for volunteer support for our Backpack to Briefcase (b2B) and Next Steps events, as well as panel events for our second-year, PhD and incoming students. Our departmental mentorship programs, messages for the graduating class and the work of the alumni associations keep our community together.
+                                        <br><br>
+                                        We look forward to in-person events when we are able to do so again safely, and we greatly appreciate being able to continue connecting with you virtually in the meantime. And don’t forget
+                                        &mdash; you can always stay up to date on the latest news, events and benefits through our <a href="https://www.artsci.utoronto.ca/alumni/ways-give/alumni-news-stories" style="color: #0580A4; text-decoration: underline;">A&amp;S online newsletter</a>.
+                                        <br><br>
+                                        On behalf of our students and the entire A&amp;S community, thank you so much for playing an important role in our alumni volunteer programs and for helping our students and new grads thrive. Stay healthy and be well, and I look forward to the day we can gather in person on U&nbsp;of&nbsp;T’s beautiful campus once again.
+                                        <br><br>
+                                        Best wishes, and have a wonderful summer.
+                                        <br><br>
+                                        <strong>Melanie A. Woodin</strong><br>
+                                        Dean, Faculty of Arts &amp; Science<br>
+                                        Professor, Department of Cell &amp; Systems Biology<br>
+                                                                                  
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- 1 Column Text + Button : END -->
+
+            </table>
+            <!-- Email Body : END -->
+
+            <!-- Email Footer : BEGIN -->
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+
+                <!-- Clear space : BEGIN -->
+                <tr>
+                    <td height="30">
+                        &nbsp;
+                    </td>
+                </tr>
+                <!-- Clear space : END -->
+
+
+              <!-- 2 Even Columns : BEGIN -->
+              <tr>
+                  <td align="center" valign="top" style="font-size:0; padding: 10px; background-color: #ffffff;">
+                      <!--[if mso]>
+                      <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="680">
+                      <tr>
+                      <td valign="top" width="400" style="mso-padding-alt: 0 10px 0 10px">
+                      <![endif]-->
+                      <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width: 400px; vertical-align:top;" class="stack-column">
+                          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                              <tr>
+                                  <!-- <td style="mso-padding-alt: 10px 0 10px 0; padding: 10px;"> -->
+                                    <td>
+                                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                          <tr>
+                                              <td style="font-family: arial, sans-serif; font-size: 13px; padding-bottom: 20px; text-align: left; color:#002a5c;" class="stack-column-center">
+                                                 <strong style="font-size: 16px;">FOLLOW A&amp;S ALUMNI</strong>
+                                              </td>
+                                           </tr>
+                                           <tr>
+                                              <td valign="top" style="padding-bottom: 20px; text-align: left;" class="stack-column-center">
+                                                 <a href="##TrackClick##https://www.facebook.com/ArtsandScienceAlumni/" style="border: none; text-decoration: none;">
+                                                 <img src="https://boundless.utoronto.ca/wp-content/uploads/icon-circle-fb.png" alt="U&nbsp;of&nbsp;T Facebook" width="45" height="45" style="border: none;" />
+                                                 </a>&nbsp;&nbsp;&nbsp;
+                                                 <a href="##TrackClick##https://www.linkedin.com/company/university-of-toronto-faculty-of-arts-science-alumni/?viewAsMember=true" style="border: none; text-decoration: none;">
+                                                 <img src="https://boundless.utoronto.ca/wp-content/uploads/icon-circle-linkedin.png" alt="U&nbsp;of&nbsp;T LinkedIn" width="45" height="45" style="border: none;" />
+                                                 </a>
+                                              </td>
+                                           </tr>
+                                           <tr>
+                                              <td style="font-family: arial, sans-serif; font-size: 13px; padding-bottom: 20px; text-align: left; color:#002a5c;" class="stack-column-center">
+                                                 <strong style="font-size: 16px;">FOLLOW ARTS &amp; SCIENCE</strong>
+                                              </td>
+                                           </tr>
+                                           <tr>
+                                              <td valign="top" style="padding-bottom: 20px; text-align: left;" class="stack-column-center">
+                                                 <a href="##TrackClick##https://www.facebook.com/UofTArtSci/" style="border: none; text-decoration: none;">
+                                                 <img src="https://boundless.utoronto.ca/wp-content/uploads/icon-circle-fb.png" alt="U&nbsp;of&nbsp;T Facebook" width="45" height="45" style="border: none;" />
+                                                 </a>&nbsp;&nbsp;&nbsp;
+                                                 <a href="##TrackClick##https://www.instagram.com/uoftartsci/" style="border: none; text-decoration: none;">
+                                                 <img src="https://boundless.utoronto.ca/wp-content/uploads/icon-circle-insta.png" alt="U&nbsp;of&nbsp;T Instagram" width="45" height="45"  style="border: none;"/>
+                                                 </a>&nbsp;&nbsp;&nbsp;
+                                                 <a href="##TrackClick##https://twitter.com/UofTArtSci" style="border: none; text-decoration: none;">
+                                                 <img src="https://boundless.utoronto.ca/wp-content/uploads/icon-circle-twitter.png" alt="U&nbsp;of&nbsp;T Twitter" width="45" height="45" style="border: none;" />
+                                                 </a>&nbsp;&nbsp;&nbsp;
+                                                 <a href="##TrackClick##https://www.youtube.com/channel/UCXRrb_NqDU5IN2ensLpWbcg" style="border: none; text-decoration: none;">
+                                                 <img src="https://boundless.utoronto.ca/wp-content/uploads/icon-circle-yt.png" alt="U&nbsp;of&nbsp;T LinkedIn" width="45" height="45" style="border: none;" />
+                                                 </a>
+                                              </td>
+                                           </tr>
+                                      </table>
+                                  </td>
+                              </tr>
+                          </table>
+                      </div>
+                      <!--[if mso]>
+                      </td>
+                      <td valign="top" width="260">
+                      <![endif]-->
+                      <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:260px; vertical-align:top;" class="stack-column">
+                          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                              <tr>
+                                  <td style="padding: 0 10px;">
+                                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                          <tr>
+                                              <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #002a5c;" class="stack-column-center">
+                                                  <p style="margin: auto;">
+                                                      <strong>Faculty of Arts &amp; Science<br> Office of Advancement</strong>
+                                                      <br />
+                                                      University&nbsp;of&nbsp;Toronto
+                                                      <br />
+                                                      Suite 2036, Sidney Smith Hall
+                                                      <br>
+                                                      100 St George Street
+                                                      <br>
+                                                      Toronto ON M5S 3G3
+                                                  </p>
+                                              </td>
+                                          </tr>
+                                      </table>
+                                  </td>
+                              </tr>
+                          </table>
+                      </div>
+                      <!--[if mso]>
+                      </td>
+                      </tr>
+                      <tr>
+                      <td valign="middle" width="680">
+                      <![endif]-->
+                      <!--[if !mso]><!-->
+                      <div style="display:inline-block; margin: 0 -1px; max-width: 660px; min-width:160px; vertical-align:middle; width:100%;" class="stack-column">
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                          <tr>
+                              <td>
+                                  <hr style="border-color: #002a5c">
+                              </td>
+                          </tr>
+                      </table>
+                      </div>
+                      <!--<![endif]-->
+                      <!--[if mso]>
+                      </td>
+                      </tr>                             
+                      </table>
+                      <![endif]-->
+                  </td>
+              </tr>
+              <!-- 2 Even Columns : END -->
+
+            <!-- MSO HR : BEGIN -->
+                <!-- 2 Even Columns : BEGIN -->
+                <tr>
+                    <td align="center" valign="top" style="font-size:0; background-color: #ffffff;">
+                <!--[if mso]>
+                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="border-bottom: solid 1px #002a5c;">
+                <tr>
+                <td style="font-size:0; background-color: #ffffff;" height="30">
+                    &nbsp;
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+                    </td>
+                </tr>
+            <!-- MSO HR : END -->
+
+              <tr>
+                  <td align="center" valign="top" style="font-size:0; background-color: #ffffff;">
+                    <!--[if mso]>
+                    <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="680">                        
+                    <tr>
+                    <td valign="middle" width="680">
+                    <![endif]-->
+                      <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:660px; vertical-align:top;" class="stack-column">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td>
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                        <tr>
+                                            <td style="font-family: sans-serif; font-size: 13px; line-height: 16px; color: #002a5c;background-color: #ffffff;" class="stack-column-center">
+                                                <p style="text-align: center;">
+                                                    The University&nbsp;of&nbsp;Toronto respects your privacy.
+                                                    We do not rent, trade or sell our mailing lists.
+                                                    Copyright &copy; 2021 University&nbsp;of&nbsp;Toronto. All rights reserved.
+                                                    <NoWebVersion>This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #002a5c;">##SubscriberEmail##</a>.
+                                                    To opt out of future messages of this kind, please <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202021-22_ARTSCI_ALL_ALL_NEWSLETTER_INITIAL##OptionalParameter3##%20Volunteer%20thank%20you%20email%20summer%202021%20-%2048082" style="color: #002a5c;text-decoration: underline;">contact us</a>. <br>##OptionalParameter3##<br /></NoWebVersion>
+                                                    <br><br>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--[if mso]>    
+                    </td>
+                    </tr>                             
+                    </table>
+                    <![endif]-->                     
+                  </td>
+                </tr>  
+              </table>
+            <!-- Email Footer : END -->
+
+            <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </div>
+
+
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title></title>
+    <style>
+      /* What it does: Hover styles for buttons */
+      .button-td a,
+      .button-a a{
+          transition: all 100ms ease-in;
+          color:#002A5C !important; 
+          background-color:#dde1e8;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;  
+      }
+      .button-td-primary:hover,
+      .button-a-primary:hover {
+          background: #002A5C !important;
+          color: #dde1e8 !important;
+      }
+      .button-td-primary a:hover,
+      .button-a-primary a:hover {
+          background: #002A5C !important;
+          color: #dde1e8 !important;
+      }
+    @media only screen and (min-width: 480px) and (max-width: 599px) {
+    table[class=outer] { width: 480px !important;}
+    td[class=outer] { width: 480px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 440px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 440px !important;}
+    td[class=inner] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 400px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 480px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 440px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 400px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 480px !important; height: auto !important;}
+    img[class=img-rect] { width: 440px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 285px !important; height: auto !important;}
+    strong[class=banner] { font-size: 28px !important;}
+    .section-heading { width: 440px !important; }
+    .section-heading td { width: 440px !important; }
+    .full-story { width: 440px !important; }
+    .image-block img { width: 440px !important; height: auto !important; }
+    .button { width: 440px !important; }
+    .two-col-section { width: 440px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 440px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    @media only screen and (min-width: 360px) and (max-width: 479px) {
+    table[class=outer] { width: 360px !important;}
+    td[class=outer] { width: 360px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 320px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 320px !important;}
+    td[class=inner] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 300px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 360px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 320px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 300px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 360px !important; height: auto !important;}
+    img[class=img-rect] { width: 320px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 260px !important; height: auto !important;}
+    strong[class=banner] { font-size: 22px !important;}
+    .section-heading { width: 320px !important; }
+    .section-heading td { width: 320px !important; }
+    .image-block img { width: 320px !important; height: auto !important; }
+    .button { width: 320px !important; }
+    .two-col-section { width: 320px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 320px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    @media only screen and (max-width: 359px) {
+    table[class=outer] { width: 320px !important;}
+    td[class=outer] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 280px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 280px !important;}
+    td[class=inner] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 260px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 280px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 260px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 320px !important; height: auto !important;}
+    img[class=img-rect] { width: 280px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 240px !important; height: auto !important;}
+    strong[class=banner] { font-size: 20px !important;}
+    .section-heading { width: 280px !important; }
+    .section-heading td { width: 280px !important; }
+    .full-story { width: 280px !important; }
+    .image-block img { width: 280px !important; height: auto !important; }
+    .button { width: 280px !important; }
+    .two-col-section { width: 280px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 280px !important; }
+    .col-story-wrap { padding-right: 0 !important; }
+    }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0;">
+    <!-- <div style="display:none;font-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">
+      Join us at PDAC March 3rd!
+    </div> -->
+
+    <!-- Visually Hidden Preheader Text : BEGIN -->
+    <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+      U of T’s Arts & Science students want to learn from you
+    </div>
+    <!-- Visually Hidden Preheader Text : END -->
+
+    <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+    <!-- Preview Text Spacing Hack : BEGIN -->
+    <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+        &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+    </div>
+    <!-- Preview Text Spacing Hack : END -->
+
+    <table cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td width="100%" align="center" valign="top">
+          <!-- end of top portion of outer table -->
+          <!-- header section (preheader text, web version link, banner) -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td width="550" valign="top" style="text-align: center; padding-bottom: 20px; padding-top: 10px; font-family: arial; background-color: #ffffff; " class="content-outer">
+                <a href="##HTMLNewsletterURL##" style="text-decoration: none !important; color: #000000; font-size: 12px;"><strong>View this email online</strong></a>
+              </td>
+            </tr>
+          </table>
+          <!-- end of header section -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center" style="text-align: center; background-color: #ffffff;">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:580px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td style="text-align: center; padding-top: 20px; padding-bottom: 20px;" class="inner--centered" width="285" valign="top">
+                <a href="##TrackClick##https://www.statistics.utoronto.ca/"><img src="https://adcomms.utoronto.ca/images/a%26s/2020/09/uoft-satistical-sciences-logo.png" style="border: none !important;" alt="University of Toronto, Faculty of Arts and Science - Department of Statistical Sciences" class="img-full" /></a>
+              </td>
+          </table>
+
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            
+
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px; color:#002A5C; background-color:#dde1e8;">
+                <strong>STATISTICAL SCIENCES ALUMNI MENTORSHIP PROGRAM</strong>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+          </table>
+
+          <!-- ANNOUNCEMENT : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:15px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td width="550" valign="top" class="content-outer" style="text-align: left; font-family: arial; padding: 15px; font-size: 15px; line-height: 20px; background-color: #ffffff; color: #002a5c;">
+                Dear ##OptionalParameter1##,
+                <br><br>
+                Mentorship is the perfect way for you to play a key role in preparing the next generation of professional statisticians while staying connected with U&nbsp;of&nbsp;T’s statistical sciences community and the Department of Statistical Sciences. Please consider becoming a mentor by completing this <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=JsKqeAMvTUuQN7RtVsVSENARXF8Yo4dHpRs7rG9epwdUMUcwQUNYMlcwWjI1TlJVVjJZNlNBV0xBRi4u">online form</a> by August 29.
+                <br><br>
+                You can choose to support one or more current statistical sciences students in both academic and/or career development and give them the benefit of your industry experience and expertise. You will be matched with your mentee(s) according to the information provided by you in the online form. Matches will be confirmed by the end of September. You and your mentee(s) will stay connected at mutually convenient times during the school year via email, video call, audio call or in person &mdash; whichever works for you. 
+                <br><br>
+                Please review our <a href="https://www.statistics.utoronto.ca/explore-our-mentorship-programs/statistical-science-alumni-mentorship">Mentor Guide</a> and don’t hesitate to contact U&nbsp;of&nbsp;T’s <a href="mailto:ssu@utoronto.ca">Statistical Sciences Union</a> or Mentorship Programs Coordinator <a href="mailto:ivan.nguyen@utoronto.ca">Ivan Nguyen</a> with any questions about the program.
+                <br><br>
+                Thank you again for considering your support for U&nbsp;of&nbsp;T students by becoming part of the Statistical Sciences Alumni Mentorship Program run by the Statistical Sciences Union and the Department of Statistical Sciences.
+                <br><br>
+                Warm regards, <br>
+                University of Toronto Statistical Sciences Union<br>
+                <a href="mailto:ssu@utoronto.ca">ssu@utoronto.ca</a><br>
+                Department of Statistical Sciences<br>
+                Faculty of Arts &amp; Sciences<br>
+                University of Toronto
+              </td>
+            </tr>
+          </table>
+          <!-- ANNOUNCEMENT : END -->
+
+          <!-- FOOTER : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:15px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:528px;color:#fff;font-family: Arial; text-align:center; line-height:0px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              
+             <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:580px;color:#fff;font-family: Arial; text-align:center; line-height:0px;font-size:7px;">&nbsp;</td>
+            </tr>
+    
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: left; max-width:570px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:0px;font-size:7px;">&nbsp;</td>
+            </tr>
+          </table>
+
+          <!-- SOCIAL MEDIA : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" style="max-width: 600px; width: 100%;" align="center">
+            <tr><td width="600" align="center" height="20" style="background-color: #ffffff;"></td></tr>
+            <tr>
+              <td width="300" valign="top" style="background-color: #ffffff;text-align: center;">
+                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                  <td style="width:5%" width="5%" text-align="center"></td>
+                    <td valign="top" style="padding-bottom: 20px; text-align: center;">
+                        <a href="##TrackClick##https://www.facebook.com/ArtsandScienceAlumni/?ref=aymt_homepage_panel" style="border: none; text-decoration: none;" target="_blank">
+                          <img src="https://adcomms.utoronto.ca/icons/facebook.png" alt="U&nbsp;of&nbsp;T Facebook" width="45" height="45" style="border: none;" />
+                        </a>&nbsp;&nbsp;&nbsp;
+                        <a href="##TrackClick##https://twitter.com/UofTStatSci" style="border: none; text-decoration: none;" target="_blank">
+                          <img src="https://adcomms.utoronto.ca/icons/twitter-icon-highres.png" alt="U&nbsp;of&nbsp;T Twitter" width="45" height="45" style="border: none;" />
+                        </a>&nbsp;&nbsp;&nbsp;
+                        <a href="##TrackClick##https://www.youtube.com/channel/UCMI6Bg6hTeHyipJmi_cm4iQ" style="border: none; text-decoration: none;" target="_blank">
+                          <img src="https://adcomms.utoronto.ca/icons/youtube.png" alt="U&nbsp;of&nbsp;T LinkedIn" width="45" height="45" style="border: none;" />
+                        </a>
+                        </a>&nbsp;&nbsp;&nbsp;
+                        <a href="##TrackClick##https://www.instagram.com/uoftartsci/" style="border: none; text-decoration: none;" target="_blank">
+                          <img src="https://adcomms.utoronto.ca/images/dua/instagramCircleIcon.png" alt="U&nbsp;of&nbsp;T LinkedIn" width="45" height="45" style="border: none;" />
+                        </a>
+                    </td>
+                    <td style="width:5%" width="5%"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr><td width="600" align="center" height="20" style="background-color: #ffffff;" class="outer"></td></tr>
+        </table>
+        <!-- SOCIAL MEDIA : END -->
+
+          <table cellspacing="0" cellpadding="0" width="600" class="outer" align="center">
+            <tr>
+              <td width="550" style="background-color: #dde1e8; padding: 30px 25px;" valign="top" class="content-outer">
+           <table width="550" cellspacing="0" cellpadding="0" class="inner">
+              <tr>
+                  <td style="line-height:16px; text-align: left; font-size: 12px; font-family: arial, helvetica, sans-serif; padding-bottom: 10px;" valign="top" class="inner--centered">
+                      <strong>
+                      Department of Statistical Sciences</strong> <br />
+                      9th Floor, Ontario Power Building<br/>
+                      700 University Ave, Toronto, ON M5G 1X6<br>
+                      Tel: (416) 978-3452<br />
+                      web: <a target="_blank" style="color:#000000;" href="##TrackClick##https://statistics.utoronto.ca">statistics.utoronto.ca</a>
+                      <br />
+                      give: <a target="_blank" style="color:#000000;" href="##TrackClick##https://donate.utoronto.ca/give/show/68?utm_source=ARTSCI&utm_medium=Newsletter&utm_campaign=Stat%20Sci%20Mentorship%20new%20alumni">donate.utoronto.ca/statistics</a>
+                  </td>
+                  <td style="line-height:16px; text-align: right; font-size: 12px; font-family: arial, helvetica, sans-serif; padding-bottom: 20px;" valign="top" class="inner--centered">
+                      This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #005cc9;">##SubscriberEmail##</a><br />
+                      <a href="##TrackClick##https://secureca.imodules.com/s/731/index_clean.aspx?sid=731&gid=1&pgid=1363&cid=2576&post_id=0" style="color: #005cc9; text-decoration: none;">Update contact information</a><br />
+                      <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%2021-22_ARTSCI_SS_ALL_Newsletter_Reminder_##OptionalParameter3##%202021%20Statistics%20Dept%20mentorship%20recruitment%20eblast%20-%20New%20Mentor%20-%2048067" style="color: #005cc9; text-decoration: none;">Opt out of future messages</a>
+                  </td>
+              </tr>
+              <!--                   <tr>
+                  <td height="50"></td>
+              </tr> -->
+              <tr>
+                <td style="text-align: left; padding-top: 20px;" class="inner--centered" width="270" height="" valign="top">
+                    <a href="##TrackClick##http://www.alumni.artsci.utoronto.ca/"><img src="https://adcomms.utoronto.ca/email-templates/logos/artsci-logo-footer-highres.png" style="max-width: 270px; height: auto; border: none !important;" alt="University of Toronto, Faculty of Arts and Science" st-image="footer-logo" class="footer-logo-left" /></a>
+                </td>
+            </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- FOOTER : END -->
+
+          <!-- COPYRIGHT: BEGIN -->
+          <table width="600" cellpadding="0" cellspacing="0" class="outer" align="center">
+            <tr>
+                <td style="text-align: center; font-size: 11px; font-family: arial, helvetica;background-color: #ffffff; color: #777777; padding: 10px 60px 20px 60px; line-height: 14px;" valign="top" width="600" class="content">
+                    The University&nbsp;of&nbsp;Toronto respects your privacy.
+                    We do not rent, trade or sell our mailing lists.
+                    Copyright &copy; 2021 University&nbsp;of&nbsp;Toronto. All rights reserved. This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #005cc9;">##SubscriberEmail##</a>.<br />
+                    ##OptionalParameter3##<br />##TrackImpression##
+                    
+                </td>
+            </tr>
+        </table>
+        <!-- COPYRIGHT: END -->
+        </td>
+      </tr>
+</table></body>
+</html>

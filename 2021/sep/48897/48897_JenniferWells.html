@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+            display: none !important;
+            opacity: 0.01 !important;
+        }
+        /* If the above doesn't work, add a .g-img class to any image in question. */
+        img.g-img + div {
+            display: none !important;
+        }
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+	    /* What it does: Hover styles for buttons */
+	    .button-td,
+	    .button-a {
+	        transition: all 100ms ease-in;
+	    }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: #555555 !important;
+	        border-color: #555555 !important;
+	    }
+
+        a {
+            font-weight: 400;
+            text-decoration: underline;
+            color: #3974dc;
+        }
+
+        .mobile-padding {
+            padding: 10px;
+        }
+
+        .connect-icons {
+            max-width: 180px;
+        }
+
+	    /* Media Queries */
+	    @media screen and (max-width: 480px) {
+
+	        /* What it does: Forces table cells into full-width rows. */
+	        .stack-column,
+	        .stack-column-center {
+	            display: block !important;
+	            width: 100% !important;
+	            max-width: 100% !important;
+	            direction: ltr !important;
+	        }
+	        /* And center justify these ones. */
+	        .stack-column-center {
+	            text-align: center !important;
+	        }
+
+	        /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+	        .center-on-narrow {
+	            text-align: center !important;
+	            display: block !important;
+	            margin-left: auto !important;
+	            margin-right: auto !important;
+	            float: none !important;
+	        }
+	        table.center-on-narrow {
+	            display: inline-block !important;
+	        }
+
+	        /* What it does: Adjust typography on small screens to improve readability */
+	        .email-container p {
+	            font-size: 17px !important;
+	        }
+
+            .mobile-padding {
+                padding: 20px;
+            }
+
+            .btn-width {
+                width: 100%;
+                text-align: center;
+            }
+
+            .connect-icons {
+                max-width: 400px;
+            }
+
+	    }
+
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #f2f4f7;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #f2f4f7;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f2f4f7;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
+            TBD
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+	        &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!--
+            Set the email width. Defined in two places:
+            1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+            2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+            Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+        -->
+        <div style="max-width: 680px; margin: 0 auto;" class="email-container">
+            <!--[if mso]>
+            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+            <tr>
+            <td>
+            <![endif]-->
+
+	        <!-- Email Body : BEGIN -->
+	        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+                <tr>
+                    <td style="background-color: #ffffff; text-align: center;">
+                        <a href="##HTMLNewsletterURL##"style="color: #000000;text-decoration: none; font-weight: bold;font-size:11px;font-family: Arial, Helvetica, sans-serif;">Click to view this email online</a>
+                    </td>
+                </tr>
+    
+            <!-- BANNER ONE : BEGIN -->
+                <tr>
+                    <td style="padding: 10px 0 0 0; text-align: center;background: #ffffff;">
+                        <a href="##TrackClick##http://www.alumni.artsci.utoronto.ca/" target="_blank"><img src="https://adcomms.utoronto.ca/images/artsc/2021/48897/00-A%26S-Header.jpg" style="width: 100%; border: none !important;max-width: 680px" width="680" alt="University of Toronto, Faculty of Arts and Science" /></a>
+                    </td>
+                </tr>
+            <!-- BANNER ONE : END -->
+    
+            <!-- BANNER ONE : BEGIN -->
+                <tr>
+                    <td style="text-align: center;background: #ffffff;">
+                        <img src="https://adcomms.utoronto.ca/images/artsc/2021/48897/00-ArtsScienceImage.jpg" style="width: 100%; border: none !important;max-width: 680px" width="680" alt="University of Toronto, Faculty of Arts and Science" />
+                    </td>
+                </tr>
+            <!-- BANNER ONE : END -->
+
+            <!-- ANNOUNCEMENT : BEGIN -->
+
+                <!-- 1 Column Text : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td style="padding: 0 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;">
+                                    <h2 style="font-family:Arial, Helvetica, sans-serif;font-size: 20px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 15px;margin-top: 15px;">In this edition:
+                                    </h2>
+                                    <p style="margin: 0 0 10px 0;mso-margin-top-alt: 15px;">
+                                        With the start of the new academic term comes hope for the future. In her first message of the 2021-22 academic year, <a href="https://www.artsci.utoronto.ca/news/dean-woodin-welcomes-community-2021-22-academic-year">A&amp;S Dean Melanie Woodin urges students</a> to connect with one another and take advantage of opportunities at U&nbsp;of&nbsp;T.
+                                        <br><br>
+                                        We have events and initiatives in honour of the first National Day for Truth and Reconciliation &mdash; and stay tuned for an exciting announcement in the next few days. We’re also celebrating the 50th anniversary of the course that led to the establishment of the Women &amp; Gender Studies Institute and announcing a new bursary for Black and Indigenous students. Plus, an alumna’s novel about Amelia Earhart, efforts to help women and underrepresented minorities get recognized and so much more.
+                                    </p>
+                                    <br><br>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- 1 Column Text : END -->            
+            <!-- ANNOUNCEMENT : END -->
+
+
+
+            <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </div>
+
+        <!-- TOP STORIES : BEGIN -->
+            <!-- SECTION HEADING : BEGIN -->
+            <tr>
+                <td style="background-color: #002A5C;padding: 0 30px;">
+                    <table width="100%" align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;text-align: center">
+                        <tr>
+                            <td style="background-color: #002A5C;padding: 7px 15px;">
+                                <span class="email-container" style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 18px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 15px;margin-top: 15px;mso-margin-bottom-alt: 15px;margin-bottom: 15px;">TOP STORIES</span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        <!-- SECTION HEADING : END -->
+
+        <!-- 2 Even Columns : BEGIN -->
+        <tr>
+            <td align="center" valign="top" style="font-size:0; padding: 20px 0 10px 0; background-color: #ffffff;">
+                <!--[if mso]>
+                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                <tr>
+                <td valign="top" width="330">
+                <![endif]-->
+                <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td class="mobile-padding">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: center;">
+                                    <tr>
+                                        <td>
+                                            <img src="https://adcomms.utoronto.ca/images/artsc/2021/48897/01-Samantha-225x140.jpg" width="310" height="" alt="Thumbnail image" border="0" class="center-on-narrow" style="width: 100%; height: auto; background: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #000000;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--[if mso]>
+                </td>
+                <td valign="top" width="330">
+                <![endif]-->
+                <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td class="mobile-padding">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                    <tr>
+                                        <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;">
+                                            <p style="margin: 0 0 10px 0;font-size: 18px;">
+                                                <strong>Arts &amp; Sciences marks Orange Shirt Day and National Day for Truth and Reconciliation</strong>
+                                            </p>
+                                            <p style="margin: 0 0 10px 0;">
+                                                Ahead of Orange Shirt Day and the first National Day for Truth and Reconciliation, we’re recognizing the many accomplishments of our Indigenous alumni and the scholarships that helped them along the way. We start with Samantha Martin-Bird, an alumna who has received critical acclaim for her writing and is helping lead the Thunder Bay Public Library’s decolonization initiative.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--[if mso]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+            </td>
+        </tr>
+        <!-- 2 Even Columns : END -->
+        <!-- HR LINE : BEGIN -->
+            <tr>
+                <!--[if mso]>
+                    <td style="background-color: #ffffff;" >
+                        <p style="border-top:solid 1px #999999; height:1px; margin:0 20px; width: 100%;padding: 0 20px;">
+                            &nbsp;
+                        </p>
+                    </td>
+                <![endif]-->
+                    <!--[if !mso]> <!---->
+                    <td style="background-color: #ffffff;">
+                        <hr style="width: 93%;" width="93%">
+                    </td>
+                <!-- <![endif]-->
+            </tr>
+        <!-- HR LINE : END -->
+        
+        <!-- 2 Even Columns : BEGIN -->
+        <tr>
+            <td align="center" valign="top" style="font-size:0; padding: 0 10px; background-color: #ffffff;">
+                <!--[if mso]>
+                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                <tr>
+                <td valign="top" width="330">
+                <![endif]-->
+                <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td class="mobile-padding">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: center;">
+                                    <tr>
+                                        <td>
+                                            <img src="https://adcomms.utoronto.ca/images/artsc/2021/48897/02-WGSI-225x140.jpg" width="310" height="" alt="Thumbnail image" border="0" class="center-on-narrow" style="width: 100%; height: auto; background: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #000000;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--[if mso]>
+                </td>
+                <td valign="top" width="330">
+                <![endif]-->
+                <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td class="mobile-padding">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                    <tr>
+                                        <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;">
+                                            <p style="margin: 0 0 10px 0;font-size: 18px;">
+                                                <strong>Women and gender studies turns 50</strong>
+                                            </p>
+                                            <p style="margin: 0 0 10px 0;">
+                                                The <a href="https://www.artsci.utoronto.ca/news/innovative-faculty-and-student-led-courses-ignited-popular-demand">Women &amp; Gender Studies Institute</a> has grown from the launch of two courses in 1971 into a transformative institute that far surpassed the “wildest dreams” of those who helped launch it. As we celebrate the 50th anniversary of those first courses, we also say goodbye to beloved professor June Larkin &mdash; and announce the <a href="https://www.artsci.utoronto.ca/news/june-larkin-reflects-three-decades-teaching-women-gender-studies-institute">June Larkin TA Award</a> in her honour.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--[if mso]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+            </td>
+        </tr>
+        <!-- 2 Even Columns : END -->
+        <!-- HR LINE : BEGIN -->
+            <tr>
+                <!--[if mso]>
+                    <td style="background-color: #ffffff;" >
+                        <p style="border-top:solid 1px #999999; height:1px; margin:0 20px; width: 100%;padding: 0 20px;">
+                            &nbsp;
+                        </p>
+                    </td>
+                <![endif]-->
+                    <!--[if !mso]> <!---->
+                    <td style="background-color: #ffffff;">
+                        <hr style="width: 93%;" width="93%">
+                    </td>
+                <!-- <![endif]-->
+            </tr>
+        <!-- HR LINE : END -->                       
+
+        <!-- 2 Even Columns : BEGIN -->
+        <tr>
+            <td align="center" valign="top" style="font-size:0; padding: 0 10px; background-color: #ffffff;">
+                <!--[if mso]>
+                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                <tr>
+                <td valign="top" width="330">
+                <![endif]-->
+                <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td class="mobile-padding">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: center;">
+                                    <tr>
+                                        <td>
+                                            <img src="https://adcomms.utoronto.ca/images/artsc/2021/48897/03-Bursary-225x140.jpg" width="310" height="" alt="Thumbnail image" border="0" class="center-on-narrow" style="width: 100%; height: auto; background: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #000000;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--[if mso]>
+                </td>
+                <td valign="top" width="330">
+                <![endif]-->
+                <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td class="mobile-padding">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                    <tr>
+                                        <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;">
+                                            <p style="margin: 0 0 10px 0;font-size: 18px;">
+                                                <strong>New bursary for Black and Indigenous students</strong>
+                                            </p>
+                                            <p style="margin: 0 0 10px 0;">
+                                                Black and Indigenous Rotman Commerce students will have access to financial support they need through the newly established <a href="https://www.artsci.utoronto.ca/news/rotman-commerce-offer-new-bursary-black-and-indigenous-students">Francisco Bursary</a>, founded by Mike and Quinn Samardzic. The award is an embodiment of shared family values: the power of education to shape lives, the belief in helping others and the pursuit of a more equitable world.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--[if mso]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+            </td>
+        </tr>
+        <!-- 2 Even Columns : END -->
+        <!-- HR LINE : BEGIN -->
+            <tr>
+                <!--[if mso]>
+                    <td style="background-color: #ffffff;" >
+                        <p style="border-top:solid 1px #999999; height:1px; margin:0 20px; width: 100%;padding: 0 20px;">
+                            &nbsp;
+                        </p>
+                    </td>
+                <![endif]-->
+                    <!--[if !mso]> <!---->
+                    <td style="background-color: #ffffff;">
+                        <hr style="width: 93%;" width="93%">
+                    </td>
+                <!-- <![endif]-->
+            </tr>
+        <!-- HR LINE : END -->   
+
+        <!-- 2 Even Columns : BEGIN -->
+        <tr>
+            <td align="center" valign="top" style="font-size:0; padding: 0 10px; background-color: #ffffff;">
+                <!--[if mso]>
+                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                <tr>
+                <td valign="top" width="330">
+                <![endif]-->
+                <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td class="mobile-padding">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: center;">
+                                    <tr>
+                                        <td>
+                                            <img src="https://adcomms.utoronto.ca/images/artsc/2021/48897/04-Earhart-225x140.jpg" width="310" height="" alt="Thumbnail image" border="0" class="center-on-narrow" style="width: 100%; height: auto; background: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #000000;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--[if mso]>
+                </td>
+                <td valign="top" width="330">
+                <![endif]-->
+                <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td class="mobile-padding">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                    <tr>
+                                        <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;">
+                                            <p style="margin: 0 0 10px 0;font-size: 18px;">
+                                                <strong>Amelia Earhart, letter writing and U&nbsp;of&nbsp;T</strong>
+                                            </p>
+                                            <p style="margin: 0 0 10px 0;">
+                                                <a href="">Alumna Lindsay Zier-Vogel’s first novel</a> is a mix of her favourite things: Amelia Earhart, writing letters and a range of special spaces across U&nbsp;of&nbsp;T’s St. George campus. Published in September by Book*hug Press, Letters to Amelia tells the story of a Thomas Fisher Rare Books Library technician who pens letters to
+                                                the long-missing pilot to help get herself through a challenging time.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--[if mso]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+            </td>
+        </tr>
+        <!-- 2 Even Columns : END -->
+        <!-- HR LINE : BEGIN -->
+            <tr>
+                <!--[if mso]>
+                    <td style="background-color: #ffffff;" >
+                        <p style="border-top:solid 1px #999999; height:1px; margin:0 20px; width: 100%;padding: 0 20px;">
+                            &nbsp;
+                        </p>
+                    </td>
+                <![endif]-->
+                    <!--[if !mso]> <!---->
+                    <td style="background-color: #ffffff;">
+                        <hr style="width: 93%;" width="93%">
+                    </td>
+                <!-- <![endif]-->
+            </tr>
+        <!-- HR LINE : END -->   
+
+        <!-- 2 Even Columns : BEGIN -->
+        <tr>
+            <td align="center" valign="top" style="font-size:0; padding: 0 10px; background-color: #ffffff;">
+                <!--[if mso]>
+                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                <tr>
+                <td valign="top" width="330">
+                <![endif]-->
+                <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td class="mobile-padding">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: center;">
+                                    <tr>
+                                        <td>
+                                            <img src="https://adcomms.utoronto.ca/images/artsc/2021/48897/05-Doyun-225x140.jpg" width="310" height="" alt="Thumbnail image" border="0" class="center-on-narrow" style="width: 100%; height: auto; background: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #000000;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--[if mso]>
+                </td>
+                <td valign="top" width="330">
+                <![endif]-->
+                <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td class="mobile-padding">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                    <tr>
+                                        <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;">
+                                            <p style="margin: 0 0 10px 0;font-size: 18px;">
+                                                <strong>Grad student tackles anti-Asian racism with research and support</strong>
+                                            </p>
+                                            <p style="margin: 0 0 10px 0;">
+                                                The Department of East Asian Studies is compiling resources and bringing the community together
+                                                to <a href="">combat the anti-Asian racism</a> that has grown during COVID-19. The resources &mdash; which include journal articles, blogs, roundtables, books and films
+                                                &mdash; provide context around how racism has grown historically and how it can be challenged today.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--[if mso]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+            </td>
+        </tr>
+        <!-- 2 Even Columns : END -->            
+        
+        <tr style="background-color: #ffffff">
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+
+        <!-- CONNECT WITH US : BEGIN -->
+
+
+            <!-- 2 Even Columns : BEGIN -->
+            <tr>
+                <td align="center" valign="top" style="font-size:0; padding: 10px; background-color: #ffffff;">
+                    <!--[if mso]>
+                    <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                    <tr>
+                    <td valign="top" width="400">
+                    <![endif]-->
+                    <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:400px; height: 100px; vertical-align:top;background-color: #BCDBE5;" class="stack-column">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" height="100">
+                            <tr>
+                                <!--[if mso]>
+                                <td style="padding: 20px; background-color: #BCDBE5;">
+                                <![endif]-->
+                                 <!--[if !mso]> <!---->
+                                 <td style="padding: 20px; background-color: #BCDBE5;">
+                                 <!-- <![endif]-->
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: center;">
+                                        <tr>
+                                            <td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 15px; text-align: left; color: #000000;">
+                                                <p style="margin: 0 0 10px 0;font-size: 15px;">
+                                                    <strong>Connect with us</strong> on LinkedIn and stay up to date with the latest
+                                                        alumni stories and news. You can also join us on Facebook!
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--[if mso]>
+                    </td>
+                    <td valign="top" width="180">
+                    <![endif]-->
+                    <div class="connect-icons" style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; height: 100px;background-color: #BCDBE5;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" hieght="150;">
+                            <tr>
+                                <td style="padding-top: 5px; background-color: #BCDBE5;">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;background-color: #BCDBE5;">
+                                        <tr>
+
+                                            <td class="mobile-padding">
+                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: center;">
+                                                    <tr>
+                                                    <!--[if mso]>
+                                                        <td style="padding: 12px 12px 13px 12px;text-align: center;">
+                                                        <![endif]-->
+                                                        <!--[if !mso]> <!---->
+                                                        <td style="text-align: center;">
+                                                            <!-- <![endif]-->
+                                                            <a href="https://www.facebook.com/ArtsandScienceAlumni" style="color: #BCDBE5"target="_blank">
+                                                                <img src="https://adcomms.utoronto.ca/images/artsc/FB_blue.jpg" width="60" height="60" border="0" alt="alt_text" style="padding: 0 10px; max-width: 60px; height: 60px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                                                                </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+                                                                <a href="https://www.linkedin.com/company/university-of-toronto-faculty-of-arts-science-alumni/" style="color: #BCDBE5" target="_blank">
+                                                                <img src="https://adcomms.utoronto.ca/images/artsc/LI_blue.jpg" width="60" height="60" border="0" alt="alt_text" style="max-width: 60px; height: 60px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                                                                </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--[if mso]>
+                    </td>
+                    </tr>
+                    </table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <!-- 2 Even Columns : END -->  
+
+
+        <!-- CONNECT WITH US : END -->
+        <tr style="background-color: #ffffff">
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        <tr style="background-color: #ffffff">
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+
+    <!-- TOP STORIES : END -->
+
+        <!-- HIGHLIGHTS : BEGIN -->
+            <!-- SECTION HEADING : BEGIN -->
+            <tr>
+                <td style="background-color: #0d8eab;padding: 0 30px;">
+                    <table width="100%" align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;text-align: center">
+                        <tr>
+                            <td style="background-color: #0d8eab;padding: 7px 15px;">
+                                <span class="email-container" style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 18px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 15px;margin-top: 15px;mso-margin-bottom-alt: 15px;margin-bottom: 15px;">HIGHLIGHTS</span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        <!-- SECTION HEADING : END -->
+
+        <!-- 2 Even Columns : BEGIN -->
+        <tr>
+            <td align="center" valign="top" style="font-size:0; padding: 20px 0 10px 0; background-color: #ffffff;">
+                <!--[if mso]>
+                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                <tr>
+                <td valign="top" width="330">
+                <![endif]-->
+                <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td class="mobile-padding">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: center;">
+                                    <tr>
+                                        <td>
+                                            <img src="https://adcomms.utoronto.ca/images/artsc/2021/48897/06-Aashni-225x140.jpg" width="310" height="" alt="Thumbnail image" border="0" class="center-on-narrow" style="width: 100%; height: auto; background: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #000000;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--[if mso]>
+                </td>
+                <td valign="top" width="330">
+                <![endif]-->
+                <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td class="mobile-padding">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                    <tr>
+                                        <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;">
+                                            <p style="margin: 0 0 10px 0;font-size: 18px;">
+                                                <strong>Alumna’s startup helps women and underrepresented minorities get recognized</strong>
+                                            </p>
+                                            <p style="margin: 0 0 10px 0;">
+                                                <a href="https://www.artsci.utoronto.ca/news/alumna-aashni-shah-creates-hypedocs-give-women-and-underrepresented-minorities-more-confidence">A&amp;S alumna Aashni Shah</a> is helping women and underrepresented minorities track personal achievements, boost their self-confidence and overcome feelings of imposter syndrome. Through HypeDocs, users are able to increase their chances of getting the recognition and promotions they deserve but are often denied.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--[if mso]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+            </td>
+        </tr>
+        <!-- 2 Even Columns : END -->
+        <!-- HR LINE : BEGIN -->
+            <tr>
+                <!--[if mso]>
+                    <td style="background-color: #ffffff;" >
+                        <p style="border-top:solid 1px #999999; height:1px; margin:0 20px; width: 100%;padding: 0 20px;">
+                            &nbsp;
+                        </p>
+                    </td>
+                <![endif]-->
+                    <!--[if !mso]> <!---->
+                    <td style="background-color: #ffffff;">
+                        <hr style="width: 93%;" width="93%">
+                    </td>
+                <!-- <![endif]-->
+            </tr>
+        <!-- HR LINE : END -->               
+        
+        <!-- 2 Even Columns : BEGIN -->
+        <tr>
+            <td align="center" valign="top" style="font-size:0; padding: 10px; background-color: #ffffff;">
+                <!--[if mso]>
+                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                <tr>
+                <td valign="top" width="330">
+                <![endif]-->
+                <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td class="mobile-padding">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: center;">
+                                    <tr>
+                                        <td>
+                                            <img src="https://adcomms.utoronto.ca/images/artsc/2021/48897/07-Stafford-225x140.jpg" width="310" height="" alt="Thumbnail image" border="0" class="center-on-narrow" style="width: 100%; height: auto; background: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #000000;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--[if mso]>
+                </td>
+                <td valign="top" width="330">
+                <![endif]-->
+                <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td class="mobile-padding">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                    <tr>
+                                        <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;">
+                                            <p style="margin: 0 0 10px 0;font-size: 18px;">
+                                                <strong>U&nbsp;of&nbsp;T’s Stafford sisters hit the track in Olympics</strong>
+                                            </p>
+                                            <p style="margin: 0 0 10px 0;">
+                                                The 1,500-metre race at this year’s Tokyo Olympic Games was faced with a <a href="https://www.artsci.utoronto.ca/news/friends-and-family-u-ts-lucia-stafford-share-track-big-sister-olympic-debut">dynamic duo</a> when two U&nbsp;of&nbsp;T sisters took the track. A&amp;S alumna Gabriela DeBues-Stafford took 5th place, while engineering student Lucia Stafford placed 13th in her Olympic debut. Both have run track with the Varsity Blues.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--[if mso]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+            </td>
+        </tr>
+        <!-- 2 Even Columns : END -->            
+
+        <tr style="background-color: #ffffff">
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+    <!-- HIGHLIGHTS : END -->
+
+        <!-- THE IMPACT OF GIVING : BEGIN -->
+                <!-- SECTION HEADING : BEGIN -->
+                <tr>
+                    <td style="background-color: #f2002f;padding: 0 30px;">
+                        <table width="100%" align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;text-align: center">
+                            <tr>
+                                <td style="background-color: #f2002f;padding: 7px 15px;">
+                                    <span style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 18px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 15px;margin-top: 15px;mso-margin-bottom-alt: 15px;margin-bottom: 15px;">THE IMPACT OF GIVING</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            <!-- SECTION HEADING : END -->
+            <!-- 2 Even Columns : BEGIN -->
+            <tr>
+                <td align="center" valign="top" style="font-size:0; padding: 10px; background-color: #ffffff;">
+                    <!--[if mso]>
+                    <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                    <tr>
+                    <td valign="top" width="330">
+                    <![endif]-->
+                    <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td class="mobile-padding">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: center;">
+                                        <tr>
+                                            <td>
+                                                <img src="https://adcomms.utoronto.ca/images/artsc/2021/48897/08-Lesra-225x140.jpg" width="310" height="" alt="Thumbnail image" border="0" class="center-on-narrow" style="width: 100%; height: auto; background: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #000000;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--[if mso]>
+                    </td>
+                    <td valign="top" width="330">
+                    <![endif]-->
+                    <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td class="mobile-padding">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                        <tr>
+                                            <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;">
+                                                <p style="margin: 0 0 10px 0;font-size: 18px;">
+                                                    <strong>Alumnus Lesra Martin helps recognize students who improve Black lives</strong>
+                                                </p>
+                                                <p style="margin: 0;">
+                                                    Lesra Martin has helped establish the <a href="https://www.artsci.utoronto.ca/news/his-journey-featured-hollywood-film-lesra-martin-helps-recognize-students-who-improve-black">Lesra Martin Student Changemaker Award</a> to recognize the efforts of students whose scholarly achievement or extra- curricular initiatives contribute to Black excellence and inclusion. Martin is an Innis College alumnus whose remarkable journey was captured in the 1999 movie <i>The Hurricane</i>.
+                                                    <br><br>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 0">
+                                                <!-- Button : BEGIN -->
+                                                <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" class="btn-width">
+                                                    <tr>
+                                                        <td class="button-td button-td-primary" style="border-radius: 4px; background: #ffffff;">
+                                                            <a class="button-a button-a-primary" href="https://engage.utoronto.ca/site/SPageServer?pagename=donate#/fund/1375" style="background: #ffffff; border: 1px solid #000000; font-family: sans-serif; font-size: 15px; line-height: 15px; text-decoration: none; padding: 13px 40px; color: #f2002f; display: block;font-weight: 700">Drive Change Now</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!-- Button : END -->
+                                            </td>
+                                        </tr>                                    
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--[if mso]>
+                    </td>
+                    </tr>
+                    </table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <!-- 2 Even Columns : END -->
+                <!-- HR LINE : BEGIN -->
+                <tr>
+                    <!--[if mso]>
+                        <td style="background-color: #ffffff;" >
+                            <p style="border-top:solid 1px #999999; height:1px; margin:0 20px; width: 100%;padding: 0 20px;">
+                                &nbsp;
+                            </p>
+                        </td>
+                    <![endif]-->
+                        <!--[if !mso]> <!---->
+                        <td style="background-color: #ffffff;">
+                            <hr style="width: 93%;" width="93%">
+                        </td>
+                    <!-- <![endif]-->
+                </tr>
+            <!-- HR LINE : END -->      
+
+            <!-- 2 Even Columns : BEGIN -->
+            <tr>
+                <td align="center" valign="top" style="font-size:0; padding: 10px; background-color: #ffffff;">
+                    <!--[if mso]>
+                    <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                    <tr>
+                    <td valign="top" width="330">
+                    <![endif]-->
+                    <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td class="mobile-padding">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: center;">
+                                        <tr>
+                                            <td>
+                                                <img src="https://adcomms.utoronto.ca/images/artsc/2021/48897/09-Lab-225x140.jpg" width="310" height="" alt="Thumbnail image" border="0" class="center-on-narrow" style="width: 100%; height: auto; background: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #000000;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--[if mso]>
+                    </td>
+                    <td valign="top" width="330">
+                    <![endif]-->
+                    <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td class="mobile-padding">
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                        <tr>
+                                            <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;">
+                                                <p style="margin: 0 0 10px 0;font-size: 18px;">
+                                                    <strong>Gratitude inspired Arts &amp; Science alumnus David B. Fraser to mentor students and colleagues</strong>
+                                                </p>
+                                                <p style="margin: 0;">
+                                                    Kind, genuine and modest, Arts &amp; Science alumnus David B. Fraser was keenly interested in lifting up the next generation of scientists and researchers before he passed away in December 2020. Now, the <a href="https://www.artsci.utoronto.ca/news/gratitude-inspired-arts-science-alumnus-david-b-fraser-mentor-students-and-colleagues">David and Louise Fraser Scholarship</a> will continue his legacy by supporting students pursuing a degree physics or biological physics.
+                                                    <br><br>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 0">
+                                                <!-- Button : BEGIN -->
+                                                <table align="left" role="presentation" cellspacing="0" cellpadding="0" border="0" class="btn-width">
+                                                    <tr>
+                                                        <td class="button-td button-td-primary" style="border-radius: 4px; background: #ffffff;">
+                                                            <a class="button-a button-a-primary" href="https://engage.utoronto.ca/site/SPageServer?pagename=donate#/fund/1710" style="background: #ffffff; border: 1px solid #000000; font-family: sans-serif; font-size: 15px; line-height: 15px; text-decoration: none; padding: 13px 40px; color: #f2002f; display: block;font-weight: 700">Drive Change Now</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <!-- Button : END -->
+                                            </td>
+                                        </tr>                                    
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--[if mso]>
+                    </td>
+                    </tr>
+                    </table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <!-- 2 Even Columns : END -->                  
+        
+            <tr style="background-color: #ffffff">
+                <td>
+                    &nbsp;
+                </td>
+            </tr>            
+    <!-- THE IMPACT OF GIVING : END -->
+
+        <!-- EVENTS : BEGIN -->
+            <!-- SECTION HEADING : BEGIN -->
+            <tr>
+                <td style="background-color: #002A5C;padding: 0 30px;">
+                    <table width="100%" align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;text-align: center">
+                        <tr>
+                            <td style="background-color: #002A5C;padding: 7px 15px;">
+                                <span style="color: #ffffff; font-family:Arial, Helvetica, sans-serif;font-size: 18px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 15px;margin-top: 15px;mso-margin-bottom-alt: 15px;margin-bottom: 15px;">EVENTS</span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        <!-- SECTION HEADING : END -->
+
+                <!-- 2 Even Columns : BEGIN -->
+                <tr>
+                    <td align="center" valign="top" style="font-size:0; padding: 10px; background-color: #ffffff;">
+                        <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                        <tr>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 10px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td>
+                                                    <img src="https://adcomms.utoronto.ca/images/artsc/2021/48897/10-Beans-250x140.jpg" width="310" height="" border="0" alt="alt_text" style="width: 100%; max-width: 310px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="center-on-narrow">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000; padding-top: 10px;" class="stack-column-center">
+                                                    <p style="margin: 0;">
+                                                        <span style="font-size: 18px;"><strong>“Beans” with Tracey Deer</strong></span>
+                                                        <br><br>
+                                                        <span><span style="font-size: 24px;">&#9632;</span> September 30, 6 to 8:30 pm EDT</span>
+                                                        <br><br>
+                                                        Filmmaker Tracey Deer brings her acclaimed drama, Beans, to the Canadian Film Forum for a special presentation commemorating the National Day for Truth and Reconciliation.
+                                                        <br><br>
+                                                        <a href="https://alumni.innis.utoronto.ca/event/beans">Register</a>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 10px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                            <tr>
+                                                <td>
+                                                    <img src="https://adcomms.utoronto.ca/images/artsc/2021/48897/11-TaRDay-250x140.jpg" width="310" height="" border="0" alt="alt_text" style="width: 100%; max-width: 310px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="center-on-narrow">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000; padding-top: 10px;" class="stack-column-center">
+                                                    <p style="margin: 0;">
+                                                        <span style="font-size: 18px;"><strong>Orange Shirt Day 2021</strong></span>
+                                                        <br><br>
+                                                        <span><span style="font-size: 24px;">&#9632;</span> September 30, 2 to 3:30 pm EDT</span>
+                                                        <br><br>
+                                                        Join us for a virtual event on Orange Shirt Day, a national movement in recognition of the experiences of survivors of residential schools in Canada. With keynote address by Lee Maracle, OC, renowned author, on Truth Before Reconciliation.
+                                                        <br><br>
+                                                        <a href="https://harthouse.ca/events/orange-shirt-day-2021">Register</a>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+                <!-- 2 Even Columns : END -->
+
+                <tr style="background-color: #ffffff">
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+        
+                <!-- CONNECT WITH US : BEGIN -->
+        
+        
+                    <!-- 2 Even Columns : BEGIN -->
+                    <tr>
+                        <td align="center" valign="top" style="font-size:0; padding: 10px; background-color: #ffffff;">
+                            <!--[if mso]>
+                            <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                            <tr>
+                            <td valign="top" width="400">
+                            <![endif]-->
+                            <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:400px; height: 100px; vertical-align:top;background-color: #BCDBE5;" class="stack-column">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" height="100">
+                                    <tr>
+                                        <!--[if mso]>
+                                        <td style="padding: 20px; background-color: #BCDBE5;">
+                                        <![endif]-->
+                                         <!--[if !mso]> <!---->
+                                         <td style="padding: 20px; background-color: #DEDEDE;">
+                                         <!-- <![endif]-->
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: center;">
+                                                <tr>
+                                                    <td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 15px; text-align: left; color: #000000;">
+                                                        <p style="margin: 0 0 10px 0;font-size: 15px;">
+                                                            Link to resource page in this space
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if mso]>
+                            </td>
+                            <td valign="top" width="180">
+                            <![endif]-->
+                            <div class="connect-icons" style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; height: 100px;background-color: #DEDEDE;">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" hieght="150;">
+                                    <tr>
+                                        <td style="background-color: #DEDEDE;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;background-color: #DEDEDE;">
+                                                <tr>
+
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if mso]>
+                            </td>
+                            </tr>
+                            </table>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                    <!-- 2 Even Columns : END -->  
+        
+        
+                <!-- CONNECT WITH US : END -->
+                <tr style="background-color: #ffffff">
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr style="background-color: #ffffff">
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+
+            <tr style="background-color: #ffffff">
+                <td>
+                    &nbsp;
+                </td>
+            </tr>            
+            
+        <!-- BENEFITS JUST FOR YOU : BEGIN -->
+            <!-- SECTION HEADING : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffd24f;padding: 0 30px;">
+                        <table width="100%" align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;text-align: center">
+                            <tr>
+                                <td style="background-color: #ffd24f;padding: 7px 15px;">
+                                    <span class="email-container" style="font-family:Arial, Helvetica, sans-serif;font-size: 18px; line-height: 22px; font-weight: bold;mso-margin-top-alt: 15px;margin-top: 15px;mso-margin-bottom-alt: 15px;margin-bottom: 15px;">BENEFITS JUST FOR YOU</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            <!-- SECTION HEADING : END -->
+  
+        
+        <!-- 2 Even Columns : BEGIN -->
+        <tr>
+            <td align="center" valign="top" style="font-size:0; padding: 10px; background-color: #ffffff;">
+                <!--[if mso]>
+                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                <tr>
+                <td valign="top" width="330">
+                <![endif]-->
+                <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td class="mobile-padding">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: center;">
+                                    <tr>
+                                        <td>
+                                            <img src="https://adcomms.utoronto.ca/images/artsc/2021/48897/12-Benefits-163x100.jpg" width="310" height="" alt="Thumbnail image" border="0" class="center-on-narrow" style="width: 100%; height: auto; background: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 15px; color: #000000;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--[if mso]>
+                </td>
+                <td valign="top" width="330">
+                <![endif]-->
+                <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td class="mobile-padding">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                    <tr>
+                                        <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;">
+                                            <p style="margin: 0 0 10px 0;font-size: 18px;">
+                                                <strong>Keep your U&nbsp;of&nbsp;T connection strong with these alumni benefits</strong>
+                                            </p>
+                                            <p style="margin: 0 0 10px 0;">
+                                                Whether you’re a <a href="https://alumni.utoronto.ca/New-grads">2021 grad</a> or it’s been <a href="https://alumni.utoronto.ca/">years since you earned your degree</a>, your connection to U&nbsp;of&nbsp;T is far from over. Make the most of being a U&nbsp;of&nbsp;T alum through networking and mentoring opportunities, plus online events, special discounts, lectures and other exclusive perks.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--[if mso]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+            </td>
+        </tr>
+        <!-- 2 Even Columns : END -->  
+
+            <tr style="background-color: #ffffff">
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr style="background-color: #ffffff">
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+        <!-- BENEFITS JUST FOR YOU : END -->            
+
+        <tr style="background-color: #ffffff">
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        
+	    <!-- Email Footer : BEGIN -->
+            <tr style="background-color: #002A5C">
+                <td>
+                    &nbsp;
+                </td>
+            </tr> 
+            <tr style="background-color: #002A5C">
+                <td>
+                    &nbsp;
+                </td>
+            </tr>            
+        <tr>
+            <td style="background-color: #002A5C;">
+                <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                        <td class="button-td button-td-primary" style="border-radius: 4px; background: #002A5C;">
+                            <img src="https://www.artsci.utoronto.ca/sites/www.artsci.utoronto.ca/files/faculty-artsandscience_white.png" style="width: 360px; height: auto;" width="360" height="auto" alt="icon">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <!-- 2 Even Columns : BEGIN -->
+        <tr>
+            <td align="center" valign="top" style="font-size:0; padding: 10px; background-color: #002a5b;">
+                <!--[if mso]>
+                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                <tr>
+                <td valign="top" width="240">
+                <![endif]-->
+                <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:240px; vertical-align:top;" class="stack-column">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding-top: 20px">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: center;">
+                                    <tr>
+                                        <td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+                                            <span style="color: #ffffff"><strong>FOLLOW A&amp;S ALUMNI</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-top: 15px;text-align: center;">
+                                            <a href="##TrackClick##https://www.facebook.com/ArtsandScienceAlumni/" target="_blank" style="padding: 0 5px;color:#002a5b;">
+                                            <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Facebook.png" width="60" height="60" border="0" alt="alt_text" style="max-width: 60px; height: 60px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                                            </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+                                            <a href="##TrackClick##https://www.linkedin.com/company/university-of-toronto-faculty-of-arts-science-alumni/?viewAsMember=true" target="_blank" style="padding: 0 5px;color:#002a5b;">
+                                            <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/linkedin.png" width="60" height="60" border="0" alt="alt_text" style="max-width: 60px; height: 60px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--[if mso]>
+                </td>
+                <td valign="top" width="400">
+                <![endif]-->
+                <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:400px; vertical-align:top;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding-top: 20px">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                    <tr>
+                                        <td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;">
+                                            <span style="color: #ffffff"><strong>FOLLOW ARTS &amp; SCIENCE</strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-top: 15px;text-align: center;">
+                                            <a href="##TrackClick##https://www.facebook.com/UofTArtSci/" target="_blank" style="padding: 0 5px;color:#002a5b;">
+                                                <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Facebook.png" width="60" height="60" border="0" alt="alt_text" style="max-width: 60px; height: 60px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                                                </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+                                                <a href="##TrackClick##https://www.instagram.com/uoftartsci/?hl=en" target="_blank" style="padding: 0 5px;color:#002a5b;;">
+                                                <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/instagram.png" width="60" height="60" border="0" alt="alt_text" style="max-width: 60px; height: 60px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                                                </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+                                                <a href="##TrackClick##https://twitter.com/uoftartsci" target="_blank" style="padding: 0 5px;color:#002a5b;">
+                                                <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/twitter.png" width="60" height="60" border="0" alt="alt_text" style="max-width: 60px; height: 60px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                                                </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+                                                <a href="##TrackClick##https://www.youtube.com/channel/UCXRrb_NqDU5IN2ensLpWbcg" target="_blank" style="padding: 0 5px;color:#002a5b;">
+                                                <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/youtube.png" width="60" height="60" border="0" alt="alt_text" style="max-width: 60px; height: 60px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--[if mso]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+            </td>
+        </tr>
+        <!-- 2 Even Columns : END -->  
+
+            <tr>
+	            <td style="padding: 0 20px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff;background-color: #002A5C;">
+                    <br><br>
+                    <strong>Produced by the Office of Communications &amp; Public Affairs,
+                    <br>
+                    for the Office of Advancement.</strong>
+                    <br><br>
+                    Contact Communications at: <a href="mailto:artsci.communications@utoronto.ca" target="_blank" style="color: #13778d;">artsci.communications@utoronto.ca</a>
+                    <br>
+                    Contact Advancement at: <a href="mailto:alumni@artsci.utoronto.ca" target="_blank" style="color: #13778d;">alumni@artsci.utoronto.ca</a> | 416-978-4179
+                    <br>
+                    Support Arts &amp; Science here: <a href="https://donate.utoronto.ca/give/show/50?utm_source=ARTSCI&utm_medium=Newsletter&utm_campaign=A%26S%20News" target="_blank" style="color: #13778d;">donate.utoronto.ca/artsandscience</a>
+                    <br><br><br>
+                    This e-mail was sent to <a href="mailto:##SubscriberEmail##" target="_blank" style="color: #13778d;">##SubscriberEmail##</a>
+                    <br>
+                    <a href="##TrackClick##https://secureca.imodules.com/s/731/index_clean.aspx?sid=731&gid=1&pgid=1363&cid=2576&post_id=0" target="_blank" style="color: #13778d; text-decoration: underline;">Update contact information</a>
+                    <br>
+                    <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202021-22_ARTSC_ALL_ALL_Newsletter_Initial_##OptionalParameter3##%20Fall%2021%20A&S%20Alumni%20News%20-%2048897" target="_blank" style="color: #13778d; text-decoration: underline;">Opt out of future messages</a>
+                    <br>
+                    <hr style="width:90%; margin: 10px auto;" width="90%">
+                    <span style="font-size: 10px">
+                        The University&nbsp;of&nbsp;Toronto respects your privacy. We do not rent, trade or sell our mailing lists.
+                        <br>
+                        Copyright &copy; 2021 University&nbsp;of&nbsp;Toronto. All rights reserved. This e-mail was sent to <a href="mailto:##SubscriberEmail##" target="_blank" style="color: #13778d;">##SubscriberEmail##</a>
+                    </span>
+	            </td>
+	        </tr>
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>

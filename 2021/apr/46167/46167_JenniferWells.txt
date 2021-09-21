@@ -16,7 +16,6 @@ Seed/approve list
 
 smanek@physics.utoronto.ca
 sheela.manek@utoronto.ca
-
 lucianna.ciccocioppo@utoronto.ca
 michael.mckinnon@utoronto.ca
 jennifer.wells@utoronto.ca

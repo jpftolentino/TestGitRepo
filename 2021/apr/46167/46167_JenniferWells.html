@@ -39,6 +39,7 @@
     .col-story-wrap { padding-right: 0 !important; padding-left: 0 !important }
     #intro-left-image { width:100%; text-align: left }
     #intro-right-heading {padding: 10px 20px;}
+    #white-space { display: none; }
     }
     @media only screen and (min-width: 360px) and (max-width: 479px) {
     table[class=outer] { width: 360px !important;}
@@ -69,6 +70,7 @@
     .col-story-wrap { padding-right: 0 !important; padding-left: 0 !important }
     #intro-left-image { width:100%; text-align: center }
     #intro-right-heading {padding: 10px 20px;}
+    #white-space { display: none; }
     }
     @media only screen and (max-width: 359px) {
     table[class=outer] { width: 320px !important;}
@@ -100,6 +102,7 @@
     .col-story-wrap { padding-right: 0 !important; padding-left: 0 !important }
     #intro-left-image { width:100%; text-align: center }
     #intro-right-heading {padding: 10px 20px;}
+    #white-space { display: none; }
     }
     </style>
   </head>
@@ -155,22 +158,27 @@
             </tr>            
           </table>
 
-          <table cellspacing="0" cellpadding="0" border="0" width="680" class="two-col-section" align="center" style="width: 100%;width:680px;">            
+          <table cellspacing="0" cellpadding="0" border="0" width="680" class="two-col-section" align="center" style="width: 100%;width:680px;">
             <!-- Even Columns : BEGIN -->
             <tr>
-              <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px;">
+              <td valign="top" align="center" class="section-inner--main" style="padding-top: 20px; padding-bottom: 20px;">
                 <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
                   <tr>
 
-                    <td valign="top" class="col-story-wrap" id="intro-left-image">
-                      <img src="https://adcomms.utoronto.ca/email-templates/arts-science/physics/2019/KimberlyStrong.jpg" width="100%" height="auto" alt="alt_text" border="0" style="width: 100%;height: auto;background: #dddddd;font-family: sans-serif;font-size: 15px;line-height: 15px;color: #555555;">
-                    </td>
-
-
-                    <td valign="top" class="col-story-wrap" style="text-align:center;width:100%;min-width:320px;max-width:320px;">
+                    <td valign="top" class="col-story-wrap" style="max-width:320px;">
                       <table cellspacing="0" cellpadding="0" border="0" align="center">
                         <tr>
-                          <td valign="top" class="story-heading" id="intro-right-heading" style="width:100%; max-width: 320px; padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
+                          <td valign="top" class="image-block" style="padding-bottom: 10px;">
+                            <img src="https://adcomms.utoronto.ca/email-templates/arts-science/physics/2019/KimberlyStrong.jpg" alt="alt_text" width="280" height="auto"/>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                    <td valign="top" class="col-story-wrap" style="max-width:320px;">
+                      <table cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td valign="top" class="story-heading" id="intro-right-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 14px; line-height: 19px; color: #002a5c;">
                             Dear Physics community,<br><br>
 
                             Now that Toronto’s April snowfall has melted and spring might finally be here, I am delighted to introduce another issue of the Physics newsletter.  Many good things have been happening in the Department, despite the ongoing pandemic and the challenges it continues to create for our activities and general well-being.  I hope the stories in this issue of Interactions provide you with some positive news in these uncertain times.
@@ -181,7 +189,6 @@
                             With very best wishes,<br>
                             <img valign="bottom" src="https://adcomms.utoronto.ca/images/artsc/physics/KimberlyStrongSig01.jpg">
                             <br>Professor &amp; Chair
-                            
                           </td>
                         </tr>
                       </table>
@@ -191,7 +198,7 @@
                 </table>
               </td>
             </tr>
-            <!-- Even Columns : END -->
+            <!-- Even Columns : END -->            
           </table>
 
           <table cellpadding="0" cellspacing="0" width="680" class="outer" align="center">
@@ -711,17 +718,19 @@
                           </tr>
                         </table>
                       </td>
-                      <td valign="top" class="col-story-wrap" width="100%" style="min-width:320px; max-width:320px;">
-                        <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <td valign="top" class="col-story-wrap" width="100%" id="white-space" style="min-width:320px; max-width:320px;">
+                        <table cellspacing="0" cellpadding="0" border="0" align="center" id="white-space">
                           <tr>
                             <td valign="top" class="image-block" style="padding-bottom: 10px;">
-                              <!-- <img src="https://adcomms.utoronto.ca/images/artsc/2021/46167/story-12.png" alt="alt_text" width="280" height="200"/> -->
+                              <img src="https://adcomms.utoronto.ca/images/artsc/physics/whitespace.png"  alt="white space" width="280" height="200"/>
                             </td>
+                            
                           </tr>
                           <tr>
                             <td valign="top" class="story-heading" style="padding-bottom: 10px; text-align: left; font-family: arial; font-size: 13px; line-height: 20px; color: #002a5c;">
                               <span style="font-size: 16px;">
                                 &nbsp;
+                              </span>
                             </td>
                           </tr>
                         </table>

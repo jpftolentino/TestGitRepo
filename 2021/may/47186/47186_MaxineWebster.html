@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+            display: none !important;
+            opacity: 0.01 !important;
+        }
+        /* If the above doesn't work, add a .g-img class to any image in question. */
+        img.g-img + div {
+            display: none !important;
+        }
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+	    /* What it does: Hover styles for buttons */
+	    .button-td,
+	    .button-a {
+	        transition: all 100ms ease-in;
+	    }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: #555555 !important;
+	        border-color: #555555 !important;
+	    }
+
+	    /* Media Queries */
+	    @media screen and (max-width: 480px) {
+
+	        /* What it does: Forces table cells into full-width rows. */
+	        .stack-column,
+	        .stack-column-center {
+	            display: block !important;
+	            width: 100% !important;
+	            max-width: 100% !important;
+	            direction: ltr !important;
+	        }
+	        /* And center justify these ones. */
+	        .stack-column-center {
+	            text-align: center !important;
+	        }
+
+	        /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+	        .center-on-narrow {
+	            text-align: center !important;
+	            display: block !important;
+	            margin-left: auto !important;
+	            margin-right: auto !important;
+	            float: none !important;
+	        }
+	        table.center-on-narrow {
+	            display: inline-block !important;
+	        }
+
+	        /* What it does: Adjust typography on small screens to improve readability */
+	        .email-container p {
+	            font-size: 17px !important;
+	        }
+	    }
+
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #f2f4f7;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #f2f4f7;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f2f4f7;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
+            Join Alumni Reunion-Home Edition!
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+	        &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!--
+            Set the email width. Defined in two places:
+            1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+            2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+            Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+        -->
+        <div style="max-width: 680px; margin: 0 auto;" class="email-container">
+            <!--[if mso]>
+            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+            <tr>
+            <td>
+            <![endif]-->
+
+	        <!-- Email Body : BEGIN -->
+	        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+		        <!-- Email Header : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff; text-align: center;">
+                        <a href="##HTMLNewsletterURL##"style="color: #000000;text-decoration: none; font-weight: bold;font-size:11px;font-family: Arial, Helvetica, sans-serif;">Click to view this email online</a>
+                    </td>
+                </tr>
+		        <!-- Email Header : END -->
+
+                <!-- Clear Spacer : BEGIN -->
+                <tr>
+                    <td aria-hidden="true" height="40" style="font-size: 0px; line-height: 0px;background: #ffffff;">
+                        &nbsp;
+                    </td>
+                </tr>
+                <!-- Clear Spacer : END -->
+
+	            <!-- Hero Image, Flush : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;text-align: center;">
+                        <a href="https://prdenpfe1.utorcsi.utoronto.ca/t.aspx?S=1&ID=7797&NL=6364&N=8132&SI=1118735&URL=https%3a%2f%2fstmikes.utoronto.ca%2f" style="color: #005cc9;">
+                            <img src="https://adcomms.utoronto.ca/email-templates/USMC/images/2020/05/logo.png" width="360" height="" alt="alt_text" border="0" style="width: 100%; max-width: 360px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;" class="g-img">
+                        </a>
+                    </td>
+                </tr>
+                <!-- Hero Image, Flush : END -->
+
+                <!-- Clear Spacer : BEGIN -->
+                <tr>
+                    <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px;background: #ffffff;">
+                        &nbsp;
+                    </td>
+                </tr>
+                <!-- Clear Spacer : END -->
+
+                <!-- 1 Column Text : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td style="padding: 20px 20px 0 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;">
+                                    <p style="margin: 0 0 10px 0;">
+                                        Dear Alumni and Friends,
+                                        <br><br>
+                                        Spring’s warmer weather, increased daylight hours, and <a href="https://twitter.com/uStMikes">flowers in bloom</a> make it a season of rejuvenation and renewal. In the midst of a challenging year, I am sure many of us are embracing the Spring season even more than usual. 
+                                        <br><br>
+                                        This is the time of year St. Michael’s would typically welcome alumni back on campus for Alumni Reunion: a weekend to reconnect with classmates, engage in the life of the College, and make new memories. While we are disappointed that many things have shifted in the last year due to COVID-19, we are looking forward to welcoming you online this week, for <a href="https://alumni.utoronto.ca">Alumni Reunion&mdash;Home Edition</a>.
+                                        <br><br>
+                                        We have been busy planning a variety of virtual gatherings, which you will find described below. In addition to St. Michael’s exclusive events, you are invited to join University of Toronto’s flagship lectures and all alumni events. If you have been unable to attend any reunions in the past, I hope you will consider registering for a few events this year!
+                                        <br><br>
+                                        This year, special events will honour alumni who are celebrating anniversaries in both 2020 and 2021: anyone who graduated in a year ending in 0, 1, 5, or 6. Of course, there are events for everyone, and all alumni are welcome to attend. 
+                                        <br><br>
+                                        Please visit our <a href="https://stmikes.utoronto.ca/alumnireunion">website</a> to view and register for St. Michael’s events, look through honoured years’ digital composites, read alumni stories, and download St. Michael’s springtime Zoom backgrounds.
+                                        <br><br>
+                                        If you have any questions about Alumni Reunion&mdash;Home Edition, or experience trouble registering, please do not hesitate to contact me.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left" valign="top" style="font-size:0; padding: 20px 10px 0 10px; background-color: #ffffff;">
+                                    <!--[if mso]>
+                                    <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                                    <tr>
+                                    <td valign="top" width="330">
+                                    <![endif]-->
+                                    <div style="display:inline-block; margin: 0; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tr>
+                                                <td style="padding: 0 10px 0 10px;">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                                        <tr>
+                                                            <td>
+                                                                <img src="https://adcomms.utoronto.ca/images/stmikes/2021/45872/signature.png" width="80" height="" border="0" alt="alt_text" style="width: 100%; max-width: 80px; height: auto; background: #ffffff; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;">
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <!--[if mso]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>                            
+                            <tr>
+                                <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;">
+                                    <p style="margin: 0 0 10px 0;">
+                                        Maxine Webster, Advancement Officer, Alumni Engagement<br>
+                                        University of St. Michael’s College<br>
+                                        in the University of Toronto<br>
+                                        <a href="mailto:maxine.webster@utoronto.ca">maxine.webster@utoronto.ca</a><br>
+                                        416.926.7260 ext. 67260
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- 1 Column Text : END -->
+
+                <!-- SECTION : BEGIN -->
+                    <!-- 1 Column Text : BEGIN -->
+                    <tr>
+                        <td style="background-color: #ffffff;text-align: center;">
+                            <table  role="presentation" cellspacing="0" cellpadding="0" border="0" width="95%">
+                                <tr>
+                                    <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #002A5C;background-color: #002A5C;">
+                                        <h1 style="text-align:center;margin: 0; font-size: 18px; line-height: 30px; color: #ffffff; font-weight: normal;font-weight: 700;">Annual General Meeting</h1>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- 1 Column Text : END -->
+
+                    <!-- 2 Even Columns : BEGIN -->
+                    <tr>
+                        <td align="center" valign="top" style="font-size:0; padding: 10px 10px 0 10px; background-color: #ffffff;">
+                            <!--[if mso]>
+                            <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                            <tr>
+                            <td valign="top" width="330">
+                            <![endif]-->
+                            <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <td style="padding: 10px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: center;">
+                                                <tr>
+                                                    <td>
+                                                        <img src="https://adcomms.utoronto.ca/images/alumni-reunion/2021/46313/Email_copy_1.jpeg" width="240" height="" border="0" alt="alt_text" style="width: 100%; max-width: 240px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="center-on-narrow">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if mso]>
+                            </td>
+                            </tr>
+                            </table>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                    <!-- 2 Even Columns : END -->
+
+                    <!-- Clear Spacer : BEGIN -->
+                    <tr>
+                        <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px;background-color: #ffffff;text-align: center;">
+                            <table  role="presentation" cellspacing="0" cellpadding="0" border="0" width="95%">
+                                <tr>
+                                    <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;background-color: #ffffff;border-top: solid 1px #888888;">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Clear Spacer : END -->
+
+                    <!-- 1 Column Text : BEGIN -->
+                    <tr>
+                        <td style="background-color: #ffffff;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 0 20px 20px 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;text-align: center;">
+                                        <p style="margin: 0 0 10px 0;">
+                                            President David Sylvester will provide an overview of the past year and a look forward to the year ahead.
+                                            <br><br>
+                                            <span style="font-weight: 700; font-size: 20px;">Thursday, May 27, 2021 // 5-6 p.m. EDT</span>
+                                            <br><br>
+                                            <a href="https://secureca.imodules.com/s/731/18/register21.aspx?sid=731&gid=1&pgid=17980&cid=29728&eventcode=R036&utm_source=SMCNewsletter&utm_medium=SMCEmail&utm_campaign=All-Newsletter&consID=##OptionalParameter3##">Register here</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- 1 Column Text : END -->
+                <!-- SECTION : END -->                    
+
+                <!-- SECTION : BEGIN -->
+                    <!-- 1 Column Text : BEGIN -->
+                    <tr>
+                        <td style="background-color: #ffffff;text-align: center;">
+                            <table  role="presentation" cellspacing="0" cellpadding="0" border="0" width="95%">
+                                <tr>
+                                    <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #002A5C;background-color: #002A5C;">
+                                        <h1 style="text-align:center;margin: 0; font-size: 18px; line-height: 30px; color: #ffffff; font-weight: normal;font-weight: 700;">Dons Reunion</h1>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- 1 Column Text : END -->
+
+                    <!-- 2 Even Columns : BEGIN -->
+                    <tr>
+                        <td align="center" valign="top" style="font-size:0; padding: 10px 10px 0 10px; background-color: #ffffff;">
+                            <!--[if mso]>
+                            <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                            <tr>
+                            <td valign="top" width="330">
+                            <![endif]-->
+                            <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <td style="padding: 10px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: center;">
+                                                <tr>
+                                                    <td>
+                                                        <img src="https://adcomms.utoronto.ca/images/smc/47186/Picture1.jpg" width="240" height="" border="0" alt="alt_text" style="width: 100%; max-width: 240px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="center-on-narrow">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if mso]>
+                            </td>
+                            </tr>
+                            </table>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                    <!-- 2 Even Columns : END -->
+
+                    <!-- Clear Spacer : BEGIN -->
+                    <tr>
+                        <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px;background-color: #ffffff;text-align: center;">
+                            <table  role="presentation" cellspacing="0" cellpadding="0" border="0" width="95%">
+                                <tr>
+                                    <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;background-color: #ffffff;border-top: solid 1px #888888;">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Clear Spacer : END -->
+
+                    <!-- 1 Column Text : BEGIN -->
+                    <tr>
+                        <td style="background-color: #ffffff;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 0 20px 20px 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;text-align: center;">
+                                        <p style="margin: 0 0 10px 0;">
+                                            Test your St. Michael’s knowledge and catch up with classmates and friends: The Dons Reunion, open to all alumni Dons, will be a trivia night with prizes.
+                                            <br><br>
+                                            <span style="font-weight: 700; font-size: 20px;">Thursday, May 27, 2021 // 7-8 p.m. EDT</span>
+                                            <br><br>
+                                            <a href="https://secureca.imodules.com/s/731/18/register21.aspx?sid=731&gid=1&pgid=17980&cid=29728&eventcode=R037&utm_source=SMCNewsletter&utm_medium=SMCEmail&utm_campaign=All-Newsletter&consID=##OptionalParameter3##">Register here</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- 1 Column Text : END -->
+                <!-- SECTION : END -->                    
+
+                <!-- SECTION : BEGIN -->
+                    <!-- 1 Column Text : BEGIN -->
+                    <tr>
+                        <td style="background-color: #ffffff;text-align: center;">
+                            <table  role="presentation" cellspacing="0" cellpadding="0" border="0" width="95%">
+                                <tr>
+                                    <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #002A5C;background-color: #002A5C;">
+                                        <h1 style="text-align:center;margin: 0; font-size: 18px; line-height: 30px; color: #ffffff; font-weight: normal;font-weight: 700;">50<sup>th</sup> Anniversary Virtual Ceremony</h1>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- 1 Column Text : END -->
+
+                    <!-- 2 Even Columns : BEGIN -->
+                    <tr>
+                        <td align="center" valign="top" style="font-size:0; padding: 10px 10px 0 10px; background-color: #ffffff;">
+                            <!--[if mso]>
+                            <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                            <tr>
+                            <td valign="top" width="330">
+                            <![endif]-->
+                            <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <td style="padding: 10px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: center;">
+                                                <tr>
+                                                    <td>
+                                                        <img src="https://adcomms.utoronto.ca/images/alumni-reunion/2021/46313/Email_copy_2.jpeg" width="240" height="" border="0" alt="alt_text" style="width: 100%; max-width: 240px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="center-on-narrow">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if mso]>
+                            </td>
+                            </tr>
+                            </table>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                    <!-- 2 Even Columns : END -->
+
+                    <!-- Clear Spacer : BEGIN -->
+                    <tr>
+                        <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px;background-color: #ffffff;text-align: center;">
+                            <table  role="presentation" cellspacing="0" cellpadding="0" border="0" width="95%">
+                                <tr>
+                                    <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;background-color: #ffffff;border-top: solid 1px #888888;">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Clear Spacer : END -->
+
+                    <!-- 1 Column Text : BEGIN -->
+                    <tr>
+                        <td style="background-color: #ffffff;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 0 20px 20px 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;text-align: center;">
+                                        <p style="margin: 0 0 10px 0;">
+                                            Join with classmates and fellow alumni who graduated in 1970 and 1971 to celebrate your milestone anniversaries.
+                                            <br><br>
+                                            <span style="font-weight: 700; font-size: 20px;">Friday, May 28, 2021 // 1-2 p.m. EDT</span>
+                                            <br><br>
+                                            University of Toronto Ceremony: 1:00 - 1:20 p.m. EDT<br>
+                                            St. Michael’s Class Mingle: 1:20 - 2:00 p.m. EDT
+                                            <br><br>
+                                            <a href="https://secureca.imodules.com/s/731/18/register21.aspx?sid=731&gid=1&pgid=17980&cid=29728&eventcode=R011&utm_source=SMCNewsletter&utm_medium=SMCEmail&utm_campaign=All-Newsletter&consID=##OptionalParameter3##">Register here</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- 1 Column Text : END -->
+                <!-- SECTION : END -->
+
+                <!-- SECTION : BEGIN -->
+                    <!-- 1 Column Text : BEGIN -->
+                    <tr>
+                        <td style="background-color: #ffffff;text-align: center;">
+                            <table  role="presentation" cellspacing="0" cellpadding="0" border="0" width="95%">
+                                <tr>
+                                    <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #002A5C;background-color: #002A5C;">
+                                        <h1 style="text-align:center;margin: 0; font-size: 18px; line-height: 30px; color: #ffffff; font-weight: normal;font-weight: 700;">Faculty Lecture: Medieval Manuscripts in a Digital Age</h1>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- 1 Column Text : END -->
+
+                    <!-- 2 Even Columns : BEGIN -->
+                    <tr>
+                        <td align="center" valign="top" style="font-size:0; padding: 10px 10px 0 10px; background-color: #ffffff;">
+                            <!--[if mso]>
+                            <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                            <tr>
+                            <td valign="top" width="330">
+                            <![endif]-->
+                            <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <td style="padding: 10px 2px 10px 10px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: right;">
+                                                <tr>
+                                                    <td>
+                                                        <img src="https://adcomms.utoronto.ca/images/alumni-reunion/2021/46313/Picture3.png" width="200" height="" border="0" alt="alt_text" style="width: 100%; max-width: 200px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="center-on-narrow">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        <!--[if mso]>
+                            </td>
+                            <td valign="top" width="330">
+                            <![endif]-->
+                            <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <td style="padding: 10px 10px 10px 2px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                                <tr>
+                                                    <td>
+                                                        <img src="https://adcomms.utoronto.ca/images/alumni-reunion/2021/46313/Picture4.png" width="200" height="" border="0" alt="alt_text" style="width: 100%; max-width: 200px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="center-on-narrow">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>                        
+                            <!--[if mso]>
+                            </td>
+                            </tr>
+                            </table>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                    <!-- 2 Even Columns : END -->
+
+                    <!-- Clear Spacer : BEGIN -->
+                    <tr>
+                        <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px;background-color: #ffffff;text-align: center;">
+                            <table  role="presentation" cellspacing="0" cellpadding="0" border="0" width="95%">
+                                <tr>
+                                    <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;background-color: #ffffff;border-top: solid 1px #888888;">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Clear Spacer : END -->
+
+                    <!-- 1 Column Text : BEGIN -->
+                    <tr>
+                        <td style="background-color: #ffffff;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 0 20px 20px 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;text-align: center;">
+                                        <p style="margin: 0 0 10px 0;">
+                                            In the last year, St. Michael’s Assistant Professor <strong>Alison More</strong> and Visiting Lecturer <strong>Paolo Granata</strong> found a way&mdash;through a virtual scriptorium and remote guests&mdash;to bring medieval manuscripts to the online format. Join this unique lecture, as Professors More and Granata share their research in medieval manuscript in the virtual realm.
+                                            <br><br>
+                                            <span style="font-weight: 700; font-size: 20px;">Friday, May 28, 2021 // 3-4 p.m. EDT</span>
+                                            <br><br>
+                                            <a href="https://secureca.imodules.com/s/731/18/register21.aspx?sid=731&gid=1&pgid=17980&cid=29728&eventcode=R039&utm_source=SMCNewsletter&utm_medium=SMCEmail&utm_campaign=All-Newsletter&consID=##OptionalParameter3##">Register here</a>                                            
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- 1 Column Text : END -->
+                <!-- SECTION : END -->
+
+                <!-- SECTION : BEGIN -->
+                    <!-- 1 Column Text : BEGIN -->
+                    <tr>
+                        <td style="background-color: #ffffff;text-align: center;">
+                            <table  role="presentation" cellspacing="0" cellpadding="0" border="0" width="95%">
+                                <tr>
+                                    <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #002A5C;background-color: #002A5C;">
+                                        <h1 style="text-align:center;margin: 0; font-size: 18px; line-height: 30px; color: #ffffff; font-weight: normal;font-weight: 700;">Honoured Years Cocktail Hour</h1>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- 1 Column Text : END -->
+
+                    <!-- 2 Even Columns : BEGIN -->
+                    <tr>
+                        <td align="center" valign="top" style="font-size:0; padding: 10px 10px 0 10px; background-color: #ffffff;">
+                            <!--[if mso]>
+                            <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                            <tr>
+                            <td valign="top" width="330">
+                            <![endif]-->
+                            <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <td style="padding: 10px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: center;">
+                                                <tr>
+                                                    <td>
+                                                        <img src="https://adcomms.utoronto.ca/images/smc/47186/Picture5.jpg" width="240" height="" border="0" alt="alt_text" style="width: 100%; max-width: 240px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="center-on-narrow">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if mso]>
+                            </td>
+                            </tr>
+                            </table>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                    <!-- 2 Even Columns : END -->
+
+                    <!-- Clear Spacer : BEGIN -->
+                    <tr>
+                        <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px;background-color: #ffffff;text-align: center;">
+                            <table  role="presentation" cellspacing="0" cellpadding="0" border="0" width="95%">
+                                <tr>
+                                    <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;background-color: #ffffff;border-top: solid 1px #888888;">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Clear Spacer : END -->
+
+                    <!-- 1 Column Text : BEGIN -->
+                    <tr>
+                        <td style="background-color: #ffffff;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 0 20px 20px 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;text-align: center;">
+                                        <p style="margin: 0 0 10px 0;">
+                                            The Honoured Years Cocktail Hour, open to all alumni who graduated in a year ending in 0, 1, 5, or 6, will include scheduled programming and the chance to connect with previous classmates.
+                                            <br><br>
+                                            <span style="font-weight: 700; font-size: 20px;">Friday, May 28, 2021 // 5-6 p.m. EDT</span>
+                                            <br><br>
+                                            <a href="https://secureca.imodules.com/s/731/18/register21.aspx?sid=731&gid=1&pgid=17980&cid=29728&eventcode=R070&utm_source=SMCNewsletter&utm_medium=SMCEmail&utm_campaign=All-Newsletter&consID=##OptionalParameter3##">Register here</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- 1 Column Text : END -->
+                <!-- SECTION : END -->                   
+
+                <!-- SECTION : BEGIN -->
+                    <!-- 1 Column Text : BEGIN -->
+                    <tr>
+                        <td style="background-color: #ffffff;text-align: center;">
+                            <table  role="presentation" cellspacing="0" cellpadding="0" border="0" width="95%">
+                                <tr>
+                                    <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #002A5C;background-color: #002A5C;">
+                                        <h1 style="text-align:center;margin: 0; font-size: 18px; line-height: 30px; color: #ffffff; font-weight: normal;font-weight: 700;">Alumni in Entertainment Panel</h1>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- 1 Column Text : END -->
+
+                    <!-- 2 Even Columns : BEGIN -->
+                    <tr>
+                        <td align="center" valign="top" style="font-size:0; padding: 10px 10px 0 10px; background-color: #ffffff;">
+                            <!--[if mso]>
+                            <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                            <tr>
+                            <td valign="top" width="165">
+                            <![endif]-->
+                            <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:165px; max-width:165px; vertical-align:top;" class="stack-column">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <td style="padding: 10px 2px 10px 10px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: right;">
+                                                <tr>
+                                                    <td>
+                                                        <img src="https://adcomms.utoronto.ca/images/smc/47186/Picture6.jpg" width="165" height="" border="0" alt="alt_text" style="width: 100%; max-width: 165px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="center-on-narrow">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        <!--[if mso]>
+                            </td>
+                            <td valign="top" width="165">
+                            <![endif]-->
+                            <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:165px; max-width:165px; vertical-align:top;" class="stack-column">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <td style="padding: 10px 10px 10px 2px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                                <tr>
+                                                    <td>
+                                                        <img src="https://adcomms.utoronto.ca/images/smc/47186/Picture7.jpg" width="200" height="" border="0" alt="alt_text" style="width: 100%; max-width: 165px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="center-on-narrow">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>                        
+                            <!--[if mso]>
+                            </td>
+                            <td valign="top" width="165">
+                            <![endif]-->
+                            <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:165px; max-width:165px; vertical-align:top;" class="stack-column">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <td style="padding: 10px 10px 10px 2px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                                <tr>
+                                                    <td>
+                                                        <img src="https://adcomms.utoronto.ca/images/smc/47186/Picture8.jpg" width="200" height="" border="0" alt="alt_text" style="width: 100%; max-width: 165px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="center-on-narrow">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>                        
+                            <!--[if mso]>
+                            </td>
+                            <td valign="top" width="165">
+                            <![endif]-->
+                            <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:165px; max-width:165px; vertical-align:top;" class="stack-column">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <td style="padding: 10px 10px 10px 2px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                                <tr>
+                                                    <td>
+                                                        <img src="https://adcomms.utoronto.ca/images/smc/47186/Picture9.jpg" width="200" height="" border="0" alt="alt_text" style="width: 100%; max-width: 165px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="center-on-narrow">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>                        
+                            <!--[if mso]>
+                            </td>                                                      
+                            </tr>
+                            </table>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                    <!-- 2 Even Columns : END -->
+
+                    <!-- Clear Spacer : BEGIN -->
+                    <tr>
+                        <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px;background-color: #ffffff;text-align: center;">
+                            <table  role="presentation" cellspacing="0" cellpadding="0" border="0" width="95%">
+                                <tr>
+                                    <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;background-color: #ffffff;border-top: solid 1px #888888;">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Clear Spacer : END -->
+
+                    <!-- 1 Column Text : BEGIN -->
+                    <tr>
+                        <td style="background-color: #ffffff;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 0 20px 20px 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;text-align: center;">
+                                        <p style="margin: 0 0 10px 0;">
+                                            Since staying home, we have all been consuming more entertainment. Hear from four alumni panelists about their time at St. Michael’s, and how it shaped their careers in media, the arts, and entertainment. 
+                                            <br><br>
+                                            Panelists:<br>
+                                            <strong>Peter Mohan (8T0)</strong>: writer and producer of Canadian and American dramatic programming including <i>The Hardy Boys</i> and <i>Orphan Black</i><br>
+                                            <strong>Natalie Jenner (9T0)</strong>: best-selling author of <i>The Jane Austen Society</i><br>
+                                            <strong>Justin Jalea (0T7)</strong>: human rights activist, conductor, and JUNO-nominated tenor<br>
+                                            <strong>Kevin Sylvester (8T9)</strong>: writer and illustrator of more than 30 children’s books<br>
+                                            Moderated by St. Michael’s Associate Professor <strong></strong>Iris Gildea</strong>
+                                            <br><br>
+                                            <span style="font-weight: 700; font-size: 20px;">Saturday, May 29, 2021 // 3-4 p.m. EDT</span>
+                                            <br><br>
+                                            <a href="https://secureca.imodules.com/s/731/18/register21.aspx?sid=731&gid=1&pgid=17980&cid=29728&eventcode=R071&utm_source=SMCNewsletter&utm_medium=SMCEmail&utm_campaign=All-Newsletter&consID=##OptionalParameter3##">Register here</a>                                            
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- 1 Column Text : END -->
+                <!-- SECTION : END -->
+
+                <!-- SECTION : BEGIN -->
+                    <!-- 1 Column Text : BEGIN -->
+                    <tr>
+                        <td style="background-color: #ffffff;text-align: center;">
+                            <table  role="presentation" cellspacing="0" cellpadding="0" border="0" width="95%">
+                                <tr>
+                                    <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #002A5C;background-color: #002A5C;">
+                                        <h1 style="text-align:center;margin: 0; font-size: 18px; line-height: 30px; color: #ffffff; font-weight: normal;font-weight: 700;">All Alumni Mass</h1>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- 1 Column Text : END -->
+
+                    <!-- 2 Even Columns : BEGIN -->
+                    <tr>
+                        <td align="center" valign="top" style="font-size:0; padding: 10px 10px 0 10px; background-color: #ffffff;">
+                            <!--[if mso]>
+                            <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                            <tr>
+                            <td valign="top" width="330">
+                            <![endif]-->
+                            <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <td style="padding: 10px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: center;">
+                                                <tr>
+                                                    <td>
+                                                        <img src="https://adcomms.utoronto.ca/images/smc/47186/Picture11.jpg" width="240" height="" border="0" alt="alt_text" style="width: 100%; max-width: 240px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;" class="center-on-narrow">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if mso]>
+                            </td>
+                            </tr>
+                            </table>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                    <!-- 2 Even Columns : END -->
+
+                    <!-- Clear Spacer : BEGIN -->
+                    <tr>
+                        <td aria-hidden="true" height="20" style="font-size: 0px; line-height: 0px;background-color: #ffffff;text-align: center;">
+                            <table  role="presentation" cellspacing="0" cellpadding="0" border="0" width="95%">
+                                <tr>
+                                    <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff;background-color: #ffffff;border-top: solid 1px #888888;">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Clear Spacer : END -->
+
+                    <!-- 1 Column Text : BEGIN -->
+                    <tr>
+                        <td style="background-color: #ffffff;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 0 20px 20px 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #000000;text-align: center;">
+                                        <p style="margin: 0 0 10px 0;">
+                                            Join us for Mass, livestreamed from St. Basil's Catholic Parish.
+                                            <br><br>
+                                            <span style="font-weight: 700; font-size: 20px;">Sunday, May 30, 2021 // 10:30 a.m. EDT</span>
+                                            <br><br>
+                                            <a href="https://secureca.imodules.com/s/731/18/register21.aspx?sid=731&gid=1&pgid=17980&cid=29728&eventcode=R041&utm_source=SMCNewsletter&utm_medium=SMCEmail&utm_campaign=All-Newsletter&consID=##OptionalParameter3##">Register here</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- 1 Column Text : END -->
+                <!-- SECTION : END -->    
+
+
+            </table>
+            <!-- Email Body : END -->
+
+            <!-- Email Footer : BEGIN -->
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 680px;">
+                <tr>
+                    <td style="padding: 20px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: center; color: #ffffff; background-color: #002A5C;">
+                        <br><br>
+                        <strong>FOLLOW USMC</strong>
+                        <br><br>
+                            <table>
+                                <tr>
+                                    <td>
+                                    <a href="https://www.facebook.com/USMCUofT/" target="_blank" style="padding: 0 5px;">
+                                        <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/Facebook.png" width="60" height="60" alt="icon">
+                                        </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+                                        <a href="https://ca.linkedin.com/school/university-of-toronto---university-of-st.-michael's-college/" target="_blank" style="padding: 0 5px;">
+                                        <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/linkedin.png" width="60" height="60" alt="icon">
+                                        </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+                                        <a href="https://twitter.com/uStMikes/" target="_blank" style="padding: 0 5px;">
+                                        <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/02/twitter.png" width="60" height="60" alt="icon">
+                                        </a><!--[if gte mso 15]>&nbsp;<![endif]-->
+                                    </td>
+                                </tr>
+                            </table>
+                        <br><br>
+                        <strong>University of St. Michael's College</strong>
+                        <br>
+                        <strong>Advancement and Alumni Affairs</strong>
+                        <br>
+                        81 St. Mary Street
+                        <br>
+                        Toronto, Ontario
+                        <br>
+                        M5S 1J4 
+                        <br><br>
+                        Give: <a href="https://stmikes.utoronto.ca/giving/" style="color: #13778d;">stmikes.utoronto.ca/alumni/giving</a>
+                        <br>
+                        E-mail: <a href="mailto:smc.alumniaffairs@utoronto.ca" style="color: #13778d;">smc.alumniaffairs@utoronto.ca</a>
+                        <br>
+                        Website: <a href="https://stmikes.utoronto.ca/alumni/" style="color: #13778d;">stmikes.utoronto.ca/alumni</a>
+                        <br><br><br>
+                        This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #13778d;">##SubscriberEmail##</a>
+                        <br>
+                        <a href="##TrackClick##https://secureca.imodules.com/s/731/index_clean.aspx?sid=731&gid=1&pgid=1363&cid=2576&post_id=0" style="color: #13778d; text-decoration: underline;">Update contact information</a>
+                        <br>
+                        <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202021-22_USMC_ALL_ALL_Newsletter_Initial_##OptionalParameter3##%20Alumni%20Reunion%20-%20Home%20Edition%20-%20MaxineWebster%20-%2047186" style="color: #13778d; text-decoration: underline;">Opt out of future messages</a>
+                        <br>
+                        <hr style="width: 100%;max-width: 660px; margin: 30px 0 15px 0;" width="660">
+                        <span style="font-size: 10px">
+                            The University&nbsp;of&nbsp;Toronto respects your privacy. We do not rent, trade or sell our mailing lists.
+                            <br>
+                            Copyright &copy; 2020 University&nbsp;of&nbsp;Toronto. All rights reserved. This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #13778d;">##SubscriberEmail##</a>
+                        </span>
+                    </td>
+                </tr>
+            </table>
+            <!-- Email Footer : END -->
+
+            <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </div>
+
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
