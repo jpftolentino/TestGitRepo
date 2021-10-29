@@ -1,0 +1,30 @@
+Seven Step Process for Creating and Sending Email Newsletters:
+
+1. Create necessary directory 
+-> Create new folder in the right year and month with using ticket number as the name of file
+    Inisde new folder:
+    -> Find a similar html template and create an html file with client's name and ticket number to copy content into
+    -> Find a similar info template and create a text file for information pull
+
+2. Pull content from helpdesk and fill text file with new information
+-> Proper naming convention: FISCALYEAR_DIVISION_DEPARTMENT_PROGRAM_INVITATION/SOLICITATION/SURVEYS/NEWSLETTERS_INITIAL/REMINDER_CAMPAIGN - TICKET#_DATECREATED
+-> Don't forget to cahnge unsubscribe url
+-> Make sure Copy Right date is right
+
+3. Fill html template with new content that the client has sent
+-> Make sure preview is Windows, Mac, Browser and Mobile responsive
+-> Make sure images are uploaded in the right resolution and right folder
+
+4. Creating a Newsletter in eNewsPro for previews and actual sends (Putting it all together)
+-> Using the gathered content create a Newsletter instance using the html template and info template
+
+5. Send client preview
+-> Back and forth of changing content and sending client previews until approval process
+
+6. Upload list once approval process is finished
+-> Clients send emailing lists separately, I usually do this last once I get final approval of preview
+-> Make sure clients seeder emails are uploaded in the email
+
+7. Schedule email for send
+-> Send news letter and double check that all the right information is displayed in newsletter queue
+-> Create confirmation email for client and get final approval

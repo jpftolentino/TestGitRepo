@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+        :root {
+          color-scheme: light;
+          supported-color-schemes: light;
+        }
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+        /* What it does: forces Samsung Android mail clients to use the entire viewport */
+        #MessageViewBody, #MessageWebViewDiv{
+            width: 100% !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+        .im {
+            color: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+            display: none !important;
+            opacity: 0.01 !important;
+        }
+        /* If the above doesn't work, add a .g-img class to any image in question. */
+        img.g-img + div {
+            display: none !important;
+        }
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            u ~ div .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            u ~ div .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            u ~ div .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+        #uoft-logo {
+            padding: 20px 20px 0 35px;
+        }
+
+        .one-column {
+            padding: 0 35px 10px 35px;
+        }
+
+        .white-space {
+            height: 35px;
+        }
+
+	    /* What it does: Hover styles for buttons */
+	    .button-td,
+	    .button-a {
+	        transition: all 100ms ease-in;
+	    }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: #555555 !important;
+	        border-color: #555555 !important;
+	    }
+
+	    /* Media Queries */
+	    @media screen and (max-width: 480px) {
+
+	        /* What it does: Forces table cells into full-width rows. */
+	        .stack-column,
+	        .stack-column-center {
+	            display: block !important;
+	            width: 100% !important;
+	            max-width: 100% !important;
+	            direction: ltr !important;
+	        }
+	        /* And center justify these ones. */
+	        .stack-column-center {
+	            text-align: center !important;
+	        }
+
+	        /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+	        .center-on-narrow {
+	            text-align: center !important;
+	            display: block !important;
+	            margin-left: auto !important;
+	            margin-right: auto !important;
+	            float: none !important;
+	        }
+	        table.center-on-narrow {
+	            display: inline-block !important;
+	        }
+
+	        /* What it does: Adjust typography on small screens to improve readability */
+	        .email-container p {
+	            font-size: 17px !important;
+	        }
+
+            #uoft-logo{
+                padding: 20px 20px 0 20px;
+            }
+
+            .one-column {
+                padding: 20px 20px 0 20px;
+            }
+
+            .white-space {
+                height: 0;
+            }
+	    }
+
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+</head>
+<!--
+	The email background color (#222222) is defined in three places:
+	1. body tag: for most email clients
+	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+	3. mso conditional: For Windows 10 Mail
+-->
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #f2f4f7;">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #f2f4f7;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f2f4f7;">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
+            To view and attend your upcoming Alumni Reunion events, go to your personal portal.
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+	        &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
+
+        <!--
+            Set the email width. Defined in two places:
+            1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+            2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+            Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+        -->
+        <div style="max-width: 680px; margin: 0 auto;" class="email-container">
+            <!--[if mso]>
+            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+            <tr>
+            <td>
+            <![endif]-->
+
+	        <!-- Email Body : BEGIN -->
+	        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+            <!-- Email Pre Header : BEGIN -->
+            <tr>
+                <td style="text-align: center; padding-bottom: 10px; padding-top: 10px; font-family: arial; background-color: #ffffff;border-bottom: 1px solid #f2f4f7;">
+                    <a href="##HTMLNewsletterURL##" style="text-decoration: none !important; color: #000000; font-size: 12px;text-align: center !important;">
+                        <strong>View this email online</strong>
+                    </a>
+                </td>
+            </tr>
+            <!-- Email Pre Header : END -->
+            <!-- UofT Logo : BEGIN -->
+            <tr>
+                <td id="uoft-logo" style="background-color: #ffffff;text-align: left;">
+                    <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/ut_signature_transp.png" width="170" height="" alt="alt_text" border="0" style="width: 33%; max-width: 170px; height: auto; background: #ffffff; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;margin: unset" class="g-img">
+                </td>
+            </tr>
+            <!-- UofT Logo : END -->
+
+            <!-- Hero Image, Flush : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <img src="https://adcomms.utoronto.ca/images/alumni-reunion/2021/AR_Evite_Banner_massconfirm_nodate.png" width="680" height="" alt="alt_text" border="0" style="width: 100%; max-width: 680px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;" class="g-img">
+                </td>
+            </tr>
+            <!-- Hero Image, Flush : END -->
+
+                <!-- Clear Spacer : BEGIN -->
+                <tr>
+                    <td class="white-space" aria-hidden="true" style="font-size: 0px; line-height: 0px;background-color: #ffffff;">
+                        &nbsp;
+                    </td>
+                </tr>
+                <!-- Clear Spacer : END -->            
+
+                <!-- 1 Column Text + Button : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;" class="one-column">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td style="font-family: sans-serif; font-size: 24px; line-height: 32px; color: #007fa3;">
+                                    <p style="margin: 0 0 10px;">
+                                        <span style="color: #25355a;">Alumni Reunion &mdash; Home Edition starts May 26, 2021. Visit <a href="##OptionalParameter25##" style="color: #007fa3;text-decoration: underline;">your personal Alumni Reunion portal</a> to view and&nbsp;access all the events you’ve registered for. Then bookmark your portal for quick access on the day of your&nbsp;event(s).</span>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 30px 20px 35px 20px;">
+                                    <!-- Button : BEGIN -->
+                                    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
+                                        <tr>
+                                            <td class="button-td button-td-primary" style="background: #007fa3;">
+											     <a class="button-a button-a-primary" href="##OptionalParameter25##" style="background: #007fa3; border: 1px solid #007fa3; font-family: sans-serif; font-weight: bold; font-size: 22px; line-height: 24px; text-decoration: none; padding: 16px 20px; color: #ffffff; display: block;text-decoration: none;text-align: center;">GO TO YOUR PORTAL</a>
+											</td>
+                                        </tr>
+                                    </table>
+                                    <!-- Button : END -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-family: sans-serif; font-size: 18px; line-height: 24px; color: #25355a;text-align: center;">
+                                    <p style="margin: 0;">
+                                        Need help? <a href="https://secureca.imodules.com/s/731/18/interior.aspx?sid=731&gid=1&pgid=14892" style="color: #007fa3;text-decoration: underline;">Contact us</a>.
+                                    </p>
+                                </td>
+                            </tr>                            
+                        </table>
+                    </td>
+                </tr>
+                <!-- 1 Column Text + Button : END -->
+                
+                <!-- Clear Spacer : BEGIN -->
+                <tr>
+                    <td aria-hidden="true" height="35" style="font-size: 0px; line-height: 0px;background-color: #ffffff;">
+                        &nbsp;
+                    </td>
+                </tr>
+                <!-- Clear Spacer : END -->
+
+                <!-- 1 Column Text + Button : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff;" class="one-column">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td style="border-top: 1px solid #3a5276;padding-top: 5px; background: #ffffff;">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td style="font-size: 20px;font-family: Arial; color: #25355A;padding-bottom:10px;font-weight: bold;">
+                                    <p style="margin: 0 0 10px;">
+                                        Get the most out of Alumni Reunion &mdash; Home Edition!
+                                    </p>
+                                </td>
+                            </tr>                          
+                        </table>
+                    </td>
+                </tr>
+                <!-- 1 Column Text + Button : END -->                
+
+                <!-- 2 Even Columns : BEGIN -->
+                <tr>
+                    <td align="center" valign="top" style="font-size:0; padding: 0 10px 10px 10px; background-color: #ffffff;">
+                        <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                        <tr>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 10px 10px 10px 25px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td>
+                                                    <img src="https://adcomms.utoronto.ca/images/alumni-reunion/2021/Mass_Confirmation_Email/alr-experience-cta5.jpg" width="310" height="##TrackClick##" alt="alt_text" border="0" style="width: 100%; max-width: 310px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 10px 25px 10px 10px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                            <tr>
+                                                <td style="font-family: sans-serif; font-weight: normal; font-size: 18px; line-height: 22px; color: #25355A; text-align: left;" class="stack-column-center">
+                                                    <h2 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 20px; line-height: 26px; font-weight: bold;"><a style="color: #007fa3;text-decoration: none;">Download the reunion spirit.</a></h2>
+                                                    <p style="margin: 0 0 10px 0;">
+                                                        Fill your home with buttons, Zoom backgrounds and the reunion buzz with our Alumni Reunion Home Pack.
+                                                        <br>
+                                                        <br>
+                                                        <a style="color: #25355a;text-decoration: none;" href="https://my.alumni.utoronto.ca/s/731/18/exp.aspx?sid=731&gid=1&pgid=16470#ContentMiddleLayoutStoriesIntro"><strong>Get your Home Pack now</strong> <span><img src="https://adcomms.utoronto.ca/email-templates/dua/2020/05/arrow.png" width="14" height="14" border="0"></span></a>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+                <!-- 2 Even Columns : END -->                
+
+                <!-- 2 Even Columns : BEGIN -->
+                <tr>
+                    <td align="center" valign="top" style="font-size:0; padding: 0 10px 10px 10px; background-color: #ffffff;">
+                        <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                        <tr>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 10px 10px 10px 25px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td>
+                                                    <img src="https://adcomms.utoronto.ca/images/alumni-reunion/2021/Mass_Confirmation_Email/alr-experience-cta3.jpg" width="310" height="##TrackClick##" alt="alt_text" border="0" style="width: 100%; max-width: 310px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 10px 25px 10px 10px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                            <tr>
+                                                <td style="font-family: sans-serif; font-weight: normal; font-size: 18px; line-height: 22px; color: #25355A; text-align: left;" class="stack-column-center">
+                                                    <h2 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 20px; line-height: 26px; font-weight: bold;"><a style="color: #007fa3;text-decoration: none;">Need tech support?</a></h2>
+                                                    <p style="margin: 0 0 10px 0;">
+                                                        Get tips for maximizing your audio, visual and internet connection. 
+                                                        <br>
+                                                        <br>
+                                                        <a style="color: #25355a;text-decoration: none;" href="https://my.alumni.utoronto.ca/s/731/18/interior.aspx?sid=731&gid=1&pgid=18160"><strong>Visit our tech page</strong> <span><img src="https://adcomms.utoronto.ca/email-templates/dua/2020/05/arrow.png" width="14" height="14" border="0"></span></a>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+                <!-- 2 Even Columns : END -->                  
+
+                <!-- 2 Even Columns : BEGIN -->
+                <tr>
+                    <td align="center" valign="top" style="font-size:0; padding: 0 10px 10px 10px; background-color: #ffffff;">
+                        <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                        <tr>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 10px 10px 10px 25px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td>
+                                                    <img src="https://adcomms.utoronto.ca/images/alumni-reunion/2021/Mass_Confirmation_Email/alr-experience-cta6.jpg" width="310" height="##TrackClick##" alt="alt_text" border="0" style="width: 100%; max-width: 310px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555;">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 10px 25px 10px 10px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                                            <tr>
+                                                <td style="font-family: sans-serif; font-weight: normal; font-size: 18px; line-height: 22px; color: #25355A; text-align: left;" class="stack-column-center">
+                                                    <h2 style="margin: 0 0 10px 0; font-family: sans-serif; font-size: 20px; line-height: 26px; font-weight: bold;"><a style="color: #007fa3;text-decoration: none;">Enter to win.</a></h2>
+                                                    <p style="margin: 0 0 10px 0;">
+                                                        Follow us on social (<a style="color: #007fa3;text-decoration: underline;" href="https://www.facebook.com/uoftalumni/">Facebook</a>, <a style="color: #007fa3;text-decoration: underline;" href="https://www.instagram.com/uoftalumni/">Instagram</a> and <a style="color: #007fa3;text-decoration: underline;" href="https://twitter.com/uoftalumni">Twitter</a>) for a chance to win U of T prize packs.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+                <!-- 2 Even Columns : END -->                      
+
+                <!-- 1 Column Text : BEGIN -->
+                <tr>
+                    <td style="background-color: #ffffff; padding: 20px 35px 10px 35px;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td style="border-top: 2px solid #002a5c;padding-top: 5px; background: #ffffff;">&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- 1 Column Text : END -->                 
+
+
+            </table>
+            <!-- Email Body : END -->
+
+            <!-- Email Footer : BEGIN -->
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 680px;">
+                <!-- Social Media : BEGIN -->
+                <tr>
+                    <td align="center" valign="top" style="font-size:0; padding-top: 10px; background-color:#25355A;">
+                        <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                        <tr>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 10px 10px 0 10px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff; padding-top: 10px;" class="center-on-narrow">
+                                                    <p style="margin: 0;">
+                                                        <a style="color: #FFFFFF">The University&nbsp;of&nbsp;Toronto <br>
+                                                        21 King's College Circle <br>
+                                                        Toronto, Ontario <br>
+                                                        M5S 3J3</a>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        <td valign="bottom" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:bottom;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 10px 10px 0 10px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: right;">
+                                            <tr>
+                                                <td class="center-on-narrow">
+                                                    <a href="##TrackClick##https://www.facebook.com/uoftalumni" style="border:0;text-decoration: none;">
+                                                        <img src="https://adcomms.utoronto.ca/email-templates/alr/2018/images/facebook-fff-128.png" alt="facebook icon" border="0"  height="28" width="20" style="max-width: 20px; height: auto; line-height: 1.2;">&nbsp;&nbsp;
+                                                    </a>
+                                                    <a href="##TrackClick##https://twitter.com/uoftalumni" style="border:0;text-decoration: none;">
+                                                        <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/twitter-fff-128.png" alt="twitter icon" border="0" width="28" height="28" style="max-width: 28px; height: auto; line-height: 1.2;">&nbsp;&nbsp;
+                                                    </a>
+                                                    <a href="##TrackClick##https://www.instagram.com/uoftalumni" style="border:0;text-decoration: none;">
+                                                        <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/instagram-fff-128.png" alt="instagram icon" border="0" width="28" height="28" style="max-width: 28px; height: auto; line-height: 1.2;">&nbsp;&nbsp;
+                                                    </a>
+                                                    <a href="https://www.linkedin.com/school/university-of-toronto/" style="border:0;text-decoration: none;">
+                                                        <img src="https://adcomms.utoronto.ca/email-templates/reunion/2020/linkedin-fff-128.png" alt="linkedin icon" border="0" width="28" height="28" style="max-width: 28px; height:auto; line-height: 1.2;padding-bottom: 2px;mso-padding-alt: 0 0 2px 0;">&nbsp;
+                                                    </a>
+                                                    &nbsp;
+                                                    <a href="https://weibo.com/u/7481349146?ssl_rnd=1607964953.64&is_all=1" style="border:0;text-decoration: none;">
+                                                        <img src="https://adcomms.utoronto.ca/images/alumni/imgpsh_mobile_save.jpg" alt="weibo icon" border="0" width="28" height="28" style="max-width: 28px; height:auto; line-height: 1.2;padding-bottom: 2px;mso-padding-alt: 0 0 2px 0;">&nbsp;
+                                                    </a>&nbsp;
+                                                    <a href="https://adcomms.utoronto.ca/email-templates/alr/2014/UofT_WeChat_QR_Code_.jpg" style="border:0;text-decoration: none;">
+                                                        <img src="https://adcomms.utoronto.ca/icons/imgpsh_mobile_save.jpg" alt="wechat icon" border="0" width="28" height="28" style="max-width: 28px; height:auto; line-height: 1.2;padding-bottom: 2px;mso-padding-alt: 0 0 2px 0;">&nbsp;
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" valign="top" style="font-size:0; padding-bottom: 10px; background-color:#25355A;">
+                        <!--[if mso]>
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+                        <tr>
+                        <td valign="top" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 0 10px 10px 10px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
+                                            <tr>
+                                                <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff; padding-top: 10px;" class="center-on-narrow">
+                                                    <p style="margin: 0;">
+                                                        <strong><a href="https://secureca.imodules.com/s/731/index_clean.aspx?sid=731&gid=1&pgid=1363&cid=2576&post_id=0" style="color: #ffffff">Update contact information</a></strong>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        <td valign="bottom" width="330">
+                        <![endif]-->
+                        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 0 10px 10px 10px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: right;">
+                                            <tr>
+                                                <td style="font-family: sans-serif; font-size: 15px; line-height: 20px; color: #ffffff; padding-top: 10px;" class="center-on-narrow">
+                                                    <p style="margin: 0;">
+                                                        <strong>#uoftreunion @uoftalumni</strong>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+                <!-- Social Media : END -->
+                
+                <tr>
+                    <td style="padding: 0 25px 20px 25px;text-align:center;font-size:11px;color:#000000;line-height:16px;font-family:Arial, sans-serif;font-weight:normal;background-color: #ffffff;">
+                        <p style="margin: 30px 0 10px 0;">
+                            The University&nbsp;of&nbsp;Toronto respects your privacy. We do not rent, trade or sell our mailing lists. Copyright © 2020 University&nbsp;of&nbsp;Toronto. All rights reserved.
+                            <br><br>
+                            This e-mail was sent to ##SubscriberEmail##<br>
+                            To opt out of future messages of this kind, please <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%20DUA_ALL_AR_Invitations_##OptionalParameter3##%20|%20REUNION21-REGISTRATION-EMAIL-##OptionalParameter21##|YOUNG|ESTABLISHED" style="color: #000000; text-decoration: underline; color: #007FA3;">contact us.</a>
+                            <br><br>
+                            ##OptionalParameter3##
+                            <br><br>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <!-- Email Footer : END -->
+
+            <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </div>
+
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>

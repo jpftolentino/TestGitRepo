@@ -1,0 +1,522 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title></title>
+    <style>
+    @media only screen and (min-width: 480px) and (max-width: 599px) {
+    table[class=outer] { width: 480px !important;}
+    td[class=outer] { width: 480px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 440px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 440px !important;}
+    td[class=inner] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 400px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 480px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 440px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 400px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 440px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 480px !important; height: auto !important;}
+    img[class=img-rect] { width: 440px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 285px !important; height: auto !important;}
+    strong[class=banner] { font-size: 28px !important;}
+    .section-heading { width: 440px !important; }
+    .section-heading td { width: 440px !important; }
+    .full-story { width: 440px !important; }
+    .image-block img { width: 440px !important; height: auto !important; }
+    .button { width: 440px !important; }
+    .two-col-section { width: 440px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 440px !important; }
+    }
+    @media only screen and (min-width: 360px) and (max-width: 479px) {
+    table[class=outer] { width: 360px !important;}
+    td[class=outer] { width: 360px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 320px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 320px !important;}
+    td[class=inner] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 280px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 360px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 320px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 280px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 360px !important; height: auto !important;}
+    img[class=img-rect] { width: 320px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 260px !important; height: auto !important;}
+    strong[class=banner] { font-size: 22px !important;}
+    .section-heading { width: 320px !important; }
+    .section-heading td { width: 320px !important; }
+    .image-block img { width: 320px !important; height: auto !important; }
+    .button { width: 320px !important; }
+    .two-col-section { width: 320px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 320px !important; }
+    }
+    @media only screen and (max-width: 359px) {
+    table[class=outer] { width: 320px !important;}
+    td[class=outer] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important;}
+    td[class=content-outer] { width: 280px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; display: block !important;}
+    td[class=header] { width: auto !important; padding-right: 10px !important; padding-left: 10px !important;}
+    table[class=inner] { width: 280px !important;}
+    td[class=inner] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    td[class=content-inner] { width: 260px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; display: block !important;}
+    td[class=outer--centered] { width: 320px !important; padding-left: 0 !important; padding-right: 0 !important; text-align: center !important; display: block !important;}
+    td[class=content-outer--centered] { width: 280px !important; padding-right: 20px !important; padding-left: 20px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner--centered] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=content-inner--centered] { width: 260px !important; padding-right: 10px !important; padding-left: 10px !important; height: auto !important; text-align: center !important; display: block !important;}
+    td[class=inner-button] { width: 280px !important; padding-left: 0 !important; padding-right: 0 !important; display: block !important; padding-top: 10px !important;}
+    table[class=button] { width: 150px !important;}
+    td[class=button] { width: 150px !important; display: block !important;}
+    img[class=img-full] { width: 320px !important; height: auto !important;}
+    img[class=img-rect] { width: 280px !important; height: auto !important;}
+    img[class=img-circle] { width: 250px !important; height: auto !important;}
+    img[class=footer-logo-left] { width: 240px !important; height: auto !important;}
+    strong[class=banner] { font-size: 20px !important;}
+    .section-heading { width: 280px !important; }
+    .section-heading td { width: 280px !important; }
+    .full-story { width: 280px !important; }
+    .image-block img { width: 280px !important; height: auto !important; }
+    .button { width: 280px !important; }
+    .two-col-section { width: 280px !important; }
+    .col-story-wrap, .divider { display: block !important; width: 280px !important; }
+    }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0;">
+    <!-- Preheader : BEGIN -->
+    <div style="display:none;font-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">
+      The latest news and information from the Department of Art History
+    </div>
+    <!-- Preheader : END -->
+    <table cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td width="100%" align="center" valign="top">
+          <!-- end of top portion of outer table -->
+
+          <!-- HEADER SECTION (web version link, banner) : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td width="600" valign="top" style="text-align: center; padding-bottom: 15px; padding-top: 10px; font-family: arial; background-color: #ffffff;" class="content-outer">
+                <a href="##HTMLNewsletterURL##" style="text-decoration: none !important; color: #000000; font-size: 12px;"><strong>View this email online</strong></a>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: center; max-width:680px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: center; max-width:600px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <!-- <td style="padding: 20px 0;" class="stack-column-center"> -->
+              <td style="padding-top: 5px;padding-bottom: 20px;" class="stack-column-center">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: center;">
+                    <tr>
+                        <!-- <td style="mso-padding-alt: 0 0 0 20px;padding-left: 20px;"> -->
+                        <td style="text-align: center;">
+                            <img src="https://adcomms.utoronto.ca/email-templates/logos/UofT-AAS-logo.jpg" width="280" height="auto" alt="alt_text" border="0" style="height: auto; background: #ffffff; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #ffffff;">
+                        </td>
+                    </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px; color:#002A5C; background-color:#ffffff;">
+                <strong>FACULTY OF ARTS &amp; SCIENCE</strong>
+              </td>
+            </tr> -->
+            <tr>
+              <td class="header" width="600" valign="top" style="font-size:20px; background-color: #002a5c; color: #ffffff; text-align: center; padding-top: 40px; padding-bottom: 30px; font-family: arial; line-height: 36px;">
+              <span style="line-height: 24px;">DEPARTMENT OF ART HISTORY</span>
+              <br />
+              <strong style="font-size:36px">YOUR ALUMNI NEWS</strong>
+              <br/>
+              <span style="font-size: 15px;">October 2021 | Issue 8</span>
+            </td>
+            </tr>
+          </table>
+          <!-- HEADER SECTION (web version link, banner) : END -->
+
+          <!-- MESSAGE FROM THE CHAIR : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: center; max-width:600px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: center; max-width:600px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+
+            
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px; color:#002A5C; background-color:#dde1e8;">
+                <strong>MESSAGE FROM THE CHAIR</strong>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: center; max-width:600px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: center; max-width:600px;color:#fff;font-family: Arial; text-align:center; line-height:15px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td width="600" valign="top" class="content-outer" style="text-align: left; font-family: arial; padding: 15px 25px 10px 25px; font-size: 14px; line-height: 20px; background-color: #ffffff; color: #000000;">
+                Dear Alumni and Friends, 
+                <br><br>
+                This time last year, I wrote to you announcing that we were all set for a semester of online classes &mdash; little did I know the semester would turn into a year, with plenty of discussion on the format for 2021–22 too! However, we are back in the classroom, and it is quite a relief to be able to say that. I have myself already given two in-person classes in my undergraduate course on ceramics &mdash; well, a blend of in-person and virtual, in fact, which presents its own particular challenges! I very much enjoyed the chance to be in person with the class, and the students seemed quite enthusiastic too. I am hearing the same from many other colleagues.
+                <br><br>
+                Some further exciting news to share is that we have a search underway for a new faculty position in art histories of Black and Latinx diasporas. The job ad is posted, and we hope for a strong field of applicants from which we can select a shortlist &mdash; with candidates giving talks in December or January, in all likelihood. The successful candidate will join our ranks next summer. 
+                <br><br>
+                I am also delighted to announce that Professor Philip Sapirstein is our newest faculty appointment, having started his tenure-track position on September 1. Professor Sapirstein is a specialist in ancient Greek architecture, rewriting the history of the earliest temples and pioneering new methods of 3D visualisation. This summer, he continued his exciting fieldwork in the Aegean at sites such as Didyma and the Athenian Agora. He is also serving as director of undergraduate studies, a particularly crucial role right now given the complicated circumstances for course delivery during the pandemic. Welcome Professor Sapirstein!
+                <br><br>
+                Finally, I am particularly pleased to launch a pilot project to match alumni with current Department of Art History projects &mdash; more on this below. I very much hope you will take part! 
+              </td>
+            </tr>
+          </table>
+          
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr><td style="height: 10px;background-color: #ffffff;" colspan="2" class="outer"></td></tr>
+            <tr>
+              <td width="600" align="center" valign="top" style="background-color:#ffffff; padding: 10px;" class="content-outer">
+                <table cellpadding="0" cellspacing="0" width="600" class="inner">
+                  <tr>
+                    <td width="275" valign="bottom" style="text-align: center; height: 100px;" class="inner--centered">
+                      <table cellpadding="0" cellspacing="0" width="275" class="inner">
+                        <tr>
+                          <td width="50%" style="width:50%; text-align: center;">
+                              <img src="https://adcomms.utoronto.ca/email-templates/arts-science/2020/12/43866/carl-knappett.png" width="130" height="" alt="alt_text" border="0" style="width: 100%;max-width: 130px;height: auto;background: #dddddd;font-family: sans-serif;font-size: 15px;line-height: 15px;color: #555555;">
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td valign="middle" style="color: #000000; font-family: arial; font-size: 13px; text-align: center;" width="50%" class="inner--centered">
+                        <strong><em>&mdash; Carl Knappett</em></strong>
+                        <br/>
+                        <em>Professor & Chair</em>
+                    </td>
+                  </tr>
+                </table>
+                <br />
+                <br />
+              </td>
+            </tr>
+          </table>
+          <!-- MESSAGE FROM THE CHAIR : END -->
+
+          <!-- NEWS AND EVENTS : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: center; max-width:600px;color:#fff;font-family: Arial; text-align:center; line-height:7px;font-size:7px; border-top: 1px solid #002A5C;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2" valign="top" style="text-align:center; font-family:Arial,sans serif; font-size:16px; padding:10px 0px 10px 3px; line-height:18px; color:#002A5C; background-color:#dde1e8;">
+                <strong>NEWS AND EVENTS</strong>
+              </td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: center; max-width:600px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: center; max-width:600px;color:#fff;font-family: Arial; text-align:center; line-height:15px;font-size:7px;">&nbsp;</td>
+            </tr>
+
+          <!-- Even Columns 1 : BEGIN -->
+          <tr>
+            <td valign="top" align="center" class="section-inner--main" style="padding: 10px">
+              <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                <tr>
+
+                  <td valign="top" class="col-story-wrap" width="280" style="text-align:center;margin: auto;padding: 0 10px">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/images/artsc/2021/49156/1_Welcome_New_Faculty.jpg" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                          <strong>Welcome New Faculty!</strong><br>
+                          We are delighted to announce that <a href="https://arthistory.utoronto.ca/news/welcome-new-faculty-member-philip-sapirstein">Philip Sapirstein</a> has been appointed assistant professor of Greek architecture in the Department of Art History. Philip is a specialist in the history of architecture of the Mediterranean, in particular, that of ancient Greece. The digital humanities are another important aspect of Philip's research, and he is among the leading practitioners in photogrammetry and 3D analysis in the context of Mediterranean archaeology. We hope you will join us in offering Philip a very warm welcome to our department.
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+
+                  <td valign="top" class="col-story-wrap" width="280" style="text-align:center;margin: auto;padding: 0 10px">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/images/artsc/2021/49156/2_Congratulations_to_Our_Graduates.jpg" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                          <strong>Congratulations to Our Graduates!</strong><br>
+                          U&nbsp;of&nbsp;T's spring convocation 2021 ceremony was presented virtually on June 23. Please join us in congratulating our master's graduates and wishing them all the best in their future endeavours: Thivya Anban, Muskoka Dittmar-McCallum, Victoria Ermakov, Veronika Korchagina, Jing LiYi, Lianne Short, Claire Smith, Jody Townshend, Kathryn Wooder, Katrin Zavgorodny-Freedman, Ruby Zhao and Arielle Zhivko. The virtual ceremony is available on <a href="https://www.youtube.com/watch?v=pFkcimw-618">U&nbsp;of&nbsp;T's YouTube page</a>.
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- Even Columns 1 : END -->   
+
+          <!-- Even Columns 1 : BEGIN -->
+          <tr>
+            <td valign="top" align="center" class="section-inner--main" style="padding: 10px">
+              <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                <tr>
+
+                  <td valign="top" class="col-story-wrap" width="280" style="text-align:center;margin: auto;padding: 0 10px">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/images/artsc/2021/49156/3_Congratulations_to_Our_Alumni.jpg" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                          <strong>Congratulations to Our Alumni!</strong><br>
+                          The Department of Art History is pleased to announce that three of our alumni have been awarded prestigious honours:
+                          <ul style="margin-block-start: 0;margin-block-end: 0;">
+                            <li><a href="https://arthistory.utoronto.ca/news/congratulations-dr-emily-doucet">Emily Doucet</a> (PhD 2020): International Fellow at the Institute for Advanced Study in the Humanities in Essen, Germany (2021) and SSHRC Postdoctoral Fellow in the Department of Art History and Communication Studies at McGill University (2022–23)</li>
+                            <li><a href="https://arthistory.utoronto.ca/news/elizabeth-rice-mattison-appointed-andrew-w-mellon-assistant-curator-academic-programming-hood">Elizabeth Rice Mattison</a> (PhD 2020): Andrew W. Mellon Assistant Curator of Academic Programming at the Hood Museum of Art, Dartmouth College</li>
+                            <li><a href="https://arthistory.utoronto.ca/news/khushi-nansi-awarded-fulbright-canada-student-award">Khushi Nansi</a> (Hons. BA 2021): Fulbright Canada Student Award (2021–22)</li>
+                          </ul>
+                          We're always looking for alumni to feature on our website. If you're interested in telling your story, please <a href="mailto:art.alumni@utoronto.ca">reach out to us via email</a>.
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                  <td valign="top" class="col-story-wrap" width="280" style="text-align:center;margin: auto;padding: 0 10px">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/images/artsc/2021/49156/4_Celebrating_Our_Students.jpg" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                          <strong>Celebrating Our Students</strong><br>
+                          The Department of Art History is pleased to announce that several of our graduate and undergraduate students have either earned fellowships or successfully defended their dissertations:
+                          <ul style="margin-block-start: 0;margin-block-end: 0;">
+                            <li><a href="https://arthistory.utoronto.ca/news/bronwen-cox-awarded-jackman-humanities-institute-undergraduate-fellowship">Bronwen Cox</a> (undergraduate): Jackman Humanities Institute Undergraduate Fellowship (2021–22)</li>
+                            <li><a href="https://arthistory.utoronto.ca/news/marina-dumont-gauthier-awarded-northrop-frye-centre-doctoral-fellowship">Marina Dumont-Gauthier</a> (PhD candidate): Northrop Frye Centre Doctoral Fellowship (2021–22)</li>
+                            <li><a href="https://arthistory.utoronto.ca/news/tia-sager-awarded-critical-digital-humanities-graduate-fellowship">Tia Sager</a> (PhD candidate): Critical Digital Humanities Graduate Fellowship (2021–22)</li>
+                            <li><a href="https://arthistory.utoronto.ca/news/congratulations-rachel-dewan">Rachel Dewan</a> (PhD candidate): dissertation defense, <i>Containing Meaning: Miniature Pottery on Bronze Age Crete</i></li>
+                            <li><a href="https://arthistory.utoronto.ca/news/congratulations-brittany-myburgh">Brittany Myburgh</a> (PhD candidate): dissertation defense, <i>Projected Visions: Electric Light and Sight in 20th and 21st Century Art</i></li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- Even Columns 1 : END -->   
+
+          <!-- Even Columns 1 : BEGIN -->
+          <tr>
+            <td valign="top" align="center" class="section-inner--main" style="padding: 10px">
+              <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                <tr>
+
+                  <td valign="top" class="col-story-wrap" width="280" style="text-align:center;margin: auto;padding: 0 10px">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/images/artsc/2021/49156/5_Art_History_Video_Series.jpg" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                          <strong>Art History Video Series</strong><br>
+                          The department is excited to present a new video series on our official YouTube channel, featuring interviews with students and short videos on approaches to art history. Videos are divided into two categories: Meet Our Students and Art History in 10. Meet Our Students videos feature art history students speaking about their personal experiences in the departmental community, as well as the career opportunities available with an art history degree. Art History in 10 videos provide insight into the perspectives, techniques and methods employed by art historians today. Subscribe to the <a href="https://www.youtube.com/channel/UCu6cOXOmI4BWtDlXVTFFuwQ">Department of Art History's YouTube channel</a>.
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                  <td valign="top" class="col-story-wrap" width="280" style="text-align:center;margin: auto;padding: 0 10px">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/images/artsc/2021/49156/6_Hidden_Canada_A_NextGen_and_U_of_T_Project.jpg" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                          <strong>Hidden Canada: A NextGen and U&nbsp;of&nbsp;T Project</strong><br>
+                          <a href="https://boundless.utoronto.ca/redirects/artsci/acontario-next-gens">ACO NextGen</a>, a group within Architectural Conservancy Ontario (ACO), is dedicated to students and emerging professionals who share an interest in historic architecture and conservation. Last spring, students in FAH473H1-S Studies in Canadian Architecture and Landscapes: Hidden Canada paired with ACO NextGen to produce articles for the <a href="https://boundless.utoronto.ca/redirects/artsci/acontario-next-gens-blog">ACO NextGen blog</a>. These articles seek to unveil some of Canada's architectural riches and demonstrate the breadth and complex nature of the architecture of Canada. The article series is reproduced on the <a href="https://arthistory.utoronto.ca/news">Department of Art History website</a>. Happy reading!
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- Even Columns 1 : END -->
+
+          <!-- Even Columns 1 : BEGIN -->
+          <tr>
+            <td valign="top" align="center" class="section-inner--main" style="padding: 10px">
+              <table cellspacing="0" cellpadding="0" border="0" align="center" class="inner">
+                <tr>
+
+                  <td valign="top" class="col-story-wrap" width="280" style="text-align:center;margin: auto;padding: 0 10px">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/images/artsc/2021/49156/7_Matching_Alumni_with_Art_History_Students_in_Research_and_Outreach.jpg" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                          <strong>Matching Alumni with Art History Students in Research and Outreach</strong><br>
+                          The Department of Art History is piloting a <a href="https://arthistory.utoronto.ca/news/matching-alumni-art-history-students-research-and-outreach">new initiative</a> to match alumni with specific research projects that could benefit from short-term funding for paid internships. Through this initiative, alumni can see the immediate results of their support. For example, Mimi Fullerton recently provided support for the <a href="https://guides.library.utoronto.ca/c.php?g=377602">public art initiative</a> led by Professor Mark Cheetham. Further support possibilities include the <a href="https://arthistory.utoronto.ca/news/rom-sculpture-project">Royal Ontario Museum (ROM) Sculpture Project</a>, the Art Gallery of Ontario (AGO) Bernini Project, the <a href="https://arthistory.utoronto.ca/research/research-areas/architecture">Architectural History Working Group</a>, the <a href="https://arthistory.utoronto.ca/graduate/resources-graduate-students/writing-initiatives">Art History Writing Initiative</a> and many more. If you're interested in getting involved in these projects, or others that see us partnering with the Aga Khan Museum or U&nbsp;of&nbsp;T's Art Museum, please <a href="mailto:arthistory@utoronto.ca">reach out to us via email</a>.
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                  <td valign="top" class="col-story-wrap" width="280" style="text-align:center;margin: auto;padding: 0 10px">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                        <td valign="top" class="image-block" style="padding-bottom: 12px;">
+                          <img src="https://adcomms.utoronto.ca/images/artsc/2021/49156/8_The_ROM_Sculpture_Project.jpg" alt="" width="280" height="auto"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" class="story-heading" style="padding-bottom: 15px; text-align: left; font-family: arial; font-size: 15px; line-height: 18px; color: #000000;">
+                          <strong>The ROM Sculpture Project</strong><br>
+                          Paul Denis (ROM) and Bjorn C. Ewald (U&nbsp;of&nbsp;T) are leading a <a href="https://arthistory.utoronto.ca/news/rom-sculpture-project">collaborative project</a> cataloguing the ROM's collection of more than 150 pieces of Greek and Roman marble sculpture, spanning from the Greek Archaic period to the late Roman era (ca. 700 BC to 400 CE). Most of the collection is either imperfectly known or totally unpublished, with several pieces believed to be "lost" by the scholarly world. During winter 2020, 12 graduate seminar students wrote 71 catalogue entries. This project marks the beginning of an increased collaboration between the two institutions and offers rich opportunities for the involvement of students on various levels &mdash; from object-based learning to independent primary research.
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- Even Columns 1 : END -->             
+
+
+          </table>
+          <!-- NEWS AND EVENTS : END -->
+
+          <!-- WHITE SPACE : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: center; max-width:600px;color:#fff;font-family: Arial; text-align:center; line-height:15px;font-size:7px;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="bar" colspan="2" valign="top" style="border-collapse: collapse; text-align: center; max-width:600px;color:#fff;font-family: Arial; text-align:center; border-bottom:1px solid #002A5C;line-height:7px;font-size:7px;">&nbsp;</td>
+            </tr>
+
+          </table>
+          <!-- WHITE SPACE : END -->
+                
+          <!-- SOCIAL MEDIA : BEGIN -->
+          <table cellpadding="0" cellspacing="0" width="600" class="outer" align="center">
+            <tr><td width="600" align="center" height="20" style="background-color: #ffffff;"></td></tr>
+            <!-- <tr>
+              <td width="600" align="center" style="background-color: #ffffff;">
+                <table cellpadding="0" cellspacing="0" width="200">
+                  <tr>
+                    <td>
+                      <a href="##TrackClick##https://www.facebook.com/UofTarthistory/" style="border:0 !important;">
+                        <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/facebook.png" width="40" height="40" />
+                      </a>
+                    </td>
+                    <td></td>
+                    <td>
+                      <a href="##TrackClick##https://twitter.com/UofArt" style="border:0 !important;">
+                        <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/twitter.png" width="40" height="40" />
+                      </a>
+                    </td>
+                    <td></td>
+                    <td>
+                      <a href="##TrackClick##https://www.instagram.com/uoftarthistory/" style="border:0 !important;">
+                        <img src="https://alumni.utoronto.ca/sites/default/files/inline-images/instagram_2.png" width="40" height="40" />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr> -->
+            <tr><td width="600" align="center" height="20" style="background-color: #ffffff;" class="outer"></td></tr>
+          </table>
+          <!-- SOCIAL MEDIA : END  -->
+
+          <!-- FOOTER : BEGIN -->
+          <table cellspacing="0" cellpadding="0" width="600" class="outer" align="center">
+            <tr>
+              <td width="600" style="background-color: #dde1e8; padding: 30px 25px;" valign="top" class="content-outer">
+                <table width="600" cellspacing="0" cellpadding="0" class="inner">
+                  <tr>
+                    <td style="line-height:16px; text-align: left; font-size: 12px; font-family: arial, helvetica, sans-serif; padding-bottom: 10px;" valign="top" class="inner--centered">
+                      <strong>
+                      Department of Art History</strong> <br />
+                      <!-- <strong>
+                      Graduate Department of Art </strong> <br /> -->
+                      100 St. George Street<br />
+                      web: <a style="color:#000000;" href="##TrackClick##https://arthistory.utoronto.ca/">https://arthistory.utoronto.ca/</a><br />
+                      give: <a style="color:#000000;" href="https://donate.utoronto.ca/give/show/50?utm_source=ARTSCI&utm_medium=Newsletter&utm_campaign=Art%20History%20e-Newsletter&sid=DIS-##OptionalParameter3##|SRC-##OptionalParameter5##|FN-##OptionalParameter6##">https://donate.utoronto.ca/give/show/50</a>
+                    </td>
+                    <td style="line-height:16px; text-align: right; font-size: 12px; font-family: arial, helvetica, sans-serif; padding-bottom: 20px;" valign="top" class="inner--centered">
+                      This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #005cc9;">##SubscriberEmail##</a><br />
+                      <a href="##TrackClick##https://secureca.imodules.com/s/731/index_clean.aspx?sid=731&gid=1&pgid=1363&cid=2576&post_id=0" style="color: #005cc9; text-decoration: none;">Update contact information</a><br />
+                      <a href="mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202021-22_ARTSCI_ART_ALL_Newsletter_Initial_##OptionalParameter3##%20Art%20History%20e-News%20-%2049156" style="color: #005cc9; text-decoration: none;">Opt out of future messages</a>
+                    </td>
+                  </tr>
+                  <!--                   <tr>
+                    <td height="50"></td>
+                  </tr> -->
+                  <tr>
+                    <td style="text-align: left; padding-top: 20px;" class="inner--centered" width="285" valign="top">
+                      <a href="##TrackClick##http://www.alumni.artsci.utoronto.ca/" style="color: #005cc9;"><img src="https://alumni.utoronto.ca/sites/default/files/inline-images/header.gif" style="border: none !important;" alt="University of Toronto, Faculty of Arts and Science" st-image="footer-logo" class="footer-logo-left" /></a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- FOOTER : END -->
+
+          <!-- COPYRIGHT AREA : BEGIN -->
+          <table width="600" cellpadding="0" cellspacing="0" class="outer" align="center">
+            <tr>
+              <td style="text-align: center; font-size: 11px; font-family: arial, helvetica;background-color: #ffffff; color: #777777; padding: 10px 60px 20px 60px; line-height: 14px;" valign="top" width="600" class="content">
+                The University&nbsp;of&nbsp;Toronto respects your privacy.
+                We do not rent, trade or sell our mailing lists.
+                Copyright &copy; 2020 University&nbsp;of&nbsp;Toronto. All rights reserved. This e-mail was sent to <a href="mailto:##SubscriberEmail##" style="color: #005cc9;">##SubscriberEmail##</a>.<br />
+                ##OptionalParameter3##<br />
+                ##TrackImpression##
+              </td>
+            </tr>
+          </table>
+          <!-- COPYRIGHT AREA : END -->
+
+          </td>
+        </tr>
+      </table>
+
+    </body>
+  </html>

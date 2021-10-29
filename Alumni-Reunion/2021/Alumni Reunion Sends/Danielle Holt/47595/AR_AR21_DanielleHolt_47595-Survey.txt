@@ -1,0 +1,50 @@
+2020-21_AR21_ALR_ALL_Survey_Initial_Alumni Reunion - Surveys - 47595_20210531
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Email Subject
+
+From: University of Toronto 
+Reply to: alumni.reunion@utoronto.ca
+Campaign: Alumni Reunion 2021
+Subject: Help us make Alumni Reunion even better!
+Preview: Fill out this short survey&mdash;we want to hear from you.
+
+Preview - Survey - 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Seed/approve list
+
+mark.sedore@utoronto.ca
+
+anjali.baichwal@utoronto.ca
+susan.fischer@utoronto.ca
+sd.baker@utoronto.ca
+
+john.tolentino@utoronto.ca
+danielle.holt@utoronto.ca
+rohini.chopra@utoronto.ca
+rachel.chochinov@utoronto.ca
+susanna.lam@utoronto.ca
+
+emily.kulin@utoronto.ca
+heather.mccall@utoronto.ca
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Unsubscribe:
+mailto:subscriptions@utoronto.ca?subject=UNSUBSCRIBE%202020-21_AR21_ALR_ALL_Survey_Initial_##OptionalParameter3##%20Alumni%20Reunion%20-%20Surveys%20-%2047595
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Solicitation URL:
+https://donate.utoronto.ca/religion?utm_source=ARTSCI&utm_medium=Newsletter&utm_campaign=Religion%20Newsletter%202020&sid=DIS-##OptionalParameter3##|SRC-##OptionalParameter5##|FN-##OptionalParameter6##
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+EVENT URLS:
+
+&utm_source=AlumniReunion21&utm_medium=DUAEmail&utm_campaign=MassConfirmationDayOf-Invitation&consID=##OptionalParameter3##
+
+https://secureca.imodules.com/s/731/18/register21.aspx?sid=731&gid=1&pgid=17980&utm_source=AlumniReunion21&utm_medium=DLSPHEmail&utm_campaign=AllAlumniReminder-Invitation&consID=##OptionalParameter3##
